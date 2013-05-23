@@ -22,3 +22,13 @@ C:\Projects\probe\NH3\NH3\nh3test\nh3test\bin\Debug\FluentNHibernate.xml
 C:\Projects\probe\NH3\NH3\nh3test\nh3test\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Projects\probe\NH3\NH3\nh3test\nh3test\obj\x86\Debug\nh3test.exe
 C:\Projects\probe\NH3\NH3\nh3test\nh3test\obj\x86\Debug\nh3test.pdb
+C:\Projects\tests\NH3\nh3test\nh3test\bin\Debug\nh3test.exe.config
+C:\Projects\tests\NH3\nh3test\nh3test\bin\Debug\nh3test.exe
+C:\Projects\tests\NH3\nh3test\nh3test\bin\Debug\nh3test.pdb
+C:\Projects\tests\NH3\nh3test\nh3test\bin\Debug\FluentNHibernate.dll
+C:\Projects\tests\NH3\nh3test\nh3test\bin\Debug\Iesi.Collections.dll
+C:\Projects\tests\NH3\nh3test\nh3test\bin\Debug\Iesi.Collections.xml
+C:\Projects\tests\NH3\nh3test\nh3test\bin\Debug\FluentNHibernate.xml
+C:\Projects\tests\NH3\nh3test\nh3test\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Projects\tests\NH3\nh3test\nh3test\obj\x86\Debug\nh3test.exe
+C:\Projects\tests\NH3\nh3test\nh3test\obj\x86\Debug\nh3test.pdb

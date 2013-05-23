@@ -1,8 +1,4 @@
-﻿using System.Reflection;
-using NHibernate.Dialect;
-using NHibernate.Driver;
-
-/*
+﻿/*
  * Created by SharpDevelop.
  * User: Alexander
  * Date: 3/8/2013
@@ -15,6 +11,9 @@ namespace nh3test
 {
     using System;
     using NHibernate.Cfg;
+    using System.Reflection;
+    using NHibernate.Dialect;
+    using NHibernate.Driver;
     
 	class Program
 	{
@@ -40,9 +39,15 @@ namespace nh3test
 			using (var session = sessionFactory.OpenSession())
 		    using (var tx = session.BeginTransaction()) {
 		        // perform database logic
+		        var customers = session.CreateCriteria<Customer>()
+		                               .List<Customer>();
+		        foreach (var customer in customers) {
+		            Console.WriteLine("{0} {1}", customer.FirstName, customer.LastName);
+		        }
 		        tx.Commit();
 		    }
-			
+			Console.WriteLine("Press <ENTER> to exit...");
+			Console.ReadLine();
 			
 			Console.Write("Press any key to continue . . . ");
 			Console.ReadKey(true);
