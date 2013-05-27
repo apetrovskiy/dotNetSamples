@@ -17,6 +17,7 @@ namespace nh3test
     using System.Reflection;
     using NHibernate.Dialect;
     using NHibernate.Driver;
+    using System.Collections;
     
 	class Program
 	{
@@ -38,6 +39,10 @@ namespace nh3test
 			prod1.Name = "product 01";
 			ProductMap prodMap = new ProductMap();
 			prodMap.Id(x => x.Id);
+			
+			Hashtable ht1 = new Hashtable();
+			ht1.Add("prop1", "val1");
+			ht1.Add("prop2", (new object());
 			
 			const string connString =
 			    //"Server=spb8638\\FIRST;Database=probe;Integrated Security=SSPI;";

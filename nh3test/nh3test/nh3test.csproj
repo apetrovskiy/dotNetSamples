@@ -65,6 +65,7 @@
     <Compile Include="Category.cs" />
     <Compile Include="CategoryMap.cs" />
     <Compile Include="Customer.cs" />
+    <Compile Include="HashtableMap.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="ProductMap.cs" />
     <Compile Include="Program.cs" />
