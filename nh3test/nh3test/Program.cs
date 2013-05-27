@@ -27,7 +27,7 @@ namespace nh3test
 			
 			// TODO: Implement Functionality Here
 			
-//			try {
+			try {
 			Category categ1 = new Category();
 			//categ.Id = 1;
 			categ1.Name = "Category 01";
@@ -40,13 +40,18 @@ namespace nh3test
 			ProductMap prodMap = new ProductMap();
 			prodMap.Id(x => x.Id);
 			
-			Hashtable ht1 = new Hashtable();
-			ht1.Add("prop1", "val1");
-			ht1.Add("prop2", (new object());
+//			Hashtable ht1 = new Hashtable();
+//			ht1.Add("prop1", "val1");
+//			ht1.Add("prop2", (new object()));
 			
 			const string connString =
 			    //"Server=spb8638\\FIRST;Database=probe;Integrated Security=SSPI;";
-			    "Server=.\\FIRST;Database=probe;Integrated Security=SSPI;";
+			    //"Server=.\\FIRST;Database=probe;Integrated Security=SSPI;";
+			    //"Server=.\\Express;Database=probe;Integrated Security=SSPI;";
+			    //"Server=.\\SQLExpress;Database=probe;Integrated Security=SSPI;";
+			    //"Server=wks301\\SQLExpress;Database=probe;Integrated Security=SSPI;";
+			    //"Data Source=wks301\\SQLExpress;Initial Catalog=probe;Integrated Security=SSPI;";
+			    @"Data Source=wks301\sqlexpress;Initial Catalog=probe;Integrated Security=SSPI;";
 			
 //			var cfg = new Configuration();
 //			cfg.DataBaseIntegration(x => {
@@ -69,15 +74,42 @@ namespace nh3test
 //			Console.WriteLine("Press <ENTER> to exit...");
 //			Console.ReadLine();
 			
-			Fluently.Configure()
-			    .Database(MsSqlConfiguration
-			              .MsSql2008
-			              .ConnectionString(connString))
-			    .Mappings(m => m.FluentMappings.AddFromAssemblyOf<ProductMap>())
-			    .ExposeConfiguration(CreateSchema)
-			    .BuildConfiguration();
+//			IPersistenceConfigurer dbConfig =
+//			    new Configuration();
+//			dbConfig.
 			
+//			    _sessionFactory = Fluently.Configure().
+//        Database(config).
+//        Mappings(m => m.FluentMappings.AddFromAssemblyOf<MappingsPersistenceModel>()).
+//        ExposeConfiguration(cfg => new SchemaUpdate(cfg).Execute(false, true)).
+//        BuildSessionFactory();
 			
+//            Configuration nhConfig = new Configuration();
+//            nhConfig.Configure();
+			
+            Console.WriteLine("00001");
+			
+			//FluentConfiguration config =
+			//NHibernate.Cfg.Configuration config =
+    			Fluently.Configure()
+    			    .Database(MsSqlConfiguration
+    			              .MsSql2008
+    			              .ConnectionString(connString))
+    			              //.ConnectionString(x => x.Is(connString)))
+    			    //.Mappings(m => m.FluentMappings.AddFromAssemblyOf<ProductMap>())
+			        .Mappings(m => m.FluentMappings.AddFromAssemblyOf<CategoryMap>())
+    			    .ExposeConfiguration(CreateSchema)
+    			    .BuildConfiguration();
+			
+//			if (null == config) {
+//			    Console.WriteLine("config == null");
+//			} else {
+//			    Console.WriteLine("config != null");
+//			}
+//			
+//			Console.WriteLine("00002");
+//			
+//			Console.WriteLine(config.Properties["connection.connection_string"]);
 			
 //			}
 //			catch (Exception eHZ) {
@@ -118,6 +150,12 @@ namespace nh3test
                 var product3 = new Product { Name = "prod3", Category = category3, Description = "descr prod 3" };
                 session.SaveOrUpdate(category3);
                 session.SaveOrUpdate(product3);
+			}
+			
+			}
+			catch (Exception eHZ) {
+			    Console.WriteLine(eHZ.Message);
+			    Console.WriteLine(eHZ.InnerException.Message);
 			}
 			
 			Console.Write("Press any key to continue . . . ");

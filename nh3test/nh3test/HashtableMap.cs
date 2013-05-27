@@ -16,11 +16,11 @@ namespace nh3test
     /// <summary>
     /// Description of HashtableMap.
     /// </summary>
-    public class HashtableMap : ClassMap<Hashtable>
-    {
-        public HashtableMap()
-        {
-            Map(
-        }
-    }
+//    public class HashtableMap : ClassMap<Hashtable>
+//    {
+//        public HashtableMap()
+//        {
+//            //Map(
+//        }
+//    }
 }
