@@ -26,21 +26,21 @@ namespace nh3test
 			
 			// TODO: Implement Functionality Here
 			
-<<<<<<< HEAD
-			try {
-			Category categ = new Category();
-			categ.Id = 1;
-			CategoryMap catMap = new CategoryMap();
-			catMap.Id(x => x.Id);
-			
-			Product prod = new Product();
-			prod.Id = 1;
-			ProductMap prodMap = new ProductMap();
-			prodMap.Id(x => x.Id);
-			
-			string connString =
-			    "Server=spb8638\\FIRST;Database=probe;Integrated Security=SSPI;";
-=======
+//<<<<<<< HEAD
+//			try {
+//			Category categ = new Category();
+//			categ.Id = 1;
+//			CategoryMap catMap = new CategoryMap();
+//			catMap.Id(x => x.Id);
+//			
+//			Product prod = new Product();
+//			prod.Id = 1;
+//			ProductMap prodMap = new ProductMap();
+//			prodMap.Id(x => x.Id);
+//			
+//			string connString =
+//			    "Server=spb8638\\FIRST;Database=probe;Integrated Security=SSPI;";
+//=======
 //			try {
 			Category categ1 = new Category();
 			//categ.Id = 1;
@@ -57,7 +57,7 @@ namespace nh3test
 			const string connString =
 			    //"Server=spb8638\\FIRST;Database=probe;Integrated Security=SSPI;";
 			    "Server=.\\FIRST;Database=probe;Integrated Security=SSPI;";
->>>>>>> 41c5193d6794d452026ce2c91b1dbedf463da1de
+//>>>>>>> 41c5193d6794d452026ce2c91b1dbedf463da1de
 			
 //			var cfg = new Configuration();
 //			cfg.DataBaseIntegration(x => {
@@ -90,14 +90,14 @@ namespace nh3test
 			
 			
 			
-<<<<<<< HEAD
-			}
-			catch (Exception eHZ) {
-			    Console.WriteLine(eHZ.Message);
-			}
-			
-			
-=======
+//<<<<<<< HEAD
+//			}
+//			catch (Exception eHZ) {
+//			    Console.WriteLine(eHZ.Message);
+//			}
+//			
+//			
+//=======
 //			}
 //			catch (Exception eHZ) {
 //			    Console.WriteLine(eHZ.Message);
@@ -138,7 +138,7 @@ namespace nh3test
                 session.SaveOrUpdate(category3);
                 session.SaveOrUpdate(product3);
 			}
->>>>>>> 41c5193d6794d452026ce2c91b1dbedf463da1de
+//>>>>>>> 41c5193d6794d452026ce2c91b1dbedf463da1de
 			
 			Console.Write("Press any key to continue . . . ");
 			Console.ReadKey(true);
