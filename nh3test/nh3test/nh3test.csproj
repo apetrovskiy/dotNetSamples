@@ -43,7 +43,7 @@
       <HintPath>..\packages\FluentNHibernate.1.3.0.733\lib\FluentNHibernate.dll</HintPath>
     </Reference>
     <Reference Include="Iesi.Collections">
-      <HintPath>..\packages\Iesi.Collections.3.2.0.4000\lib\Net35\Iesi.Collections.dll</HintPath>
+      <HintPath>..\..\..\..\..\PS\STUPS\binaries\NHibernate\Required_Bins\Iesi.Collections.dll</HintPath>
     </Reference>
     <Reference Include="NHibernate">
       <HintPath>..\packages\NHibernate.3.3.3.4000\lib\Net35\NHibernate.dll</HintPath>
@@ -65,6 +65,7 @@
     <Compile Include="Category.cs" />
     <Compile Include="CategoryMap.cs" />
     <Compile Include="Customer.cs" />
+    <Compile Include="HashtableMap.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="ProductMap.cs" />
     <Compile Include="Program.cs" />
@@ -73,6 +74,9 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="Customer.hbm.xml" />
+    <None Include="hibernate.cfg.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />

@@ -6,11 +6,12 @@
  * 
  * To change this template use Tools | Options | Coding | Edit Standard Headers.
  */
-using System;
-using FluentNHibernate.Mapping;
 
 namespace nh3test
 {
+    using System;
+    using FluentNHibernate.Mapping;
+    
 	/// <summary>
 	/// Description of CategoryMap.
 	/// </summary>
