@@ -22,12 +22,13 @@ namespace testNSub
 
 		}
 		private DamnSealedClass[] _elements;
+		//public DamnSealedClass this[int index] {
 		public DamnSealedClass this[int index] {
 			get { return this._elements[index]; }
 		}
 		
-		public DamnSealedClass this[int index] {
-			get { return this._elements.[index]; }
+		public DamnSealedClass Item {
+			get { return this._elements[index]; }
 		}
 		//public DamnSealedClass Item { get; set; }
 		
@@ -56,5 +57,19 @@ namespace testNSub
 		{
 			return this._elements.GetEnumerator();
 		}
+		////////////////////////////////////////////////
+		/*
+		private IEnumerator<string> Enumerator() {
+            // ...
+        }
+    
+        public IEnumerator<string> GetEnumerator() {
+            return Enumerator();
+        }
+    
+        System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() {
+            return Enumerator();
+        }
+		*/
 	}
 }
