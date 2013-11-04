@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>Digitrish.WrapperGenerator</id>
+    <version>1.0.0.8</version>
+    <authors>Digitrish - Francis Marasigan</authors>
+    <owners>Digitrish - Francis Marasigan</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Scaffold code generator for generating wrapper class to any existing non-testable classes such static classes and .Net libraries like System.IO. Very useful for doing TDD and decoupling dependencies to 3rd party libraries.
+          Usage: On Package Manager Console type the following command:
+          Scaffold Wrapper {[Namespace].ClassName} 
+          Examples:
+          Scaffold Wrapper System.IO.Directory
+          Scaffold Wrapper System.IO.FileSystemWatcher
+          Scaffold Wrapper System.IO.File                    
+          Note: Reference assemblies must be already referenced to your project before generating wrapper class.</description>
+    <releaseNotes>1.0.0.9
+            - Change naming of wrapper class by suffixing 2 eg. DateTime --&gt; DateTime2
+            - Add support for static wrapper only. Example : "Scaffold Wrapper System.DateTime true"   
+            - Fix some formatting.</releaseNotes>
+    <copyright>Copyright 2013</copyright>
+    <tags>Wrapper Generator TDD Mockable UnitTesting Interface</tags>
+    <dependencies>
+      <dependency id="T4Scaffolding.Core" />
+    </dependencies>
+    <references />
+  </metadata>
+</package>
