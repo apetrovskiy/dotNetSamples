@@ -1,1 +1,8 @@
 C:\Projects\probe\testNSub\testNSub\obj\Debug\testNSub.csprojResolveAssemblyReference.cache
+C:\Projects\probe\testNSub\testNSub\bin\Debug\testNSub.exe.config
+C:\Projects\probe\testNSub\testNSub\bin\Debug\testNSub.exe
+C:\Projects\probe\testNSub\testNSub\bin\Debug\testNSub.pdb
+C:\Projects\probe\testNSub\testNSub\bin\Debug\NSubstitute.dll
+C:\Projects\probe\testNSub\testNSub\bin\Debug\NSubstitute.xml
+C:\Projects\probe\testNSub\testNSub\obj\Debug\testNSub.exe
+C:\Projects\probe\testNSub\testNSub\obj\Debug\testNSub.pdb

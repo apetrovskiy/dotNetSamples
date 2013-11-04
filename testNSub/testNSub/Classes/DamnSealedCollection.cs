@@ -14,7 +14,8 @@ namespace testNSub
 	/// <summary>
 	/// Description of DamnSealedCollection.
 	/// </summary>
-	public class DamnSealedCollection : ICollection, IEnumerable, IDamnSealedCollection
+	//public class DamnSealedCollection : ICollection, IEnumerable, IDamnSealedCollection
+	public class DamnSealedCollection : IDamnSealedCollection
 	{
 		//public DamnSealedClass Item { get; set; }
 		internal DamnSealedCollection()
@@ -25,11 +26,12 @@ namespace testNSub
 		//public DamnSealedClass this[int index] {
 		public DamnSealedClass this[int index] {
 			get { return this._elements[index]; }
+			private set { ; }
 		}
 		
-		public DamnSealedClass Item {
-			get { return this._elements[index]; }
-		}
+//		public DamnSealedClass Item {
+//			get { return this._elements[index]; }
+//		}
 		//public DamnSealedClass Item { get; set; }
 		
 		public int Count {

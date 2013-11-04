@@ -11,14 +11,14 @@ using System.Collections;
 
 namespace testNSub
 {
-	public interface IDamnSealedCollection
+    public interface IDamnSealedCollection : IEnumerable, ICollection
 	{
-		void CopyTo(Array array, int index);
+		//void CopyTo(Array array, int index);
 		void CopyTo(DamnSealedClass[] array, int index);
-		IEnumerator GetEnumerator();
-		DamnSealedClass Item { get; }
-		int Count { get; }
-		object SyncRoot { get; }
-		bool IsSynchronized { get; }
+		//IEnumerator GetEnumerator();
+		//DamnSealedClass Item { get; }
+		//int Count { get; }
+		//object SyncRoot { get; }
+		//bool IsSynchronized { get; }
 	}
 }

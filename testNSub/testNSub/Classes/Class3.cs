@@ -1,32 +1,34 @@
 ﻿/*
  * Created by SharpDevelop.
  * User: Alexander
- * Date: 11/2/2013
- * Time: 12:36 PM
+ * Date: 11/3/2013
+ * Time: 11:28 PM
  * 
  * To change this template use Tools | Options | Coding | Edit Standard Headers.
  */
 using System;
 
-namespace testNSub.Classes
+namespace testNSub
 {
-    /// <summary>
-    /// Description of Class3.
-    /// </summary>
-    public class Class3
-    {
-        
-        
-        public Class3(Interface1 obj1)
-        {
-        }
-        
-        public Class3(Interface2 obj2)
-        {
-        }
-        
-        public Class3(Interface1 obj1, Interface2 obj2)
-        {
-        }
-    }
+	/// <summary>
+	/// Description of Class3.
+	/// </summary>
+	public class Class3
+	{
+		public Class3()
+		{
+		}
+		
+		public DamnSealedClass GetOneElement()
+		{
+			DamnSealedClass dc = MyFactory.GetElement();
+			DamnSealedCollection coll = dc.ManyElements();
+			if (null != coll && 0 < coll.Count) {
+				return coll[0];
+			} else {
+				//return coll;
+				return null;
+			}
+		}
+	}
 }

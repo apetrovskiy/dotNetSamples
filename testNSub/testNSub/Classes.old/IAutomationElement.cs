@@ -6,11 +6,14 @@
  * 
  * To change this template use Tools | Options | Coding | Edit Standard Headers.
  */
-using MS.Internal.Automation;
+
+using System.Drawing;
+
+//using MS.Internal.Automation;
 using System;
 using System.Collections;
 using System.ComponentModel;
-using System.Windows.Automation.Provider;
+//using System.Windows.Automation.Provider;
 namespace System.Windows.Automation
 {
 	public interface IAutomationElement

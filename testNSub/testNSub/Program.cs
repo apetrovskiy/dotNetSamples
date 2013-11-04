@@ -34,6 +34,12 @@ namespace testNSub
 			Console.WriteLine(if2returned.IsRegistered);
 			Console.WriteLine(if2.Received().IsRegistered);
 			
+			Class4 cl4 = new Class4();
+			cl4.GetManyElements();
+			
+			//System.Windows.Automation.IAutomationElement
+			
+			
 			Console.Write("Press any key to continue . . . ");
 			Console.ReadKey(true);
 		}
