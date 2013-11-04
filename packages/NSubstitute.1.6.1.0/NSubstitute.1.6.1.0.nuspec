@@ -3,6 +3,10 @@
   <metadata>
     <id>NSubstitute</id>
     <version>1.6.1.0</version>
+<<<<<<< HEAD
+=======
+    <title>NSubstitute</title>
+>>>>>>> dd5f22f2ccb47763b46c04e33710fe0afc8c9f63
     <authors>Anthony Egerton, David Tchepak</authors>
     <owners>Anthony Egerton, David Tchepak</owners>
     <licenseUrl>https://github.com/nsubstitute/NSubstitute/raw/master/LICENSE.txt</licenseUrl>
