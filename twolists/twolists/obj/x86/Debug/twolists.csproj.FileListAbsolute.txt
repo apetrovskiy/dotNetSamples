@@ -1,0 +1,7 @@
+C:\Projects\probe\twolists\twolists\bin\Debug\twolists.exe
+C:\Projects\probe\twolists\twolists\bin\Debug\twolists.pdb
+C:\Projects\probe\twolists\twolists\obj\x86\Debug\twolists.csprojResolveAssemblyReference.cache
+C:\Projects\probe\twolists\twolists\obj\x86\Debug\twolists.MainForm.resources
+C:\Projects\probe\twolists\twolists\obj\x86\Debug\twolists.csproj.GenerateResource.Cache
+C:\Projects\probe\twolists\twolists\obj\x86\Debug\twolists.exe
+C:\Projects\probe\twolists\twolists\obj\x86\Debug\twolists.pdb
