@@ -155,5 +155,10 @@ namespace testNSub
 		{
 		    get { return this.elementHolder; }
 		}
+		
+		public static AutomationElement RootElement
+		{
+		    get { return AutomationElement.RootElement; }
+		}
 	}
 }

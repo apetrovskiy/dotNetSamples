@@ -40,6 +40,8 @@ namespace testNSub
             Console.WriteLine(ae.Current.ControlType.ProgrammaticName);
             
             IAutomationElementAdapter ad = new AutomationElementAdapter(ae);
+            
+            //AutomationElement.ro
             //AutomationElement ae2 =
             IAutomationElementAdapter ad2 =
                 ad.FindFirst(
@@ -62,8 +64,13 @@ namespace testNSub
                         AutomationElement.ControlTypeProperty,
                         ControlType.MenuItem));
             
+            Console.WriteLine(adc.Count);
+            Console.WriteLine(adc.GetType().Name);
+            Console.WriteLine("==============================");
             foreach (AutomationElement element in adc) {
                 Console.WriteLine(element.Current.Name);
+                Console.WriteLine(element.GetType().Name);
+                Console.WriteLine("==============================");
             }
             
         }
