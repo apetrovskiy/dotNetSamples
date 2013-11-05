@@ -54,6 +54,18 @@ namespace testNSub
             Console.WriteLine(ae2.Current.AutomationId);
             Console.WriteLine(ae2.Current.ClassName);
             Console.WriteLine(ae2.Current.ControlType.ProgrammaticName);
+            
+            IAutomationElementCollection adc =
+                ad.FindAll(
+                    TreeScope.Descendants,
+                    new PropertyCondition(
+                        AutomationElement.ControlTypeProperty,
+                        ControlType.MenuItem));
+            
+            foreach (AutomationElement element in adc) {
+                Console.WriteLine(element.Current.Name);
+            }
+            
         }
     }
 }

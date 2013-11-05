@@ -75,7 +75,7 @@
   <ItemGroup>
     <Compile Include="AutomationElement.cs" />
     <Compile Include="AutomationElementAdapter.cs" />
-    <Compile Include="AutomationElementCollection.cs" />
+    <Compile Include="AutomationElementCollectionAdapter.cs" />
     <Compile Include="Classes.old\Class1.cs" />
     <Compile Include="Classes.old\Class2.cs" />
     <Compile Include="Classes.old\Class3.cs" />

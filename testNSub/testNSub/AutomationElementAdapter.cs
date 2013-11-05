@@ -93,9 +93,14 @@ namespace testNSub
 		    return adapterElement;
 		}
 		
-		public AutomationElementCollection FindAll(TreeScope scope, Condition condition)
+		//public AutomationElementCollection FindAll(TreeScope scope, Condition condition)
+		public IAutomationElementCollection FindAll(TreeScope scope, Condition condition)
 		{
-		    return this.elementHolder.FindAll(scope, condition);
+		    //return this.elementHolder.FindAll(scope, condition);
+		    IAutomationElementCollection adapterColleciton =
+		        new AutomationElementCollectionAdapter(
+		            this.elementHolder.FindAll(scope, condition));
+		    return adapterColleciton;
 		}
 		
 		public AutomationProperty[] GetSupportedProperties()

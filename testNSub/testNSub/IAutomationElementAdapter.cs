@@ -31,18 +31,22 @@ namespace System.Windows.Automation
 		AutomationElement GetUpdatedCache(CacheRequest request);
 		//AutomationElement FindFirst(TreeScope scope, Condition condition);
 		IAutomationElementAdapter FindFirst(TreeScope scope, Condition condition);
-		AutomationElementCollection FindAll(TreeScope scope, Condition condition);
+		//AutomationElementCollection FindAll(TreeScope scope, Condition condition);
+		IAutomationElementCollection FindAll(TreeScope scope, Condition condition);
 		AutomationProperty[] GetSupportedProperties();
 		AutomationPattern[] GetSupportedPatterns();
 		void SetFocus();
-		bool TryGetClickablePoint(out Point pt);
-		Point GetClickablePoint();
+		//bool TryGetClickablePoint(out Point pt);
+		bool TryGetClickablePoint(out System.Windows.Point pt);
+		//Point GetClickablePoint();
+		System.Windows.Point GetClickablePoint();
 		AutomationElement.AutomationElementInformation Cached { get; }
 		AutomationElement.AutomationElementInformation Current { get; }
 		AutomationElement CachedParent { get; }
 		AutomationElementCollection CachedChildren { get; }
 		
 		AutomationElement SourceElement { get; }
+		//IAutomationElement aaa();
 	}
 }
 //using System;
