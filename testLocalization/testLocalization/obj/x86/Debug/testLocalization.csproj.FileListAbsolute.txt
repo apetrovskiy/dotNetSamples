@@ -1,0 +1,5 @@
+C:\Projects\probe\testLocalization\testLocalization\bin\Debug\testLocalization.exe.config
+C:\Projects\probe\testLocalization\testLocalization\bin\Debug\testLocalization.exe
+C:\Projects\probe\testLocalization\testLocalization\bin\Debug\testLocalization.pdb
+C:\Projects\probe\testLocalization\testLocalization\obj\x86\Debug\testLocalization.exe
+C:\Projects\probe\testLocalization\testLocalization\obj\x86\Debug\testLocalization.pdb

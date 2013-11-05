@@ -1,0 +1,18 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+# SharpDevelop 4.3
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "testpsevents", "testpsevents\testpsevents.csproj", "{087F0BBA-D63B-4880-B08C-C3F872E4A774}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{087F0BBA-D63B-4880-B08C-C3F872E4A774}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{087F0BBA-D63B-4880-B08C-C3F872E4A774}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{087F0BBA-D63B-4880-B08C-C3F872E4A774}.Release|Any CPU.Build.0 = Release|Any CPU
+		{087F0BBA-D63B-4880-B08C-C3F872E4A774}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+EndGlobal

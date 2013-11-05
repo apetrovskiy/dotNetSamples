@@ -1,0 +1,6 @@
+C:\Projects\tests\xmlMerge\xmlMerge\obj\x86\Debug\xmlMerge.csprojResolveAssemblyReference.cache
+C:\Projects\tests\xmlMerge\xmlMerge\bin\Debug\xmlMerge.exe.config
+C:\Projects\tests\xmlMerge\xmlMerge\bin\Debug\xmlMerge.exe
+C:\Projects\tests\xmlMerge\xmlMerge\bin\Debug\xmlMerge.pdb
+C:\Projects\tests\xmlMerge\xmlMerge\obj\x86\Debug\xmlMerge.exe
+C:\Projects\tests\xmlMerge\xmlMerge\obj\x86\Debug\xmlMerge.pdb

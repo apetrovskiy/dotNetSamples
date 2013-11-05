@@ -1,0 +1,8 @@
+C:\Projects\tests\testDateTimePicker32\testDateTimePicker32\bin\Debug\testDateTimePicker32.exe.config
+C:\Projects\tests\testDateTimePicker32\testDateTimePicker32\bin\Debug\testDateTimePicker32.exe
+C:\Projects\tests\testDateTimePicker32\testDateTimePicker32\bin\Debug\testDateTimePicker32.pdb
+C:\Projects\tests\testDateTimePicker32\testDateTimePicker32\obj\x86\Debug\testDateTimePicker32.csprojResolveAssemblyReference.cache
+C:\Projects\tests\testDateTimePicker32\testDateTimePicker32\obj\x86\Debug\testDateTimePicker32.MainForm.resources
+C:\Projects\tests\testDateTimePicker32\testDateTimePicker32\obj\x86\Debug\testDateTimePicker32.csproj.GenerateResource.Cache
+C:\Projects\tests\testDateTimePicker32\testDateTimePicker32\obj\x86\Debug\testDateTimePicker32.exe
+C:\Projects\tests\testDateTimePicker32\testDateTimePicker32\obj\x86\Debug\testDateTimePicker32.pdb

@@ -1,0 +1,6 @@
+C:\Projects\probe\ngchart_test\ngchart_test\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Projects\probe\ngchart_test\ngchart_test\bin\Debug\ngchart_test.exe.config
+C:\Projects\probe\ngchart_test\ngchart_test\bin\Debug\ngchart_test.exe
+C:\Projects\probe\ngchart_test\ngchart_test\bin\Debug\NGChart.dll
+C:\Projects\probe\ngchart_test\ngchart_test\bin\Debug\NGChart.pdb
+C:\Projects\probe\ngchart_test\ngchart_test\obj\x86\Debug\ngchart_test.exe

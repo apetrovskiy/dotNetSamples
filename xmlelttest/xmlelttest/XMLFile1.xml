@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AT_CONFIG>
+  <DESCRIPTION>SPCR</DESCRIPTION>
+  <SETTINGS>
+    <CVS_SETTINGS>
+      <CVS_ROOT>:pserver:at_nwx_user@10.0.0.24:/at</CVS_ROOT>
+      <CVS_PASSWORD>Lock12Lock</CVS_PASSWORD>
+      <UPDATE_CORE_MODULE>0</UPDATE_CORE_MODULE>
+    </CVS_SETTINGS>
+    <LOGGING>
+      <!--<LOGS_DIR>$TestHome\Logs</LOGS_DIR>-->
+      <LOGS_DIR>C:\TestHome\Logs</LOGS_DIR>
+      <MAIN_LOG>AT_Runner.log</MAIN_LOG>
+      <HISTORY>5</HISTORY>
+      <LOGLEVEL>debug</LOGLEVEL>
+      <ADDITIONAL_INFO>\\njqclib2\bugs_attachments\AT_ADDITIONAL_INFORMATION</ADDITIONAL_INFO>
+    </LOGGING>
+    <BACKUP>
+      <BACKUPS_DIR>C:\HOME\Archives</BACKUPS_DIR>
+      <DAYS_STORED>7</DAYS_STORED>
+    </BACKUP>
+    <NOTIFICATIONS SMTP_SERVER="NJEXH01" SMTP_PORT="257">
+      <RECIPIENTS>denis.kapralov@netwrix.com;</RECIPIENTS>
+      <!--Vladimir.Lobanov@netwrix.com;Igor.Podobed@netwrix.com;-->
+    </NOTIFICATIONS>
+    <DISTRIB>
+      <PATH_TO_DISTRIB>\\njvms42\Builds_to_test</PATH_TO_DISTRIB>
+      <USER>NWX\at_nwx_user</USER>
+      <PASSWORD>Lock12Lock</PASSWORD>
+    </DISTRIB>
+    <VMM>
+      <VMMServer>njqclib2</VMMServer>
+      <VMMHost>njqc5</VMMHost>
+      <USER>NWX\at_nwx_user</USER>
+      <PASSWORD>Lock12Lock</PASSWORD>
+    </VMM>
+  </SETTINGS>
+  <HOSTS>
+    <CREDENTIALS>
+      <USER>delta</USER>
+      <PASSWORD>Lock12Lock</PASSWORD>
+      <DOMAIN>LAB</DOMAIN>
+    </CREDENTIALS>
+    <!--
+    <HOST NAME="WIN7_W2" OS="WIN7" PLATFORM="x86_64" BITS="64" HOSTNAME="vl-atdevclient1" VM_NAME="vl_atdevclient1" DOMAIN="OUTCAST" />
+    <HOST NAME="W2K3_S1" OS="W2K3_R2" PLATFORM="x86_64" BITS="64" HOSTNAME="vl-w2k3tr-dc1" DOMAIN="OUTCAST" />
+-->
+    <HOST NAME="W2K8_R2_S1" OS="W2K8_R2" PLATFORM="x86_64" BITS="64" HOSTNAME="dk_w2k8r2_x64_03" DOMAIN="LAB" />
+    <HOST NAME="W2K8_R2_S2" OS="W2K8_R2" PLATFORM="x86_64" BITS="64" HOSTNAME="dk_w2k8r2_x64_04" DOMAIN="LAB" />
+  </HOSTS>
+  <DOMAINS>
+    <DOMAIN NETBIOS="LAB" FQDN="lab.local">
+      <ADMINISTRATOR>
+        <!-- <NAME>OUTCAST\at_admin</NAME> -->
+        <NAME>LAB\delta</NAME>
+        <PASSWORD>Lock12Lock</PASSWORD>
+        <EMAIL>delta@lab.local</EMAIL>
+        <SMTP_SERVER>qcdns</SMTP_SERVER>
+        <NOTIFY_MAIL>delta@lab.local</NOTIFY_MAIL>
+        <NOTIFY_MAIL_GROUP>delta@lab.local</NOTIFY_MAIL_GROUP>
+      </ADMINISTRATOR>
+      <EXCH_SRV>qcdns</EXCH_SRV>
+      <DOMAIN_CONTROLLERS>
+        <DC PDC="True" NAME="W2K8_R2_S1"></DC>
+      </DOMAIN_CONTROLLERS>
+    </DOMAIN>
+  </DOMAINS>
+  <TESTLINK>
+    <TL_PATH>http://vl-testlink-s1/TestLink/lib/api/xmlrpc.php</TL_PATH>
+    <TL_DEVKEY>187309e30f6921162b4c298e3b9cbcc0</TL_DEVKEY>
+  </TESTLINK>
+  <!--DATABASES>
+    <TESTLINK>
+      <DB_HOST>vl-testlink-s1</DB_HOST>
+      <DB_NAME>testlink</DB_NAME>
+      <DB_USER>testlink_user</DB_USER>
+      <DB_PASSWORD>Lock12Lock</DB_PASSWORD>
+	  <TL_PATH>http://vl-testlink-s1/TestLink/lib/api/xmlrpc.php</TL_PATH>
+	  <TL_DEVKEY>187309e30f6921162b4c298e3b9cbcc0</TL_DEVKEY>
+    </TESTLINK>
+  </DATABASES-->
+  <PRODUCTS>
+    <PRODUCT Id='FSCR'>
+      FSCR
+      <ACRONYM>FSCR_NMC</ACRONYM>
+      <CODE>FSCR</CODE>
+      <ACTIVE>1</ACTIVE>
+      <VERSION>4.0</VERSION>
+      <DO_CLIENT_RESTORE>1</DO_CLIENT_RESTORE>
+      <DO_INSTALL>1</DO_INSTALL>
+      <UNINSTALL_NAME>%netwrix%file%system%</UNINSTALL_NAME>
+      <CLEAR_PRODUCT_DATA>1</CLEAR_PRODUCT_DATA>
+      <!--<UNINSTALL_NAME></UNINSTALL_NAME>-->
+      <TESTRUN_TAGS>0001</TESTRUN_TAGS>
+      <!-- <INSTALL_TO>at-root-client</INSTALL_TO> -->
+      <INSTALL_TO>abalone.lab.local</INSTALL_TO>
+      <DISTRIB_NAME>fscrfull_setup.msi</DISTRIB_NAME>
+      <DONT_SAVE_INFO>0</DONT_SAVE_INFO>
+      <!-- DISTRIB_CUSTOM_PATH>\\njvms42\Builds_to_test\ADCR_NMC\7.5.738</DISTRIB_CUSTOM_PATH -->
+      <NOTIFY>denis.kapralov@netwrix.com;</NOTIFY>
+      <UPDATE_PRODUCT_TESTS>0</UPDATE_PRODUCT_TESTS>
+      <MAX_ALERT_DELAY>5</MAX_ALERT_DELAY>
+      <MAX_REPORT_DELAY>10</MAX_REPORT_DELAY>
+      <PARAMETERS>
+        <DEPLOYMENT>
+          <HOST>
+            <NAME>abalone.lab.local</NAME>
+            <DOMAIN>lab</DOMAIN>
+            <USER_NAME>delta</USER_NAME>
+            <USER_PASSWORD>Lock12Lock</USER_PASSWORD>
+            <ROLE>console</ROLE>
+            <PORT>15000</PORT>
+            <PLATFORM>Windows 2008 R2</PLATFORM>
+          </HOST>
+          <!--
+                <HOST>
+                    <NAME>10.0.2.82</NAME>
+                </HOST>
+                <HOST>
+                    <NAME>10.0.1.140</NAME>
+                </HOST>
+-->
+        </DEPLOYMENT>
+        <!-- The root folder of the test sutie -->
+        <TESTHOME>C:\TESTHOME</TESTHOME>
+        <!-- The host the product is installed on -->
+        <!--<PRODUCT_HOST>10.0.1.143</PRODUCT_HOST>-->
+        <PRODUCT_HOST>10.0.4.28</PRODUCT_HOST>
+        <!-- Domain -->
+        <PRODUCT_DOMAIN>LAB</PRODUCT_DOMAIN>
+        <!-- DNS domain name -->
+        <PRODUCT_DNS_DOMAIN>lab.local</PRODUCT_DNS_DOMAIN>
+        <!-- The main user test are running under -->
+        <PRODUCT_USER>delta</PRODUCT_USER>
+        <!-- The main user's password -->
+        <PRODUCT_PASSWORD>Lock12Lock</PRODUCT_PASSWORD>
+      </PARAMETERS>
+      <PLATFORMS>
+        <PLATFORM DOMAIN="LAB" PLATFORM_NAME="Windows 2008, root domain" PLATFORM_ACRO="ROOT" TL_PLATFORM_ID="4"/>
+        <!-- <PLATFORM DOMAIN="TWOCHILD" PLATFORM_NAME="Windows 2012, childtwo domain" PLATFORM_ACRO="CHILD2" TL_PLATFORM_ID="6"/> -->
+        <!-- E2010_EXCH_CMDLETS|ZERO_SQL_SNAPSHOT|SQL_AD_CHANGES|E2010_AD_CMDLETS|AD_SD_CHANGE|ZERO_SQL_SNAPSHOT|SQL_AD_CHANGES E2010_EXCH_CMDLETS> -->
+      </PLATFORMS>
+    </PRODUCT>
+    <PRODUCT>
+      <NAME>NetWrix Event Collector</NAME>
+      <ACRONYM>EC</ACRONYM>
+      <CODE>EC</CODE>
+      <ACTIVE>0</ACTIVE>
+      <DO_INSTALL>1</DO_INSTALL>
+      <DO_CLIENT_RESTORE>1</DO_CLIENT_RESTORE>
+      <DISTRIB_NAME>EventCollector.zip</DISTRIB_NAME>
+      <CVS_TEST_MODULE>EC_TESTS</CVS_TEST_MODULE>
+      <TEST_DIR>EC_tests</TEST_DIR>
+      <TESTRUN_TAGS>FULL</TESTRUN_TAGS>
+      <INSTALL_TO>vl-atdevclient1</INSTALL_TO>
+      <DONT_SAVE_INFO>0</DONT_SAVE_INFO>
+      <VERSION>5.0</VERSION>
+      <TESTLINK>
+        <TESTPROJECT>Event Collector</TESTPROJECT>
+        <TESTPLAN>Smoke Test</TESTPLAN>
+      </TESTLINK>
+      <UPDATE_PRODUCT_TESTS>1</UPDATE_PRODUCT_TESTS>
+      <PLATFORMS>
+        <PLATFORM DOMAIN="OUTCAST" PLATFORM_NAME="Windows 2003, trusted domain" PLATFORM_ACRO="TRUST" TL_PLATFORM_ID="3"/>
+      </PLATFORMS>
+    </PRODUCT>
+    <PRODUCT>
+      <NAME>NetWrix Active Directory Change Reporter Enterprise Edition</NAME>
+      <ACRONYM>ADCR_NMC</ACRONYM>
+      <CODE>ADCR</CODE>
+      <ACTIVE>0</ACTIVE>
+      <DO_CLIENT_RESTORE>1</DO_CLIENT_RESTORE>
+      <DO_INSTALL>1</DO_INSTALL>
+      <UPDATE_PRODUCT_TESTS>0</UPDATE_PRODUCT_TESTS>
+      <CVS_TEST_MODULE>ADCR_TESTS</CVS_TEST_MODULE>
+      <TEST_DIR>ADCR_tests</TEST_DIR>
+      <VERSION>7.5</VERSION>
+      <NOTIFY></NOTIFY>
+      <INSTALL_TO>WIN7_W2</INSTALL_TO>
+      <DISTRIB_NAME>adcrfull_setup.msi</DISTRIB_NAME>
+      <DISTRIB_CUSTOM_PATH></DISTRIB_CUSTOM_PATH>
+      <TESTRUN_TAGS>FULL</TESTRUN_TAGS>
+      <MAX_REPORT_DELAY>10</MAX_REPORT_DELAY>
+      <MAX_ALERT_DELAY>5</MAX_ALERT_DELAY>
+      <TESTLINK>
+        <TESTPROJECT>Active Directory Change Reporter</TESTPROJECT>
+        <!-- Проект ADCR -->
+        <TESTPLAN>Smoke Test</TESTPLAN>
+      </TESTLINK>
+      <PARAMETERS>
+        <!-- The root folder of the test sutie -->
+        <TESTHOME>C:\TESTHOME</TESTHOME>
+        <!-- The host the product is installed on -->
+        <!--<PRODUCT_HOST>10.0.1.143</PRODUCT_HOST>-->
+        <PRODUCT_HOST>10.0.1.214</PRODUCT_HOST>
+        <!-- Domain -->
+        <PRODUCT_DOMAIN>OUTCAST</PRODUCT_DOMAIN>
+        <!-- DNS domain name -->
+        <PRODUCT_DNS_DOMAIN>castaway.at.local</PRODUCT_DNS_DOMAIN>
+        <!-- The main user test are running under -->
+        <PRODUCT_USER>Administrator</PRODUCT_USER>
+        <!-- The main user's password -->
+        <PRODUCT_PASSWORD>Lock12Lock</PRODUCT_PASSWORD>
+      </PARAMETERS>
+      <PLATFORMS>
+        <!--PLATFORM DOMAIN="DOMFIRST" PLATFORM_NAME="Windows 2008, root domain" PLATFORM_ACRO="ROOT" TL_PLATFORM_ID="4"/>
+        <PLATFORM DOMAIN="ONECHILD" PLATFORM_NAME="Windows 2008, child domain" PLATFORM_ACRO="CHILD" TL_PLATFORM_ID="5"/-->
+        <PLATFORM DOMAIN="OUTCAST" PLATFORM_NAME="Windows 2003, trusted domain" PLATFORM_ACRO="TRUST" TL_PLATFORM_ID="3"/>
+      </PLATFORMS>
+    </PRODUCT>
+  </PRODUCTS>
+</AT_CONFIG>

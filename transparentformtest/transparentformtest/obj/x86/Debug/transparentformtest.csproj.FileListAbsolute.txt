@@ -1,0 +1,8 @@
+C:\Projects\tests\transparentformtest\transparentformtest\bin\Debug\transparentformtest.exe.config
+C:\Projects\tests\transparentformtest\transparentformtest\bin\Debug\transparentformtest.exe
+C:\Projects\tests\transparentformtest\transparentformtest\bin\Debug\transparentformtest.pdb
+C:\Projects\tests\transparentformtest\transparentformtest\obj\x86\Debug\transparentformtest.csprojResolveAssemblyReference.cache
+C:\Projects\tests\transparentformtest\transparentformtest\obj\x86\Debug\transparentformtest.MainForm.resources
+C:\Projects\tests\transparentformtest\transparentformtest\obj\x86\Debug\transparentformtest.csproj.GenerateResource.Cache
+C:\Projects\tests\transparentformtest\transparentformtest\obj\x86\Debug\transparentformtest.exe
+C:\Projects\tests\transparentformtest\transparentformtest\obj\x86\Debug\transparentformtest.pdb

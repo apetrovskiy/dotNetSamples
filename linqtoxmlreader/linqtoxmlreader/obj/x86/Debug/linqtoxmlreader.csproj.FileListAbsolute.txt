@@ -1,0 +1,5 @@
+C:\Projects\tests\linqtoxmlreader\linqtoxmlreader\bin\Debug\linqtoxmlreader.exe
+C:\Projects\tests\linqtoxmlreader\linqtoxmlreader\bin\Debug\linqtoxmlreader.pdb
+C:\Projects\tests\linqtoxmlreader\linqtoxmlreader\obj\x86\Debug\linqtoxmlreader.csprojResolveAssemblyReference.cache
+C:\Projects\tests\linqtoxmlreader\linqtoxmlreader\obj\x86\Debug\linqtoxmlreader.exe
+C:\Projects\tests\linqtoxmlreader\linqtoxmlreader\obj\x86\Debug\linqtoxmlreader.pdb

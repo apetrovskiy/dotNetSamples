@@ -1,0 +1,6 @@
+C:\Projects\probe\GetCorrIdProbe\GetCorrIdProbe\obj\x86\Debug\GetCorrIdProbe.csprojResolveAssemblyReference.cache
+C:\Projects\probe\GetCorrIdProbe\GetCorrIdProbe\bin\Debug\GetCorrIdProbe.exe.config
+C:\Projects\probe\GetCorrIdProbe\GetCorrIdProbe\bin\Debug\GetCorrIdProbe.exe
+C:\Projects\probe\GetCorrIdProbe\GetCorrIdProbe\bin\Debug\GetCorrIdProbe.pdb
+C:\Projects\probe\GetCorrIdProbe\GetCorrIdProbe\obj\x86\Debug\GetCorrIdProbe.exe
+C:\Projects\probe\GetCorrIdProbe\GetCorrIdProbe\obj\x86\Debug\GetCorrIdProbe.pdb

@@ -1,0 +1,6 @@
+C:\Projects\probe\testArrayListCleanUp\testArrayListCleanUp\bin\Debug\testArrayListCleanUp.exe.config
+C:\Projects\probe\testArrayListCleanUp\testArrayListCleanUp\bin\Debug\testArrayListCleanUp.exe
+C:\Projects\probe\testArrayListCleanUp\testArrayListCleanUp\bin\Debug\testArrayListCleanUp.pdb
+C:\Projects\probe\testArrayListCleanUp\testArrayListCleanUp\obj\x86\Debug\testArrayListCleanUp.csprojResolveAssemblyReference.cache
+C:\Projects\probe\testArrayListCleanUp\testArrayListCleanUp\obj\x86\Debug\testArrayListCleanUp.exe
+C:\Projects\probe\testArrayListCleanUp\testArrayListCleanUp\obj\x86\Debug\testArrayListCleanUp.pdb

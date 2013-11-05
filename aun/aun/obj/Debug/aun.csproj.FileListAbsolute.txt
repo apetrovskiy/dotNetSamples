@@ -1,0 +1,5 @@
+C:\Projects\probe\aun\aun\obj\Debug\aun.csprojResolveAssemblyReference.cache
+C:\Projects\probe\aun\aun\bin\Debug\aun.exe.config
+C:\Projects\probe\aun\aun\bin\Debug\aun.exe
+C:\Projects\probe\aun\aun\bin\Debug\privMethods.dll
+C:\Projects\probe\aun\aun\obj\Debug\aun.exe

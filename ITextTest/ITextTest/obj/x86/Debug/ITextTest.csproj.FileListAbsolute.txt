@@ -1,0 +1,14 @@
+C:\Projects\tests\ITextTest\ITextTest\obj\x86\Debug\ITextTest.csprojResolveAssemblyReference.cache
+C:\Projects\tests\ITextTest\ITextTest\bin\Debug\ITextTest.exe.config
+C:\Projects\tests\ITextTest\ITextTest\bin\Debug\ITextTest.exe
+C:\Projects\tests\ITextTest\ITextTest\bin\Debug\ITextTest.pdb
+C:\Projects\tests\ITextTest\ITextTest\bin\Debug\itextsharp.dll
+C:\Projects\tests\ITextTest\ITextTest\bin\Debug\itextsharp.pdfa.dll
+C:\Projects\tests\ITextTest\ITextTest\bin\Debug\itextsharp.xtra.dll
+C:\Projects\tests\ITextTest\ITextTest\bin\Debug\itextsharp.xml
+C:\Projects\tests\ITextTest\ITextTest\obj\x86\Debug\ITextTest.exe
+C:\Projects\tests\ITextTest\ITextTest\obj\x86\Debug\ITextTest.pdb
+C:\Projects\tests\ITextTest\ITextTest\bin\Debug\PdfSharp.dll
+C:\Projects\tests\ITextTest\ITextTest\bin\Debug\PdfSharp.pdb
+C:\Projects\tests\ITextTest\ITextTest\bin\Debug\PdfSharp.xml
+C:\Projects\tests\ITextTest\ITextTest\bin\Debug\de\PdfSharp.resources.dll

@@ -1,0 +1,18 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+# SharpDevelop 4.2.2.8818
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "autofac3test", "autofac3test\autofac3test.csproj", "{A869A3D9-3CA7-4426-95C1-7EACA06535AC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A869A3D9-3CA7-4426-95C1-7EACA06535AC}.Debug|x86.Build.0 = Debug|x86
+		{A869A3D9-3CA7-4426-95C1-7EACA06535AC}.Debug|x86.ActiveCfg = Debug|x86
+		{A869A3D9-3CA7-4426-95C1-7EACA06535AC}.Release|x86.Build.0 = Release|x86
+		{A869A3D9-3CA7-4426-95C1-7EACA06535AC}.Release|x86.ActiveCfg = Release|x86
+	EndGlobalSection
+EndGlobal
