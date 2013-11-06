@@ -6,3 +6,6 @@ C:\Projects\probe\testNSub\testNSub\bin\Debug\NSubstitute.dll
 C:\Projects\probe\testNSub\testNSub\bin\Debug\NSubstitute.xml
 C:\Projects\probe\testNSub\testNSub\obj\Debug\testNSub.exe
 C:\Projects\probe\testNSub\testNSub\obj\Debug\testNSub.pdb
+C:\Projects\probe\testNSub\testNSub\bin\Debug\Ninject.dll
+C:\Projects\probe\testNSub\testNSub\bin\Debug\Ninject.pdb
+C:\Projects\probe\testNSub\testNSub\bin\Debug\Ninject.xml

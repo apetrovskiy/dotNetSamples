@@ -13,6 +13,7 @@
 using System;
 using NSubstitute;
 using System.Windows.Automation;
+using Ninject;
 
 namespace testNSub
 {
@@ -34,11 +35,22 @@ namespace testNSub
 			Console.WriteLine(if2returned.IsRegistered);
 			Console.WriteLine(if2.Received().IsRegistered);
 			
-			Class4 cl4 = new Class4();
-			cl4.GetManyElements();
+			// this works
+			//Class4 cl4 = new Class4();
+			//cl4.GetManyElements();
 			
-			//System.Windows.Automation.IAutomationElement
-			
+			// this works
+			//using (var kernel = new Ninject.StandardKernel())
+            //{
+            //    var class4 = kernel.Get<Class4>();
+            //    class4.GetManyElements();
+            //}
+            
+            using (var kernel = new StandardKernel(new AutomationModule())) {
+                var aea = kernel.Get<AutomationElementAdapter>();
+                var class4 = kernel.Get<Class4>();
+                class4.GetManyElements();
+            }
 			
 			Console.Write("Press any key to continue . . . ");
 			Console.ReadKey(true);

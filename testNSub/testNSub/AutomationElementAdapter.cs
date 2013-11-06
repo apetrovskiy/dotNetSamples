@@ -20,6 +20,10 @@ namespace testNSub
 	{
         private AutomationElement elementHolder;
         
+        public AutomationElementAdapter()
+        {
+        }
+        
         public AutomationElementAdapter(AutomationElement element)
         {
             this.elementHolder = element;
@@ -154,6 +158,7 @@ namespace testNSub
 		public AutomationElement SourceElement
 		{
 		    get { return this.elementHolder; }
+		    set { this.elementHolder = value; }
 		}
 		
 		public static AutomationElement RootElement

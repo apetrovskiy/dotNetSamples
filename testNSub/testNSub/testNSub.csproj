@@ -43,6 +43,9 @@
     <DefineConstants>TRACE</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Ninject">
+      <HintPath>..\packages\Ninject.3.0.1.10\lib\net35\Ninject.dll</HintPath>
+    </Reference>
     <Reference Include="NSubstitute">
       <HintPath>..\packages\NSubstitute.1.6.1.0\lib\NET35\NSubstitute.dll</HintPath>
     </Reference>
@@ -76,6 +79,7 @@
     <Compile Include="AutomationElement.cs" />
     <Compile Include="AutomationElementAdapter.cs" />
     <Compile Include="AutomationElementCollectionAdapter.cs" />
+    <Compile Include="AutomationModule.cs" />
     <Compile Include="Classes.old\Class1.cs" />
     <Compile Include="Classes.old\Class2.cs" />
     <Compile Include="Classes.old\Class3.cs" />
