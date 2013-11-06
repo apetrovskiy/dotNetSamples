@@ -49,7 +49,10 @@ namespace testNSub
             using (var kernel = new StandardKernel(new AutomationModule())) {
                 var aea = kernel.Get<AutomationElementAdapter>();
                 var class4 = kernel.Get<Class4>();
-                class4.GetManyElements();
+                var result = class4.GetManyElements();
+                
+                var results = ((AutomationElementCollectionAdapter)result).GetByWildcard("*o*");
+                Console.WriteLine(results.GetType().Name);
             }
 			
 			Console.Write("Press any key to continue . . . ");

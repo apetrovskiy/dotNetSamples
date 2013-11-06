@@ -61,6 +61,7 @@
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Management.Automation" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -93,6 +94,7 @@
     <Compile Include="Classes\DamnSealedClass.cs" />
     <Compile Include="Classes\DamnSealedCollection.cs" />
     <Compile Include="Classes\MyFactory.cs" />
+    <Compile Include="ExtensionsMethods.cs" />
     <Compile Include="IAutomationElementAdapter.cs" />
     <Compile Include="IAutomationElementCollection.cs" />
     <Compile Include="Interfaces.old\Interface1.cs" />

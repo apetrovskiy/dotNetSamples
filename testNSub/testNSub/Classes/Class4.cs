@@ -21,7 +21,8 @@ namespace testNSub
         {
         }
         
-        public void GetManyElements()
+        //public void GetManyElements()
+        public IAutomationElementCollection GetManyElements()
         {
             AutomationElement ae =
             //IAutomationElement ae =
@@ -73,6 +74,7 @@ namespace testNSub
                 Console.WriteLine("==============================");
             }
             
+            return adc;
         }
     }
 }
