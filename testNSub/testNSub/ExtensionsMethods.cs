@@ -36,11 +36,7 @@ namespace testNSub
                     WildcardOptions.Compiled;
             //}
             
-            System.Collections.Generic.List<AutomationElement> list =
-                new System.Collections.Generic.List<AutomationElement>();
-            foreach (AutomationElement element in collection) {
-                list.Add(element);
-            }
+            System.Collections.Generic.List<AutomationElement> list = collection.Cast<AutomationElement>().ToList();
             
             WildcardPattern wildcardName = 
                 new WildcardPattern(wildcard, options);
