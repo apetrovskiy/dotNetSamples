@@ -1,0 +1,5 @@
+C:\Projects\probe\testWildcard\testWildcard\bin\Debug\testWildcard.exe
+C:\Projects\probe\testWildcard\testWildcard\bin\Debug\testWildcard.pdb
+C:\Projects\probe\testWildcard\testWildcard\obj\Debug\testWildcard.csprojResolveAssemblyReference.cache
+C:\Projects\probe\testWildcard\testWildcard\obj\Debug\testWildcard.exe
+C:\Projects\probe\testWildcard\testWildcard\obj\Debug\testWildcard.pdb
