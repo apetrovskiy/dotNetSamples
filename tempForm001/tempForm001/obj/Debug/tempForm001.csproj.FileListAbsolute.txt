@@ -1,0 +1,8 @@
+C:\Projects\probe\tempForm001\tempForm001\bin\Debug\tempForm001.exe.config
+C:\Projects\probe\tempForm001\tempForm001\bin\Debug\tempForm001.exe
+C:\Projects\probe\tempForm001\tempForm001\bin\Debug\tempForm001.pdb
+C:\Projects\probe\tempForm001\tempForm001\obj\Debug\tempForm001.csprojResolveAssemblyReference.cache
+C:\Projects\probe\tempForm001\tempForm001\obj\Debug\tempForm001.MainForm.resources
+C:\Projects\probe\tempForm001\tempForm001\obj\Debug\tempForm001.csproj.GenerateResource.Cache
+C:\Projects\probe\tempForm001\tempForm001\obj\Debug\tempForm001.exe
+C:\Projects\probe\tempForm001\tempForm001\obj\Debug\tempForm001.pdb
