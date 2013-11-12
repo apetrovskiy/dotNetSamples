@@ -52,6 +52,9 @@ namespace testNSub
                 var result = class4.GetManyElements();
                 
                 var results = ((AutomationElementCollectionAdapter)result).GetByWildcard("*o*");
+                
+                class4.GetTwoWindows();
+                
                 Console.WriteLine(results.GetType().Name);
             }
 			
