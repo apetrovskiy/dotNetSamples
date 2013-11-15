@@ -1,0 +1,10 @@
+C:\Projects\probe\testNSub2\testNSub2\bin\Debug\testNSub2.exe.config
+C:\Projects\probe\testNSub2\testNSub2\bin\Debug\testNSub2.exe
+C:\Projects\probe\testNSub2\testNSub2\bin\Debug\testNSub2.pdb
+C:\Projects\probe\testNSub2\testNSub2\bin\Debug\NSubstitute.dll
+C:\Projects\probe\testNSub2\testNSub2\bin\Debug\nunit.framework.dll
+C:\Projects\probe\testNSub2\testNSub2\bin\Debug\NSubstitute.xml
+C:\Projects\probe\testNSub2\testNSub2\bin\Debug\nunit.framework.xml
+C:\Projects\probe\testNSub2\testNSub2\obj\Debug\ResolveAssemblyReference.cache
+C:\Projects\probe\testNSub2\testNSub2\obj\Debug\testNSub2.exe
+C:\Projects\probe\testNSub2\testNSub2\obj\Debug\testNSub2.pdb

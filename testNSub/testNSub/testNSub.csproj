@@ -103,6 +103,8 @@
     <Compile Include="Interfaces\IDamnSealedCollection.cs" />
     <Compile Include="Interfaces\Interface1.cs" />
     <Compile Include="Interfaces\Interface2.cs" />
+    <Compile Include="OfficialExamples\Calculator.cs" />
+    <Compile Include="OfficialExamples\ICalculator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -115,6 +117,7 @@
     <Folder Include="Interfaces.old" />
     <Folder Include="Interfaces" />
     <Folder Include="Classes" />
+    <Folder Include="OfficialExamples" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
 </Project>

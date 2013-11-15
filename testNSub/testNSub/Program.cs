@@ -46,6 +46,7 @@ namespace testNSub
             //    class4.GetManyElements();
             //}
             
+            /*
             using (var kernel = new StandardKernel(new AutomationModule())) {
                 var aea = kernel.Get<AutomationElementAdapter>();
                 var class4 = kernel.Get<Class4>();
@@ -57,6 +58,15 @@ namespace testNSub
                 
                 Console.WriteLine(results.GetType().Name);
             }
+            */
+           
+            var calculator = Substitute.For<ICalculator>();
+            Console.WriteLine(calculator.GetType().Name);
+            Console.WriteLine(calculator.Received().GetType().Name);
+            
+            calculator.Add(1, 2).Returns(3);
+            //Assert.That(calculator.Add(1, 2), Is.EqualTo(3));
+            //Console.WriteLine(calculator.Add(1, 2).ToString());
 			
 			Console.Write("Press any key to continue . . . ");
 			Console.ReadKey(true);
