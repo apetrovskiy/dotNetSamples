@@ -42,8 +42,20 @@ namespace testNSub2
             }
             logger.LogError("aaaa");
             try {
+                Console.WriteLine("test aaaa");
                 logger.Received().LogError("aaaa");
+                
+                Console.WriteLine("test cccc");
                 Assert.That(logger.LogError2("cccc"), Is.EqualTo("cccc+"));
+                
+                Console.WriteLine("test dddd");
+                Assert.AreEqual("dddd+", logger.LogError2("dddd"));
+                
+                Console.WriteLine("test eeee");
+                logger.Received().LogError2("eeee");
+                logger.DidNotReceive().LogError2("ffff");
+                
+                logger.LogError2("ffff");
             }
             catch (Exception eeee2) {
                 Console.WriteLine(eeee2.Message);
