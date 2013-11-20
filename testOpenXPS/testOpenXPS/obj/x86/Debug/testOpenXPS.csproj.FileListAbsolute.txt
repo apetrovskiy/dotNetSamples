@@ -1,0 +1,6 @@
+C:\Projects\probe\testOpenXPS\testOpenXPS\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Projects\probe\testOpenXPS\testOpenXPS\bin\Debug\testOpenXPS.exe.config
+C:\Projects\probe\testOpenXPS\testOpenXPS\bin\Debug\testOpenXPS.exe
+C:\Projects\probe\testOpenXPS\testOpenXPS\bin\Debug\testOpenXPS.pdb
+C:\Projects\probe\testOpenXPS\testOpenXPS\obj\x86\Debug\testOpenXPS.exe
+C:\Projects\probe\testOpenXPS\testOpenXPS\obj\x86\Debug\testOpenXPS.pdb
