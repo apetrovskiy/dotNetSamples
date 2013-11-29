@@ -57,8 +57,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Examples\Calculator.cs" />
+    <Compile Include="Examples\CommandRepeater.cs" />
     <Compile Include="Examples\FakeLogger.cs" />
+    <Compile Include="Examples\SomethingThatNeedsACommand.cs" />
     <Compile Include="Interface\ICalculator.cs" />
+    <Compile Include="Interface\ICommand.cs" />
     <Compile Include="Interface\ILogger.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -1,0 +1,1 @@
+C:\Projects\probe\testGenericInnerObjects\testGenericInnerObjects\obj\Debug\testGenericInnerObjects.csprojResolveAssemblyReference.cache

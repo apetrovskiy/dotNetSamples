@@ -1,4 +1,5 @@
-﻿/*
+﻿using NUnit.Framework.Constraints;
+/*
  * Created by SharpDevelop.
  * User: APetrovsky
  * Date: 11/15/2013
@@ -59,6 +60,60 @@ namespace testNSub2
             }
             catch (Exception eeee2) {
                 Console.WriteLine(eeee2.Message);
+            }
+            
+            ICommand command = null;
+            SomethingThatNeedsACommand something = null;
+            CommandRepeater repeater = null;
+            
+            try {
+                //[Test]
+                //public void Should_execute_command() {
+                    //Arrange
+                    //var 
+                    command = Substitute.For<ICommand>();
+                    //var 
+                    something = new SomethingThatNeedsACommand(command);
+                    //Act
+                    something.DoSomething();
+                    //Assert
+                    command.Received().Execute();
+                    // there are call(s) in fact command.DidNotReceive().Execute();
+                //}
+            }
+            catch (Exception example01) {
+                Console.WriteLine(example01.Message);
+            }
+            try {
+                //var 
+                command = Substitute.For<ICommand>();
+                //var 
+                something = new SomethingThatNeedsACommand(command);
+                //Act
+                something.DontDoAnything();
+                //Assert
+                command.DidNotReceive().Execute();
+                // no calls in fact command.Received().Execute();
+            }
+            catch (Exception example02) {
+                Console.WriteLine(example02.Message);
+            }
+            
+            try {
+            //[Test]
+            //public void Should_execute_command_the_number_of_times_specified() {
+              //var 
+              command = Substitute.For<ICommand>();
+              //var 
+              repeater = new CommandRepeater(command, 3); // only 3 would work
+              //Act
+              repeater.Execute();
+              //Assert
+              command.Received(3).Execute(); // << This will fail if 2 or 4 calls were received
+            //}
+            }
+            catch (Exception example03) {
+                Console.WriteLine(example03.Message);
             }
             
             Console.Write("Press any key to continue . . . ");
