@@ -11,6 +11,8 @@ namespace testUIARecursive
 {
     using System;
     using System.Diagnostics;
+    using System.Windows.Automation;
+    using System.Reflection;
     
     class Program
     {
@@ -19,6 +21,22 @@ namespace testUIARecursive
             Console.WriteLine("Hello World!");
             
             // TODO: Implement Functionality Here
+            
+            
+            Condition cond =
+                new AndCondition(
+                    new PropertyCondition(
+                        AutomationElement.AutomationIdProperty,
+                        "id"),
+                    new PropertyCondition(
+                        AutomationElement.ClassNameProperty,
+                        "ccc"),
+                    new PropertyCondition(
+                        ValuePattern.ValueProperty,
+                        "vvv"));
+            MethodInfo mInfo =
+                cond.
+            
             
             if (null != args[0] && string.Empty != args[0]) {
                 
