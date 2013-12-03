@@ -1,0 +1,6 @@
+c:\Projects\probe\testNBehaveVsAddin\testNBehaveVsAddin\bin\Debug\testNBehaveVsAddin.exe.config
+c:\Projects\probe\testNBehaveVsAddin\testNBehaveVsAddin\bin\Debug\testNBehaveVsAddin.exe
+c:\Projects\probe\testNBehaveVsAddin\testNBehaveVsAddin\bin\Debug\testNBehaveVsAddin.pdb
+c:\Projects\probe\testNBehaveVsAddin\testNBehaveVsAddin\obj\Debug\testNBehaveVsAddin.csprojResolveAssemblyReference.cache
+c:\Projects\probe\testNBehaveVsAddin\testNBehaveVsAddin\obj\Debug\testNBehaveVsAddin.exe
+c:\Projects\probe\testNBehaveVsAddin\testNBehaveVsAddin\obj\Debug\testNBehaveVsAddin.pdb
