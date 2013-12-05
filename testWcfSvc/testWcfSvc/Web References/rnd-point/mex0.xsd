@@ -1,0 +1,539 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/NetWrix.SharePoint.Audit.Services.Interfaces" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/NetWrix.SharePoint.Audit.Services.Interfaces" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://rnd-point/_vti_bin/NetWrix/ConfigurationService.svc/mex?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://rnd-point/_vti_bin/NetWrix/ConfigurationService.svc/mex?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://rnd-point/_vti_bin/NetWrix/ConfigurationService.svc/mex?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System" />
+  <xs:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+  <xs:import namespace="http://schemas.xmlsoap.org/wsdl/" />
+  <xs:complexType name="AuditConfiguration">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SiteConfigurations" nillable="true" type="tns:ArrayOfSiteAuditConfiguration" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AuditConfiguration" nillable="true" type="tns:AuditConfiguration" />
+  <xs:complexType name="ArrayOfSiteAuditConfiguration">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SiteAuditConfiguration" nillable="true" type="tns:SiteAuditConfiguration" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSiteAuditConfiguration" nillable="true" type="tns:ArrayOfSiteAuditConfiguration" />
+  <xs:complexType name="SiteAuditConfiguration">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CustomComparerOfSiteAuditConfigurationComparerById_S26KDEMj">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AuditLogTrimmingRetention" nillable="true" type="xs:int" />
+          <xs:element name="Id" nillable="true" type="tns:SiteKey" />
+          <xs:element minOccurs="0" name="ItemOperations" nillable="true" type="tns:ArrayOfItemAuditOperation">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="ListOperations" nillable="true" type="tns:ArrayOfListAuditOperation">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="SecurityOperations" type="tns:SecurityOperations" />
+          <xs:element minOccurs="0" name="SiteOperations" nillable="true" type="tns:ArrayOfSiteAuditOperation">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="WebConfigurations" nillable="true" type="tns:ArrayOfWebAuditConfiguration">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="WebOperations" nillable="true" type="tns:ArrayOfWebAuditOperation">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SiteAuditConfiguration" nillable="true" type="tns:SiteAuditConfiguration" />
+  <xs:complexType name="CustomComparerOfSiteAuditConfigurationComparerById_S26KDEMj">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="CustomComparerOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/NetWrix.SharePoint.Audit.Services.Interfaces" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="SiteAuditConfigurationComparerById" Namespace="http://schemas.datacontract.org/2004/07/NetWrix.SharePoint.Audit.Services.Interfaces" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="CustomComparerOfSiteAuditConfigurationComparerById_S26KDEMj" nillable="true" type="tns:CustomComparerOfSiteAuditConfigurationComparerById_S26KDEMj" />
+  <xs:complexType name="SiteKey">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="WebApplicationId" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SiteKey" nillable="true" type="tns:SiteKey" />
+  <xs:complexType name="ArrayOfItemAuditOperation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ItemAuditOperation" type="tns:ItemAuditOperation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfItemAuditOperation" nillable="true" type="tns:ArrayOfItemAuditOperation" />
+  <xs:simpleType name="ItemAuditOperation">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ItemAdded">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">7</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ItemDeleted">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">8</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ItemUpdated">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">9</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ItemFileConverted">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">10</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ItemFileMoved">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">11</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ItemCheckedIn">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">12</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ItemCheckedOut">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">13</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ItemUncheckedOut">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">14</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ItemAttachmentAdded">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">15</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ItemAttachmentDeleted">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">16</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ItemAuditOperation" nillable="true" type="tns:ItemAuditOperation" />
+  <xs:complexType name="ArrayOfListAuditOperation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ListAuditOperation" type="tns:ListAuditOperation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfListAuditOperation" nillable="true" type="tns:ArrayOfListAuditOperation" />
+  <xs:simpleType name="ListAuditOperation">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ListAdded">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ListDeleted">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">6</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ListAuditOperation" nillable="true" type="tns:ListAuditOperation" />
+  <xs:simpleType name="SecurityOperations">
+    <xs:annotation>
+      <xs:appinfo>
+        <ActualType Name="unsignedLong" Namespace="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:list>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="None">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">0</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="SecGroupCreate">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="SecGroupDelete">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="SecGroupMemberAdd">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="SecGroupMemberDel">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">8</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="SecRoleDefCreate">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">16</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="SecRoleDefDelete">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">32</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="SecRoleDefModify">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">64</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="SecRoleDefBreakInherit">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">128</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="SecRoleBindUpdate">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">256</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="SecRoleBindInherit">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">512</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="SecRoleBindBreakInherit">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1024</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="All">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2047</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:list>
+  </xs:simpleType>
+  <xs:element name="SecurityOperations" nillable="true" type="tns:SecurityOperations" />
+  <xs:complexType name="ArrayOfSiteAuditOperation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SiteAuditOperation" type="tns:SiteAuditOperation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSiteAuditOperation" nillable="true" type="tns:ArrayOfSiteAuditOperation" />
+  <xs:simpleType name="SiteAuditOperation">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SiteDeleted" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SiteAuditOperation" nillable="true" type="tns:SiteAuditOperation" />
+  <xs:complexType name="ArrayOfWebAuditConfiguration">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WebAuditConfiguration" nillable="true" type="tns:WebAuditConfiguration" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWebAuditConfiguration" nillable="true" type="tns:ArrayOfWebAuditConfiguration" />
+  <xs:complexType name="WebAuditConfiguration">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CustomComparerOfWebAuditConfigurationComparerById_S26KDEMj">
+        <xs:sequence>
+          <xs:element name="Id" type="ser:guid" />
+          <xs:element minOccurs="0" name="ItemOperations" nillable="true" type="tns:ArrayOfItemAuditOperation">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="ListConfigurations" nillable="true" type="tns:ArrayOfListAuditConfiguration">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="ListOperations" nillable="true" type="tns:ArrayOfListAuditOperation">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="ParentWebId" type="ser:guid" />
+          <xs:element minOccurs="0" name="WebOperations" nillable="true" type="tns:ArrayOfWebAuditOperation">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="WebAuditConfiguration" nillable="true" type="tns:WebAuditConfiguration" />
+  <xs:complexType name="CustomComparerOfWebAuditConfigurationComparerById_S26KDEMj">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="CustomComparerOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/NetWrix.SharePoint.Audit.Services.Interfaces" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="WebAuditConfigurationComparerById" Namespace="http://schemas.datacontract.org/2004/07/NetWrix.SharePoint.Audit.Services.Interfaces" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="CustomComparerOfWebAuditConfigurationComparerById_S26KDEMj" nillable="true" type="tns:CustomComparerOfWebAuditConfigurationComparerById_S26KDEMj" />
+  <xs:complexType name="ArrayOfListAuditConfiguration">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ListAuditConfiguration" nillable="true" type="tns:ListAuditConfiguration" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfListAuditConfiguration" nillable="true" type="tns:ArrayOfListAuditConfiguration" />
+  <xs:complexType name="ListAuditConfiguration">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CustomComparerOfListAuditConfigurationComparerById_S26KDEMj">
+        <xs:sequence>
+          <xs:element name="Id" type="ser:guid" />
+          <xs:element minOccurs="0" name="ItemConfigurations" nillable="true" type="tns:ArrayOfItemAuditConfiguration" />
+          <xs:element minOccurs="0" name="ItemOperations" nillable="true" type="tns:ArrayOfItemAuditOperation" />
+          <xs:element minOccurs="0" name="ListOperations" nillable="true" type="tns:ArrayOfListAuditOperation" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ListAuditConfiguration" nillable="true" type="tns:ListAuditConfiguration" />
+  <xs:complexType name="CustomComparerOfListAuditConfigurationComparerById_S26KDEMj">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="CustomComparerOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/NetWrix.SharePoint.Audit.Services.Interfaces" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ListAuditConfigurationComparerById" Namespace="http://schemas.datacontract.org/2004/07/NetWrix.SharePoint.Audit.Services.Interfaces" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="CustomComparerOfListAuditConfigurationComparerById_S26KDEMj" nillable="true" type="tns:CustomComparerOfListAuditConfigurationComparerById_S26KDEMj" />
+  <xs:complexType name="ArrayOfItemAuditConfiguration">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ItemAuditConfiguration" nillable="true" type="tns:ItemAuditConfiguration" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfItemAuditConfiguration" nillable="true" type="tns:ArrayOfItemAuditConfiguration" />
+  <xs:complexType name="ItemAuditConfiguration">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CustomComparerOfItemAuditConfigurationComparerById_S26KDEMj">
+        <xs:sequence>
+          <xs:element name="Id" type="ser:guid" />
+          <xs:element minOccurs="0" name="ItemOperations" nillable="true" type="tns:ArrayOfItemAuditOperation" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ItemAuditConfiguration" nillable="true" type="tns:ItemAuditConfiguration" />
+  <xs:complexType name="CustomComparerOfItemAuditConfigurationComparerById_S26KDEMj">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="CustomComparerOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/NetWrix.SharePoint.Audit.Services.Interfaces" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ItemAuditConfigurationComparerById" Namespace="http://schemas.datacontract.org/2004/07/NetWrix.SharePoint.Audit.Services.Interfaces" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="CustomComparerOfItemAuditConfigurationComparerById_S26KDEMj" nillable="true" type="tns:CustomComparerOfItemAuditConfigurationComparerById_S26KDEMj" />
+  <xs:complexType name="ArrayOfWebAuditOperation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WebAuditOperation" type="tns:WebAuditOperation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWebAuditOperation" nillable="true" type="tns:ArrayOfWebAuditOperation" />
+  <xs:simpleType name="WebAuditOperation">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="WebAdding">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WebDeleted">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WebMoved">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WebProvisioned">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="WebAuditOperation" nillable="true" type="tns:WebAuditOperation" />
+  <xs:complexType name="AuditConfigurationUpdateResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AddedConfiguration" nillable="true" type="tns:AuditConfigurationItemsStatus" />
+      <xs:element minOccurs="0" name="RemovedConfiguration" nillable="true" type="tns:AuditConfigurationItemsStatus" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AuditConfigurationUpdateResult" nillable="true" type="tns:AuditConfigurationUpdateResult" />
+  <xs:complexType name="AuditConfigurationItemsStatus">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ListItemItems" nillable="true" type="q1:ArrayOfKeyValueOfListItemKeyMonitoredItemStatusYxoTkQPR" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ListItems" nillable="true" type="q2:ArrayOfKeyValueOfListKeyMonitoredItemStatusYxoTkQPR" />
+      <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="SiteItems" nillable="true" type="q3:ArrayOfKeyValueOfSiteKeyMonitoredItemStatusYxoTkQPR" />
+      <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="WebItems" nillable="true" type="q4:ArrayOfKeyValueOfWebSiteKeyMonitoredItemStatusYxoTkQPR" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AuditConfigurationItemsStatus" nillable="true" type="tns:AuditConfigurationItemsStatus" />
+  <xs:complexType name="ListItemKey">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="ListKey" nillable="true" type="tns:ListKey" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ListItemKey" nillable="true" type="tns:ListItemKey" />
+  <xs:complexType name="ListKey">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="WebSiteKey" nillable="true" type="tns:WebSiteKey" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ListKey" nillable="true" type="tns:ListKey" />
+  <xs:complexType name="WebSiteKey">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="SiteKey" nillable="true" type="tns:SiteKey" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WebSiteKey" nillable="true" type="tns:WebSiteKey" />
+  <xs:complexType name="MonitoredItemStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ObjectError" nillable="true" type="xs:string" />
+      <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Operations" nillable="true" type="q5:ArrayOfKeyValueOfAuditOperationAuditOperationStatusYxoTkQPR" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MonitoredItemStatus" nillable="true" type="tns:MonitoredItemStatus" />
+  <xs:simpleType name="AuditOperation">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SiteDeleted" />
+      <xs:enumeration value="WebAdding" />
+      <xs:enumeration value="WebDeleted" />
+      <xs:enumeration value="WebMoved" />
+      <xs:enumeration value="WebProvisioned" />
+      <xs:enumeration value="ListAdded" />
+      <xs:enumeration value="ListDeleted" />
+      <xs:enumeration value="ItemAdded" />
+      <xs:enumeration value="ItemDeleted" />
+      <xs:enumeration value="ItemUpdated" />
+      <xs:enumeration value="ItemFileConverted" />
+      <xs:enumeration value="ItemFileMoved" />
+      <xs:enumeration value="ItemCheckedIn" />
+      <xs:enumeration value="ItemCheckedOut" />
+      <xs:enumeration value="ItemUncheckedOut" />
+      <xs:enumeration value="ItemAttachmentAdded" />
+      <xs:enumeration value="ItemAttachmentDeleted" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AuditOperation" nillable="true" type="tns:AuditOperation" />
+  <xs:complexType name="AuditOperationStatus">
+    <xs:sequence>
+      <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Errors" nillable="true" type="q6:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AuditOperationStatus" nillable="true" type="tns:AuditOperationStatus" />
+  <xs:complexType name="ServerRuntimeException">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q7="http://schemas.datacontract.org/2004/07/System" base="q7:Exception" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServerRuntimeException" nillable="true" type="tns:ServerRuntimeException" />
+</xs:schema>
