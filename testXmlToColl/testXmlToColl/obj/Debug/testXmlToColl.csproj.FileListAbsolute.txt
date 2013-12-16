@@ -1,0 +1,6 @@
+C:\Projects\probe\testXmlToColl\testXmlToColl\obj\Debug\testXmlToColl.csprojResolveAssemblyReference.cache
+C:\Projects\probe\testXmlToColl\testXmlToColl\bin\Debug\testXmlToColl.exe.config
+C:\Projects\probe\testXmlToColl\testXmlToColl\bin\Debug\testXmlToColl.exe
+C:\Projects\probe\testXmlToColl\testXmlToColl\bin\Debug\testXmlToColl.pdb
+C:\Projects\probe\testXmlToColl\testXmlToColl\obj\Debug\testXmlToColl.exe
+C:\Projects\probe\testXmlToColl\testXmlToColl\obj\Debug\testXmlToColl.pdb

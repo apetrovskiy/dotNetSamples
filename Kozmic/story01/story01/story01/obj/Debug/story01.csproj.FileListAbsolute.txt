@@ -1,0 +1,11 @@
+C:\Projects\probe\Kozmic\story01\story01\story01\obj\Debug\story01.csprojResolveAssemblyReference.cache
+C:\Projects\probe\Kozmic\story01\story01\story01\bin\Debug\story01.dll
+C:\Projects\probe\Kozmic\story01\story01\story01\bin\Debug\story01.pdb
+C:\Projects\probe\Kozmic\story01\story01\story01\bin\Debug\Castle.Core.dll
+C:\Projects\probe\Kozmic\story01\story01\story01\bin\Debug\xunit.dll
+C:\Projects\probe\Kozmic\story01\story01\story01\bin\Debug\xunit.extensions.dll
+C:\Projects\probe\Kozmic\story01\story01\story01\bin\Debug\Castle.Core.xml
+C:\Projects\probe\Kozmic\story01\story01\story01\bin\Debug\xunit.xml
+C:\Projects\probe\Kozmic\story01\story01\story01\bin\Debug\xunit.extensions.xml
+C:\Projects\probe\Kozmic\story01\story01\story01\obj\Debug\story01.dll
+C:\Projects\probe\Kozmic\story01\story01\story01\obj\Debug\story01.pdb
