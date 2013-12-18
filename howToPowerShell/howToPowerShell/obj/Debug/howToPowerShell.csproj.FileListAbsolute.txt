@@ -1,0 +1,6 @@
+C:\Projects\probe\howToPowerShell\howToPowerShell\obj\Debug\howToPowerShell.csprojResolveAssemblyReference.cache
+C:\Projects\probe\howToPowerShell\howToPowerShell\bin\Debug\howToPowerShell.exe.config
+C:\Projects\probe\howToPowerShell\howToPowerShell\bin\Debug\howToPowerShell.exe
+C:\Projects\probe\howToPowerShell\howToPowerShell\bin\Debug\howToPowerShell.pdb
+C:\Projects\probe\howToPowerShell\howToPowerShell\obj\Debug\howToPowerShell.exe
+C:\Projects\probe\howToPowerShell\howToPowerShell\obj\Debug\howToPowerShell.pdb
