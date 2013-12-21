@@ -1,0 +1,5 @@
+C:\Projects\probe\testStatic\testStatic\bin\Debug\testStatic.exe
+C:\Projects\probe\testStatic\testStatic\bin\Debug\testStatic.pdb
+C:\Projects\probe\testStatic\testStatic\obj\Debug\testStatic.csprojResolveAssemblyReference.cache
+C:\Projects\probe\testStatic\testStatic\obj\Debug\testStatic.exe
+C:\Projects\probe\testStatic\testStatic\obj\Debug\testStatic.pdb
