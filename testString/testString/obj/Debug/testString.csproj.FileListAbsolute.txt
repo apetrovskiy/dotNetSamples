@@ -1,0 +1,5 @@
+C:\Projects\probe\testString\testString\obj\Debug\testString.csprojResolveAssemblyReference.cache
+C:\Projects\probe\testString\testString\bin\Debug\testString.exe
+C:\Projects\probe\testString\testString\bin\Debug\testString.pdb
+C:\Projects\probe\testString\testString\obj\Debug\testString.exe
+C:\Projects\probe\testString\testString\obj\Debug\testString.pdb
