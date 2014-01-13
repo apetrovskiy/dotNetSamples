@@ -1,0 +1,18 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+# SharpDevelop 4.4
+Project("{CFEE4113-1246-4D54-95CB-156813CB8593}") = "testWix38-01", "testWix38-01\testWix38-01.wixproj", "{EC3EC455-0C9F-4CFC-98FD-507AD668CE02}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EC3EC455-0C9F-4CFC-98FD-507AD668CE02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC3EC455-0C9F-4CFC-98FD-507AD668CE02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC3EC455-0C9F-4CFC-98FD-507AD668CE02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC3EC455-0C9F-4CFC-98FD-507AD668CE02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+EndGlobal

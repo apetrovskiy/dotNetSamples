@@ -1,0 +1,2 @@
+C:\Projects\probe\testWix38-01\testWix38-01\bin\Debug\testWix38-01.msi
+C:\Projects\probe\testWix38-01\testWix38-01\bin\Debug\testWix38-01.wixpdb
