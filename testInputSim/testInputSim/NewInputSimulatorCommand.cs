@@ -22,6 +22,13 @@ namespace testInputSim
         protected override void BeginProcessing()
         {
             WriteObject(new InputSimulator());
+            var sim = new InputSimulator();
+            // sim.Mouse.LeftButtonDoubleClick();
+            // sim.Mouse.LeftButtonClick();
+            // sim.Mouse.MoveMouseTo(double, double);
+            // sim.Mouse.MoveMouseToPositionOnVirtualDesktop(double, double);
+            
+            // sim.Keyboard.TextEntry(string)
         }
     }
 }
