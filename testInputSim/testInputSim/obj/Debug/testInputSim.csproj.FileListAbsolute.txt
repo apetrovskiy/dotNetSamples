@@ -1,0 +1,6 @@
+C:\Projects\probe\testInputSim\testInputSim\bin\Debug\WindowsInput.dll
+C:\Projects\probe\testInputSim\testInputSim\bin\Debug\WindowsInput.xml
+C:\Projects\probe\testInputSim\testInputSim\obj\Debug\ResolveAssemblyReference.cache
+C:\Projects\probe\testInputSim\testInputSim\bin\Debug\testInputSim.exe
+C:\Projects\probe\testInputSim\testInputSim\bin\Debug\testInputSim.dll
+C:\Projects\probe\testInputSim\testInputSim\obj\Debug\testInputSim.dll
