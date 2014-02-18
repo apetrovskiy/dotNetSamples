@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>MultiTouchBehaviors</id>
+    <version>0.6.9</version>
+    <title>MultiTouch Behaviors</title>
+    <authors>Davide Zordan</authors>
+    <owners>Davide Zordan</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Windows Phone / Silverlight Behaviors implementing Multi-Touch Manipulation (Gestures) and Inertia.</description>
+    <releaseNotes>Added a new Windows Phone 8 preview sample using the same codebase of the WP7.x and Silverlight versions.</releaseNotes>
+    <copyright>Copyright 2013</copyright>
+    <tags>MultiTouch</tags>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="System.Windows.Interactivity" targetFramework="WindowsPhone8.0" />
+      <frameworkAssembly assemblyName="System.Windows.Interactivity" targetFramework="WindowsPhone7.1" />
+      <frameworkAssembly assemblyName="System.Windows.Interactivity" targetFramework="WindowsPhone7.0" />
+      <frameworkAssembly assemblyName="System.Windows.Interactivity" targetFramework="Silverlight4.0" />
+      <frameworkAssembly assemblyName="System.Windows.Interactivity" targetFramework="Silverlight5.0" />
+    </frameworkAssemblies>
+  </metadata>
+</package>

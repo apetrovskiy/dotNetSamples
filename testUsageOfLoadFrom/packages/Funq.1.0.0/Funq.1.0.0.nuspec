@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>Funq</id>
+    <version>1.0.0</version>
+    <authors>dcazzulino</authors>
+    <owners>dcazzulino</owners>
+    <licenseUrl>http://funq.codeplex.com/license</licenseUrl>
+    <projectUrl>http://funq.codeplex.com/</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>this package contains the assembly to reference Funq which is a high performance DI framework.</description>
+    <releaseNotes>Funq 1.0 Oct 2, 2010, Stable</releaseNotes>
+    <tags>Funq ioc</tags>
+  </metadata>
+</package>

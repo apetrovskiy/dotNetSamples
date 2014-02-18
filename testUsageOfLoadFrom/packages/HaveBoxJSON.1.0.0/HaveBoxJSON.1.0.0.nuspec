@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>HaveBoxJSON</id>
+    <version>1.0.0</version>
+    <title>HaveBoxJSON</title>
+    <authors>Christian Henrik Reich</authors>
+    <owners>Christian Henrik Reich</owners>
+    <licenseUrl>https://bitbucket.org/Have/haveboxjson/src/1e579ad496f7fb6f74f34db8eb8a3c29605e2464/LICENSE.txt?at=master</licenseUrl>
+    <projectUrl>https://bitbucket.org/Have/haveboxjson</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>HaveBoxJSON is a among the fastest of JSON Libs for .NET.
+
+HaveBoxJSON is dedicated to only serialize and deserialize JSON, and it does it faster than most other JSON libs. HaveBoxJSON is not bloated with unnecessary features, and therefor it is only a fraction in size compared to leading competitors. HaveBoxJSON is following the JSON specification(http://json.org) strict.   
+
+**Highlights:**
+
+* Serializing and Deserializing of all .NET primitives
+* Serializing and Deserializing .NET datastructs with interfaces: IList, ICollection, IEnumerable
+* Serializing and Deserializing .NET Dictionary and IDictionary
+* Nested Serializing and Deserializing 
+* Support for .NET 3.5, 4.0, 4.5, 4.5.1</description>
+    <copyright>Copyright 2014 Christian Henrik Reich</copyright>
+    <tags>.NET JSON Serialize deserialize HaveBox HaveBoxJSON fast</tags>
+  </metadata>
+</package>
