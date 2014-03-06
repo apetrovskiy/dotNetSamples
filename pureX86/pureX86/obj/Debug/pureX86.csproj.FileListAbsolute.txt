@@ -1,0 +1,5 @@
+C:\Projects\probe\pureX86\pureX86\bin\Debug\pureX86.exe
+C:\Projects\probe\pureX86\pureX86\bin\Debug\pureX86.pdb
+C:\Projects\probe\pureX86\pureX86\obj\Debug\pureX86.csprojResolveAssemblyReference.cache
+C:\Projects\probe\pureX86\pureX86\obj\Debug\pureX86.exe
+C:\Projects\probe\pureX86\pureX86\obj\Debug\pureX86.pdb
