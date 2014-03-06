@@ -1,0 +1,9 @@
+C:\Projects\probe\testSameNamespace\testSameNamespace\bin\Debug\testSameNamespace.exe
+C:\Projects\probe\testSameNamespace\testSameNamespace\bin\Debug\testSameNamespace.pdb
+C:\Projects\probe\testSameNamespace\testSameNamespace\bin\Debug\assembly01.dll
+C:\Projects\probe\testSameNamespace\testSameNamespace\bin\Debug\assembly02.dll
+C:\Projects\probe\testSameNamespace\testSameNamespace\bin\Debug\assembly01.pdb
+C:\Projects\probe\testSameNamespace\testSameNamespace\bin\Debug\assembly02.pdb
+C:\Projects\probe\testSameNamespace\testSameNamespace\obj\Debug\testSameNamespace.csprojResolveAssemblyReference.cache
+C:\Projects\probe\testSameNamespace\testSameNamespace\obj\Debug\testSameNamespace.exe
+C:\Projects\probe\testSameNamespace\testSameNamespace\obj\Debug\testSameNamespace.pdb

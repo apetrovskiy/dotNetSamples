@@ -1,0 +1,5 @@
+C:\Projects\probe\testSameNamespace\assembly02\bin\Debug\assembly02.dll
+C:\Projects\probe\testSameNamespace\assembly02\bin\Debug\assembly02.pdb
+C:\Projects\probe\testSameNamespace\assembly02\obj\Debug\assembly02.csprojResolveAssemblyReference.cache
+C:\Projects\probe\testSameNamespace\assembly02\obj\Debug\assembly02.dll
+C:\Projects\probe\testSameNamespace\assembly02\obj\Debug\assembly02.pdb
