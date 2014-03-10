@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+# SharpDevelop 5.0
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "centralLib", "centralLib\centralLib.csproj", "{7BE2F087-FFB2-4553-815A-014C6E7485A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pluginOne", "pluginOne\pluginOne.csproj", "{DE2EE625-B845-4388-9C11-5B747340CDFF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pluginTwo", "pluginTwo\pluginTwo.csproj", "{DD2E67F5-AE69-457A-8E2D-5CCCA14F5B7F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7BE2F087-FFB2-4553-815A-014C6E7485A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BE2F087-FFB2-4553-815A-014C6E7485A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BE2F087-FFB2-4553-815A-014C6E7485A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BE2F087-FFB2-4553-815A-014C6E7485A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE2EE625-B845-4388-9C11-5B747340CDFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE2EE625-B845-4388-9C11-5B747340CDFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE2EE625-B845-4388-9C11-5B747340CDFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE2EE625-B845-4388-9C11-5B747340CDFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD2E67F5-AE69-457A-8E2D-5CCCA14F5B7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD2E67F5-AE69-457A-8E2D-5CCCA14F5B7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD2E67F5-AE69-457A-8E2D-5CCCA14F5B7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD2E67F5-AE69-457A-8E2D-5CCCA14F5B7F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
