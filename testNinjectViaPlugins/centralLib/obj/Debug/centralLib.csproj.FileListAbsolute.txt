@@ -1,0 +1,8 @@
+C:\Projects\probe\testNinjectViaPlugins\centralLib\bin\Debug\centralLib.dll
+C:\Projects\probe\testNinjectViaPlugins\centralLib\bin\Debug\centralLib.pdb
+C:\Projects\probe\testNinjectViaPlugins\centralLib\bin\Debug\Ninject.dll
+C:\Projects\probe\testNinjectViaPlugins\centralLib\bin\Debug\Ninject.pdb
+C:\Projects\probe\testNinjectViaPlugins\centralLib\bin\Debug\Ninject.xml
+C:\Projects\probe\testNinjectViaPlugins\centralLib\obj\Debug\ResolveAssemblyReference.cache
+C:\Projects\probe\testNinjectViaPlugins\centralLib\obj\Debug\centralLib.dll
+C:\Projects\probe\testNinjectViaPlugins\centralLib\obj\Debug\centralLib.pdb

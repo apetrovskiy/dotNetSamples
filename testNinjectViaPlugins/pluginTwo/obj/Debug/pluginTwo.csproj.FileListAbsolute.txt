@@ -1,0 +1,10 @@
+C:\Projects\probe\testNinjectViaPlugins\pluginTwo\bin\Debug\pluginTwo.dll
+C:\Projects\probe\testNinjectViaPlugins\pluginTwo\bin\Debug\pluginTwo.pdb
+C:\Projects\probe\testNinjectViaPlugins\pluginTwo\bin\Debug\centralLib.dll
+C:\Projects\probe\testNinjectViaPlugins\pluginTwo\bin\Debug\Ninject.dll
+C:\Projects\probe\testNinjectViaPlugins\pluginTwo\bin\Debug\Ninject.pdb
+C:\Projects\probe\testNinjectViaPlugins\pluginTwo\bin\Debug\Ninject.xml
+C:\Projects\probe\testNinjectViaPlugins\pluginTwo\bin\Debug\centralLib.pdb
+C:\Projects\probe\testNinjectViaPlugins\pluginTwo\obj\Debug\ResolveAssemblyReference.cache
+C:\Projects\probe\testNinjectViaPlugins\pluginTwo\obj\Debug\pluginTwo.dll
+C:\Projects\probe\testNinjectViaPlugins\pluginTwo\obj\Debug\pluginTwo.pdb
