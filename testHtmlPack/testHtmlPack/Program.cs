@@ -11,6 +11,9 @@ namespace testHtmlPack
 {
 	using System;
 	using System.Linq;
+	using System.IO;
+	using System.Text;
+	using System.Xml;
 	using HtmlAgilityPack;
 	
 	class Program
@@ -74,12 +77,24 @@ namespace testHtmlPack
 			*/
 			
 			
+			var web = new HtmlWeb();
+			web.Load(@"http://10.0.1.214/reportserver", "10.0.1.214", 80, @"outcast\spmgmtaccount", @"Lock12Lock");
+			
+			
 			var letter = new HtmlAgilityPack.HtmlDocument();
-			letter.Load(@"D:\20140311\0943.htm");
+			// letter.Load(@"D:\20140311\0943.htm");
+			letter.Load(@"D:\20140311\0944.htm");
 			
 			// letter.ge
 			
 			Console.WriteLine("========================================================================================================================");
+			
+			// using (var xmlWriter = new XmlTextWriter(@"D:\20140311\0943.xml", Encoding.UTF8)) {
+			using (var xmlWriter = new XmlTextWriter(@"D:\20140311\0944.xml", Encoding.UTF8)) {
+				// var xmlWriter = XmlWriter.Create(@"D:\20140311\0943.xml");
+				letter.DocumentNode.WriteTo(xmlWriter);
+			}
+			
 			
 			var tables = letter.DocumentNode.SelectNodes("//table[@id='changes']");
 			if (null == tables) {
