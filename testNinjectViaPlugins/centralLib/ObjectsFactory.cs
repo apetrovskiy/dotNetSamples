@@ -13,6 +13,7 @@ namespace centralLib
     using System.Linq;
     using Ninject;
 	using Ninject.Modules;
+    using Ninject.Parameters;
     
     /// <summary>
     /// Description of ObjectsFactory.
@@ -25,16 +26,17 @@ namespace centralLib
         {
             if (null != Kernel) {
                 var currentModules = Kernel.GetModules();
-                if (null != currentModules && 0 < currentModules.Count()) {
+                // if (null != currentModules && 0 < currentModules.Count()) {
+                if (null != currentModules && currentModules.Any()) {
                     modules.Union(currentModules);
                 }
             }
             Kernel = new StandardKernel(modules);
         }
         
-        public static T Resolve<T>()
+        public static T Resolve<T>(params IParameter[] parameters)
         {
-            return Kernel.Get<T>();
+            return Kernel.Get<T>(parameters);
         }
     }
 }
