@@ -12,6 +12,7 @@ namespace testHtmlPack
 	using System;
 	using System.Linq;
 	using System.IO;
+	using System.Net;
 	using System.Text;
 	using System.Xml;
 	using HtmlAgilityPack;
@@ -23,6 +24,7 @@ namespace testHtmlPack
 			Console.WriteLine("Hello World!");
 			
 			// TODO: Implement Functionality Here
+            #region commented
 			/*
 			var doc0 = new HtmlDocument();
 			doc0.Load(@"D:\HTML\TPAMmenu.htm");
@@ -75,7 +77,7 @@ namespace testHtmlPack
 			}
 			
 			*/
-			
+			#endregion commented
 			
 			var web = new HtmlWeb();
 			web.Load(@"http://10.0.1.214/reportserver", "10.0.1.214", 80, @"outcast\spmgmtaccount", @"Lock12Lock");
@@ -132,6 +134,46 @@ namespace testHtmlPack
 			catch (Exception eParsing) {
 				Console.WriteLine(eParsing.Message);
 			}
+            
+            
+            Console.WriteLine("========================================================================================================================");
+            // 20140321
+            // var mhtml = new HtmlDocument();
+            // mhtml.Load(@"D:\20140321\dashboard\All SharePoint Changes by Date.mhtml");
+            var mhtmlPage = new HtmlWeb();
+            // var cred = new netwo
+            var mhtml = 
+                mhtmlPage.Load(
+                    @"http://vl-w8x86-client/ReportServer/Pages/ReportViewer.aspx?%2fNetwrix+Enterprise+Overview+Reports%2fEnterprise-Wide+Reports%2fSharePoint+Server%2fAll+SharePoint+Changes+by+Date&rs:Command=Render",
+                    "GET", //"PUT", //"POST", // "GET", //string.Empty, // "10.0.1.214",
+                    // 0, //80,
+                    null,
+                    new NetworkCredential() {
+                        // UserName = @"outcast\spmgmtaccount",
+                        UserName = @"spmgmtaccount",
+                        Password = "Lock12Lock"});
+            
+            var allNodes = mhtml.DocumentNode.SelectNodes("//*");
+            
+            if (null == allNodes) {
+                Console.WriteLine("null == allNodes");
+            } else {
+                Console.WriteLine("null != allNodes");
+                foreach (var singleNode in allNodes) {
+                    Console.WriteLine(singleNode.InnerText);
+                }
+            }
+            
+            var allTables = mhtml.DocumentNode.SelectNodes("//table");
+            
+            if (null == allTables) {
+                Console.WriteLine("null == allTables");
+            } else {
+                Console.WriteLine("null != allTables");
+                foreach (var singleTable in allTables) {
+                    Console.WriteLine(singleTable.InnerText);
+                }
+            }
 			
 			Console.Write("Press any key to continue . . . ");
 			Console.ReadKey(true);
