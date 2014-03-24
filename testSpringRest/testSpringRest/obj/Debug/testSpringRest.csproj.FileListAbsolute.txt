@@ -1,0 +1,9 @@
+C:\Projects\probe\testSpringRest\testSpringRest\bin\Debug\testSpringRest.exe
+C:\Projects\probe\testSpringRest\testSpringRest\bin\Debug\testSpringRest.pdb
+C:\Projects\probe\testSpringRest\testSpringRest\bin\Debug\Common.Logging.dll
+C:\Projects\probe\testSpringRest\testSpringRest\bin\Debug\Spring.Rest.dll
+C:\Projects\probe\testSpringRest\testSpringRest\bin\Debug\Spring.Rest.pdb
+C:\Projects\probe\testSpringRest\testSpringRest\bin\Debug\Spring.Rest.xml
+C:\Projects\probe\testSpringRest\testSpringRest\obj\Debug\ResolveAssemblyReference.cache
+C:\Projects\probe\testSpringRest\testSpringRest\obj\Debug\testSpringRest.exe
+C:\Projects\probe\testSpringRest\testSpringRest\obj\Debug\testSpringRest.pdb
