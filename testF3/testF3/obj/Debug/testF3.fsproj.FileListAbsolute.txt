@@ -1,0 +1,8 @@
+C:\Projects\probe\testF3\testF3\bin\Debug\testF3.exe.config
+C:\Projects\probe\testF3\testF3\bin\Debug\testF3.exe
+C:\Projects\probe\testF3\testF3\bin\Debug\testF3.pdb
+C:\Projects\probe\testF3\testF3\bin\Debug\FSharp.Core.dll
+C:\Projects\probe\testF3\testF3\bin\Debug\FSharp.Core.xml
+C:\Projects\probe\testF3\testF3\obj\Debug\testF3.fsprojResolveAssemblyReference.cache
+C:\Projects\probe\testF3\testF3\obj\Debug\testF3.exe
+C:\Projects\probe\testF3\testF3\obj\Debug\testF3.pdb
