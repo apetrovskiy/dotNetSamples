@@ -1,0 +1,17 @@
+C:\Projects\probe\testSimpleOdataClient20\testSimpleOdataClient20\bin\Debug\testSimpleOdataClient20.dll
+C:\Projects\probe\testSimpleOdataClient20\testSimpleOdataClient20\bin\Debug\testSimpleOdataClient20.pdb
+C:\Projects\probe\testSimpleOdataClient20\testSimpleOdataClient20\bin\Debug\Microsoft.Threading.Tasks.Extensions.Desktop.dll
+C:\Projects\probe\testSimpleOdataClient20\testSimpleOdataClient20\bin\Debug\System.IO.dll
+C:\Projects\probe\testSimpleOdataClient20\testSimpleOdataClient20\bin\Debug\System.Net.Http.dll
+C:\Projects\probe\testSimpleOdataClient20\testSimpleOdataClient20\bin\Debug\System.Net.Http.Primitives.dll
+C:\Projects\probe\testSimpleOdataClient20\testSimpleOdataClient20\bin\Debug\System.Net.Http.WebRequest.dll
+C:\Projects\probe\testSimpleOdataClient20\testSimpleOdataClient20\bin\Debug\System.Threading.Tasks.dll
+C:\Projects\probe\testSimpleOdataClient20\testSimpleOdataClient20\bin\Debug\Microsoft.Threading.Tasks.Extensions.Desktop.xml
+C:\Projects\probe\testSimpleOdataClient20\testSimpleOdataClient20\bin\Debug\System.IO.xml
+C:\Projects\probe\testSimpleOdataClient20\testSimpleOdataClient20\bin\Debug\System.Net.Http.xml
+C:\Projects\probe\testSimpleOdataClient20\testSimpleOdataClient20\bin\Debug\System.Net.Http.Primitives.xml
+C:\Projects\probe\testSimpleOdataClient20\testSimpleOdataClient20\bin\Debug\System.Net.Http.WebRequest.xml
+C:\Projects\probe\testSimpleOdataClient20\testSimpleOdataClient20\bin\Debug\System.Threading.Tasks.xml
+C:\Projects\probe\testSimpleOdataClient20\testSimpleOdataClient20\obj\Debug\testSimpleOdataClient20.dll
+C:\Projects\probe\testSimpleOdataClient20\testSimpleOdataClient20\obj\Debug\testSimpleOdataClient20.pdb
+C:\Projects\probe\testSimpleOdataClient20\testSimpleOdataClient20\obj\Debug\testSimpleOdataClient20.csprojResolveAssemblyReference.cache
