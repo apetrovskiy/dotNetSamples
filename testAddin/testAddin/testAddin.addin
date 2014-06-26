@@ -1,0 +1,19 @@
+﻿<AddIn name        = "testAddin"
+       author      = "alexa_000"
+       url         = ""
+       description = "TODO: Put description here">
+	
+	<Manifest>
+        <Identity name="testAddin" />
+    </Manifest>
+	
+	<Runtime>
+		<Import assembly = "testAddin.dll"/>
+	</Runtime>
+	
+	<!-- Extend the SharpDevelop AddIn-Tree like this:
+	<Path name = ...>
+		<.../>
+	</Path>
+	-->
+</AddIn>

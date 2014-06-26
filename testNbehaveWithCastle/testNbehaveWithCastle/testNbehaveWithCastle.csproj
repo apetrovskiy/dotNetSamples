@@ -1,18 +1,28 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
   <PropertyGroup>
-    <ProjectGuid>{530AB4FD-42F2-4414-9E14-0CEE03103151}</ProjectGuid>
+    <ProjectGuid>{E71186EE-DD5D-4B50-8FD1-377B732B1BC7}</ProjectGuid>
     <ProjectTypeGuids>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <OutputType>Library</OutputType>
-    <RootNamespace>testLib</RootNamespace>
-    <AssemblyName>testLib</AssemblyName>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>testNbehaveWithCastle</RootNamespace>
+    <AssemblyName>testNbehaveWithCastle</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <AppDesignerFolder>Properties</AppDesignerFolder>
+    <NoWin32Manifest>False</NoWin32Manifest>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <NoStdLib>False</NoStdLib>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+    <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x86</PlatformTarget>
+    <BaseAddress>4194304</BaseAddress>
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <FileAlignment>4096</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <OutputPath>bin\Debug\</OutputPath>
@@ -21,6 +31,7 @@
     <Optimize>False</Optimize>
     <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <BaseIntermediateOutputPath>obj\</BaseIntermediateOutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <OutputPath>bin\Release\</OutputPath>
@@ -33,6 +44,9 @@
   <ItemGroup>
     <Reference Include="GurkBurk">
       <HintPath>..\packages\nbehave.0.6.2\lib\net35\GurkBurk.dll</HintPath>
+    </Reference>
+    <Reference Include="NBehave.Fluent.Framework">
+      <HintPath>..\packages\nbehave.fluent.xunit.0.6.2\lib\net35\NBehave.Fluent.Framework.dll</HintPath>
     </Reference>
     <Reference Include="NBehave.Gherkin">
       <HintPath>..\packages\nbehave.0.6.2\lib\net35\NBehave.Gherkin.dll</HintPath>
@@ -56,6 +70,10 @@
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -65,17 +83,23 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddNumbers.cs" />
-    <Compile Include="EmbeddedRunnerSpec.cs" />
-    <Compile Include="HelloWorldSteps.cs" />
+    <Compile Include="FluentExample.cs" />
+    <Compile Include="Gherkin\EmbeddedExample.cs" />
+    <Compile Include="Gherkin\Examples.cs" />
+    <Compile Include="Gherkin\Language.cs" />
+    <Compile Include="Gherkin\Simple.cs" />
+    <Compile Include="Gherkin\Tables.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Steps.cs" />
+    <Compile Include="SpecExample.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="AddNumbers.feature" />
-    <None Include="HelloWorld.feature" />
+    <None Include="Gherkin\Examples.feature" />
+    <None Include="Gherkin\Language.feature" />
+    <None Include="Gherkin\Simple.feature" />
+    <None Include="Gherkin\Tables.feature" />
     <None Include="packages.config" />
-    <None Include="Steps.feature" />
+    <None Include="__ReadMe__.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

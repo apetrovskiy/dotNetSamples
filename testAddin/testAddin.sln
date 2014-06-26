@@ -1,0 +1,18 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+# SharpDevelop 5.0
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "testAddin", "testAddin\testAddin.csproj", "{09EE610F-DCA6-454C-9442-4CB6F7386823}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{09EE610F-DCA6-454C-9442-4CB6F7386823}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09EE610F-DCA6-454C-9442-4CB6F7386823}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09EE610F-DCA6-454C-9442-4CB6F7386823}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09EE610F-DCA6-454C-9442-4CB6F7386823}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
