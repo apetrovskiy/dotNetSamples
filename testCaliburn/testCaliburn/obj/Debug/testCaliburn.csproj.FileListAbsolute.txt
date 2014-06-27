@@ -1,0 +1,13 @@
+C:\Projects\probe\testCaliburn\testCaliburn\obj\Debug\testCaliburn.csprojResolveAssemblyReference.cache
+C:\Projects\probe\testCaliburn\testCaliburn\obj\Debug\App.g.cs
+C:\Projects\probe\testCaliburn\testCaliburn\obj\Debug\testCaliburn_MarkupCompile.cache
+C:\Projects\probe\testCaliburn\testCaliburn\bin\Debug\testCaliburn.exe.config
+C:\Projects\probe\testCaliburn\testCaliburn\bin\Debug\testCaliburn.exe
+C:\Projects\probe\testCaliburn\testCaliburn\bin\Debug\testCaliburn.pdb
+C:\Projects\probe\testCaliburn\testCaliburn\bin\Debug\Caliburn.Micro.dll
+C:\Projects\probe\testCaliburn\testCaliburn\bin\Debug\System.Windows.Interactivity.dll
+C:\Projects\probe\testCaliburn\testCaliburn\bin\Debug\Caliburn.Micro.pdb
+C:\Projects\probe\testCaliburn\testCaliburn\bin\Debug\Caliburn.Micro.xml
+C:\Projects\probe\testCaliburn\testCaliburn\bin\Debug\System.Windows.Interactivity.xml
+C:\Projects\probe\testCaliburn\testCaliburn\obj\Debug\testCaliburn.exe
+C:\Projects\probe\testCaliburn\testCaliburn\obj\Debug\testCaliburn.pdb

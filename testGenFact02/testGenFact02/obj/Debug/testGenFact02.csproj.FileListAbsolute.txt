@@ -1,0 +1,5 @@
+C:\Projects\probe\testGenFact02\testGenFact02\bin\Debug\testGenFact02.exe
+C:\Projects\probe\testGenFact02\testGenFact02\bin\Debug\testGenFact02.pdb
+C:\Projects\probe\testGenFact02\testGenFact02\obj\Debug\testGenFact02.csprojResolveAssemblyReference.cache
+C:\Projects\probe\testGenFact02\testGenFact02\obj\Debug\testGenFact02.exe
+C:\Projects\probe\testGenFact02\testGenFact02\obj\Debug\testGenFact02.pdb
