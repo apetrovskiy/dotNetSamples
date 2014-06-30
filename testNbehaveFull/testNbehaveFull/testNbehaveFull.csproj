@@ -1,28 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
   <PropertyGroup>
-    <ProjectGuid>{E71186EE-DD5D-4B50-8FD1-377B732B1BC7}</ProjectGuid>
+    <ProjectGuid>{BAAE5FCA-B99E-4938-8375-03FD2481244B}</ProjectGuid>
     <ProjectTypeGuids>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <OutputType>Exe</OutputType>
-    <RootNamespace>testNbehaveWithCastle</RootNamespace>
-    <AssemblyName>testNbehaveWithCastle</AssemblyName>
+    <RootNamespace>testNbehaveFull</RootNamespace>
+    <AssemblyName>testNbehaveFull</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <NoWin32Manifest>False</NoWin32Manifest>
-    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
-    <NoStdLib>False</NoStdLib>
-    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
-    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
-    <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
     <PlatformTarget>x86</PlatformTarget>
-    <BaseAddress>4194304</BaseAddress>
-    <RegisterForComInterop>False</RegisterForComInterop>
-    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
-    <FileAlignment>4096</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <OutputPath>bin\Debug\</OutputPath>
@@ -31,7 +21,6 @@
     <Optimize>False</Optimize>
     <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <BaseIntermediateOutputPath>obj\</BaseIntermediateOutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <OutputPath>bin\Release\</OutputPath>
@@ -46,7 +35,7 @@
       <HintPath>..\packages\nbehave.0.6.2\lib\net35\GurkBurk.dll</HintPath>
     </Reference>
     <Reference Include="NBehave.Fluent.Framework">
-      <HintPath>..\packages\nbehave.fluent.xunit.0.6.2\lib\net35\NBehave.Fluent.Framework.dll</HintPath>
+      <HintPath>..\packages\nbehave.fluent.nunit.0.6.2\lib\net35\NBehave.Fluent.Framework.dll</HintPath>
     </Reference>
     <Reference Include="NBehave.Gherkin">
       <HintPath>..\packages\nbehave.0.6.2\lib\net35\NBehave.Gherkin.dll</HintPath>
@@ -56,9 +45,6 @@
     </Reference>
     <Reference Include="NBehave.Spec.NUnit">
       <HintPath>..\packages\nbehave.spec.nunit.0.6.2\lib\net35\NBehave.Spec.NUnit.dll</HintPath>
-    </Reference>
-    <Reference Include="NBehave.Spec.Xunit">
-      <HintPath>..\packages\nbehave.spec.xunit.0.6.2\lib\net35\NBehave.Spec.Xunit.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
       <HintPath>..\packages\NUnit.2.6.2\lib\nunit.framework.dll</HintPath>
@@ -78,9 +64,6 @@
     <Reference Include="System.Xml.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
-    <Reference Include="xunit">
-      <HintPath>..\packages\xunit.1.9.1\lib\net20\xunit.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FluentExample.cs" />
@@ -98,6 +81,8 @@
     <None Include="Gherkin\Language.feature" />
     <None Include="Gherkin\Simple.feature" />
     <None Include="Gherkin\Tables.feature" />
+    <None Include="packages.config" />
+    <None Include="__ReadMe__.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Projects\probe\testNbehaveWithCastle\testNbehaveWithCastle\bin\Debug\testNbehaveWithCastle.exe
 C:\Projects\probe\testNbehaveWithCastle\testNbehaveWithCastle\bin\Debug\testNbehaveWithCastle.pdb
 C:\Projects\probe\testNbehaveWithCastle\testNbehaveWithCastle\bin\Debug\GurkBurk.dll
@@ -15,3 +16,6 @@ C:\Projects\probe\testNbehaveWithCastle\testNbehaveWithCastle\obj\Debug\testNbeh
 C:\Projects\probe\testNbehaveWithCastle\testNbehaveWithCastle\obj\Debug\testNbehaveWithCastle.pdb
 C:\Projects\probe\testNbehaveWithCastle\testNbehaveWithCastle\obj\Debug\testNbehaveWithCastle.csprojResolveAssemblyReference.cache
 C:\Projects\probe\testNbehaveWithCastle\testNbehaveWithCastle\bin\Debug\nunit.framework.dll
+=======
+C:\Projects\probe\testNbehaveWithCastle\testNbehaveWithCastle\obj\Debug\testNbehaveWithCastle.csprojResolveAssemblyReference.cache
+>>>>>>> fc8cd2f43321096ffd0f675cbe1b11cf391219e1
