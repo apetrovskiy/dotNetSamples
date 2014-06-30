@@ -1,0 +1,5 @@
+C:\Projects\probe\testRest001\testRest001\bin\testRest001.dll
+C:\Projects\probe\testRest001\testRest001\bin\testRest001.pdb
+C:\Projects\probe\testRest001\testRest001\obj\Debug\testRest001.csprojResolveAssemblyReference.cache
+C:\Projects\probe\testRest001\testRest001\obj\Debug\testRest001.dll
+C:\Projects\probe\testRest001\testRest001\obj\Debug\testRest001.pdb

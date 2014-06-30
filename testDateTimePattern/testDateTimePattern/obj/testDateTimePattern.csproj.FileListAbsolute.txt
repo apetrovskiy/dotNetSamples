@@ -1,0 +1,5 @@
+C:\Projects\probe\testDateTimePattern\testDateTimePattern\obj\Debug\ResolveAssemblyReference.cache
+C:\Projects\probe\testDateTimePattern\testDateTimePattern\obj\Debug\testDateTimePattern.exe
+C:\Projects\probe\testDateTimePattern\testDateTimePattern\bin\Debug\testDateTimePattern.exe
+C:\Projects\probe\testDateTimePattern\testDateTimePattern\bin\Debug\testDateTimePattern.pdb
+C:\Projects\probe\testDateTimePattern\testDateTimePattern\obj\Debug\testDateTimePattern.pdb

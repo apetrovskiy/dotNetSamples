@@ -1,0 +1,14 @@
+C:\Projects\probe\NancyExample03\NancyExample03\bin\NancyExample03.dll
+C:\Projects\probe\NancyExample03\NancyExample03\bin\NancyExample03.pdb
+C:\Projects\probe\NancyExample03\NancyExample03\bin\Nancy.Bootstrappers.StructureMap.dll
+C:\Projects\probe\NancyExample03\NancyExample03\bin\Nancy.dll
+C:\Projects\probe\NancyExample03\NancyExample03\bin\Nancy.Hosting.Aspnet.dll
+C:\Projects\probe\NancyExample03\NancyExample03\bin\StructureMap.dll
+C:\Projects\probe\NancyExample03\NancyExample03\bin\StructureMap.Net4.dll
+C:\Projects\probe\NancyExample03\NancyExample03\bin\Nancy.xml
+C:\Projects\probe\NancyExample03\NancyExample03\bin\Nancy.Hosting.Aspnet.xml
+C:\Projects\probe\NancyExample03\NancyExample03\bin\StructureMap.pdb
+C:\Projects\probe\NancyExample03\NancyExample03\bin\StructureMap.Net4.pdb
+C:\Projects\probe\NancyExample03\NancyExample03\obj\Debug\NancyExample03.csprojResolveAssemblyReference.cache
+C:\Projects\probe\NancyExample03\NancyExample03\obj\Debug\NancyExample03.dll
+C:\Projects\probe\NancyExample03\NancyExample03\obj\Debug\NancyExample03.pdb

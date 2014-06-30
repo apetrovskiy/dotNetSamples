@@ -1,0 +1,5 @@
+C:\Projects\probe\NancyExample04\NancyExample04\bin\NancyExample04.dll
+C:\Projects\probe\NancyExample04\NancyExample04\bin\NancyExample04.pdb
+C:\Projects\probe\NancyExample04\NancyExample04\obj\Debug\NancyExample04.csprojResolveAssemblyReference.cache
+C:\Projects\probe\NancyExample04\NancyExample04\obj\Debug\NancyExample04.dll
+C:\Projects\probe\NancyExample04\NancyExample04\obj\Debug\NancyExample04.pdb
