@@ -42,43 +42,24 @@ namespace NancyExample10Tests
 		{
 			sut.Post("/todos/", with => with.JsonBody(aTodo));
 			
-			// AssertCalledTryAddOnDataStoreWith(aTodo);
-			AssertCalledTryAddOnDataStoreWtih(aTodo);
+			AssertCalledTryAddOnDataStoreWith(aTodo);
 		}
 		
-//		private void AssertCalledTryAddOnDataStoreWith(Todo expected)
-//		{
-////			A.CallTo(() =>
-////			         fakeDataStore.TryAdd(A<Todo>.That.Matches(actual =>
-////			                                                   {
-////			                                                   	Assert.Equal(expected.title, actual.title);
-////			                                                   	Assert.Equal(expected.order, actual.order);
-////			                                                   	Assert.Equal(expected.completed, actual.completed);
-////			                                                   	return true;
-////			                                                   }
-////			                                                  )))
-//			A.CallTo(() =>
-//			         fakeDataStore.TryAdd(A<Todo>
-//			                              .That.Matches(actual => { Assert.Same(expected, actual); return true; })))
-//				.MustHaveHappened();
-//		}
-		
-//	    private void AssertCalledTryAddOnDataStoreWtih(Todo expected)
-//	    {
-//	      A.CallTo(() =>
-//	        fakeDataStore.TryAdd(A<Todo>
-//	          .That.Matches(actual => Assertions.AreSame(expected, actual))))
-//	        .MustHaveHappened();
-//	    }
-	
-		private void AssertCalledTryAddOnDataStoreWtih(Todo expected)
+		private void AssertCalledTryAddOnDataStoreWith(Todo expected)
 		{
 			A.CallTo(() =>
-			         fakeDataStore.TryAdd(A<Todo>
-			                              .That.Matches<Todo>(actual => { return true; })
-			                             ))
+			         fakeDataStore.TryAdd(A<Todo>.That.Matches(actual =>
+			                                                   AssertEquality(expected, actual)
+			                                                  )))
 				.MustHaveHappened();
 		}
-	
+		
+		private bool AssertEquality(Todo expected, Todo actual)
+		{
+			Assert.Equal(expected.title, actual.title);
+			Assert.Equal(expected.order, actual.order);
+			Assert.Equal(expected.completed, actual.completed);
+			return true;
+		}
 	}
 }
