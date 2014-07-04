@@ -23,7 +23,7 @@ namespace NancyExampleRestService
 			// start
 			nancyHost.Start();
 			Console.WriteLine("REST service listening on " + url);
-			//stop with an <Enter> ket press
+			//stop with an <Enter> key press
 			Console.ReadLine();
 			nancyHost.Stop();
 		}
