@@ -10,7 +10,10 @@
 namespace NancyExampleRestService
 {
     using System;
+	using System.IO;
+	using System.Windows.Forms;
 	using Nancy;
+	using Nancy.ModelBinding;
     
     /// <summary>
     /// Description of TestResultModule.
@@ -29,6 +32,28 @@ namespace NancyExampleRestService
                 var result = new { Id = parameter.id, Name = parameter.name, Status = parameter.status };
                 return Response.AsJson(result).WithStatusCode(HttpStatusCode.OK); 
             };
+            
+            // Post["/"] = pa
+            // this.Request.Body
+            //             Post["/rel"] = parameters => new StreamReader(this.Request.Body).ReadToEnd();
+            // Request.Body.
+            
+			Post["/"] = _ => {
+				// Request.Body
+				// Response.
+				var model = this.Bind();
+				var loadedData = new StreamReader(Request.Body).ReadToEnd();
+				// Console.WriteLine(loadedData);
+				// MessageBox.Show(loadedData);
+				// var myObj = Response.AsJson<string>(
+				// return Response.AsJson<int[]>(new int[]{1,2,3}, HttpStatusCode.OK);
+				return Response.AsJson<string>(loadedData, HttpStatusCode.OK);
+				// return Response.AsJson<string>(model, HttpStatusCode.OK);
+			};
+            
+//			Post["/"] = _ => {
+//            	
+//			};
         }
 //        
 //        private object GetTestResult(int id, string name, int status)
