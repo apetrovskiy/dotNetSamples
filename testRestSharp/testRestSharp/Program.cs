@@ -32,11 +32,27 @@ namespace testRestSharp
 			// request.AddFile(path);
 			var response = client.Execute(request);
 			var content = response.Content;
+			Console.WriteLine("======= 01 =======");
 			Console.WriteLine(content);
+			Console.WriteLine("======= 02 =======");
 			
+			request = new RestRequest("/testresults/", Method.POST);
+			request.AddBody(new TestResult { Name = "test result 2 ...", Id = "1112", TestScenarioId = "2222", TestSuiteId = "3332" });
 			IRestResponse<TestResult> response2 = client.Execute<TestResult>(request);
 			Console.WriteLine(response2.Content);
 			// var name = response2.Data.Name;
+			
+			request = new RestRequest("/testresults/suites/", Method.POST);
+			request.AddBody(new TestSuite { Name = "test suite 001", Id = "333" });
+			response = client.Execute(request);
+			Console.WriteLine("======= 03 =======");
+			Console.WriteLine(response.Content);
+			
+			request = new RestRequest("/testresults/scenarios/", Method.POST);
+			request.AddBody(new TestScenario { Name = "test scenario 001", Id = "222", TestSuiteId = "333" });
+			response = client.Execute(request);
+			Console.WriteLine("======= 04 =======");
+			Console.WriteLine(response.Content);
 			
 			Console.Write("Press any key to continue . . . ");
 			Console.ReadKey(true);
