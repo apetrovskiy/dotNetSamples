@@ -21,7 +21,7 @@ namespace NancyExampleRestService
     /// </summary>
     public class TestResultModule : NancyModule
     {
-        public TestResultModule() : base("/TestResults")
+        public TestResultModule() : base("/v1")
         {
             // Get["/{id}/{name}/{status}"] = parameter => { return GetTestResult(parameter.id, parameter.name, parameter.status); };
             Get["/{id}/{name}/{status}"] = parameter => {
@@ -29,17 +29,17 @@ namespace NancyExampleRestService
                 return Response.AsJson(result).WithStatusCode(HttpStatusCode.OK);
             };
             
-            Post["/{id}/{name}/{status}"] = parameter => {
-                var result = new { Id = parameter.id, Name = parameter.name, Status = parameter.status };
-                return Response.AsJson(result).WithStatusCode(HttpStatusCode.OK); 
-            };
+//            Post["/{id}/{name}/{status}"] = parameter => {
+//                var result = new { Id = parameter.id, Name = parameter.name, Status = parameter.status };
+//                return Response.AsJson(result).WithStatusCode(HttpStatusCode.OK); 
+//            };
             
             // Post["/"] = pa
             // this.Request.Body
             //             Post["/rel"] = parameters => new StreamReader(this.Request.Body).ReadToEnd();
             // Request.Body.
             
-			Post["/"] = _ => {
+			Post["/TestResults/"] = _ => {
 				// var model = this.Bind();
 				// var loadedData = new StreamReader(Request.Body).ReadToEnd();
 				var testResult = this.Bind<TestResult>();
@@ -48,13 +48,13 @@ namespace NancyExampleRestService
 				return Response.AsJson<ITestResult>(testResult, HttpStatusCode.OK);
 			};
             
-            Post["/suites/"] = _ => {
+            Post["/TestSuites/"] = _ => {
                 var testSuite = this.Bind<TestSuite>();
                 testSuite.Name += " processed. ";
                 return Response.AsJson<ITestSuite>(testSuite, HttpStatusCode.OK);
             };
             
-            Post["/scenarios/"] = _ => {
+            Post["/TestScenarios/"] = _ => {
                 var testScenario = this.Bind<TestScenario>();
                 testScenario.Name += " processed.";
                 return Response.AsJson<ITestScenario>(testScenario, HttpStatusCode.OK);
