@@ -13,7 +13,7 @@ namespace testInterfaces
 	/// <summary>
 	/// Description of TestScenario.
 	/// </summary>
-	public class TestScenario
+	public class TestScenario : ITestScenario
 	{
 		public string Name { get; set; }
 		public string Id { get; set; }

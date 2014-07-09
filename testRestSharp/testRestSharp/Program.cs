@@ -31,6 +31,13 @@ namespace testRestSharp
 			request.AddBody(new TestResult { Name = "test result ...", Id = "111", TestScenarioId = "222", TestSuiteId = "333" });
 			// request.AddFile(path);
 			var response = client.Execute(request);
+			if (null == response)
+				Console.WriteLine("null == response");
+			if (null == response.Content)
+				Console.WriteLine("null == response.Content");
+			Console.WriteLine(response.StatusCode);
+			if (0 == response.StatusCode)
+				return;
 			var content = response.Content;
 			Console.WriteLine("======= 01 =======");
 			Console.WriteLine(content);

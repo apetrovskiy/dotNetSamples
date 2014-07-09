@@ -45,19 +45,19 @@ namespace NancyExampleRestService
 				var testResult = this.Bind<TestResult>();
 				testResult.Name += " processed.";
 				// return Response.AsJson<string>(loadedData, HttpStatusCode.OK);
-				return Response.AsJson<TestResult>(testResult, HttpStatusCode.OK);
+				return Response.AsJson<ITestResult>(testResult, HttpStatusCode.OK);
 			};
             
             Post["/suites/"] = _ => {
                 var testSuite = this.Bind<TestSuite>();
                 testSuite.Name += " processed. ";
-                return Response.AsJson<TestSuite>(testSuite, HttpStatusCode.OK);
+                return Response.AsJson<ITestSuite>(testSuite, HttpStatusCode.OK);
             };
             
             Post["/scenarios/"] = _ => {
                 var testScenario = this.Bind<TestScenario>();
                 testScenario.Name += " processed.";
-                return Response.AsJson<TestScenario>(testScenario, HttpStatusCode.OK);
+                return Response.AsJson<ITestScenario>(testScenario, HttpStatusCode.OK);
             };
         }
 //        
