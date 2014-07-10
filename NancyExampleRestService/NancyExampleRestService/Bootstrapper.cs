@@ -18,7 +18,7 @@ namespace NancyExampleRestService
 	/// </summary>
 	public class Bootstrapper : DefaultNancyBootstrapper
 	{
-		protected virtual NancyInternalConfiguration InternalConfiguration
+		protected override NancyInternalConfiguration InternalConfiguration
 		{
 			get {
 				return NancyInternalConfiguration.Default;

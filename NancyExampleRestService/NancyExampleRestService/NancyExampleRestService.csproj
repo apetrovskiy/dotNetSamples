@@ -61,6 +61,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestResultModule.cs" />
+    <Compile Include="TestStepModule.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

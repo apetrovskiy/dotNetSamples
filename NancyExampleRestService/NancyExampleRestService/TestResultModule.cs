@@ -29,6 +29,12 @@ namespace NancyExampleRestService
                 return Response.AsJson(result).WithStatusCode(HttpStatusCode.OK);
             };
             
+            Get["/testresults/{id}"] = parameter => {
+                var testResult = this.Bind<TestResult>();
+				testResult.Name += " processed (get).";
+				return Response.AsJson<ITestResult>(testResult, HttpStatusCode.OK);
+            };
+            
 //            Post["/{id}/{name}/{status}"] = parameter => {
 //                var result = new { Id = parameter.id, Name = parameter.name, Status = parameter.status };
 //                return Response.AsJson(result).WithStatusCode(HttpStatusCode.OK); 
@@ -40,31 +46,22 @@ namespace NancyExampleRestService
             // Request.Body.
             
 			Post["/TestResults/"] = _ => {
-				// var model = this.Bind();
-				// var loadedData = new StreamReader(Request.Body).ReadToEnd();
 				var testResult = this.Bind<TestResult>();
-				testResult.Name += " processed.";
-				// return Response.AsJson<string>(loadedData, HttpStatusCode.OK);
+				testResult.Name += " processed (post).";
 				return Response.AsJson<ITestResult>(testResult, HttpStatusCode.OK);
 			};
             
             Post["/TestSuites/"] = _ => {
                 var testSuite = this.Bind<TestSuite>();
-                testSuite.Name += " processed. ";
+                testSuite.Name += " processed (post). ";
                 return Response.AsJson<ITestSuite>(testSuite, HttpStatusCode.OK);
             };
             
             Post["/TestScenarios/"] = _ => {
                 var testScenario = this.Bind<TestScenario>();
-                testScenario.Name += " processed.";
+                testScenario.Name += " processed (post).";
                 return Response.AsJson<ITestScenario>(testScenario, HttpStatusCode.OK);
             };
         }
-//        
-//        private object GetTestResult(int id, string name, int status)
-//        {
-//            // fake a return
-//            return new { Id = id, Name = name, Status = status };
-//        }
     }
 }

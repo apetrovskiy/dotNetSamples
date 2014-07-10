@@ -11,6 +11,7 @@ namespace testRestSharp
 {
 	using System;
 	using RestSharp;
+	using RestSharp.Serializers;
 	using testInterfaces;
 	
 	class Program
@@ -22,7 +23,7 @@ namespace testRestSharp
 			// TODO: Implement Functionality Here
 			
 			
-			var client = new RestClient("http://localhost:12345");
+			var client = new RestClient("http://localhost:12345/v1");
 			// var request = new RestRequest("resource/{id}", Method.POST);
 			var request = new RestRequest("/testresults/", Method.POST);
 			// request.AddParameter("name", "value");
@@ -43,7 +44,7 @@ namespace testRestSharp
 			Console.WriteLine(content);
 			Console.WriteLine("======= 02 =======");
 			
-			for (int i = 0; i < 1000000; i++) {
+			// for (int i = 0; i < 1000000; i++) {
 			
 				request = new RestRequest("/testresults/", Method.POST);
 				request.AddBody(new TestResult {
@@ -56,13 +57,13 @@ namespace testRestSharp
 				Console.WriteLine(response2.Content);
 				// var name = response2.Data.Name;
 			
-				request = new RestRequest("/testresults/suites/", Method.POST);
+				request = new RestRequest("/testsuites/", Method.POST);
 				request.AddBody(new TestSuite { Name = "test suite 001", Id = "333" });
 				response = client.Execute(request);
 				Console.WriteLine("======= 03 =======");
 				Console.WriteLine(response.Content);
 			
-				request = new RestRequest("/testresults/scenarios/", Method.POST);
+				request = new RestRequest("/testscenarios/", Method.POST);
 				request.AddBody(new TestScenario {
 					Name = "test scenario 001",
 					Id = "222",
@@ -71,7 +72,28 @@ namespace testRestSharp
 				response = client.Execute(request);
 				Console.WriteLine("======= 04 =======");
 				Console.WriteLine(response.Content);
-			}
+				
+				request = new RestRequest("testresults/1112?name=testresultname&testsuiteid=8888&testscenarioid=9999", Method.GET);
+				response = client.Execute(request);
+				Console.WriteLine("======= 05 =======");
+				Console.WriteLine(response.Content);
+			// }
+			
+			request = new RestRequest("/teststeps/currentstep?id=567&hostid=w1", Method.GET);
+			IRestResponse<TestStep> testStepResponse = client.Execute<TestStep>(request);
+			Console.WriteLine("======= 101 =======");
+			Console.WriteLine(testStepResponse.Content);
+			var testStep = testStepResponse.Data;
+			Console.WriteLine(testStep.Name);
+			Console.WriteLine(testStep.HostId);
+			
+			request = new RestRequest("/teststeps/" + testStepResponse.Data.Id, Method.PUT);
+			testStep.Accepted = true;
+			request.AddBody(testStep);
+			Console.WriteLine("======= 102 =======");
+			Console.WriteLine(testStepResponse.Content);
+			Console.WriteLine(testStepResponse.Data.Name);
+			Console.WriteLine(testStepResponse.Data.HostId);
 			
 			Console.Write("Press any key to continue . . . ");
 			Console.ReadKey(true);
