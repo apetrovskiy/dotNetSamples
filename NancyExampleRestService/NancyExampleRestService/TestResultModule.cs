@@ -10,8 +10,7 @@
 namespace NancyExampleRestService
 {
     using System;
-	using System.IO;
-	using System.Windows.Forms;
+    using System.Linq;
 	using Nancy;
 	using Nancy.ModelBinding;
 	using testInterfaces;
@@ -24,15 +23,18 @@ namespace NancyExampleRestService
         public TestResultModule() : base("/v1")
         {
             // Get["/{id}/{name}/{status}"] = parameter => { return GetTestResult(parameter.id, parameter.name, parameter.status); };
-            Get["/{id}/{name}/{status}"] = parameter => {
-                var result = new { Id = parameter.id, Name = parameter.name, Status = parameter.status };
+            Get["/{id}/{name}/{status}"] = parameters => {
+                var result = new { Id = parameters.id, Name = parameters.name, Status = parameters.status };
                 return Response.AsJson(result).WithStatusCode(HttpStatusCode.OK);
             };
             
-            Get["/testresults/{id}"] = parameter => {
+            Get["/testresults/{id}"] = parameters => {
                 var testResult = this.Bind<TestResult>();
-				testResult.Name += " processed (get).";
-				return Response.AsJson<ITestResult>(testResult, HttpStatusCode.OK);
+				// testResult.Name += " processed (get).";
+				var testResultInStorage = TestResultStorage.TestResults.First(tr => tr.Id == testResult.Id);
+				// testResultInStorage.Name += " processed (get).";
+				// return Response.AsJson<ITestResult>(testResult, HttpStatusCode.OK);
+				return Response.AsJson<ITestResult>(testResultInStorage, HttpStatusCode.OK);
             };
             
 //            Post["/{id}/{name}/{status}"] = parameter => {
@@ -46,9 +48,11 @@ namespace NancyExampleRestService
             // Request.Body.
             
 			Post["/TestResults/"] = _ => {
-				var testResult = this.Bind<TestResult>();
+            	try { var testResult = this.Bind<TestResult>();
 				testResult.Name += " processed (post).";
+				TestResultStorage.TestResults.Add(testResult);
 				return Response.AsJson<ITestResult>(testResult, HttpStatusCode.OK);
+				} catch (Exception e) { throw new Exception("getting the test result supplied. " + e.Message); }
 			};
             
             Post["/TestSuites/"] = _ => {

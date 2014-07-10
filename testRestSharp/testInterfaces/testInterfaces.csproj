@@ -41,17 +41,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Enums.cs" />
     <Compile Include="IClient.cs" />
     <Compile Include="ITestResult.cs" />
     <Compile Include="ITestScenario.cs" />
-    <Compile Include="ITestStep.cs" />
-    <Compile Include="ITestStepAction.cs" />
+    <Compile Include="ITestBucket.cs" />
+    <Compile Include="ITestBucketAction.cs" />
     <Compile Include="ITestSuite.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestResult.cs" />
     <Compile Include="TestScenario.cs" />
-    <Compile Include="TestStep.cs" />
-    <Compile Include="TestStepAction.cs" />
+    <Compile Include="TestBucket.cs" />
+    <Compile Include="TestBucketAction.cs" />
     <Compile Include="TestSuite.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

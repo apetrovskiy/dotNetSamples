@@ -11,7 +11,6 @@ namespace testRestSharp
 {
 	using System;
 	using RestSharp;
-	using RestSharp.Serializers;
 	using testInterfaces;
 	
 	class Program
@@ -55,7 +54,11 @@ namespace testRestSharp
 				});
 				IRestResponse<TestResult> response2 = client.Execute<TestResult>(request);
 				Console.WriteLine(response2.Content);
-				// var name = response2.Data.Name;
+				
+				request = new RestRequest("/testresults/" + response2.Data.Id, Method.GET);
+				var testResultResponse = client.Execute<TestResult>(request);
+				Console.WriteLine(testResultResponse.Content);
+				// var testResult = testResultResponse.Data;
 			
 				request = new RestRequest("/testsuites/", Method.POST);
 				request.AddBody(new TestSuite { Name = "test suite 001", Id = "333" });
@@ -77,23 +80,46 @@ namespace testRestSharp
 				response = client.Execute(request);
 				Console.WriteLine("======= 05 =======");
 				Console.WriteLine(response.Content);
+				
+				request = new RestRequest("/TestBuckets/freebucket?hostid=w1", Method.GET);
+				// request = new RestRequest("/TestBuckets/567?name=ttttt&hostid=w1", Method.GET);
+				// IRestResponse<TestBucket> testBucketResponse = client.Execute<TestBucket>(request);
+				var testBucketResponse = client.Execute<TestBucket>(request);
+				Console.WriteLine("======= 101 =======");
+				Console.WriteLine(testBucketResponse.Content);
+				var testBucket = testBucketResponse.Data;
+//				Console.WriteLine(testBucket.Name);
+				Console.WriteLine(testBucket.HostId);
+				Console.WriteLine(testBucket.Id);
+				
+				request = new RestRequest("/TestBuckets/" + testBucket.Id, Method.PUT);
+				testBucket.Status = TestBucketStatuses.Accepted;
+				Console.WriteLine(testBucket.Status);
+				request.AddBody(testBucket);
+				testBucketResponse = client.Execute<TestBucket>(request);
+				
+				request = new RestRequest("/TestBuckets/" + testBucket.Id, Method.GET);
+				testBucketResponse = client.Execute<TestBucket>(request);
+				Console.WriteLine("======= 102 =======");
+				Console.WriteLine(testBucketResponse.Content);
+				testBucket = testBucketResponse.Data;
+				Console.WriteLine(testBucket.HostId);
+				Console.WriteLine(testBucket.Id);
+				
+				request = new RestRequest("/TestBuckets/" + testBucket.Id, Method.PUT);
+				testBucket.Status = TestBucketStatuses.CompletedSuccessfully;
+				request.AddBody(testBucket);
+				testBucketResponse = client.Execute<TestBucket>(request);
+				
+				request = new RestRequest("/TestBuckets/" + testBucket.Id, Method.GET);
+				testBucketResponse = client.Execute<TestBucket>(request);
+				Console.WriteLine("======= 103 =======");
+				Console.WriteLine(testBucketResponse.Content);
+				testBucket = testBucketResponse.Data;
+				Console.WriteLine(testBucket.HostId);
+				Console.WriteLine(testBucket.Id);
+				
 			// }
-			
-			request = new RestRequest("/teststeps/currentstep?id=567&hostid=w1", Method.GET);
-			IRestResponse<TestStep> testStepResponse = client.Execute<TestStep>(request);
-			Console.WriteLine("======= 101 =======");
-			Console.WriteLine(testStepResponse.Content);
-			var testStep = testStepResponse.Data;
-			Console.WriteLine(testStep.Name);
-			Console.WriteLine(testStep.HostId);
-			
-			request = new RestRequest("/teststeps/" + testStepResponse.Data.Id, Method.PUT);
-			testStep.Accepted = true;
-			request.AddBody(testStep);
-			Console.WriteLine("======= 102 =======");
-			Console.WriteLine(testStepResponse.Content);
-			Console.WriteLine(testStepResponse.Data.Name);
-			Console.WriteLine(testStepResponse.Data.HostId);
 			
 			Console.Write("Press any key to continue . . . ");
 			Console.ReadKey(true);

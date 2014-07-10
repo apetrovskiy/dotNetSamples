@@ -10,7 +10,9 @@
 namespace NancyExampleRestService
 {
 	using System;
+	using System.Collections.Generic;
 	using Nancy.Hosting.Self;
+	using testInterfaces;
 	
 	class Program
 	{
@@ -18,6 +20,27 @@ namespace NancyExampleRestService
 		
 		public static void Main(string[] args)
 		{
+			// preparation of data
+			TestBucketsStorage.TestBuckets =
+				new List<ITestBucket> {
+				new TestBucket {
+					Id = 123,
+					Name = "bucket 01",
+					HostId = "w2"
+				},
+				new TestBucket {
+					Id = 567,
+					Name = "bucket 02",
+					// HostId = "W1"
+					HostId = "w1"
+				},
+				new TestBucket {
+					Id = 789,
+					Name = "bucket 03",
+					HostId = "w3"
+				}
+			};
+			
 			// create a new self-host server
 			var nancyHost = new NancyHost(new Uri(url));
 			// start

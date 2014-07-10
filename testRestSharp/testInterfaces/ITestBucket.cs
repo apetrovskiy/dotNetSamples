@@ -10,18 +10,19 @@
 namespace testInterfaces
 {
 	/// <summary>
-	/// Description of ITestStep.
+	/// Description of ITestBucket.
 	/// </summary>
-	public interface ITestStep
+	public interface ITestBucket
 	{
 		int Id { get; set; }
 		string Name { get; set; }
-		ITestStepAction[] Action { get; set; }
+		ITestBucketAction[] Action { get; set; }
 		string[] ExpectedResult { get; set; }
 		int ExecutionType { get; set; }
 		bool Active { get; set; }
 		string HostId { get; set; }
-		int Status { get; set; }
-		bool Accepted { get; set; }
+		// int Status { get; set; }
+		//bool Accepted { get; set; }
+		TestBucketStatuses Status { get; set; }
 	}
 }

@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NancyExampleRestService", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "testInterfaces", "..\testRestSharp\testInterfaces\testInterfaces.csproj", "{30A88FEF-A4CB-4168-B56C-FFA5F8EF55EC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NancyExampleRestServiceTests", "..\NancyExampleRestServiceTests\NancyExampleRestServiceTests.csproj", "{81087B87-2A88-4B66-8577-F25F59292912}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,5 +22,9 @@ Global
 		{30A88FEF-A4CB-4168-B56C-FFA5F8EF55EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{30A88FEF-A4CB-4168-B56C-FFA5F8EF55EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{30A88FEF-A4CB-4168-B56C-FFA5F8EF55EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81087B87-2A88-4B66-8577-F25F59292912}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81087B87-2A88-4B66-8577-F25F59292912}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81087B87-2A88-4B66-8577-F25F59292912}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81087B87-2A88-4B66-8577-F25F59292912}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
