@@ -22,7 +22,7 @@ namespace testRestSharp
 			// TODO: Implement Functionality Here
 			
 			
-			var client = new RestClient("http://localhost:12345");
+			var client = new RestClient("http://localhost:12345/v1");
 			// var request = new RestRequest("resource/{id}", Method.POST);
 			var request = new RestRequest("/testresults/", Method.POST);
 			// request.AddParameter("name", "value");
@@ -56,13 +56,13 @@ namespace testRestSharp
 				Console.WriteLine(response2.Content);
 				// var name = response2.Data.Name;
 			
-				request = new RestRequest("/testresults/suites/", Method.POST);
+				request = new RestRequest("/testsuites/", Method.POST);
 				request.AddBody(new TestSuite { Name = "test suite 001", Id = "333" });
 				response = client.Execute(request);
 				Console.WriteLine("======= 03 =======");
 				Console.WriteLine(response.Content);
 			
-				request = new RestRequest("/testresults/scenarios/", Method.POST);
+				request = new RestRequest("/testscenarios/", Method.POST);
 				request.AddBody(new TestScenario {
 					Name = "test scenario 001",
 					Id = "222",
