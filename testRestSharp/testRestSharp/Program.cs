@@ -42,28 +42,9 @@ namespace testRestSharp
 			Console.WriteLine("======= 01 =======");
 			Console.WriteLine(content);
 			Console.WriteLine("======= 02 =======");
-			
-<<<<<<< HEAD
-			request = new RestRequest("/testresults/", Method.POST);
-			request.AddBody(new TestResult { Name = "test result 2 ...", Id = "1112", TestScenarioId = "2222", TestSuiteId = "3332" });
-			IRestResponse<TestResult> response2 = client.Execute<TestResult>(request);
-			Console.WriteLine(response2.Content);
-			// var name = response2.Data.Name;
-			
-			request = new RestRequest("/testsuites/", Method.POST);
-			request.AddBody(new TestSuite { Name = "test suite 001", Id = "333" });
-			response = client.Execute(request);
-			Console.WriteLine("======= 03 =======");
-			Console.WriteLine(response.Content);
-			
-			request = new RestRequest("/testscenarios/", Method.POST);
-			request.AddBody(new TestScenario { Name = "test scenario 001", Id = "222", TestSuiteId = "333" });
-			response = client.Execute(request);
-			Console.WriteLine("======= 04 =======");
-			Console.WriteLine(response.Content);
-=======
+
 			// for (int i = 0; i < 1000000; i++) {
-			
+
 				request = new RestRequest("/testresults/", Method.POST);
 				request.AddBody(new TestResult {
 					Name = "test result 2 ...",
@@ -73,18 +54,18 @@ namespace testRestSharp
 				});
 				IRestResponse<TestResult> response2 = client.Execute<TestResult>(request);
 				Console.WriteLine(response2.Content);
-				
+
 				request = new RestRequest("/testresults/" + response2.Data.Id, Method.GET);
 				var testResultResponse = client.Execute<TestResult>(request);
 				Console.WriteLine(testResultResponse.Content);
 				// var testResult = testResultResponse.Data;
-			
+
 				request = new RestRequest("/testsuites/", Method.POST);
 				request.AddBody(new TestSuite { Name = "test suite 001", Id = "333" });
 				response = client.Execute(request);
 				Console.WriteLine("======= 03 =======");
 				Console.WriteLine(response.Content);
-			
+
 				request = new RestRequest("/testscenarios/", Method.POST);
 				request.AddBody(new TestScenario {
 					Name = "test scenario 001",
@@ -94,12 +75,12 @@ namespace testRestSharp
 				response = client.Execute(request);
 				Console.WriteLine("======= 04 =======");
 				Console.WriteLine(response.Content);
-				
+
 				request = new RestRequest("testresults/1112?name=testresultname&testsuiteid=8888&testscenarioid=9999", Method.GET);
 				response = client.Execute(request);
 				Console.WriteLine("======= 05 =======");
 				Console.WriteLine(response.Content);
-				
+
 				request = new RestRequest("/TestBuckets/freebucket?hostid=w1", Method.GET);
 				// request = new RestRequest("/TestBuckets/567?name=ttttt&hostid=w1", Method.GET);
 				// IRestResponse<TestBucket> testBucketResponse = client.Execute<TestBucket>(request);
@@ -110,13 +91,13 @@ namespace testRestSharp
 //				Console.WriteLine(testBucket.Name);
 				Console.WriteLine(testBucket.HostId);
 				Console.WriteLine(testBucket.Id);
-				
+
 				request = new RestRequest("/TestBuckets/" + testBucket.Id, Method.PUT);
 				testBucket.Status = TestBucketStatuses.Accepted;
 				Console.WriteLine(testBucket.Status);
 				request.AddBody(testBucket);
 				testBucketResponse = client.Execute<TestBucket>(request);
-				
+
 				request = new RestRequest("/TestBuckets/" + testBucket.Id, Method.GET);
 				testBucketResponse = client.Execute<TestBucket>(request);
 				Console.WriteLine("======= 102 =======");
@@ -124,12 +105,12 @@ namespace testRestSharp
 				testBucket = testBucketResponse.Data;
 				Console.WriteLine(testBucket.HostId);
 				Console.WriteLine(testBucket.Id);
-				
+
 				request = new RestRequest("/TestBuckets/" + testBucket.Id, Method.PUT);
 				testBucket.Status = TestBucketStatuses.CompletedSuccessfully;
 				request.AddBody(testBucket);
 				testBucketResponse = client.Execute<TestBucket>(request);
-				
+
 				request = new RestRequest("/TestBuckets/" + testBucket.Id, Method.GET);
 				testBucketResponse = client.Execute<TestBucket>(request);
 				Console.WriteLine("======= 103 =======");
@@ -139,7 +120,6 @@ namespace testRestSharp
 				Console.WriteLine(testBucket.Id);
 				
 			// }
->>>>>>> ad8a7e641193ff159c45cdbd921f7977ced37adc
 			
 			Console.Write("Press any key to continue . . . ");
 			Console.ReadKey(true);
