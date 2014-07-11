@@ -16,25 +16,26 @@ namespace NancyExampleRestService
 	
 	class Program
 	{
-		const string url = "http://localhost:12345";
+		// const string url = "http://localhost:12345";
+		const string url = "http://localhost:13001";
 		
 		public static void Main(string[] args)
 		{
 			// preparation of data
 			TestBucketsStorage.TestBuckets =
-				new List<ITestBucket> {
-				new TestBucket {
+				new List<ITestActivity> {
+				new TestActivity {
 					Id = 123,
 					Name = "bucket 01",
 					HostId = "w2"
 				},
-				new TestBucket {
+				new TestActivity {
 					Id = 567,
 					Name = "bucket 02",
-					// HostId = "W1"
-					HostId = "w1"
+					HostId = "W1"
+					// HostId = "w1"
 				},
-				new TestBucket {
+				new TestActivity {
 					Id = 789,
 					Name = "bucket 03",
 					HostId = "w3"

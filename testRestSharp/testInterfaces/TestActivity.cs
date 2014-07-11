@@ -12,19 +12,22 @@ namespace testInterfaces
 	using System;
 	
 	/// <summary>
-	/// Description of testBucket.
+	/// Description of TestActivity.
 	/// </summary>
-	public class TestBucket : ITestBucket
+	public class TestActivity : ITestActivity
 	{
 		public int Id { get; set; }
 		public string Name { get; set; }
-		public ITestBucketAction[] Action { get; set; }
+		public ITestActivityAction[] Action { get; set; }
 		public string[] ExpectedResult { get; set; }
 		public int ExecutionType { get; set; }
-		public bool Active { get; set; }
+		public bool On { get; set; }
 		public string HostId { get; set; }
-		// public int Status { get; set; }
-		// public bool Accepted { get; set; }
-		public TestBucketStatuses Status { get; set; }
+		public TestActivityStatuses Status { get; set; }
+		public int Timeout { get; set; }
+		public int Retry { get; set; }
+		public bool IsCritical { get; set; }
+		public int Order { get; set; }
+		public TestActivityTypes ActivityType { get; set; }
 	}
 }

@@ -22,7 +22,8 @@ namespace testRestSharp
 			// TODO: Implement Functionality Here
 			
 			
-			var client = new RestClient("http://localhost:12345/v1");
+			// var client = new RestClient("http://localhost:12345/v1");
+			var client = new RestClient("http://localhost:13001/v1");
 			// var request = new RestRequest("resource/{id}", Method.POST);
 			var request = new RestRequest("/testresults/", Method.POST);
 			// request.AddParameter("name", "value");
@@ -140,7 +141,7 @@ namespace testRestSharp
 				request = new RestRequest("/TestBuckets/freebucket?hostid=w1", Method.GET);
 				// request = new RestRequest("/TestBuckets/567?name=ttttt&hostid=w1", Method.GET);
 				// IRestResponse<TestBucket> testBucketResponse = client.Execute<TestBucket>(request);
-				var testBucketResponse = client.Execute<TestBucket>(request);
+				var testBucketResponse = client.Execute<TestActivity>(request);
 				Console.WriteLine("======= 101 =======");
 				Console.WriteLine(testBucketResponse.Content);
 				var testBucket = testBucketResponse.Data;
@@ -149,13 +150,13 @@ namespace testRestSharp
 				Console.WriteLine(testBucket.Id);
 
 				request = new RestRequest("/TestBuckets/" + testBucket.Id, Method.PUT);
-				testBucket.Status = TestBucketStatuses.Accepted;
+				testBucket.Status = TestActivityStatuses.Accepted;
 				Console.WriteLine(testBucket.Status);
 				request.AddBody(testBucket);
-				testBucketResponse = client.Execute<TestBucket>(request);
+				testBucketResponse = client.Execute<TestActivity>(request);
 
 				request = new RestRequest("/TestBuckets/" + testBucket.Id, Method.GET);
-				testBucketResponse = client.Execute<TestBucket>(request);
+				testBucketResponse = client.Execute<TestActivity>(request);
 				Console.WriteLine("======= 102 =======");
 				Console.WriteLine(testBucketResponse.Content);
 				testBucket = testBucketResponse.Data;
@@ -163,12 +164,12 @@ namespace testRestSharp
 				Console.WriteLine(testBucket.Id);
 
 				request = new RestRequest("/TestBuckets/" + testBucket.Id, Method.PUT);
-				testBucket.Status = TestBucketStatuses.CompletedSuccessfully;
+				testBucket.Status = TestActivityStatuses.CompletedSuccessfully;
 				request.AddBody(testBucket);
-				testBucketResponse = client.Execute<TestBucket>(request);
+				testBucketResponse = client.Execute<TestActivity>(request);
 
 				request = new RestRequest("/TestBuckets/" + testBucket.Id, Method.GET);
-				testBucketResponse = client.Execute<TestBucket>(request);
+				testBucketResponse = client.Execute<TestActivity>(request);
 				Console.WriteLine("======= 103 =======");
 				Console.WriteLine(testBucketResponse.Content);
 				testBucket = testBucketResponse.Data;

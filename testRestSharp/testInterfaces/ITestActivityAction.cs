@@ -9,15 +9,14 @@
 
 namespace testInterfaces
 {
-	using System;
 	using System.Collections.Generic;
 	
 	/// <summary>
-	/// Description of TestStepAction.
+	/// Description of ITestActivityAction.
 	/// </summary>
-	public class TestBucketAction : ITestBucketAction
+	public interface ITestActivityAction
 	{
-		public string Code { get; set; }
-		public Dictionary<string, object> Parameters { get; set; }
+		string Code { get; set; }
+		Dictionary<string, object> Parameters { get; set; }
 	}
 }

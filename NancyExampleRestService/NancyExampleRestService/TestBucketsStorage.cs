@@ -18,11 +18,11 @@ namespace NancyExampleRestService
 	/// </summary>
 	public static class TestBucketsStorage
 	{
-		public static List<ITestBucket> TestBuckets { get; set; }
+		public static List<ITestActivity> TestBuckets { get; set; }
 		
 		static TestBucketsStorage()
 		{
-			TestBuckets = new List<ITestBucket>();
+			TestBuckets = new List<ITestActivity>();
 		}
 	}
 }

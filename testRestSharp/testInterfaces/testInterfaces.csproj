@@ -46,15 +46,15 @@
     <Compile Include="ISomething.cs" />
     <Compile Include="ITestResult.cs" />
     <Compile Include="ITestScenario.cs" />
-    <Compile Include="ITestBucket.cs" />
-    <Compile Include="ITestBucketAction.cs" />
+    <Compile Include="ITestActivity.cs" />
+    <Compile Include="ITestActivityAction.cs" />
     <Compile Include="ITestSuite.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Something.cs" />
     <Compile Include="TestResult.cs" />
     <Compile Include="TestScenario.cs" />
-    <Compile Include="TestBucket.cs" />
-    <Compile Include="TestBucketAction.cs" />
+    <Compile Include="TestActivity.cs" />
+    <Compile Include="TestActivityAction.cs" />
     <Compile Include="TestSuite.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
