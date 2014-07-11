@@ -55,14 +55,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BadgeModule.cs" />
     <Compile Include="Bootstrapper.cs" />
-    <Compile Include="HomeModule.cs" />
+    <Compile Include="Modules\BadgeModule.cs" />
+    <Compile Include="Modules\HomeModule.cs" />
+    <Compile Include="Modules\SmthModule.cs" />
+    <Compile Include="Modules\TestBucketModule.cs" />
+    <Compile Include="Modules\TestResultModule.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SmthStorage.cs" />
     <Compile Include="TestBucketsStorage.cs" />
-    <Compile Include="TestResultModule.cs" />
-    <Compile Include="TestBucketModule.cs" />
     <Compile Include="TestResultStorage.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -74,6 +76,9 @@
       <Project>{30A88FEF-A4CB-4168-B56C-FFA5F8EF55EC}</Project>
       <Name>testInterfaces</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Modules" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

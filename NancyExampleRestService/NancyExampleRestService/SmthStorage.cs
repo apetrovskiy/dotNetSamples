@@ -1,8 +1,8 @@
 ﻿/*
  * Created by SharpDevelop.
  * User: alexa_000
- * Date: 7/10/2014
- * Time: 3:46 PM
+ * Date: 7/11/2014
+ * Time: 2:08 PM
  * 
  * To change this template use Tools | Options | Coding | Edit Standard Headers.
  */
@@ -14,15 +14,15 @@ namespace NancyExampleRestService
 	using testInterfaces;
 	
 	/// <summary>
-	/// Description of TestBucketsStorage.
+	/// Description of SmthStorage.
 	/// </summary>
-	public static class TestBucketsStorage
+	public static class SmthStorage
 	{
-		public static List<ITestBucket> TestBuckets { get; set; }
+		public static List<ISomething> Somethings { get; set; }
 		
-		static TestBucketsStorage()
+		static SmthStorage()
 		{
-			TestBuckets = new List<ITestBucket>();
+			Somethings = new List<ISomething>();
 		}
 	}
 }

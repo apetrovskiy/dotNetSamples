@@ -16,8 +16,13 @@ namespace NancyExampleRestService
 	/// <summary>
 	/// Description of TestResultStorage.
 	/// </summary>
-	public class TestResultStorage
+	public static class TestResultStorage
 	{
 		public static List<ITestResult> TestResults { get; set; }
+		
+		static TestResultStorage()
+		{
+			TestResults = new List<ITestResult>();
+		}
 	}
 }

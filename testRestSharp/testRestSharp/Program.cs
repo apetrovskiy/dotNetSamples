@@ -43,6 +43,62 @@ namespace testRestSharp
 			Console.WriteLine(content);
 			Console.WriteLine("======= 02 =======");
 			
+			// ==================================================================================
+			
+			request = new RestRequest("/somethings/", Method.POST);
+			request.AddBody(new Something { Id = 1, Name = "s1", Description = "s001" });
+			var smthResponse = client.Execute<Something>(request);
+			Console.WriteLine("======= 0001 =======");
+			Console.WriteLine(smthResponse.Content);
+			Console.WriteLine(smthResponse.Data);
+			
+			request = new RestRequest("/somethings/" + smthResponse.Data.Id, Method.GET);
+			smthResponse = client.Execute<Something>(request);
+			Console.WriteLine("======= 0002 =======");
+			Console.WriteLine(smthResponse.Content);
+			Console.WriteLine(smthResponse.Data);
+			
+			request = new RestRequest("/somethings/", Method.POST);
+			request.AddBody(new Something { Id = 100, Name = "s100", Description = "s0010000000", Status = 5 });
+			smthResponse = client.Execute<Something>(request);
+			Console.WriteLine("======= 0003 =======");
+			Console.WriteLine(smthResponse.Content);
+			Console.WriteLine(smthResponse.Data);
+			
+			request = new RestRequest("/somethings/" + smthResponse.Data.Id, Method.GET);
+			smthResponse = client.Execute<Something>(request);
+			Console.WriteLine("======= 0004 =======");
+			Console.WriteLine(smthResponse.Content);
+			Console.WriteLine(smthResponse.Data);
+			
+			request = new RestRequest("/somethings/1", Method.GET);
+			smthResponse = client.Execute<Something>(request);
+			Console.WriteLine("======= 0005 =======");
+			Console.WriteLine(smthResponse.Content);
+			Console.WriteLine(smthResponse.Data);
+			
+			request = new RestRequest("/somethings/1", Method.PUT);
+			smthResponse.Data.Status = 10;
+			request.AddBody(smthResponse.Data);
+			smthResponse = client.Execute<Something>(request);
+			Console.WriteLine("======= 0006 =======");
+			Console.WriteLine(smthResponse.Content);
+			Console.WriteLine(smthResponse.Data);
+			
+			request = new RestRequest("/somethings/1", Method.GET);
+			smthResponse = client.Execute<Something>(request);
+			Console.WriteLine("======= 0007 =======");
+			Console.WriteLine(smthResponse.Content);
+			Console.WriteLine(smthResponse.Data);
+			
+			request = new RestRequest("/somethings/100", Method.GET);
+			smthResponse = client.Execute<Something>(request);
+			Console.WriteLine("======= 0008 =======");
+			Console.WriteLine(smthResponse.Content);
+			Console.WriteLine(smthResponse.Data);
+			
+			// ==================================================================================
+			
 			// for (int i = 0; i < 1000000; i++) {
 			
 				request = new RestRequest("/testresults/", Method.POST);
