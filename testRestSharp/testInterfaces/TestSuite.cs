@@ -13,7 +13,7 @@ namespace testInterfaces
 	/// <summary>
 	/// Description of TestSuite.
 	/// </summary>
-	public class TestSuite
+	public class TestSuite : ITestSuite
 	{
 		public string Name { get; set; }
 		public string Id { get; set; }

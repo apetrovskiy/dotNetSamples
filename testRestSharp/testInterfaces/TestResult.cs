@@ -13,7 +13,7 @@ namespace testInterfaces
 	/// <summary>
 	/// Description of TestResult.
 	/// </summary>
-	public class TestResult
+	public class TestResult : ITestResult
 	{
 		public string Name { get; set; }
 		public string Id { get; set; }
