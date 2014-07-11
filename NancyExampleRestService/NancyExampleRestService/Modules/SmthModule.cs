@@ -29,7 +29,7 @@ namespace NancyExampleRestService
 				return Response.AsJson<ISomething>(smthInStorage, HttpStatusCode.OK);
             };
             
-			Post["/"] = _ => {
+            Post["/"] = _ => {
             	try { 
 					var smth = this.Bind<Something>();
 					smth.Name += " created (post)";
@@ -41,7 +41,7 @@ namespace NancyExampleRestService
 				}
 			};
 			
-			Put["/{id}"] = parameters => {
+            Put["/{id}"] = parameters => {
 				var smth = this.Bind<Something>();
 				smth.Name += " replaced (put)";
 				var smthInStorage = SmthStorage.Somethings.First(s => s.Id == smth.Id);
