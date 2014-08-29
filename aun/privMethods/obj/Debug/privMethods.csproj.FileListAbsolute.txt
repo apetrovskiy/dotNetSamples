@@ -1,0 +1,3 @@
+C:\Projects\probe\aun\privMethods\bin\Debug\privMethods.dll
+C:\Projects\probe\aun\privMethods\obj\Debug\privMethods.csprojResolveAssemblyReference.cache
+C:\Projects\probe\aun\privMethods\obj\Debug\privMethods.dll

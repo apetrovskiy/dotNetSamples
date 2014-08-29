@@ -1,0 +1,18 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+# SharpDevelop 4.2.2.8818
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "PSModules", "PSModules\PSModules.fsproj", "{53E22278-BDFC-4EF2-8198-B995454C1F96}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{53E22278-BDFC-4EF2-8198-B995454C1F96}.Debug|x86.Build.0 = Debug|x86
+		{53E22278-BDFC-4EF2-8198-B995454C1F96}.Debug|x86.ActiveCfg = Debug|x86
+		{53E22278-BDFC-4EF2-8198-B995454C1F96}.Release|x86.Build.0 = Release|x86
+		{53E22278-BDFC-4EF2-8198-B995454C1F96}.Release|x86.ActiveCfg = Release|x86
+	EndGlobalSection
+EndGlobal

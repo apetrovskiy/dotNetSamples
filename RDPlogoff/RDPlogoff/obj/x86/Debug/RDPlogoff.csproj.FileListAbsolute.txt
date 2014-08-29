@@ -1,0 +1,10 @@
+C:\Projects\tests\RDPlogoff\RDPlogoff\bin\Debug\RDPlogoff.exe
+C:\Projects\tests\RDPlogoff\RDPlogoff\bin\Debug\RDPlogoff.pdb
+C:\Projects\tests\RDPlogoff\RDPlogoff\obj\x86\Debug\RDPlogoff.csprojResolveAssemblyReference.cache
+C:\Projects\tests\RDPlogoff\RDPlogoff\obj\x86\Debug\RDPlogoff.exe
+C:\Projects\tests\RDPlogoff\RDPlogoff\obj\x86\Debug\RDPlogoff.pdb
+C:\Projects\probe\RDPlogoff\RDPlogoff\bin\Debug\RDPlogoff.exe
+C:\Projects\probe\RDPlogoff\RDPlogoff\bin\Debug\RDPlogoff.pdb
+C:\Projects\probe\RDPlogoff\RDPlogoff\obj\x86\Debug\RDPlogoff.csprojResolveAssemblyReference.cache
+C:\Projects\probe\RDPlogoff\RDPlogoff\obj\x86\Debug\RDPlogoff.exe
+C:\Projects\probe\RDPlogoff\RDPlogoff\obj\x86\Debug\RDPlogoff.pdb

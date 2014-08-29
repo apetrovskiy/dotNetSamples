@@ -1,0 +1,13 @@
+C:\Projects\probu\ModernUItest\ModernUItest\obj\x86\Debug\ModernUItest.csprojResolveAssemblyReference.cache
+C:\Projects\probu\ModernUItest\ModernUItest\obj\x86\Debug\App.g.cs
+C:\Projects\probu\ModernUItest\ModernUItest\obj\x86\Debug\ModernUItest_MarkupCompile.cache
+C:\Projects\probu\ModernUItest\ModernUItest\bin\Debug\ModernUItest.exe.config
+C:\Projects\probu\ModernUItest\ModernUItest\bin\Debug\ModernUItest.exe
+C:\Projects\probu\ModernUItest\ModernUItest\bin\Debug\ModernUItest.pdb
+C:\Projects\probu\ModernUItest\ModernUItest\bin\Debug\Microsoft.Windows.Shell.dll
+C:\Projects\probu\ModernUItest\ModernUItest\obj\x86\Debug\Window1.baml
+C:\Projects\probu\ModernUItest\ModernUItest\obj\x86\Debug\Window1.g.cs
+C:\Projects\probu\ModernUItest\ModernUItest\obj\x86\Debug\ModernUItest.g.resources
+C:\Projects\probu\ModernUItest\ModernUItest\obj\x86\Debug\ModernUItest.exe
+C:\Projects\probu\ModernUItest\ModernUItest\obj\x86\Debug\ModernUItest.pdb
+C:\Projects\probu\ModernUItest\ModernUItest\obj\x86\Debug\ResolveAssemblyReference.cache
