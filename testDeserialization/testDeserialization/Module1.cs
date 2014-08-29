@@ -24,13 +24,13 @@ namespace testDeserialization
         {
             // Post["probe/"] = parameters => {
             Post["probe/"] = _ => {
-                // var xDoc = this.Bind<XDocument>();
+                var xDoc = this.Bind<XDocument>("set_Declaration", "get_Declaration", "Declaration");
                 // var xDoc = this.Bind<XmlDocument>();
-                var xDoc = this.Bind();
+                // var xDoc = this.Bind();
                 
                 if (null != xDoc) {
                     Console.WriteLine(xDoc.GetType().Name);
-                    Console.WriteLine(xDoc.Body);
+                    // Console.WriteLine(xDoc.Body);
                 }
                 
                 if (null != xDoc)
