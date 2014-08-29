@@ -1,8 +1,0 @@
-C:\Projects\probe\testF01\testF01\obj\Debug\testF01.fsprojResolveAssemblyReference.cache
-C:\Projects\probe\testF01\testF01\bin\Debug\testF01.exe.config
-C:\Projects\probe\testF01\testF01\bin\Debug\testF01.exe
-C:\Projects\probe\testF01\testF01\bin\Debug\testF01.pdb
-C:\Projects\probe\testF01\testF01\bin\Debug\FSharp.Core.dll
-C:\Projects\probe\testF01\testF01\bin\Debug\FSharp.Core.xml
-C:\Projects\probe\testF01\testF01\obj\Debug\testF01.exe
-C:\Projects\probe\testF01\testF01\obj\Debug\testF01.pdb

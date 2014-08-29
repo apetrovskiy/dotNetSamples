@@ -1,5 +1,0 @@
-C:\Projects\probe\runAsX86\runAsX86\bin\Debug\runAsX86.exe
-C:\Projects\probe\runAsX86\runAsX86\bin\Debug\runAsX86.pdb
-C:\Projects\probe\runAsX86\runAsX86\obj\Debug\runAsX86.csprojResolveAssemblyReference.cache
-C:\Projects\probe\runAsX86\runAsX86\obj\Debug\runAsX86.exe
-C:\Projects\probe\runAsX86\runAsX86\obj\Debug\runAsX86.pdb

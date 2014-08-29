@@ -1,5 +1,0 @@
-C:\Projects\probe\testRest002\testRest002\bin\testRest002.dll
-C:\Projects\probe\testRest002\testRest002\bin\testRest002.pdb
-C:\Projects\probe\testRest002\testRest002\obj\Debug\testRest002.csprojResolveAssemblyReference.cache
-C:\Projects\probe\testRest002\testRest002\obj\Debug\testRest002.dll
-C:\Projects\probe\testRest002\testRest002\obj\Debug\testRest002.pdb

@@ -1,6 +1,0 @@
-C:\Projects\probe\svcPointManagerTest\svcPointManagerTest\obj\Debug\svcPointManagerTest.csprojResolveAssemblyReference.cache
-C:\Projects\probe\svcPointManagerTest\svcPointManagerTest\bin\Debug\svcPointManagerTest.exe.config
-C:\Projects\probe\svcPointManagerTest\svcPointManagerTest\bin\Debug\svcPointManagerTest.exe
-C:\Projects\probe\svcPointManagerTest\svcPointManagerTest\bin\Debug\svcPointManagerTest.pdb
-C:\Projects\probe\svcPointManagerTest\svcPointManagerTest\obj\Debug\svcPointManagerTest.exe
-C:\Projects\probe\svcPointManagerTest\svcPointManagerTest\obj\Debug\svcPointManagerTest.pdb

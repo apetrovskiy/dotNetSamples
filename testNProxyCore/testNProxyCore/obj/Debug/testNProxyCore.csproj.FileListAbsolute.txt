@@ -1,7 +1,0 @@
-C:\Projects\probe\testNProxyCore\testNProxyCore\bin\Debug\testNProxyCore.exe
-C:\Projects\probe\testNProxyCore\testNProxyCore\bin\Debug\testNProxyCore.pdb
-C:\Projects\probe\testNProxyCore\testNProxyCore\bin\Debug\NProxy.Core.dll
-C:\Projects\probe\testNProxyCore\testNProxyCore\bin\Debug\NProxy.Core.xml
-C:\Projects\probe\testNProxyCore\testNProxyCore\obj\Debug\testNProxyCore.csprojResolveAssemblyReference.cache
-C:\Projects\probe\testNProxyCore\testNProxyCore\obj\Debug\testNProxyCore.exe
-C:\Projects\probe\testNProxyCore\testNProxyCore\obj\Debug\testNProxyCore.pdb

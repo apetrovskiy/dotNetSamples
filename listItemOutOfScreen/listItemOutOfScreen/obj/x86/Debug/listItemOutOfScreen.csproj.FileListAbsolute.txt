@@ -1,8 +1,0 @@
-C:\Projects\probe\listItemOutOfScreen\listItemOutOfScreen\bin\Debug\listItemOutOfScreen.exe.config
-C:\Projects\probe\listItemOutOfScreen\listItemOutOfScreen\bin\Debug\listItemOutOfScreen.exe
-C:\Projects\probe\listItemOutOfScreen\listItemOutOfScreen\bin\Debug\listItemOutOfScreen.pdb
-C:\Projects\probe\listItemOutOfScreen\listItemOutOfScreen\obj\x86\Debug\listItemOutOfScreen.csprojResolveAssemblyReference.cache
-C:\Projects\probe\listItemOutOfScreen\listItemOutOfScreen\obj\x86\Debug\listItemOutOfScreen.MainForm.resources
-C:\Projects\probe\listItemOutOfScreen\listItemOutOfScreen\obj\x86\Debug\listItemOutOfScreen.csproj.GenerateResource.Cache
-C:\Projects\probe\listItemOutOfScreen\listItemOutOfScreen\obj\x86\Debug\listItemOutOfScreen.exe
-C:\Projects\probe\listItemOutOfScreen\listItemOutOfScreen\obj\x86\Debug\listItemOutOfScreen.pdb

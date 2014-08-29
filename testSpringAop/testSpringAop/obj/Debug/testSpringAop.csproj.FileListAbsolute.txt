@@ -1,6 +1,0 @@
-C:\Projects\probe\testSpringAop\testSpringAop\bin\Debug\testSpringAop.exe
-C:\Projects\probe\testSpringAop\testSpringAop\bin\Debug\testSpringAop.pdb
-C:\Projects\probe\testSpringAop\testSpringAop\bin\Debug\Common.Logging.dll
-C:\Projects\probe\testSpringAop\testSpringAop\obj\Debug\ResolveAssemblyReference.cache
-C:\Projects\probe\testSpringAop\testSpringAop\obj\Debug\testSpringAop.exe
-C:\Projects\probe\testSpringAop\testSpringAop\obj\Debug\testSpringAop.pdb

@@ -1,6 +1,0 @@
-C:\Projects\probe\testEnumerables\testEnumerables\bin\Debug\testEnumerables.exe.config
-C:\Projects\probe\testEnumerables\testEnumerables\bin\Debug\testEnumerables.exe
-C:\Projects\probe\testEnumerables\testEnumerables\bin\Debug\testEnumerables.pdb
-C:\Projects\probe\testEnumerables\testEnumerables\obj\Debug\testEnumerables.csprojResolveAssemblyReference.cache
-C:\Projects\probe\testEnumerables\testEnumerables\obj\Debug\testEnumerables.exe
-C:\Projects\probe\testEnumerables\testEnumerables\obj\Debug\testEnumerables.pdb

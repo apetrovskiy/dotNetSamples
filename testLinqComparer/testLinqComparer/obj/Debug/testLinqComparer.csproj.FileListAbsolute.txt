@@ -1,6 +1,0 @@
-C:\Projects\probe\testLinqComparer\testLinqComparer\bin\Debug\testLinqComparer.exe.config
-C:\Projects\probe\testLinqComparer\testLinqComparer\bin\Debug\testLinqComparer.exe
-C:\Projects\probe\testLinqComparer\testLinqComparer\bin\Debug\testLinqComparer.pdb
-C:\Projects\probe\testLinqComparer\testLinqComparer\obj\Debug\testLinqComparer.csprojResolveAssemblyReference.cache
-C:\Projects\probe\testLinqComparer\testLinqComparer\obj\Debug\testLinqComparer.exe
-C:\Projects\probe\testLinqComparer\testLinqComparer\obj\Debug\testLinqComparer.pdb

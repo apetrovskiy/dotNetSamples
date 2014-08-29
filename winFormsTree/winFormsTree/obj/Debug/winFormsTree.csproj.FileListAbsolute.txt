@@ -1,7 +1,0 @@
-C:\Projects\probe\winFormsTree\winFormsTree\bin\Debug\winFormsTree.exe
-C:\Projects\probe\winFormsTree\winFormsTree\bin\Debug\winFormsTree.pdb
-C:\Projects\probe\winFormsTree\winFormsTree\obj\Debug\winFormsTree.csprojResolveAssemblyReference.cache
-C:\Projects\probe\winFormsTree\winFormsTree\obj\Debug\winFormsTree.MainForm.resources
-C:\Projects\probe\winFormsTree\winFormsTree\obj\Debug\winFormsTree.csproj.GenerateResource.Cache
-C:\Projects\probe\winFormsTree\winFormsTree\obj\Debug\winFormsTree.exe
-C:\Projects\probe\winFormsTree\winFormsTree\obj\Debug\winFormsTree.pdb

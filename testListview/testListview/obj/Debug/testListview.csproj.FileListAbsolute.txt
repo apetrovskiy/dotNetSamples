@@ -1,7 +1,0 @@
-C:\Projects\probe\testListview\testListview\bin\Debug\testListview.exe
-C:\Projects\probe\testListview\testListview\bin\Debug\testListview.pdb
-C:\Projects\probe\testListview\testListview\obj\Debug\testListview.csprojResolveAssemblyReference.cache
-C:\Projects\probe\testListview\testListview\obj\Debug\testListview.MainForm.resources
-C:\Projects\probe\testListview\testListview\obj\Debug\testListview.csproj.GenerateResource.Cache
-C:\Projects\probe\testListview\testListview\obj\Debug\testListview.exe
-C:\Projects\probe\testListview\testListview\obj\Debug\testListview.pdb

@@ -1,6 +1,0 @@
-C:\Projects\probe\xmlImportTest\xmlImportTest\obj\x86\Debug\xmlImportTest.csprojResolveAssemblyReference.cache
-C:\Projects\probe\xmlImportTest\xmlImportTest\bin\Debug\xmlImportTest.exe.config
-C:\Projects\probe\xmlImportTest\xmlImportTest\bin\Debug\xmlImportTest.exe
-C:\Projects\probe\xmlImportTest\xmlImportTest\bin\Debug\xmlImportTest.pdb
-C:\Projects\probe\xmlImportTest\xmlImportTest\obj\x86\Debug\xmlImportTest.exe
-C:\Projects\probe\xmlImportTest\xmlImportTest\obj\x86\Debug\xmlImportTest.pdb

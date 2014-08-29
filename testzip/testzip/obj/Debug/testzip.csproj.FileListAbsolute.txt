@@ -1,7 +1,0 @@
-C:\Projects\probe\testzip\testzip\obj\Debug\testzip.csprojResolveAssemblyReference.cache
-C:\Projects\probe\testzip\testzip\bin\Debug\testzip.exe.config
-C:\Projects\probe\testzip\testzip\bin\Debug\testzip.exe
-C:\Projects\probe\testzip\testzip\bin\Debug\testzip.pdb
-C:\Projects\probe\testzip\testzip\bin\Debug\Ionic.Zip.dll
-C:\Projects\probe\testzip\testzip\obj\Debug\testzip.exe
-C:\Projects\probe\testzip\testzip\obj\Debug\testzip.pdb

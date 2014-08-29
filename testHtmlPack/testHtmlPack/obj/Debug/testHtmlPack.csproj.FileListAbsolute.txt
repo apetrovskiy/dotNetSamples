@@ -1,8 +1,0 @@
-C:\Projects\probe\testHtmlPack\testHtmlPack\bin\Debug\testHtmlPack.exe
-C:\Projects\probe\testHtmlPack\testHtmlPack\bin\Debug\testHtmlPack.pdb
-C:\Projects\probe\testHtmlPack\testHtmlPack\bin\Debug\HtmlAgilityPack.dll
-C:\Projects\probe\testHtmlPack\testHtmlPack\bin\Debug\HtmlAgilityPack.pdb
-C:\Projects\probe\testHtmlPack\testHtmlPack\bin\Debug\HtmlAgilityPack.xml
-C:\Projects\probe\testHtmlPack\testHtmlPack\obj\Debug\ResolveAssemblyReference.cache
-C:\Projects\probe\testHtmlPack\testHtmlPack\obj\Debug\testHtmlPack.exe
-C:\Projects\probe\testHtmlPack\testHtmlPack\obj\Debug\testHtmlPack.pdb

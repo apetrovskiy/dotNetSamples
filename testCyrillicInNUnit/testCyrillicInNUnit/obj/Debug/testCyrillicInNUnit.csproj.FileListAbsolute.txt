@@ -1,6 +1,0 @@
-c:\Projects\probe\testCyrillicInNUnit\testCyrillicInNUnit\bin\Debug\testCyrillicInNUnit.dll
-c:\Projects\probe\testCyrillicInNUnit\testCyrillicInNUnit\bin\Debug\testCyrillicInNUnit.pdb
-c:\Projects\probe\testCyrillicInNUnit\testCyrillicInNUnit\bin\Debug\nunit.framework.dll
-c:\Projects\probe\testCyrillicInNUnit\testCyrillicInNUnit\bin\Debug\nunit.framework.xml
-c:\Projects\probe\testCyrillicInNUnit\testCyrillicInNUnit\obj\Debug\testCyrillicInNUnit.dll
-c:\Projects\probe\testCyrillicInNUnit\testCyrillicInNUnit\obj\Debug\testCyrillicInNUnit.pdb
