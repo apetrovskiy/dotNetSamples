@@ -1,1 +1,0 @@
-C:\Projects\tests\testmsaa\testmsaa\obj\x86\Debug\testmsaa.csprojResolveAssemblyReference.cache

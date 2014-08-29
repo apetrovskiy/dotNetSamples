@@ -1,6 +1,0 @@
-C:\Projects\probe\sortedDict\sortedDict\obj\x86\Debug\sortedDict.csprojResolveAssemblyReference.cache
-C:\Projects\probe\sortedDict\sortedDict\bin\Debug\sortedDict.exe.config
-C:\Projects\probe\sortedDict\sortedDict\bin\Debug\sortedDict.exe
-C:\Projects\probe\sortedDict\sortedDict\bin\Debug\sortedDict.pdb
-C:\Projects\probe\sortedDict\sortedDict\obj\x86\Debug\sortedDict.exe
-C:\Projects\probe\sortedDict\sortedDict\obj\x86\Debug\sortedDict.pdb

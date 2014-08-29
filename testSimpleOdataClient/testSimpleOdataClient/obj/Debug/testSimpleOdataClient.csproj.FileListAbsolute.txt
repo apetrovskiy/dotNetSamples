@@ -1,7 +1,0 @@
-C:\Projects\probe\testSimpleOdataClient\testSimpleOdataClient\bin\Debug\testSimpleOdataClient.exe.config
-C:\Projects\probe\testSimpleOdataClient\testSimpleOdataClient\bin\Debug\testSimpleOdataClient.exe
-C:\Projects\probe\testSimpleOdataClient\testSimpleOdataClient\bin\Debug\testSimpleOdataClient.pdb
-C:\Projects\probe\testSimpleOdataClient\testSimpleOdataClient\bin\Debug\Simple.OData.Client.Net40.dll
-C:\Projects\probe\testSimpleOdataClient\testSimpleOdataClient\obj\Debug\testSimpleOdataClient.csprojResolveAssemblyReference.cache
-C:\Projects\probe\testSimpleOdataClient\testSimpleOdataClient\obj\Debug\testSimpleOdataClient.exe
-C:\Projects\probe\testSimpleOdataClient\testSimpleOdataClient\obj\Debug\testSimpleOdataClient.pdb

@@ -1,6 +1,0 @@
-C:\Projects\probe\testIfaceOverStatic\testIfaceOverStatic\bin\Debug\testIfaceOverStatic.exe.config
-C:\Projects\probe\testIfaceOverStatic\testIfaceOverStatic\bin\Debug\testIfaceOverStatic.exe
-C:\Projects\probe\testIfaceOverStatic\testIfaceOverStatic\bin\Debug\testIfaceOverStatic.pdb
-C:\Projects\probe\testIfaceOverStatic\testIfaceOverStatic\obj\Debug\testIfaceOverStatic.csprojResolveAssemblyReference.cache
-C:\Projects\probe\testIfaceOverStatic\testIfaceOverStatic\obj\Debug\testIfaceOverStatic.exe
-C:\Projects\probe\testIfaceOverStatic\testIfaceOverStatic\obj\Debug\testIfaceOverStatic.pdb

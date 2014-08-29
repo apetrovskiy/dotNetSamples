@@ -1,6 +1,0 @@
-C:\Projects\probe\test7ZipLib2\test7ZipLib2\bin\Debug\test7ZipLib2.exe
-C:\Projects\probe\test7ZipLib2\test7ZipLib2\bin\Debug\test7ZipLib2.pdb
-C:\Projects\probe\test7ZipLib2\test7ZipLib2\bin\Debug\SevenZipSharp.dll
-C:\Projects\probe\test7ZipLib2\test7ZipLib2\obj\Debug\test7ZipLib2.exe
-C:\Projects\probe\test7ZipLib2\test7ZipLib2\obj\Debug\test7ZipLib2.pdb
-C:\Projects\probe\test7ZipLib2\test7ZipLib2\obj\Debug\ResolveAssemblyReference.cache

@@ -1,5 +1,0 @@
-C:\Projects\probe\testUsageOfLoadFrom\lib\bin\Debug\lib.dll
-C:\Projects\probe\testUsageOfLoadFrom\lib\bin\Debug\lib.pdb
-C:\Projects\probe\testUsageOfLoadFrom\lib\obj\Debug\ResolveAssemblyReference.cache
-C:\Projects\probe\testUsageOfLoadFrom\lib\obj\Debug\lib.dll
-C:\Projects\probe\testUsageOfLoadFrom\lib\obj\Debug\lib.pdb

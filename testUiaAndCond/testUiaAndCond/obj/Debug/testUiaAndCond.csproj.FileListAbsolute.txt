@@ -1,6 +1,0 @@
-C:\Projects\probe\testUiaAndCond\testUiaAndCond\obj\Debug\testUiaAndCond.csprojResolveAssemblyReference.cache
-C:\Projects\probe\testUiaAndCond\testUiaAndCond\bin\Debug\testUiaAndCond.exe.config
-C:\Projects\probe\testUiaAndCond\testUiaAndCond\bin\Debug\testUiaAndCond.exe
-C:\Projects\probe\testUiaAndCond\testUiaAndCond\bin\Debug\testUiaAndCond.pdb
-C:\Projects\probe\testUiaAndCond\testUiaAndCond\obj\Debug\testUiaAndCond.exe
-C:\Projects\probe\testUiaAndCond\testUiaAndCond\obj\Debug\testUiaAndCond.pdb

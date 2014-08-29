@@ -1,8 +1,0 @@
-C:\Projects\tests\onLoadForm\onLoadForm\bin\Debug\onLoadForm.exe.config
-C:\Projects\tests\onLoadForm\onLoadForm\bin\Debug\onLoadForm.exe
-C:\Projects\tests\onLoadForm\onLoadForm\bin\Debug\onLoadForm.pdb
-C:\Projects\tests\onLoadForm\onLoadForm\obj\x86\Debug\onLoadForm.csprojResolveAssemblyReference.cache
-C:\Projects\tests\onLoadForm\onLoadForm\obj\x86\Debug\onLoadForm.MainForm.resources
-C:\Projects\tests\onLoadForm\onLoadForm\obj\x86\Debug\onLoadForm.csproj.GenerateResource.Cache
-C:\Projects\tests\onLoadForm\onLoadForm\obj\x86\Debug\onLoadForm.exe
-C:\Projects\tests\onLoadForm\onLoadForm\obj\x86\Debug\onLoadForm.pdb

@@ -1,6 +1,0 @@
-C:\Projects\probe\testLoadFrom\testLoadFrom\bin\Debug\testLoadFrom.exe.config
-C:\Projects\probe\testLoadFrom\testLoadFrom\bin\Debug\testLoadFrom.exe
-C:\Projects\probe\testLoadFrom\testLoadFrom\bin\Debug\testLoadFrom.pdb
-C:\Projects\probe\testLoadFrom\testLoadFrom\obj\Debug\testLoadFrom.exe
-C:\Projects\probe\testLoadFrom\testLoadFrom\obj\Debug\testLoadFrom.pdb
-C:\Projects\probe\testLoadFrom\testLoadFrom\obj\Debug\ResolveAssemblyReference.cache

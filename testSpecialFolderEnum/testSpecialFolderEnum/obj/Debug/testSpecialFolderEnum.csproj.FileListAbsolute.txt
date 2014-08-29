@@ -1,6 +1,0 @@
-C:\Projects\probe\testSpecialFolderEnum\testSpecialFolderEnum\bin\Debug\testSpecialFolderEnum.exe.config
-C:\Projects\probe\testSpecialFolderEnum\testSpecialFolderEnum\bin\Debug\testSpecialFolderEnum.exe
-C:\Projects\probe\testSpecialFolderEnum\testSpecialFolderEnum\bin\Debug\testSpecialFolderEnum.pdb
-C:\Projects\probe\testSpecialFolderEnum\testSpecialFolderEnum\obj\Debug\ResolveAssemblyReference.cache
-C:\Projects\probe\testSpecialFolderEnum\testSpecialFolderEnum\obj\Debug\testSpecialFolderEnum.exe
-C:\Projects\probe\testSpecialFolderEnum\testSpecialFolderEnum\obj\Debug\testSpecialFolderEnum.pdb

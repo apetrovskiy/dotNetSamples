@@ -1,7 +1,0 @@
-C:\Projects\probe\testDataGrid\testDataGrid\bin\Debug\testDataGrid.exe
-C:\Projects\probe\testDataGrid\testDataGrid\bin\Debug\testDataGrid.pdb
-C:\Projects\probe\testDataGrid\testDataGrid\obj\Debug\testDataGrid.csprojResolveAssemblyReference.cache
-C:\Projects\probe\testDataGrid\testDataGrid\obj\Debug\testDataGrid.MainForm.resources
-C:\Projects\probe\testDataGrid\testDataGrid\obj\Debug\testDataGrid.csproj.GenerateResource.Cache
-C:\Projects\probe\testDataGrid\testDataGrid\obj\Debug\testDataGrid.exe
-C:\Projects\probe\testDataGrid\testDataGrid\obj\Debug\testDataGrid.pdb

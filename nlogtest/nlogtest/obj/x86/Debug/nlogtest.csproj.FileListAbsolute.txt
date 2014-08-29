@@ -1,8 +1,0 @@
-C:\Projects\probe\nlogtest\nlogtest\obj\x86\Debug\ResolveAssemblyReference.cache
-C:\Projects\probe\nlogtest\nlogtest\bin\Debug\nlogtest.exe.config
-C:\Projects\probe\nlogtest\nlogtest\bin\Debug\nlogtest.exe
-C:\Projects\probe\nlogtest\nlogtest\bin\Debug\nlogtest.pdb
-C:\Projects\probe\nlogtest\nlogtest\bin\Debug\NLog.dll
-C:\Projects\probe\nlogtest\nlogtest\bin\Debug\NLog.xml
-C:\Projects\probe\nlogtest\nlogtest\obj\x86\Debug\nlogtest.exe
-C:\Projects\probe\nlogtest\nlogtest\obj\x86\Debug\nlogtest.pdb

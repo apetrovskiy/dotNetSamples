@@ -1,1 +1,0 @@
-C:\Projects\probe\listsSvc\listsSvc\obj\x86\Debug\ResolveAssemblyReference.cache

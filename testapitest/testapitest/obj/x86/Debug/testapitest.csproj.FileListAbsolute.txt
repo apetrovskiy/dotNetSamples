@@ -1,7 +1,0 @@
-C:\Projects\probe\testapitest\testapitest\bin\Debug\testapitest.exe
-C:\Projects\probe\testapitest\testapitest\bin\Debug\TestApiCore.dll
-C:\Projects\probe\testapitest\testapitest\bin\Debug\TestApiCore.pdb
-C:\Projects\probe\testapitest\testapitest\bin\Debug\TestApiCore.xml
-C:\Projects\probe\testapitest\testapitest\obj\x86\Debug\testapitest.exe
-C:\Projects\probe\testapitest\testapitest\obj\x86\Debug\ResolveAssemblyReference.cache
-C:\Projects\probe\testapitest\testapitest\bin\Debug\testapitest.exe.config

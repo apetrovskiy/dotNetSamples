@@ -1,7 +1,0 @@
-C:\Projects\probe\testLoadFrom\testDefault\bin\Debug\testDefault.dll
-C:\Projects\probe\testLoadFrom\testDefault\bin\Debug\testDefault.pdb
-C:\Projects\probe\testLoadFrom\testDefault\obj\Debug\testDefault.dll
-C:\Projects\probe\testLoadFrom\testDefault\obj\Debug\testDefault.pdb
-C:\Projects\probe\testLoadFrom\testDefault\obj\Debug\ResolveAssemblyReference.cache
-C:\Projects\probe\testLoadFrom\testDefault\bin\Debug\NSubstitute.dll
-C:\Projects\probe\testLoadFrom\testDefault\bin\Debug\NSubstitute.xml

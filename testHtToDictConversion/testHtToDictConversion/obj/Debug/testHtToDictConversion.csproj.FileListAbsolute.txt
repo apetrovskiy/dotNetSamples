@@ -1,6 +1,0 @@
-C:\Projects\probe\testHtToDictConversion\testHtToDictConversion\obj\Debug\testHtToDictConversion.csprojResolveAssemblyReference.cache
-C:\Projects\probe\testHtToDictConversion\testHtToDictConversion\bin\Debug\testHtToDictConversion.exe.config
-C:\Projects\probe\testHtToDictConversion\testHtToDictConversion\bin\Debug\testHtToDictConversion.exe
-C:\Projects\probe\testHtToDictConversion\testHtToDictConversion\bin\Debug\testHtToDictConversion.pdb
-C:\Projects\probe\testHtToDictConversion\testHtToDictConversion\obj\Debug\testHtToDictConversion.exe
-C:\Projects\probe\testHtToDictConversion\testHtToDictConversion\obj\Debug\testHtToDictConversion.pdb

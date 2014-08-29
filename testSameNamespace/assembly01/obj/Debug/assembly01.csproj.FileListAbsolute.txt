@@ -1,5 +1,0 @@
-C:\Projects\probe\testSameNamespace\assembly01\bin\Debug\assembly01.dll
-C:\Projects\probe\testSameNamespace\assembly01\bin\Debug\assembly01.pdb
-C:\Projects\probe\testSameNamespace\assembly01\obj\Debug\assembly01.csprojResolveAssemblyReference.cache
-C:\Projects\probe\testSameNamespace\assembly01\obj\Debug\assembly01.dll
-C:\Projects\probe\testSameNamespace\assembly01\obj\Debug\assembly01.pdb

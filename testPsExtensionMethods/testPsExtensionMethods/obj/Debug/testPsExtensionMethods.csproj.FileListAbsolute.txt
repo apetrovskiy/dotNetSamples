@@ -1,5 +1,0 @@
-C:\Projects\probe\testPsExtensionMethods\testPsExtensionMethods\obj\Debug\ResolveAssemblyReference.cache
-C:\Projects\probe\testPsExtensionMethods\testPsExtensionMethods\bin\Debug\testPsExtensionMethods.dll
-C:\Projects\probe\testPsExtensionMethods\testPsExtensionMethods\bin\Debug\testPsExtensionMethods.pdb
-C:\Projects\probe\testPsExtensionMethods\testPsExtensionMethods\obj\Debug\testPsExtensionMethods.dll
-C:\Projects\probe\testPsExtensionMethods\testPsExtensionMethods\obj\Debug\testPsExtensionMethods.pdb

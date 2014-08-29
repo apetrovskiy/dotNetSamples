@@ -1,6 +1,0 @@
-C:\Projects\probe\testInheritanceWithIfaces\testInheritanceWithIfaces\obj\Debug\testInheritanceWithIfaces.csprojResolveAssemblyReference.cache
-C:\Projects\probe\testInheritanceWithIfaces\testInheritanceWithIfaces\bin\Debug\testInheritanceWithIfaces.exe.config
-C:\Projects\probe\testInheritanceWithIfaces\testInheritanceWithIfaces\bin\Debug\testInheritanceWithIfaces.exe
-C:\Projects\probe\testInheritanceWithIfaces\testInheritanceWithIfaces\bin\Debug\testInheritanceWithIfaces.pdb
-C:\Projects\probe\testInheritanceWithIfaces\testInheritanceWithIfaces\obj\Debug\testInheritanceWithIfaces.exe
-C:\Projects\probe\testInheritanceWithIfaces\testInheritanceWithIfaces\obj\Debug\testInheritanceWithIfaces.pdb
