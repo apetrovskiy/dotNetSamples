@@ -10,21 +10,40 @@
 namespace testRestTemplate
 {
     using System;
-	using System.Collections;
-	using System.Collections.Generic;
-	using System.IO;
+    using System.Collections;
+    using System.Collections.Generic;
+    using System.IO;
     using System.Xml;
-	using Spring.Http;
+    using Spring.Http;
     using Spring.Http.Converters;
-	using Spring.Http.Converters.Json;
-	using Spring.Http.Converters.Xml;
-    using Spring.Rest.Client;
+    using Spring.Http.Converters.Json;
+    using Spring.Http.Converters.Xml;
+	using Spring.Rest.Client;
     
     class Program
     {
         public static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+            
+            try {
+                
+                var reader = new StreamReader(@"E:\20140828\imported_rdp_SPLab-2008R2.SPALab.at.local_170.xml");
+                var data = reader.ReadToEnd();
+                
+                var restTemplate01 = new RestTemplate(); // FormHttpMessageConverter is configured by default
+                var parts = new Dictionary<string, object>();
+                // var entity = new HttpEntity(new FileInfo(@"E:\20140828\imported_rdp_SPLab-2008R2.SPALab.at.local_170.xml"));
+                var entity = new HttpEntity(data);
+                // entity.Headers["Content-Type"] = "application/xml";
+                // entity.Headers["Content-Type"] = "text/xml";
+                entity.Headers["Content-Type"] = "text/plain";
+                parts.Add("data", entity);
+                restTemplate01.PostForLocation("http://localhost:12340/probe3/", parts);
+            }
+            catch (Exception e03) {
+                Console.WriteLine(e03.Message);
+            }
             
             // TODO: Implement Functionality Here
             
