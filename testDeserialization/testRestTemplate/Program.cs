@@ -39,7 +39,8 @@ namespace testRestTemplate
                 // entity.Headers["Content-Type"] = "text/xml";
                 entity.Headers["Content-Type"] = "text/plain";
                 parts.Add("data", entity);
-                restTemplate01.PostForLocation("http://localhost:12340/probe3/", parts);
+                // restTemplate01.PostForLocation("http://localhost:12340/probe3/", parts);
+                restTemplate01.PostForObject<object>("http://localhost:12340/probe3/", parts);
             }
             catch (Exception e03) {
                 Console.WriteLine(e03.Message);

@@ -19,9 +19,11 @@ namespace testDeserialization
     /// </summary>
     public class Module3 : NancyModule
     {
-        public Module3() : base("/probe3")
+        // public Module3() : base("/probe3")
+        public Module3() : base("/")
         {
-            Post["/"] = _ => {
+            // Post["/"] = _ => {
+            Post["probe3/"] = _ => {
 //                Console.WriteLine("======================Body=========================");
 //                Console.WriteLine(Request.Body);
 //                
@@ -54,7 +56,8 @@ namespace testDeserialization
                 var xDoc = XDocument.Parse(s);
                 Console.WriteLine(xDoc.Root);
                 
-                return true;
+                // return true;
+                return HttpStatusCode.Created;
             };
         }
     }
