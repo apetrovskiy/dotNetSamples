@@ -14,11 +14,13 @@ namespace testRestTemplate
     using System.Collections.Generic;
     using System.IO;
     using System.Xml;
+	using System.Xml.Linq;
     using Spring.Http;
     using Spring.Http.Converters;
     using Spring.Http.Converters.Json;
     using Spring.Http.Converters.Xml;
 	using Spring.Rest.Client;
+	using testInterfaces;
     
     class Program
     {
@@ -29,23 +31,111 @@ namespace testRestTemplate
             try {
                 
                 var reader = new StreamReader(@"E:\20140828\imported_rdp_SPLab-2008R2.SPALab.at.local_170.xml");
-                var data = reader.ReadToEnd();
+                // var reader = new StreamReader(@"E:\20140828\_tempo_.xml");
+                var originalData = reader.ReadToEnd();
+                var xDoc = XDocument.Parse(originalData);
+                // var data = xDoc.Root.ToString();
+                var data = xDoc.FirstNode.ToString();
                 
                 var restTemplate01 = new RestTemplate(); // FormHttpMessageConverter is configured by default
-                var parts = new Dictionary<string, object>();
-                // var entity = new HttpEntity(new FileInfo(@"E:\20140828\imported_rdp_SPLab-2008R2.SPALab.at.local_170.xml"));
-                var entity = new HttpEntity(data);
+                // var restTemplate01 = new RestTemplate("http://localhost:12340/");
+                //
+                //
+                // restTemplate01.MessageConverters.Clear();
+                // restTemplate01.MessageConverters.Add(new NJsonHttpMessageConverter());
+//                restTemplate01.MessageConverters.Add(new DataContractJsonHttpMessageConverter());
+//                restTemplate01.MessageConverters.Add(new ResourceHttpMessageConverter());
+//                restTemplate01.MessageConverters.Add(new XmlSerializableHttpMessageConverter());
+                //
+                //
+                // data = "<?xml version='1.0' encoding='UTF-8' ?><Root><TestElement testAttribute='value'/><TestElement testAttribute='novalue'/></Root>";
+                //
+                //
+                restTemplate01.MessageConverters.Add(new XElementHttpMessageConverter());
+                //
+                //
+//                foreach (var messageConverter in restTemplate01.MessageConverters) {
+//                    Console.WriteLine(messageConverter.GetType().Name);
+//                }
+//                var parts = new Dictionary<string, object>();
+//                // var entity = new HttpEntity(new FileInfo(@"E:\20140828\imported_rdp_SPLab-2008R2.SPALab.at.local_170.xml"));
+//                // var entity = new HttpEntity(data);
+//                var dataObject = new Class1 { Data = data };
+                // var entity = new HttpEntity(dataObject);
                 // entity.Headers["Content-Type"] = "application/xml";
                 // entity.Headers["Content-Type"] = "text/xml";
-                entity.Headers["Content-Type"] = "text/plain";
-                parts.Add("data", entity);
+                // entity.Headers["Content-Type"] = "text/plain";
+                // entity.Headers["Content-Type"] = "application/json";
+                // parts.Add("data", entity);
                 // restTemplate01.PostForLocation("http://localhost:12340/probe3/", parts);
-                restTemplate01.PostForObject<object>("http://localhost:12340/probe3/", parts);
+                // restTemplate01.PostForObject<Class1>("http://localhost:12340/probe3/", parts);
+                // restTemplate01.PostForObject<object>("http://localhost:12340/probe3/", parts);
+                // restTemplate01.PostForObject<char[]>("http://localhost:12340/probe3/", parts);
+                // restTemplate01.PostForLocation("http://localhost:12340/probe3/", dataObject);
+                // restTemplate01.PostForMessage<Class1>("http://localhost:12340/probe3/", dataObject);
+                // restTemplate01.PostForMessage<Class1>("probe3/", dataObject);
+                // restTemplate01.PostForMessage<Class1>("probe3/", parts);
+                // restTemplate01.PostForMessage("probe3/", parts);
+                // restTemplate01.PostForMessage<Class1>("probe3/", dataObject);
+                
+//                Interface1 requestBody = new Class1(); // create booking request content
+//                requestBody.Data = data;
+//                HttpEntity entity01 = new HttpEntity(requestBody);
+//                entity01.Headers["MyRequestHeader"] = "MyValue";
+//                // restTemplate01.PostForLocation("probe3/", entity01);
+//                // var responseMessage = restTemplate01.PostForLocation("http://localhost:12340/probe3/", entity01);
+//Console.WriteLine("======================================000000000000000001===============================");
+//                // HttpResponseMessage result = restTemplate01.PostForMessage("http://localhost:12340/probe3/", xDoc.FirstNode);
+//                // var entity = new HttpEntity(new FileInfo(@"E:\20140828\imported_rdp_SPLab-2008R2.SPALab.at.local_170.xml"));
+//                var entity02 = new HttpEntity(xDoc.FirstNode);
+//                // entity02.Headers["Content-Type"] = "text/plain";
+//                // entity02.Headers["Content-Type"] = "application/json";
+//                // entity02.Headers["Content-Type"] = "application/xml";
+//                // entity02.Headers["Content-Type"] = "text/xml";
+//                parts.Add("data", entity02);
+                
+//                XElement user = new XElement("User", 
+//                    new XElement("Name", "Lisa Baia"));
+    
+                // HttpResponseMessage result = restTemplate01.PostForMessage("http://localhost:12340/probe3/", user);
+                // HttpResponseMessage result01 = restTemplate01.PostForMessage("http://localhost:12340/probe3/", parts);
+                HttpResponseMessage result01 = restTemplate01.PostForMessage("http://localhost:12340/probe3/", xDoc.FirstNode);
+                
+//                var parts = new Dictionary<string, object>();
+//                var entity = new HttpEntity(new FileInfo(@"E:\20140828\imported_rdp_SPLab-2008R2.SPALab.at.local_170.xml"));
+//                // entity.Headers["Content-Type"] = "application/xml";
+//                // entity.Headers["Content-Type"] = "text/xml";
+//                entity.Headers["Content-Type"] = "text/plain";
+//                parts.Add("file", entity);
+//                restTemplate.PostForLocation("http://localhost:12340/probe2/", parts);
+                
+                // Console.WriteLine(responseMessage);
+                
+                
+                // ===================================================================================================================================================
+                if (string.IsNullOrEmpty(args[0]))
+                    throw new FileNotFoundException("Please provide the right path to the file");
+                var restTemplate04 = new RestTemplate();
+                var parts04 = new Dictionary<string, object>();
+                var entity04 = new HttpEntity(new FileInfo(args[0]));
+                parts04.Add("data", entity04);
+                
+                var entity041 = new HttpEntity(args[0].Substring(0, args[0].LastIndexOf('\\') + 1));
+                parts04.Add("path", entity041);
+                
+                // HttpResponseMessage result04 = restTemplate04.PostForMessage("http://localhost:12340/probe4/", parts04);
+                HttpResponseMessage result04 = restTemplate04.PostForMessage("http://localhost:12340/probe4/", parts04);
+                
+                foreach (var messageConverter in restTemplate04.MessageConverters) {
+                    Console.WriteLine(messageConverter.GetType().Name);
+                }
+                
+                Console.WriteLine(result01.StatusCode);
             }
             catch (Exception e03) {
                 Console.WriteLine(e03.Message);
             }
-            
+            return;
             // TODO: Implement Functionality Here
             
 //            String fileToUpload = dir.getPath() + File.separator + fileName;

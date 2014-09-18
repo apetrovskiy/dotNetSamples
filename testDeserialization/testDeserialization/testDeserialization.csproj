@@ -60,11 +60,18 @@
     <Compile Include="Module1.cs" />
     <Compile Include="Module2.cs" />
     <Compile Include="Module3.cs" />
+    <Compile Include="Module4.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\testInterfaces\testInterfaces.csproj">
+      <Project>{1CAB08CB-EE63-44A9-ADD1-A852B6E9C520}</Project>
+      <Name>testInterfaces</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

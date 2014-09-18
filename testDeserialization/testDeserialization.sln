@@ -8,6 +8,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "testRestTemplate", "testRes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "testRestSharp", "testRestSharp\testRestSharp.csproj", "{6048BF4C-2CD4-4FEE-A907-16F2CB948FAF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "testInterfaces", "testInterfaces\testInterfaces.csproj", "{1CAB08CB-EE63-44A9-ADD1-A852B6E9C520}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,5 +28,9 @@ Global
 		{6048BF4C-2CD4-4FEE-A907-16F2CB948FAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6048BF4C-2CD4-4FEE-A907-16F2CB948FAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6048BF4C-2CD4-4FEE-A907-16F2CB948FAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CAB08CB-EE63-44A9-ADD1-A852B6E9C520}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CAB08CB-EE63-44A9-ADD1-A852B6E9C520}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CAB08CB-EE63-44A9-ADD1-A852B6E9C520}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CAB08CB-EE63-44A9-ADD1-A852B6E9C520}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
