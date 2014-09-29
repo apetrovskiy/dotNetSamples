@@ -10,6 +10,8 @@
 namespace testDeserialization
 {
     using System;
+    using System.Collections;
+    using System.Collections.Generic;
 	using System.IO;
     using System.Linq;
 	using System.Text;
@@ -23,9 +25,28 @@ namespace testDeserialization
     {
         public Module4() : base("/")
         {
-            Post["probe4/"] = _ => {
+            Post["probe4/"] = parameters => {
                 
                 // this.Context.Request.
+                
+                Console.WriteLine("========================= parameters: ===========================");
+                try { Console.WriteLine(parameters["data"]); } catch {}
+                try { Console.WriteLine(parameters["path"]); } catch {}
+                // try { Console.WriteLine(parameters["some data"]); } catch {}
+                
+                Console.WriteLine("========================= Request.Query: ===========================");
+                foreach (var qqq in Request.Query) {
+                    Console.WriteLine(qqq);
+                }
+                try { Console.WriteLine(Request.Query.data); } catch {}
+                try { Console.WriteLine(Request.Query.path); } catch {}
+                // try { Console.WriteLine(Request.Query.some data); } catch {}
+                
+                Console.WriteLine("========================= Context.Text: ===========================");
+                Console.WriteLine(Context.Text);
+                
+                Console.WriteLine("========================= Context.NegotiationContext: ===========================");
+                Console.WriteLine(Context.NegotiationContext);
                 
                 Console.WriteLine("========================= this.Context.Parameters: ===========================");
                 foreach (var prm in this.Context.Parameters) {
@@ -52,6 +73,18 @@ namespace testDeserialization
                         }
                     }
                     catch {}
+                }
+                
+                Console.WriteLine("========================= Request.Form: ===========================");
+                foreach (var ff in Request.Form.ToDictionary()) {
+                    Console.WriteLine(ff);
+                    Console.WriteLine(ff.GetType());
+                    // Console.WriteLine(ff.);
+                }
+                Console.WriteLine("========================= Request.Form again: ===========================");
+                foreach (KeyValuePair<string, object> pair in Request.Form.ToDictionary()) {
+                    Console.WriteLine(pair.Key);
+                    Console.WriteLine(pair.Value);
                 }
                 
                 Console.WriteLine("========================= Request.Files: ===========================");

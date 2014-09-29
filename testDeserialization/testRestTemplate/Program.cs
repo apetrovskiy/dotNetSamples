@@ -123,6 +123,9 @@ namespace testRestTemplate
                 var entity041 = new HttpEntity(args[0].Substring(0, args[0].LastIndexOf('\\') + 1));
                 parts04.Add("path", entity041);
                 
+                var entity042 = new HttpEntity("some string data");
+                parts04.Add("some data", entity042);
+                
                 // HttpResponseMessage result04 = restTemplate04.PostForMessage("http://localhost:12340/probe4/", parts04);
                 HttpResponseMessage result04 = restTemplate04.PostForMessage("http://localhost:12340/probe4/", parts04);
                 
