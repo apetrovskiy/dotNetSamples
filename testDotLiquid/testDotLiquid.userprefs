@@ -1,0 +1,21 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="testDotLiquid/Views/probe.htm">
+    <Files>
+      <File FileName="testDotLiquid/Modules/DotLiquidModule.cs" Line="14" Column="16" />
+      <File FileName="testDotLiquid/Views/probe.htm" Line="13" Column="1" />
+      <File FileName="testDotLiquid/Program.cs" Line="10" Column="1" />
+      <File FileName="testDotLiquid/Data.cs" Line="14" Column="16" />
+      <File FileName="testDotLiquid/Types/Task.cs" Line="4" Column="2" />
+      <File FileName="testDotLiquid/Types/User.cs" Line="6" Column="18" />
+      <File FileName="testDotLiquid/CustomBootstrapper.cs" Line="25" Column="20" />
+      <File FileName="testDotLiquid/Modules/SimpleModule.cs" Line="13" Column="18" />
+      <File FileName="testDotLiquid/Views/simple.htm" Line="7" Column="28" />
+      <File FileName="testDotLiquid/TmxServerRootPathProvider.cs" Line="13" Column="115" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

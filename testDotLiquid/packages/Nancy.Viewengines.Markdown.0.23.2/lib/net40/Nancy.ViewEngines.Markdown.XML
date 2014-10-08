@@ -1,0 +1,135 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Nancy.ViewEngines.Markdown</name>
+    </assembly>
+    <members>
+        <member name="T:Nancy.ViewEngines.Markdown.MarkDownViewEngine">
+            <summary>
+            Viewengine for rendering Markdown
+            </summary>
+        </member>
+        <member name="F:Nancy.ViewEngines.Markdown.MarkDownViewEngine.ParagraphSubstitution">
+            <summary>
+            A regex for removing paragraph tags that the parser inserts on unknown content such as @Section['Content']
+            </summary>
+            <remarks>
+             &lt;p>		- matches the literal string "&lt;p>"
+             (		- creates a capture group, so that we can get the text back by backreferencing in our replacement string
+             @		- matches the literal string "@"
+             [^&lt;]*	- matches any character other than the "&lt;" character and does this any amount of times
+             )		- ends the capture group
+             &lt;/p>	- matches the literal string "&lt;/p>"
+            </remarks>
+        </member>
+        <member name="M:Nancy.ViewEngines.Markdown.MarkDownViewEngine.#ctor(Nancy.ViewEngines.SuperSimpleViewEngine.SuperSimpleViewEngine)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Nancy.ViewEngines.Markdown.MarkDownViewEngine"/> class.
+            </summary>
+            <param name="engineWrapper">The <see cref="T:Nancy.ViewEngines.SuperSimpleViewEngine.SuperSimpleViewEngine"/> that should be used by the engine.</param>
+        </member>
+        <member name="M:Nancy.ViewEngines.Markdown.MarkDownViewEngine.Initialize(Nancy.ViewEngines.ViewEngineStartupContext)">
+            <summary>
+            Initialise the view engine (if necessary)
+            </summary>
+            <param name="viewEngineStartupContext">Startup context</param>
+        </member>
+        <member name="M:Nancy.ViewEngines.Markdown.MarkDownViewEngine.RenderView(Nancy.ViewEngines.ViewLocationResult,System.Object,Nancy.ViewEngines.IRenderContext)">
+            <summary>
+            Renders the view.
+            </summary>
+            <param name="viewLocationResult">A <see cref="T:Nancy.ViewEngines.ViewLocationResult"/> instance, containing information on how to get the view template.</param>
+            <param name="model">The model that should be passed into the view</param>
+            <param name="renderContext">The render context.</param>
+            <returns>A response.</returns>
+        </member>
+        <member name="M:Nancy.ViewEngines.Markdown.MarkDownViewEngine.ConvertMarkdown(Nancy.ViewEngines.ViewLocationResult)">
+            <summary>
+            Converts the markdown.
+            </summary>
+            <returns>
+            HTML converted from markdown
+            </returns>
+            <param name='viewLocationResult'>
+            View location result.
+            </param>
+        </member>
+        <member name="P:Nancy.ViewEngines.Markdown.MarkDownViewEngine.Extensions">
+            <summary>
+            Gets the extensions file extensions that are supported by the view engine.
+            </summary>
+            <value>An <see cref="T:System.Collections.Generic.IEnumerable`1"/> instance containing the extensions.</value>
+            <remarks>The extensions should not have a leading dot in the name.</remarks>
+        </member>
+        <member name="M:Nancy.ViewEngines.Markdown.MarkdownViewEngineHost.#ctor(Nancy.ViewEngines.SuperSimpleViewEngine.IViewEngineHost,Nancy.ViewEngines.IRenderContext,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Nancy.ViewEngines.Markdown.MarkdownViewEngineHost"/> class.
+            </summary>
+            <param name="viewEngineHost">A decorator <see cref="T:Nancy.ViewEngines.SuperSimpleViewEngine.IViewEngineHost"/></param>
+            <param name="renderContext">The render context.</param>
+            <param name="viewExtensions">The allowed extensions</param>
+        </member>
+        <member name="M:Nancy.ViewEngines.Markdown.MarkdownViewEngineHost.HtmlEncode(System.String)">
+            <summary>
+            Html "safe" encode a string
+            </summary>
+            <param name="input">Input string</param>
+            <returns>Encoded string</returns>
+        </member>
+        <member name="M:Nancy.ViewEngines.Markdown.MarkdownViewEngineHost.GetTemplate(System.String,System.Object)">
+            <summary>
+            Get the contenst of a template
+            </summary>
+            <param name="templateName">Name/location of the template</param>
+            <param name="model">Model to use to locate the template via conventions</param>
+            <returns>Contents of the template, or null if not found</returns>
+        </member>
+        <member name="M:Nancy.ViewEngines.Markdown.MarkdownViewEngineHost.GetUriString(System.String,System.String[])">
+            <summary>
+            Gets a uri string for a named route
+            </summary>
+            <param name="name">Named route name</param>
+            <param name="parameters">Parameters to use to expand the uri string</param>
+            <returns>Expanded uri string, or null if not found</returns>
+        </member>
+        <member name="M:Nancy.ViewEngines.Markdown.MarkdownViewEngineHost.ExpandPath(System.String)">
+            <summary>
+            Expands a path to include any base paths
+            </summary>
+            <param name="path">Path to expand</param>
+            <returns>Expanded path</returns>
+        </member>
+        <member name="M:Nancy.ViewEngines.Markdown.MarkdownViewEngineHost.AntiForgeryToken">
+            <summary>
+            Get the anti forgery token form element
+            </summary>
+            <returns>String containin the form element</returns>
+        </member>
+        <member name="P:Nancy.ViewEngines.Markdown.MarkdownViewEngineHost.Context">
+            <summary>
+            Context object of the host application.
+            </summary>
+            <value>An instance of the context object from the host.</value>
+        </member>
+        <member name="F:Nancy.ViewEngines.Markdown.MarkdownViewengineRender.ParagraphSubstitution">
+            <summary>
+            A regex for removing paragraph tags that the parser inserts on unknown content such as @Section['Content']
+            </summary>
+            <remarks>
+             &lt;p>		- matches the literal string "&lt;p>"
+             (		- creates a capture group, so that we can get the text back by backreferencing in our replacement string
+             @		- matches the literal string "@"
+             [^&lt;]*	- matches any character other than the "&lt;" character and does this any amount of times
+             )		- ends the capture group
+             &lt;/p>	- matches the literal string "&lt;/p>"
+            </remarks>
+        </member>
+        <member name="M:Nancy.ViewEngines.Markdown.MarkdownViewengineRender.RenderMasterPage(System.String)">
+            <summary>
+            Renders stand alone / master page
+            </summary>
+            <param name="templateContent">Template content</param>
+            <returns>HTML converted to markdown</returns>
+        </member>
+    </members>
+</doc>
