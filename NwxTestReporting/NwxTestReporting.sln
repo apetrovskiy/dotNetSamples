@@ -6,6 +6,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NwxTestReporting", "NwxTest
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NwxTestReporting.Tests", "NwxTestReporting.Tests\NwxTestReporting.Tests.csproj", "{D15C7803-A912-4B70-92D5-A4FE7822558F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tmx.Server", "..\..\PS\STUPS\TMX\Tmx.Server\Tmx.Server.csproj", "{A80B14D0-C8DB-4F70-B18E-4FD1C16E0AEC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TMX.Interfaces", "..\..\PS\STUPS\TMX\TMX.Interfaces\TMX.Interfaces.csproj", "{9C5DA25F-6A59-4F97-B107-64DD549CB800}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,5 +24,13 @@ Global
 		{D15C7803-A912-4B70-92D5-A4FE7822558F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D15C7803-A912-4B70-92D5-A4FE7822558F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D15C7803-A912-4B70-92D5-A4FE7822558F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A80B14D0-C8DB-4F70-B18E-4FD1C16E0AEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A80B14D0-C8DB-4F70-B18E-4FD1C16E0AEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A80B14D0-C8DB-4F70-B18E-4FD1C16E0AEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A80B14D0-C8DB-4F70-B18E-4FD1C16E0AEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C5DA25F-6A59-4F97-B107-64DD549CB800}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C5DA25F-6A59-4F97-B107-64DD549CB800}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C5DA25F-6A59-4F97-B107-64DD549CB800}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C5DA25F-6A59-4F97-B107-64DD549CB800}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

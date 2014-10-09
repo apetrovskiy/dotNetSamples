@@ -4,7 +4,9 @@
 		<title></title>
 	</head>
 	<body>
-	
+	Hello {{name}}          
+	Hello {{user.name}}
+	Hello {{ 'tobi' }}
 		<p>{{ user.name | upcase }} has to do:</p>
 
 		<ul>
@@ -12,6 +14,5 @@
 		  <li>{{ item.name }}</li>
 		{% endfor -%}
 		</ul>
-	
 	</body>
 </html>

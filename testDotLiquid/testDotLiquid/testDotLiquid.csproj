@@ -95,14 +95,22 @@
     <Compile Include="CustomBootstrapper.cs" />
     <Compile Include="Modules\SimpleModule.cs" />
     <Compile Include="TmxServerRootPathProvider.cs" />
+    <Compile Include="Modules\DecisionModule.cs" />
+    <Compile Include="Types\Command.cs" />
+    <Compile Include="Enums.cs" />
+    <Compile Include="StaticControl.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <None Include="packages.config" />
-    <None Include="Views\probe.htm">
+    <None Include="Views\simple.htm">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Views\simple.htm">
+    <None Include="Views\probe.liquid">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Views\probe.htm" />
+    <None Include="Views\report.htm">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

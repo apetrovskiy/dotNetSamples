@@ -20,7 +20,9 @@ namespace testDotLiquid
 						new Task { Name = "Code comments" }
 					}
 				};
-				return View["probe.htm", user];
+				// return View["probe.htm", user];
+				return View["probe.liquid", user];
+				// return DotLiquid.Document
 			};
 		}
 	}
