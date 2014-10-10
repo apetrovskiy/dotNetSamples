@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "testSpringTesting", "testSpringTesting\testSpringTesting.csproj", "{B40E96A2-EA32-4039-8501-FDCD930BBA96}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B40E96A2-EA32-4039-8501-FDCD930BBA96}.Debug|x86.ActiveCfg = Debug|x86
+		{B40E96A2-EA32-4039-8501-FDCD930BBA96}.Debug|x86.Build.0 = Debug|x86
+		{B40E96A2-EA32-4039-8501-FDCD930BBA96}.Release|x86.ActiveCfg = Release|x86
+		{B40E96A2-EA32-4039-8501-FDCD930BBA96}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = testSpringTesting\testSpringTesting.csproj
+	EndGlobalSection
+EndGlobal
