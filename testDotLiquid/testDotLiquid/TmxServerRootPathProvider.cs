@@ -11,7 +11,15 @@ namespace testDotLiquid
 		public string GetRootPath()
 		{
 			var serverAssembly = (AppDomain.CurrentDomain.GetAssemblies().First(asm => asm.FullName.Contains("testDotLiquid")));
-			return serverAssembly.Location.Substring(0, serverAssembly.Location.LastIndexOf('/'));
+			string resultPath = string.Empty;
+			try {
+			    resultPath = serverAssembly.Location.Substring(0, serverAssembly.Location.LastIndexOf('/'));
+			}
+			catch {}
+			if (string.Empty == resultPath)
+			    resultPath = serverAssembly.Location.Substring(0, serverAssembly.Location.LastIndexOf('\\'));
+			// return serverAssembly.Location.Substring(0, serverAssembly.Location.LastIndexOf('/'));
+			return resultPath;
 		}
 	}
 }
