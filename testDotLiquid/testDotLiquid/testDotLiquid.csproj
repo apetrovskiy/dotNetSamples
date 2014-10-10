@@ -99,6 +99,7 @@
     <Compile Include="Types\Command.cs" />
     <Compile Include="Enums.cs" />
     <Compile Include="StaticControl.cs" />
+    <Compile Include="Types\Holder.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

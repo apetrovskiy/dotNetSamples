@@ -5,5 +5,22 @@
 	</head>
 	<body>
 	zzzzzzzzzzzzzzzzzzzzzzzzzz
+			<table>
+				<tr>
+					<th>Suite name</th>
+					<th>Suite id</th>
+					<th>Scenario name</th>
+					<th>Scenario id</th>
+					<th>Scenario status</th>
+					<th>Result name</th>
+					<th>Result id</th>
+					<th>Result status</th>
+				</tr>
+				@Each
+				<tr>
+					@Current
+				</tr>
+				@EndEach
+			</table>
 	</body>
 </html>

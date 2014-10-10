@@ -40,6 +40,7 @@ namespace testDotLiquid
 				new Result { Id = "4", Name = "tr04", Status = "PASSED" }
 			});
 			suite.Scenarios.Add (scenario);
+			Holder.Suites.Add (suite);
 
 			suite = new Suite { Id = "2", Name = "s02" };
 			scenario = new Scenario { Id = "1", Name = "sc01", Status = "PASSED" };
@@ -60,6 +61,7 @@ namespace testDotLiquid
 				new Result { Id = "4", Name = "tr04", Status = "PASSED" }
 			});
 			suite.Scenarios.Add (scenario);
+			Holder.Suites.Add (suite);
 
 			StaticConfiguration.DisableErrorTraces = false;
 

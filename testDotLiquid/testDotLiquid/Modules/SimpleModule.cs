@@ -2,6 +2,7 @@
 namespace testDotLiquid
 {
 	using System;
+	using System.Linq;
 	using Nancy;
 	using Nancy.ModelBinding;
 
@@ -10,7 +11,11 @@ namespace testDotLiquid
 		public SimpleModule () : base("/simple")
 		{
 			Get ["/simple"] = _ => {
-				return View["simple.htm"];
+				// return View["simple.htm"];
+				var data = Holder.Suites.SelectMany(suite => suite.Scenarios
+				                                    .SelectMany(scenario => scenario.Results
+				            .Select(result => "<td>" + suite.Name + "</td><td>" + suite.Id + "</td><td>" + scenario.Name + "</td><td>" + scenario.Id + "</td><td>" + scenario.Status + "</td><td>" + result.Name + "</td><td>" + result.Id + "</td><td>" + result.Status + "</td>"))).ToArray<string>().ToList();
+				return View["simple.htm", data];
 			};
 		}
 	}
