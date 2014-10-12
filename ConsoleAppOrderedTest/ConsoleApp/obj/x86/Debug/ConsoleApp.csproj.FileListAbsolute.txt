@@ -1,4 +1,0 @@
-c:\Projects\probe\ConsoleAppOrderedTest\ConsoleApp\bin\Debug\ConsoleAppOrderedTest.exe
-c:\Projects\probe\ConsoleAppOrderedTest\ConsoleApp\bin\Debug\ConsoleAppOrderedTest.pdb
-c:\Projects\probe\ConsoleAppOrderedTest\ConsoleApp\obj\x86\Debug\ConsoleAppOrderedTest.exe
-c:\Projects\probe\ConsoleAppOrderedTest\ConsoleApp\obj\x86\Debug\ConsoleAppOrderedTest.pdb
