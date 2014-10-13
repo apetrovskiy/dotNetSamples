@@ -2,8 +2,9 @@ namespace testDotLiquid
 {
 	using System;
 	using System.Collections.Generic;
+	using DotLiquid;
 
-	public class Scenario
+	public class Scenario : Drop, ILiquidizable
 	{
 		public Scenario ()
 		{

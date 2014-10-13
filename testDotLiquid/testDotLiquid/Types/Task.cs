@@ -1,8 +1,11 @@
-using System;
 
 namespace testDotLiquid
 {
-	public class Task
+	using System;
+	using DotLiquid;
+
+	[LiquidType("task")]
+	public class Task : Drop, ILiquidizable
 	{
 		public string Name { get; set; }
 	}

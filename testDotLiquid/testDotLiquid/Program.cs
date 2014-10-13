@@ -12,6 +12,9 @@ namespace testDotLiquid
 	{
 		public static void Main (string[] args)
 		{
+			// var holder = new Holder ();
+			Holder.Suites = new List<Suite> ();
+
 			var suite = new Suite { Id = "1", Name = "s01" };
 			var scenario = new Scenario { Id = "1", Name = "sc01", Status = "PASSED" };
 			scenario.Results.AddRange (

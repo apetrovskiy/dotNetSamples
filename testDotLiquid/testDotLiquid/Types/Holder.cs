@@ -4,11 +4,12 @@ namespace testDotLiquid
 	using System;
 	using System.Collections.Generic;
 
-	public static class Holder
+	public class Holder
 	{
-		static Holder()
+
+		public Holder()
 		{
-			Suites = new List<Suite> ();
+			// Suites = new List<Suite> ();
 		}
 
 		public static List<Suite> Suites { get; set; }
