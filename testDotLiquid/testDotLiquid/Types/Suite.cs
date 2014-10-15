@@ -3,9 +3,9 @@ namespace testDotLiquid
 {
 	using System;
 	using System.Collections.Generic;
-	using DotLiquid;
+	// using DotLiquid;
 
-	public class Suite : Drop, ILiquidizable
+	public class Suite // : Drop, ILiquidizable
 	{
 		public Suite()
 		{

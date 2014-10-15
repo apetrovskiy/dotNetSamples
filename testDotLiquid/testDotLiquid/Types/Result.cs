@@ -2,9 +2,9 @@
 namespace testDotLiquid
 {
 	using System;
-	using DotLiquid;
+	// using DotLiquid;
 
-	public class Result : Drop, ILiquidizable
+	public class Result // : Drop, ILiquidizable
 	{
 		public Result ()
 		{

@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectGuid>{FA16FD68-0F58-4047-9288-DC0E6ACEACC1}</ProjectGuid>
+    <ProjectTypeGuids>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>testDotLiquid2</RootNamespace>
+    <AssemblyName>testDotLiquid2</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DotLiquid">
+      <HintPath>..\packages\DotLiquid.1.7.0\lib\NET40\DotLiquid.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="Nancy">
+      <HintPath>..\packages\Nancy.0.23.2\lib\net40\Nancy.dll</HintPath>
+    </Reference>
+    <Reference Include="Nancy.Hosting.Self">
+      <HintPath>..\packages\Nancy.Hosting.Self.0.23.2\lib\net40\Nancy.Hosting.Self.dll</HintPath>
+    </Reference>
+    <Reference Include="Nancy.ViewEngines.DotLiquid">
+      <HintPath>..\packages\Nancy.Viewengines.DotLiquid.0.23.2\lib\net40\Nancy.ViewEngines.DotLiquid.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\testDotLiquid\DataLoader.cs">
+      <Link>DataLoader.cs</Link>
+    </Compile>
+    <Compile Include="..\testDotLiquid\Helpers\CustomBootstrapper.cs">
+      <Link>Helpers\CustomBootstrapper.cs</Link>
+    </Compile>
+    <Compile Include="..\testDotLiquid\Helpers\Enums.cs">
+      <Link>Helpers\Enums.cs</Link>
+    </Compile>
+    <Compile Include="..\testDotLiquid\Helpers\ModulesLoader.cs">
+      <Link>Helpers\ModulesLoader.cs</Link>
+    </Compile>
+    <Compile Include="..\testDotLiquid\Helpers\ServerControl.cs">
+      <Link>Helpers\ServerControl.cs</Link>
+    </Compile>
+    <Compile Include="..\testDotLiquid\Helpers\StaticControl.cs">
+      <Link>Helpers\StaticControl.cs</Link>
+    </Compile>
+    <Compile Include="..\testDotLiquid\Helpers\TmxServerRootPathProvider.cs">
+      <Link>Helpers\TmxServerRootPathProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\testDotLiquid\Modules\DecisionModule.cs">
+      <Link>Modules\DecisionModule.cs</Link>
+    </Compile>
+    <Compile Include="..\testDotLiquid\Modules\DotLiquidModule.cs">
+      <Link>Modules\DotLiquidModule.cs</Link>
+    </Compile>
+    <Compile Include="..\testDotLiquid\Modules\SimpleModule.cs">
+      <Link>Modules\SimpleModule.cs</Link>
+    </Compile>
+    <Compile Include="..\testDotLiquid\Program.cs">
+      <Link>Program.cs</Link>
+    </Compile>
+    <Compile Include="..\testDotLiquid\Types\Command.cs">
+      <Link>Types\Command.cs</Link>
+    </Compile>
+    <Compile Include="..\testDotLiquid\Types\Data.cs">
+      <Link>Types\Data.cs</Link>
+    </Compile>
+    <Compile Include="..\testDotLiquid\Types\Holder.cs">
+      <Link>Types\Holder.cs</Link>
+    </Compile>
+    <Compile Include="..\testDotLiquid\Types\Result.cs">
+      <Link>Types\Result.cs</Link>
+    </Compile>
+    <Compile Include="..\testDotLiquid\Types\Scenario.cs">
+      <Link>Types\Scenario.cs</Link>
+    </Compile>
+    <Compile Include="..\testDotLiquid\Types\Suite.cs">
+      <Link>Types\Suite.cs</Link>
+    </Compile>
+    <Compile Include="..\testDotLiquid\Types\Task.cs">
+      <Link>Types\Task.cs</Link>
+    </Compile>
+    <Compile Include="..\testDotLiquid\Types\User.cs">
+      <Link>Types\User.cs</Link>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\testDotLiquid\testDotLiquid.csproj">
+      <Link>testDotLiquid.csproj</Link>
+    </None>
+    <None Include="..\testDotLiquid\TmxServerRootPathProvider.html">
+      <Link>TmxServerRootPathProvider.html</Link>
+    </None>
+    <None Include="..\testDotLiquid\Views\probe.htm">
+      <Link>Views\probe.htm</Link>
+    </None>
+    <None Include="..\testDotLiquid\Views\probe.liquid">
+      <Link>Views\probe.liquid</Link>
+    </None>
+    <None Include="..\testDotLiquid\Views\report.htm">
+      <Link>Views\report.htm</Link>
+    </None>
+    <None Include="..\testDotLiquid\Views\results.liquid">
+      <Link>Views\results.liquid</Link>
+    </None>
+    <None Include="..\testDotLiquid\Views\simple.htm">
+      <Link>Views\simple.htm</Link>
+    </None>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Modules" />
+    <Folder Include="Helpers" />
+    <Folder Include="Views" />
+    <Folder Include="Types" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

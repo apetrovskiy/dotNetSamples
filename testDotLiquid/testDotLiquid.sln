@@ -1,7 +1,12 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
+# SharpDevelop 5.0
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "testDotLiquid", "testDotLiquid\testDotLiquid.csproj", "{F501DE86-E175-4FEE-91BC-B9E2C11C187F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "testDotLiquid2", "testDotLiquid2\testDotLiquid2.csproj", "{FA16FD68-0F58-4047-9288-DC0E6ACEACC1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "runner2", "runner2\runner2.csproj", "{35413C90-2C38-4A7E-89B3-B4884AAD22A2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,6 +18,14 @@ Global
 		{F501DE86-E175-4FEE-91BC-B9E2C11C187F}.Debug|x86.Build.0 = Debug|x86
 		{F501DE86-E175-4FEE-91BC-B9E2C11C187F}.Release|x86.ActiveCfg = Release|x86
 		{F501DE86-E175-4FEE-91BC-B9E2C11C187F}.Release|x86.Build.0 = Release|x86
+		{FA16FD68-0F58-4047-9288-DC0E6ACEACC1}.Debug|x86.ActiveCfg = Debug|x86
+		{FA16FD68-0F58-4047-9288-DC0E6ACEACC1}.Debug|x86.Build.0 = Debug|x86
+		{FA16FD68-0F58-4047-9288-DC0E6ACEACC1}.Release|x86.ActiveCfg = Release|x86
+		{FA16FD68-0F58-4047-9288-DC0E6ACEACC1}.Release|x86.Build.0 = Release|x86
+		{35413C90-2C38-4A7E-89B3-B4884AAD22A2}.Debug|x86.ActiveCfg = Debug|x86
+		{35413C90-2C38-4A7E-89B3-B4884AAD22A2}.Debug|x86.Build.0 = Debug|x86
+		{35413C90-2C38-4A7E-89B3-B4884AAD22A2}.Release|x86.ActiveCfg = Release|x86
+		{35413C90-2C38-4A7E-89B3-B4884AAD22A2}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = testDotLiquid\testDotLiquid.csproj
