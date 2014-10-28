@@ -1,6 +1,6 @@
 ﻿/*
  * Created by SharpDevelop.
- * User: alexa_000
+ * User: unknown
  * Date: 10/28/2014
  * Time: 6:36 PM
  * 
@@ -151,8 +151,8 @@ namespace testImpersonation02
         public static void LaunchCommand1(string strCommand, string strDomain, string strName, string strPassword)
         {
             // Variables
-            PROCESS_INFORMATION processInfo = new PROCESS_INFORMATION();
-            STARTUPINFO startInfo = new STARTUPINFO();
+            var processInfo = new PROCESS_INFORMATION();
+            var startInfo = new STARTUPINFO();
             bool bResult = false;
             UInt32 uiResultWait = WAIT_FAILED;
 
@@ -174,7 +174,7 @@ namespace testImpersonation02
                     ref startInfo, 
                     out processInfo
                 );
-                if (!bResult) { throw new Exception("CreateProcessWithLogonW error #" + Marshal.GetLastWin32Error().ToString()); }
+                if (!bResult) { throw new Exception("CreateProcessWithLogonW error #" + Marshal.GetLastWin32Error()); }
 
                 // Wait for process to end
                 uiResultWait = WaitForSingleObject(processInfo.hProcess, INFINITE);
@@ -192,8 +192,8 @@ namespace testImpersonation02
         public static void LaunchCommand2(string strCommand, string strDomain, string strName, string strPassword)
         {
             // Variables
-            PROCESS_INFORMATION processInfo = new PROCESS_INFORMATION();
-            STARTUPINFO startInfo = new STARTUPINFO();
+            var processInfo = new PROCESS_INFORMATION();
+            var startInfo = new STARTUPINFO();
             Boolean bResult = false;
             IntPtr hToken = IntPtr.Zero;
             UInt32 uiResultWait = WAIT_FAILED;
