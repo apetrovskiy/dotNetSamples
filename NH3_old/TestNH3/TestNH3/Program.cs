@@ -6,6 +6,10 @@ namespace TestNH3
     using FluentNHibernate.Cfg.Db;
     using NHibernate.Cfg;
     using NHibernate.Tool.hbm2ddl;
+    using System.Data.SQLite;
+    using NHibernate.SqlTypes;
+    using NHibernate.Driver;
+    using NHibernate.Bytecode.CodeDom;
 
     class MainClass
     {
@@ -13,10 +17,24 @@ namespace TestNH3
         {
             Console.WriteLine("Hello World!");
 
-            const string connString = "Data Source=:memory:;Version=3;New=True;";
+            const string connString01 = "Data Source=:memory:;Version=3;New=True;";
+            const string connString02 = "Server=localhost;Port=3306;Database=shuran_schema;Uid=root;Pwd=;";
+            /*
+            Fluently.Configure ()
+                .Database (SQLiteConfiguration.Standard.ConnectionString (connString01))
+                    .Mappings (m => m.FluentMappings.AddFromAssemblyOf<ProductMap> ())
+                    .ExposeConfiguration (CreateSchema)
+                    .BuildConfiguration ();
+            */
 
             Fluently.Configure ()
-                .Database (SQLiteConfiguration.Standard.ConnectionString (connString))
+                .Database (MySQLConfiguration.Standard.ConnectionString (connString02))
+                    .Mappings (m => m.FluentMappings.AddFromAssemblyOf<ProductMap> ())
+                    .ExposeConfiguration (CreateSchema)
+                    .BuildConfiguration ();
+
+            Fluently.Configure ()
+                .Database (SQLiteConfiguration.Standard.ConnectionString(connString01).Driver<SQLite20Driver>().InMemory().Dialect("SQLite"))
                     .Mappings (m => m.FluentMappings.AddFromAssemblyOf<ProductMap> ())
                     .ExposeConfiguration (CreateSchema)
                     .BuildConfiguration ();
