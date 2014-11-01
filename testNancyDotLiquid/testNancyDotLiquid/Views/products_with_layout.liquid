@@ -1,0 +1,21 @@
+﻿{% extends layout %}
+
+ {% block title %}My AMAZING Website{% endblock %}
+
+ {% block content %}
+
+    {% assign name = 'test' %}Hello Mr. TES
+    <h1>Hello Mr. {{ name }}</h1>
+    <h1>Hello Mr. {{ name | upcase }}</h1>
+
+     <ul id="products">
+        {% for product in Model.Products %}
+            <li>
+                <h2>{{product.name}}</h2>
+                Only {{product.price | price }}
+                {{product.description | prettyprint | paragraph }}
+            </li>
+        {% endfor %}
+    </ul>
+
+ {% endblock %}
