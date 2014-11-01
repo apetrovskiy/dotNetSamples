@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4230BDEB-122A-46D7-BBA2-20384F3EA9A8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Tmx.Interfaces</RootNamespace>
+    <AssemblyName>Tmx.Interfaces</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MyClass.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="DataTypes\IAddScenarioCmdletBaseDataObject.cs" />
+    <Compile Include="DataTypes\IAddTestCaseCmdletBaseDataObject.cs" />
+    <Compile Include="DataTypes\ICommonCmdletBaseDataObject.cs" />
+    <Compile Include="DataTypes\ICommonDataObject.cs" />
+    <Compile Include="DataTypes\IGetTmxTestSuiteStatusDataObject.cs" />
+    <Compile Include="DataTypes\IImportExportCmdletBaseDataObject.cs" />
+    <Compile Include="DataTypes\IOpenScenarioCmdletBaseDataObject.cs" />
+    <Compile Include="DataTypes\IOpenSuiteCmdletBaseDataObject.cs" />
+    <Compile Include="DataTypes\ISearchCmdletBaseDataObject.cs" />
+    <Compile Include="DataTypes\ISearchTmxTestResultDataObject.cs" />
+    <Compile Include="DataTypes\ISettingsCmdletBaseDataObject.cs" />
+    <Compile Include="DataTypes\ITestResultCmdletBaseDataObject.cs" />
+    <Compile Include="DataTypes\ITestResultStatusCmdletBaseDataObject.cs" />
+    <Compile Include="DataTypes\ItestResultDetailCmdletBaseDataObject.cs" />
+    <Compile Include="DataTypes\Types\AddScenarioCmdletBaseDataObject.cs" />
+    <Compile Include="DataTypes\Types\AddTestCaseCmdletBaseDataObject.cs" />
+    <Compile Include="DataTypes\Types\CommonCmdletBaseDataObject.cs" />
+    <Compile Include="DataTypes\Types\GetTmxTestSuiteStatusDataObject.cs" />
+    <Compile Include="DataTypes\Types\ImportExportCmdletBaseDataObject.cs" />
+    <Compile Include="DataTypes\Types\OpenScenarioCmdletBaseDataObject.cs" />
+    <Compile Include="DataTypes\Types\SearchCmdletBaseDataObject.cs" />
+    <Compile Include="DataTypes\Types\SearchTmxTestResultDataObject.cs" />
+    <Compile Include="DataTypes\Types\SettingsCmdletBaseDataObject.cs" />
+    <Compile Include="DataTypes\Types\TestResultCmdletBaseDataObject.cs" />
+    <Compile Include="DataTypes\Types\TestResultDetailCmdletBaseDataObject.cs" />
+    <Compile Include="DataTypes\Types\TestResultStatusCmdletBaseDataObject.cs" />
+    <Compile Include="Delegates\Delegates.cs" />
+    <Compile Include="Exceptions\AcceptTaskException.cs" />
+    <Compile Include="Exceptions\ClientDeregistrationException.cs" />
+    <Compile Include="Exceptions\ClientNotRegisteredException.cs" />
+    <Compile Include="Exceptions\ClientRegistrationException.cs" />
+    <Compile Include="Exceptions\CompleteTaskException.cs" />
+    <Compile Include="Exceptions\FailedToGetNextTaskException.cs" />
+    <Compile Include="Exceptions\LoadTaskException.cs" />
+    <Compile Include="Exceptions\SendingCommonDataItemException.cs" />
+    <Compile Include="Exceptions\SendingDetailedStatusException.cs" />
+    <Compile Include="Exceptions\SendingTestResultsException.cs" />
+    <Compile Include="Exceptions\UpdateTaskException.cs" />
+    <Compile Include="Exceptions\WorkflowLoadingException.cs" />
+    <Compile Include="Exceptions\WrongTaskDataException.cs" />
+    <Compile Include="Internal\ISystemInfo.cs" />
+    <Compile Include="Remoting\Enums.cs" />
+    <Compile Include="Remoting\ICommonData.cs" />
+    <Compile Include="Remoting\ICommonDataItem.cs" />
+    <Compile Include="Remoting\IServerCommand.cs" />
+    <Compile Include="Remoting\ITestClient.cs" />
+    <Compile Include="Remoting\ITestClientProxy.cs" />
+    <Compile Include="Remoting\ITestHost.cs" />
+    <Compile Include="Remoting\ITestHostGroup.cs" />
+    <Compile Include="Remoting\ITestTask.cs" />
+    <Compile Include="Remoting\ITestTaskCodeProxy.cs" />
+    <Compile Include="Remoting\ITestTaskProxy.cs" />
+    <Compile Include="Remoting\ITestTaskResultProxy.cs" />
+    <Compile Include="Remoting\ITestTaskStatusProxy.cs" />
+    <Compile Include="Remoting\IWorkflow.cs" />
+    <Compile Include="TestStructure\Enumerations.cs" />
+    <Compile Include="TestStructure\ITestBucket.cs" />
+    <Compile Include="TestStructure\ITestCase.cs" />
+    <Compile Include="TestStructure\ITestConstant.cs" />
+    <Compile Include="TestStructure\ITestPlatform.cs" />
+    <Compile Include="TestStructure\ITestResult.cs" />
+    <Compile Include="TestStructure\ITestResultDetail.cs" />
+    <Compile Include="TestStructure\ITestScenario.cs" />
+    <Compile Include="TestStructure\ITestSuite.cs" />
+    <Compile Include="Types\TestStructure\TestStat.cs" />
+    <Compile Include="IDatabase.cs" />
+    <Compile Include="ITestSuitesCollection.cs" />
+    <Compile Include="IWorkflowStep.cs" />
+    <Compile Include="IXMLElementsStruct.cs" />
+    <Compile Include="UrnList.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="DataTypes\" />
+    <Folder Include="Delegates\" />
+    <Folder Include="Exceptions\" />
+    <Folder Include="Internal\" />
+    <Folder Include="Remoting\" />
+    <Folder Include="TestStructure\" />
+    <Folder Include="Types\" />
+  </ItemGroup>
+</Project>
