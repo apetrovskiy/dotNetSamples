@@ -1,6 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
+# SharpDevelop 5.0
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestNH3", "TestNH3\TestNH3.csproj", "{F701D3CD-009A-4C88-A639-65DBD5B9AB79}"
 EndProject
 Global
