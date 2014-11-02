@@ -51,8 +51,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Core\TestResultsImporter.cs">
-      <Link>TestResultsImporter.cs</Link>
+    <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Core\TestResultsImportExport.cs">
+      <Link>TestResultsImportExport.cs</Link>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
