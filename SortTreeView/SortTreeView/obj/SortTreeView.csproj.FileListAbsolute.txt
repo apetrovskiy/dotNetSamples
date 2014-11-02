@@ -1,8 +1,0 @@
-C:\Projects\probe\SortTreeView\SortTreeView\bin\Debug\SortTreeView.exe.config
-C:\Projects\probe\SortTreeView\SortTreeView\bin\Debug\SortTreeView.exe
-C:\Projects\probe\SortTreeView\SortTreeView\bin\Debug\SortTreeView.pdb
-C:\Projects\probe\SortTreeView\SortTreeView\obj\x86\Debug\ResolveAssemblyReference.cache
-C:\Projects\probe\SortTreeView\SortTreeView\obj\x86\Debug\SortTreeView.MainForm.resources
-C:\Projects\probe\SortTreeView\SortTreeView\obj\x86\Debug\SortTreeView.csproj.GenerateResource.Cache
-C:\Projects\probe\SortTreeView\SortTreeView\obj\x86\Debug\SortTreeView.exe
-C:\Projects\probe\SortTreeView\SortTreeView\obj\x86\Debug\SortTreeView.pdb
