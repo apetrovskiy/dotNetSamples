@@ -12,6 +12,7 @@ namespace Tmx.Core
     using System;
     using System.Linq;
     using System.Xml.Linq;
+    using Tmx.Interfaces;
     
     class Program
     {
@@ -40,6 +41,18 @@ namespace Tmx.Core
                     }
                 }
             }
+            
+            var testResultsExporter = new TestResultsImportExport();
+            var xDoc2 = testResultsExporter.GetTestResultsAsXdocument(
+                           new SearchCmdletBaseDataObject {
+                    Descending = false,
+                    FilterAll = true,
+                    FilterFailed = false,
+                    OrderById = true
+                },
+                           list);
+            
+            Console.WriteLine(xDoc2);
             
             Console.Write("Press any key to continue . . . ");
             Console.ReadKey(true);
