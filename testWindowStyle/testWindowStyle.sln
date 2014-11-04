@@ -1,0 +1,18 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+# SharpDevelop 4.4
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "testWindowStyle", "testWindowStyle\testWindowStyle.csproj", "{A23768A1-0C83-4E58-A8E3-0C1D1BB39EF1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A23768A1-0C83-4E58-A8E3-0C1D1BB39EF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A23768A1-0C83-4E58-A8E3-0C1D1BB39EF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A23768A1-0C83-4E58-A8E3-0C1D1BB39EF1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A23768A1-0C83-4E58-A8E3-0C1D1BB39EF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+EndGlobal
