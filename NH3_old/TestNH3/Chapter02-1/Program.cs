@@ -1,43 +1,32 @@
-using NHibernate.Dialect;
-using NHibernate.Driver;
 
 namespace TestNH3
 {
     using System;
     using FluentNHibernate.Cfg;
     using FluentNHibernate.Cfg.Db;
+    using NHibernate;
+    using NHibernate.Dialect;
+    using NHibernate.Driver;
     using NHibernate.Cfg;
     using NHibernate.Tool.hbm2ddl;
-//    using System.Data.SQLite;
-//    using NHibernate.SqlTypes;
-//    using NHibernate.Driver;
-//    using NHibernate.Bytecode.CodeDom;
 
     class MainClass
     {
         public static void Main (string[] args)
         {
-            Console.WriteLine("Hello World!");
-            
-            bool sqlite = true;
-            bool mysql = false;
-            
+            var drivers = DriverUsed.MySql | DriverUsed.Sqlite;
+
             const string connString01 = "Data Source=:memory:;Version=3;New=True;";
             const string connString02 = "Server=localhost;Port=3306;Database=shuran_schema;Uid=root;Pwd=;";
-            /*
-            Fluently.Configure ()
-                .Database (SQLiteConfiguration.Standard.ConnectionString (connString01))
-                    .Mappings (m => m.FluentMappings.AddFromAssemblyOf<ProductMap> ())
-                    .ExposeConfiguration (CreateSchema)
-                    .BuildConfiguration ();
-            */
-//			if (mysql)
-//	            Fluently.Configure ()
-//	                .Database (MySQLConfiguration.Standard.ConnectionString (connString02))
-//	                    .Mappings (m => m.FluentMappings.AddFromAssemblyOf<ProductMap> ())
-//	                    .ExposeConfiguration (CreateSchema)
-//	                    .BuildConfiguration ();
-			if (sqlite)
+
+			if (DriverUsed.MySql | drivers)
+	            Fluently.Configure ()
+	                .Database (MySQLConfiguration.Standard.ConnectionString (connString02))
+	                    .Mappings (m => m.FluentMappings.AddFromAssemblyOf<ProductMap> ())
+	                    .ExposeConfiguration (CreateSchema)
+	                    .BuildConfiguration ();
+
+			if (DriverUsed.Sqlite | drivers)
 	            Fluently.Configure ()
 	                .Database (SQLiteConfiguration.Standard
 					           .ConnectionString(connString01).Driver<SQLite20Driver>()
@@ -48,9 +37,8 @@ namespace TestNH3
 	                    .ExposeConfiguration (CreateSchema)
 	                    .BuildConfiguration ();
 			
-//			Fluently.Configure()
-//				.Database(SQLiteConfiguration.Standard.ConnectionString(connString01).Driver<sqli
 			
+            Console.ReadKey ();
         }
 
         static void CreateSchema(Configuration cfg)
@@ -58,6 +46,12 @@ namespace TestNH3
             var schemaExport = new SchemaExport (cfg);
             schemaExport.Drop (false, true);
             schemaExport.Create (false, true);
+        }
+
+        ISessionFactory CreateSessionFactory(DriverUsed drivers)
+        {
+            // if (DriverUsed.MySql | drivers)
+                // return Fluently.
         }
     }
 }
