@@ -1,11 +1,12 @@
-using NHibernate.Dialect;
-using NHibernate.Driver;
 
 namespace TestNH3
 {
     using System;
     using FluentNHibernate.Cfg;
     using FluentNHibernate.Cfg.Db;
+    using NHibernate;
+	using NHibernate.Dialect;
+	using NHibernate.Driver;
     using NHibernate.Cfg;
     using NHibernate.Tool.hbm2ddl;
 //    using System.Data.SQLite;
@@ -51,6 +52,7 @@ namespace TestNH3
 //			Fluently.Configure()
 //				.Database(SQLiteConfiguration.Standard.ConnectionString(connString01).Driver<sqli
 			
+			Console.ReadKey();
         }
 
         static void CreateSchema(Configuration cfg)
@@ -59,5 +61,7 @@ namespace TestNH3
             schemaExport.Drop (false, true);
             schemaExport.Create (false, true);
         }
+        
+        ISessionFactory
     }
 }
