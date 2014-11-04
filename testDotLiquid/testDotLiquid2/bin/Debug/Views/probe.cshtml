@@ -1,0 +1,23 @@
+
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+	@Model.Name
+	Hello {{name}}          
+	Hello {{user.name}}
+	Hello {{ 'tobi' }}
+		<p>{{ user.name | upcase }} has to do:</p>
+
+		<ul>
+		{% for item in user.tasks -%}
+		  <li>{{ item.name }}</li>
+		{% endfor -%}
+		</ul>
+	@Model.Name
+	@Each.Tasks
+		@Current.Name
+	@EndEach
+	</body>
+</html>
