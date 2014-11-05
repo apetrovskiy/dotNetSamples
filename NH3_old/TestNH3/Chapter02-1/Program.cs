@@ -17,18 +17,19 @@ namespace TestNH3
 
         public static void Main (string[] args)
         {
-            var drivers = DriverUsed.MySql; // | DriverUsed.Sqlite;
+            // var drivers = DriverUsed.MySql; // | DriverUsed.Sqlite;
+            var drivers = DriverUsed.Sqlite;
 
-			if (DriverUsed.MySql == (drivers |= DriverUsed.MySql))
+            if (DriverUsed.MySql == (drivers |= DriverUsed.MySql)) {
 	            Fluently.Configure ()
 	                .Database (MySQLConfiguration.Standard.ConnectionString (connString02))
 	                    .Mappings (m => m.FluentMappings.AddFromAssemblyOf<ProductMap> ())
 	                    .ExposeConfiguration (CreateSchema)
 	                    .BuildConfiguration ();
 
-            CreateSessionFactory (drivers);
-
-			if (DriverUsed.Sqlite == (drivers |= DriverUsed.Sqlite))
+	            SaveObjects(drivers);
+            }
+            if (DriverUsed.Sqlite == (drivers |= DriverUsed.Sqlite)) {
 	            Fluently.Configure ()
 	                .Database (SQLiteConfiguration.Standard
 					           .ConnectionString(connString01).Driver<SQLite20Driver>()
@@ -39,11 +40,29 @@ namespace TestNH3
 	                    .ExposeConfiguration (CreateSchema)
 	                    .BuildConfiguration ();
 			
-            CreateSessionFactory (drivers);
-
-
+	            SaveObjects(drivers);
+            }
+            
+            Console.WriteLine("Sehr gut!");
             Console.ReadKey ();
         }
+        
+		static void SaveObjects(DriverUsed drivers)
+		{
+			// if (DriverUsed.MySql == (drivers |= DriverUsed.MySql))
+			
+			if (DriverUsed.Sqlite == (drivers |= DriverUsed.Sqlite)) {
+				var factorySqlite = CreateSessionFactory(drivers);
+				using (var sessionSqlite = factorySqlite.OpenSession()) {
+					var category = new Category { Name = "Beverages", Description = "aaa" };
+					var product = new Product { Name = "Milk", Category = category };
+					sessionSqlite.Save(category);
+					sessionSqlite.Save(product);
+					
+					sessionSqlite.Delete(category);
+				}
+			}
+		}
 
         static void CreateSchema(Configuration cfg)
         {
@@ -57,7 +76,7 @@ namespace TestNH3
             if (DriverUsed.MySql == (drivers |= DriverUsed.MySql))
                 return Fluently.Configure ()
                     .Database (MySQLConfiguration.Standard
-                              .ConnectionString (connString01))
+                              .ConnectionString (connString02))
                     .Mappings (m => m.FluentMappings
                               .AddFromAssemblyOf<ProductMap> ())
                     .BuildSessionFactory ();
@@ -65,7 +84,10 @@ namespace TestNH3
             if (DriverUsed.Sqlite == (drivers |= DriverUsed.Sqlite))
                 return Fluently.Configure ()
                     .Database (SQLiteConfiguration
-                              .Standard.ConnectionString (connString02))
+            		           .Standard.ConnectionString (connString01).Driver<SQLite20Driver>()
+					           .InMemory()
+					           // .Dialect("NHibernate.Dialect.SQLiteDialect"))
+					           .Dialect(typeof(SQLiteDialect).FullName))
                     .Mappings (m => m.FluentMappings
                               .AddFromAssemblyOf<ProductMap> ())
                     .BuildSessionFactory ();
