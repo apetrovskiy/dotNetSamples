@@ -1,11 +1,14 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Tmx.Interfaces/DataTypes/IAddScenarioCmdletBaseDataObject.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="../../PS/STUPS/TMX/Tmx.Server/Modules/TestDataModule.cs">
     <Files>
       <File FileName="testTmxServer/Program.cs" Line="1" Column="1" />
       <File FileName="../../PS/STUPS/TMX/Tmx.Server.Runner/Program.cs" Line="1" Column="1" />
-      <File FileName="../../PS/STUPS/TMX/Tmx.Server/Modules/ExternalFilesModule.cs" Line="24" Column="72" />
+      <File FileName="../../PS/STUPS/TMX/Tmx.Server/Modules/ExternalFilesModule.cs" Line="1" Column="1" />
       <File FileName="Tmx.Interfaces/DataTypes/IAddScenarioCmdletBaseDataObject.cs" Line="12" Column="15" />
+      <File FileName="../../PS/STUPS/TMX/Tmx.Client/ObjectModel/TaskLoader.cs" Line="1" Column="1" />
+      <File FileName="../../PS/STUPS/TMX/Tmx.Client/ObjectModel/Registration.cs" Line="53" Column="5" />
+      <File FileName="../../PS/STUPS/TMX/Tmx.Server/Modules/TestDataModule.cs" Line="70" Column="46" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
