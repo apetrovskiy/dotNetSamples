@@ -33,41 +33,145 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MyClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ExtensionMethods\ExtensionMethods.cs" />
-    <Compile Include="Helpers\StorageHelper.cs" />
-    <Compile Include="Helpers\TMXHelper.cs" />
-    <Compile Include="Helpers\Mapping\TestPlatformMap.cs" />
-    <Compile Include="Helpers\Mapping\TestResultDetailMap.cs" />
-    <Compile Include="Helpers\Mapping\TestResultMap.cs" />
-    <Compile Include="Helpers\Mapping\TestScenarioMap.cs" />
-    <Compile Include="Helpers\Mapping\TestSuiteMap.cs" />
-    <Compile Include="Helpers\Spring.IoC\ObjectFactory.cs" />
-    <Compile Include="Helpers\UserSettings\Preferences.cs" />
-    <Compile Include="TestData\TestData.cs" />
-    <Compile Include="Types\Remoting\CommonData.cs" />
-    <Compile Include="Types\Remoting\CommonDataItem.cs" />
-    <Compile Include="Types\Remoting\DetailedStatus.cs" />
-    <Compile Include="Types\Remoting\ServerCommand.cs" />
-    <Compile Include="Types\Remoting\TestClient.cs" />
-    <Compile Include="Types\Remoting\TestTask.cs" />
-    <Compile Include="Types\Remoting\TestTaskCodeProxy.cs" />
-    <Compile Include="Types\Remoting\TestTaskProxy.cs" />
-    <Compile Include="Types\Remoting\TestTaskResultProxy.cs" />
-    <Compile Include="Types\Remoting\TestTaskStatusProxy.cs" />
-    <Compile Include="Types\Remoting\TestWorkflow.cs" />
-    <Compile Include="Types\TestStructure\TestCase.cs" />
-    <Compile Include="Types\TestStructure\TestPlatform.cs" />
-    <Compile Include="Types\TestStructure\TestResult.cs" />
-    <Compile Include="Types\TestStructure\TestResultDetail.cs" />
-    <Compile Include="Types\TestStructure\TestScenario.cs" />
-    <Compile Include="Types\TestStructure\TestSuite.cs" />
-    <Compile Include="Types\TestStructure\TestTaskAction.cs" />
-    <Compile Include="GatherTestResultsCollections.cs" />
-    <Compile Include="TestResultDetail.cs" />
-    <Compile Include="XMLElementsJUnitStruct.cs" />
-    <Compile Include="XMLElementsNativeStruct.cs" />
+    <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Core\GatherTestResultsCollections.cs">
+      <Link>GatherTestResultsCollections.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Core\TestResultDetail.cs">
+      <Link>TestResultDetail.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Core\TestResultsImportExport.cs">
+      <Link>TestResultsImportExport.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Core\TestResultsSearcher.cs">
+      <Link>TestResultsSearcher.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Core\TestStatistics.cs">
+      <Link>TestStatistics.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Core\XMLElementsJUnitStruct.cs">
+      <Link>XMLElementsJUnitStruct.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Core\XMLElementsNativeStruct.cs">
+      <Link>XMLElementsNativeStruct.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Core\Types\TestStructure\TestCase.cs">
+      <Link>Types\TestStructure\TestCase.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Core\Types\TestStructure\TestPlatform.cs">
+      <Link>Types\TestStructure\TestPlatform.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Core\Types\TestStructure\TestResult.cs">
+      <Link>Types\TestStructure\TestResult.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Core\Types\TestStructure\TestResultDetail.cs">
+      <Link>Types\TestStructure\TestResultDetail.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Core\Types\TestStructure\TestScenario.cs">
+      <Link>Types\TestStructure\TestScenario.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Core\Types\TestStructure\TestSuite.cs">
+      <Link>Types\TestStructure\TestSuite.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Core\Types\TestStructure\TestTaskAction.cs">
+      <Link>Types\TestStructure\TestTaskAction.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Core\Types\Remoting\CommonData.cs">
+      <Link>Types\Remoting\CommonData.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Core\Types\Remoting\CommonDataItem.cs">
+      <Link>Types\Remoting\CommonDataItem.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Core\Types\Remoting\DetailedStatus.cs">
+      <Link>Types\Remoting\DetailedStatus.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Core\Types\Remoting\ListOfTestSuites.cs">
+      <Link>Types\Remoting\ListOfTestSuites.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Core\Types\Remoting\ServerCommand.cs">
+      <Link>Types\Remoting\ServerCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Core\Types\Remoting\TestClient.cs">
+      <Link>Types\Remoting\TestClient.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Core\Types\Remoting\TestLab.cs">
+      <Link>Types\Remoting\TestLab.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Core\Types\Remoting\TestResultsDataObject.cs">
+      <Link>Types\Remoting\TestResultsDataObject.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Core\Types\Remoting\TestResultsHolder.cs">
+      <Link>Types\Remoting\TestResultsHolder.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Core\Types\Remoting\TestRun.cs">
+      <Link>Types\Remoting\TestRun.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Core\Types\Remoting\TestRunCommand.cs">
+      <Link>Types\Remoting\TestRunCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Core\Types\Remoting\TestTask.cs">
+      <Link>Types\Remoting\TestTask.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Core\Types\Remoting\TestTaskCodeProxy.cs">
+      <Link>Types\Remoting\TestTaskCodeProxy.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Core\Types\Remoting\TestTaskProxy.cs">
+      <Link>Types\Remoting\TestTaskProxy.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Core\Types\Remoting\TestTaskResultProxy.cs">
+      <Link>Types\Remoting\TestTaskResultProxy.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Core\Types\Remoting\TestTaskStatusProxy.cs">
+      <Link>Types\Remoting\TestTaskStatusProxy.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Core\Types\Remoting\TestWorkflow.cs">
+      <Link>Types\Remoting\TestWorkflow.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Core\Types\Remoting\Binders\TestResultDetailSerializationBinder.cs">
+      <Link>Types\Remoting\Binders\TestResultDetailSerializationBinder.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Core\Types\Remoting\Binders\TestResultSerializationBinder.cs">
+      <Link>Types\Remoting\Binders\TestResultSerializationBinder.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Core\Types\Remoting\Binders\TestScenarioSerializationBinder.cs">
+      <Link>Types\Remoting\Binders\TestScenarioSerializationBinder.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Core\Types\Remoting\Binders\TestSuiteSerializationBinder.cs">
+      <Link>Types\Remoting\Binders\TestSuiteSerializationBinder.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Core\TestData\TestData.cs">
+      <Link>TestData\TestData.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Core\Helpers\StorageHelper.cs">
+      <Link>Helpers\StorageHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Core\Helpers\TMXHelper.cs">
+      <Link>Helpers\TMXHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Core\Helpers\UserSettings\Preferences.cs">
+      <Link>Helpers\UserSettings\Preferences.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Core\Helpers\Spring.IoC\ObjectFactory.cs">
+      <Link>Helpers\Spring.IoC\ObjectFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Core\Helpers\Mapping\TestPlatformMap.cs">
+      <Link>Helpers\Mapping\TestPlatformMap.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Core\Helpers\Mapping\TestResultDetailMap.cs">
+      <Link>Helpers\Mapping\TestResultDetailMap.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Core\Helpers\Mapping\TestResultMap.cs">
+      <Link>Helpers\Mapping\TestResultMap.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Core\Helpers\Mapping\TestScenarioMap.cs">
+      <Link>Helpers\Mapping\TestScenarioMap.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Core\Helpers\Mapping\TestSuiteMap.cs">
+      <Link>Helpers\Mapping\TestSuiteMap.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Core\ExtensionMethods\ExtensionMethods.cs">
+      <Link>ExtensionMethods\ExtensionMethods.cs</Link>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -75,6 +179,12 @@
     <Folder Include="Helpers\" />
     <Folder Include="TestData\" />
     <Folder Include="Types\" />
+    <Folder Include="Types\TestStructure\" />
+    <Folder Include="Types\Remoting\" />
+    <Folder Include="Types\Remoting\Binders\" />
+    <Folder Include="Helpers\UserSettings\" />
+    <Folder Include="Helpers\Spring.IoC\" />
+    <Folder Include="Helpers\Mapping\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Tmx.Interfaces\Tmx.Interfaces.csproj">

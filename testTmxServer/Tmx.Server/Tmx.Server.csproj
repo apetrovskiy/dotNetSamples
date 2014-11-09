@@ -50,16 +50,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MyClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Server\Modules\ExternalFilesModule.cs">
       <Link>Modules\ExternalFilesModule.cs</Link>
-    </Compile>
-    <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Server\Modules\GlobalSettingsViewsModule.cs">
-      <Link>Modules\GlobalSettingsViewsModule.cs</Link>
-    </Compile>
-    <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Server\Modules\RootPageModule.cs">
-      <Link>Modules\RootPageModule.cs</Link>
     </Compile>
     <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Server\Modules\ServerControlModule.cs">
       <Link>Modules\ServerControlModule.cs</Link>
@@ -73,20 +66,11 @@
     <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Server\Modules\TestResultsModule.cs">
       <Link>Modules\TestResultsModule.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Server\Modules\TestResultsViewsModule.cs">
-      <Link>Modules\TestResultsViewsModule.cs</Link>
-    </Compile>
-    <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Server\Modules\TestStatusViewsModule.cs">
-      <Link>Modules\TestStatusViewsModule.cs</Link>
-    </Compile>
     <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Server\Modules\TestTasksModule.cs">
       <Link>Modules\TestTasksModule.cs</Link>
     </Compile>
     <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Server\Modules\TestWorkflowsModule.cs">
       <Link>Modules\TestWorkflowsModule.cs</Link>
-    </Compile>
-    <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Server\Helpers\CommonDataItems.cs">
-      <Link>Helpers\CommonDataItems.cs</Link>
     </Compile>
     <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Server\Helpers\ServerWatcher.cs">
       <Link>Helpers\ServerWatcher.cs</Link>
@@ -129,6 +113,36 @@
     </Compile>
     <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Server\Helpers\Objects\WorkflowCollection.cs">
       <Link>Helpers\Objects\WorkflowCollection.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Server\Modules\TestRunsModule.cs">
+      <Link>Modules\TestRunsModule.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Server\Modules\ViewsGlobalSettingsModule.cs">
+      <Link>Modules\ViewsGlobalSettingsModule.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Server\Modules\ViewsRootPageModule.cs">
+      <Link>Modules\ViewsRootPageModule.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Server\Modules\ViewsTestResultsModule.cs">
+      <Link>Modules\ViewsTestResultsModule.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Server\Modules\ViewsTestRunsModule.cs">
+      <Link>Modules\ViewsTestRunsModule.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Server\Modules\ViewsTestStatusModule.cs">
+      <Link>Modules\ViewsTestStatusModule.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Server\Helpers\CommonData.cs">
+      <Link>Helpers\CommonData.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Server\Helpers\TestRunSelector.cs">
+      <Link>Helpers\TestRunSelector.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Server\Helpers\Objects\TestLabCollection.cs">
+      <Link>Helpers\Objects\TestLabCollection.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Server\Helpers\Objects\TestRunQueue.cs">
+      <Link>Helpers\Objects\TestRunQueue.cs</Link>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
@@ -198,6 +212,9 @@
     <None Include="Scripts\jquery-2.1.1.js" />
     <None Include="Scripts\jquery-2.1.1.min.js" />
     <None Include="Scripts\jquery-2.1.1.min.map" />
+    <None Include="..\..\..\PS\STUPS\TMX\Tmx.Server\Views\status\TestRuns.liquid">
+      <Link>Views\status\TestRuns.liquid</Link>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Tmx.Core\Tmx.Core.csproj">
