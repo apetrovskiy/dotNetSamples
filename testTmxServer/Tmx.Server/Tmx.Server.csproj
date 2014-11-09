@@ -50,7 +50,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MyClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Server\Modules\ExternalFilesModule.cs">
       <Link>Modules\ExternalFilesModule.cs</Link>

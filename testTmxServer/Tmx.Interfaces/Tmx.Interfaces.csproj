@@ -33,78 +33,241 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MyClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="DataTypes\IAddScenarioCmdletBaseDataObject.cs" />
-    <Compile Include="DataTypes\IAddTestCaseCmdletBaseDataObject.cs" />
-    <Compile Include="DataTypes\ICommonCmdletBaseDataObject.cs" />
-    <Compile Include="DataTypes\ICommonDataObject.cs" />
-    <Compile Include="DataTypes\IGetTmxTestSuiteStatusDataObject.cs" />
-    <Compile Include="DataTypes\IImportExportCmdletBaseDataObject.cs" />
-    <Compile Include="DataTypes\IOpenScenarioCmdletBaseDataObject.cs" />
-    <Compile Include="DataTypes\IOpenSuiteCmdletBaseDataObject.cs" />
-    <Compile Include="DataTypes\ISearchCmdletBaseDataObject.cs" />
-    <Compile Include="DataTypes\ISearchTmxTestResultDataObject.cs" />
-    <Compile Include="DataTypes\ISettingsCmdletBaseDataObject.cs" />
-    <Compile Include="DataTypes\ITestResultCmdletBaseDataObject.cs" />
-    <Compile Include="DataTypes\ITestResultStatusCmdletBaseDataObject.cs" />
-    <Compile Include="DataTypes\ItestResultDetailCmdletBaseDataObject.cs" />
-    <Compile Include="DataTypes\Types\AddScenarioCmdletBaseDataObject.cs" />
-    <Compile Include="DataTypes\Types\AddTestCaseCmdletBaseDataObject.cs" />
-    <Compile Include="DataTypes\Types\CommonCmdletBaseDataObject.cs" />
-    <Compile Include="DataTypes\Types\GetTmxTestSuiteStatusDataObject.cs" />
-    <Compile Include="DataTypes\Types\ImportExportCmdletBaseDataObject.cs" />
-    <Compile Include="DataTypes\Types\OpenScenarioCmdletBaseDataObject.cs" />
-    <Compile Include="DataTypes\Types\SearchCmdletBaseDataObject.cs" />
-    <Compile Include="DataTypes\Types\SearchTmxTestResultDataObject.cs" />
-    <Compile Include="DataTypes\Types\SettingsCmdletBaseDataObject.cs" />
-    <Compile Include="DataTypes\Types\TestResultCmdletBaseDataObject.cs" />
-    <Compile Include="DataTypes\Types\TestResultDetailCmdletBaseDataObject.cs" />
-    <Compile Include="DataTypes\Types\TestResultStatusCmdletBaseDataObject.cs" />
-    <Compile Include="Delegates\Delegates.cs" />
-    <Compile Include="Exceptions\AcceptTaskException.cs" />
-    <Compile Include="Exceptions\ClientDeregistrationException.cs" />
-    <Compile Include="Exceptions\ClientNotRegisteredException.cs" />
-    <Compile Include="Exceptions\ClientRegistrationException.cs" />
-    <Compile Include="Exceptions\CompleteTaskException.cs" />
-    <Compile Include="Exceptions\FailedToGetNextTaskException.cs" />
-    <Compile Include="Exceptions\LoadTaskException.cs" />
-    <Compile Include="Exceptions\SendingCommonDataItemException.cs" />
-    <Compile Include="Exceptions\SendingDetailedStatusException.cs" />
-    <Compile Include="Exceptions\SendingTestResultsException.cs" />
-    <Compile Include="Exceptions\UpdateTaskException.cs" />
-    <Compile Include="Exceptions\WorkflowLoadingException.cs" />
-    <Compile Include="Exceptions\WrongTaskDataException.cs" />
-    <Compile Include="Internal\ISystemInfo.cs" />
-    <Compile Include="Remoting\Enums.cs" />
-    <Compile Include="Remoting\ICommonData.cs" />
-    <Compile Include="Remoting\ICommonDataItem.cs" />
-    <Compile Include="Remoting\IServerCommand.cs" />
-    <Compile Include="Remoting\ITestClient.cs" />
-    <Compile Include="Remoting\ITestClientProxy.cs" />
-    <Compile Include="Remoting\ITestHost.cs" />
-    <Compile Include="Remoting\ITestHostGroup.cs" />
-    <Compile Include="Remoting\ITestTask.cs" />
-    <Compile Include="Remoting\ITestTaskCodeProxy.cs" />
-    <Compile Include="Remoting\ITestTaskProxy.cs" />
-    <Compile Include="Remoting\ITestTaskResultProxy.cs" />
-    <Compile Include="Remoting\ITestTaskStatusProxy.cs" />
-    <Compile Include="Remoting\IWorkflow.cs" />
-    <Compile Include="TestStructure\Enumerations.cs" />
-    <Compile Include="TestStructure\ITestBucket.cs" />
-    <Compile Include="TestStructure\ITestCase.cs" />
-    <Compile Include="TestStructure\ITestConstant.cs" />
-    <Compile Include="TestStructure\ITestPlatform.cs" />
-    <Compile Include="TestStructure\ITestResult.cs" />
-    <Compile Include="TestStructure\ITestResultDetail.cs" />
-    <Compile Include="TestStructure\ITestScenario.cs" />
-    <Compile Include="TestStructure\ITestSuite.cs" />
-    <Compile Include="Types\TestStructure\TestStat.cs" />
-    <Compile Include="IDatabase.cs" />
-    <Compile Include="ITestSuitesCollection.cs" />
-    <Compile Include="IWorkflowStep.cs" />
-    <Compile Include="IXMLElementsStruct.cs" />
-    <Compile Include="UrnList.cs" />
+    <Compile Include="..\..\..\PS\STUPS\TMX\TMX.Interfaces\UrnList.cs">
+      <Link>UrnList.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\TMX.Interfaces\IDatabase.cs">
+      <Link>IDatabase.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\TMX.Interfaces\ITestSuitesCollection.cs">
+      <Link>ITestSuitesCollection.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\TMX.Interfaces\IWorkflowStep.cs">
+      <Link>IWorkflowStep.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\TMX.Interfaces\IXMLElementsStruct.cs">
+      <Link>IXMLElementsStruct.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\TMX.Interfaces\Types\TestStructure\TestStat.cs">
+      <Link>Types\TestStructure\TestStat.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\TMX.Interfaces\TestStructure\Enumerations.cs">
+      <Link>TestStructure\Enumerations.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\TMX.Interfaces\TestStructure\ITestBucket.cs">
+      <Link>TestStructure\ITestBucket.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\TMX.Interfaces\TestStructure\ITestCase.cs">
+      <Link>TestStructure\ITestCase.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\TMX.Interfaces\TestStructure\ITestConstant.cs">
+      <Link>TestStructure\ITestConstant.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\TMX.Interfaces\TestStructure\ITestPlatform.cs">
+      <Link>TestStructure\ITestPlatform.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\TMX.Interfaces\TestStructure\ITestResult.cs">
+      <Link>TestStructure\ITestResult.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\TMX.Interfaces\TestStructure\ITestResultDetail.cs">
+      <Link>TestStructure\ITestResultDetail.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\TMX.Interfaces\TestStructure\ITestScenario.cs">
+      <Link>TestStructure\ITestScenario.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\TMX.Interfaces\TestStructure\ITestSuite.cs">
+      <Link>TestStructure\ITestSuite.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\TMX.Interfaces\Remoting\Enums.cs">
+      <Link>Remoting\Enums.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\TMX.Interfaces\Remoting\ICommonData.cs">
+      <Link>Remoting\ICommonData.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\TMX.Interfaces\Remoting\ICommonDataItem.cs">
+      <Link>Remoting\ICommonDataItem.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\TMX.Interfaces\Remoting\IServerCommand.cs">
+      <Link>Remoting\IServerCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\TMX.Interfaces\Remoting\ITestClient.cs">
+      <Link>Remoting\ITestClient.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\TMX.Interfaces\Remoting\ITestClientProxy.cs">
+      <Link>Remoting\ITestClientProxy.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\TMX.Interfaces\Remoting\ITestHost.cs">
+      <Link>Remoting\ITestHost.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\TMX.Interfaces\Remoting\ITestHostGroup.cs">
+      <Link>Remoting\ITestHostGroup.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\TMX.Interfaces\Remoting\ITestLab.cs">
+      <Link>Remoting\ITestLab.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\TMX.Interfaces\Remoting\ITestResultsDataObject.cs">
+      <Link>Remoting\ITestResultsDataObject.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\TMX.Interfaces\Remoting\ITestResultsHolder.cs">
+      <Link>Remoting\ITestResultsHolder.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\TMX.Interfaces\Remoting\ITestRun.cs">
+      <Link>Remoting\ITestRun.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\TMX.Interfaces\Remoting\ITestRunCommand.cs">
+      <Link>Remoting\ITestRunCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\TMX.Interfaces\Remoting\ITestTask.cs">
+      <Link>Remoting\ITestTask.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\TMX.Interfaces\Remoting\ITestTaskCodeProxy.cs">
+      <Link>Remoting\ITestTaskCodeProxy.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\TMX.Interfaces\Remoting\ITestTaskProxy.cs">
+      <Link>Remoting\ITestTaskProxy.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\TMX.Interfaces\Remoting\ITestTaskResultProxy.cs">
+      <Link>Remoting\ITestTaskResultProxy.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\TMX.Interfaces\Remoting\ITestTaskStatusProxy.cs">
+      <Link>Remoting\ITestTaskStatusProxy.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\TMX.Interfaces\Remoting\ITestWorkflow.cs">
+      <Link>Remoting\ITestWorkflow.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\TMX.Interfaces\Remoting\IWorkflow.cs">
+      <Link>Remoting\IWorkflow.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\TMX.Interfaces\Remoting\ListOfTestSuites.cs">
+      <Link>Remoting\ListOfTestSuites.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\TMX.Interfaces\Internal\ISystemInfo.cs">
+      <Link>Internal\ISystemInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\TMX.Interfaces\Exceptions\AcceptTaskException.cs">
+      <Link>Exceptions\AcceptTaskException.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\TMX.Interfaces\Exceptions\ClientDeregistrationException.cs">
+      <Link>Exceptions\ClientDeregistrationException.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\TMX.Interfaces\Exceptions\ClientNotRegisteredException.cs">
+      <Link>Exceptions\ClientNotRegisteredException.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\TMX.Interfaces\Exceptions\ClientRegistrationException.cs">
+      <Link>Exceptions\ClientRegistrationException.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\TMX.Interfaces\Exceptions\CompleteTaskException.cs">
+      <Link>Exceptions\CompleteTaskException.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\TMX.Interfaces\Exceptions\FailedToGetNextTaskException.cs">
+      <Link>Exceptions\FailedToGetNextTaskException.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\TMX.Interfaces\Exceptions\LoadingTestResultsException.cs">
+      <Link>Exceptions\LoadingTestResultsException.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\TMX.Interfaces\Exceptions\LoadTaskException.cs">
+      <Link>Exceptions\LoadTaskException.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\TMX.Interfaces\Exceptions\SendingCommonDataItemException.cs">
+      <Link>Exceptions\SendingCommonDataItemException.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\TMX.Interfaces\Exceptions\SendingDetailedStatusException.cs">
+      <Link>Exceptions\SendingDetailedStatusException.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\TMX.Interfaces\Exceptions\SendingTestResultsException.cs">
+      <Link>Exceptions\SendingTestResultsException.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\TMX.Interfaces\Exceptions\UpdateTaskException.cs">
+      <Link>Exceptions\UpdateTaskException.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\TMX.Interfaces\Exceptions\WorkflowLoadingException.cs">
+      <Link>Exceptions\WorkflowLoadingException.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\TMX.Interfaces\Exceptions\WrongTaskDataException.cs">
+      <Link>Exceptions\WrongTaskDataException.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\TMX.Interfaces\Delegates\Delegates.cs">
+      <Link>Delegates\Delegates.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\TMX.Interfaces\DataTypes\IAddScenarioCmdletBaseDataObject.cs">
+      <Link>DataTypes\IAddScenarioCmdletBaseDataObject.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\TMX.Interfaces\DataTypes\IAddTestCaseCmdletBaseDataObject.cs">
+      <Link>DataTypes\IAddTestCaseCmdletBaseDataObject.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\TMX.Interfaces\DataTypes\ICommonCmdletBaseDataObject.cs">
+      <Link>DataTypes\ICommonCmdletBaseDataObject.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\TMX.Interfaces\DataTypes\ICommonDataObject.cs">
+      <Link>DataTypes\ICommonDataObject.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\TMX.Interfaces\DataTypes\IGetTmxTestSuiteStatusDataObject.cs">
+      <Link>DataTypes\IGetTmxTestSuiteStatusDataObject.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\TMX.Interfaces\DataTypes\IImportExportCmdletBaseDataObject.cs">
+      <Link>DataTypes\IImportExportCmdletBaseDataObject.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\TMX.Interfaces\DataTypes\IOpenScenarioCmdletBaseDataObject.cs">
+      <Link>DataTypes\IOpenScenarioCmdletBaseDataObject.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\TMX.Interfaces\DataTypes\IOpenSuiteCmdletBaseDataObject.cs">
+      <Link>DataTypes\IOpenSuiteCmdletBaseDataObject.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\TMX.Interfaces\DataTypes\ISearchCmdletBaseDataObject.cs">
+      <Link>DataTypes\ISearchCmdletBaseDataObject.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\TMX.Interfaces\DataTypes\ISearchTmxTestResultDataObject.cs">
+      <Link>DataTypes\ISearchTmxTestResultDataObject.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\TMX.Interfaces\DataTypes\ISettingsCmdletBaseDataObject.cs">
+      <Link>DataTypes\ISettingsCmdletBaseDataObject.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\TMX.Interfaces\DataTypes\ITestResultCmdletBaseDataObject.cs">
+      <Link>DataTypes\ITestResultCmdletBaseDataObject.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\TMX.Interfaces\DataTypes\ItestResultDetailCmdletBaseDataObject.cs">
+      <Link>DataTypes\ItestResultDetailCmdletBaseDataObject.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\TMX.Interfaces\DataTypes\ITestResultStatusCmdletBaseDataObject.cs">
+      <Link>DataTypes\ITestResultStatusCmdletBaseDataObject.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\TMX.Interfaces\DataTypes\Types\AddScenarioCmdletBaseDataObject.cs">
+      <Link>DataTypes\Types\AddScenarioCmdletBaseDataObject.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\TMX.Interfaces\DataTypes\Types\AddTestCaseCmdletBaseDataObject.cs">
+      <Link>DataTypes\Types\AddTestCaseCmdletBaseDataObject.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\TMX.Interfaces\DataTypes\Types\CommonCmdletBaseDataObject.cs">
+      <Link>DataTypes\Types\CommonCmdletBaseDataObject.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\TMX.Interfaces\DataTypes\Types\GetTmxTestSuiteStatusDataObject.cs">
+      <Link>DataTypes\Types\GetTmxTestSuiteStatusDataObject.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\TMX.Interfaces\DataTypes\Types\ImportExportCmdletBaseDataObject.cs">
+      <Link>DataTypes\Types\ImportExportCmdletBaseDataObject.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\TMX.Interfaces\DataTypes\Types\OpenScenarioCmdletBaseDataObject.cs">
+      <Link>DataTypes\Types\OpenScenarioCmdletBaseDataObject.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\TMX.Interfaces\DataTypes\Types\SearchCmdletBaseDataObject.cs">
+      <Link>DataTypes\Types\SearchCmdletBaseDataObject.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\TMX.Interfaces\DataTypes\Types\SearchTmxTestResultDataObject.cs">
+      <Link>DataTypes\Types\SearchTmxTestResultDataObject.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\TMX.Interfaces\DataTypes\Types\SettingsCmdletBaseDataObject.cs">
+      <Link>DataTypes\Types\SettingsCmdletBaseDataObject.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\TMX.Interfaces\DataTypes\Types\TestResultCmdletBaseDataObject.cs">
+      <Link>DataTypes\Types\TestResultCmdletBaseDataObject.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\TMX.Interfaces\DataTypes\Types\TestResultDetailCmdletBaseDataObject.cs">
+      <Link>DataTypes\Types\TestResultDetailCmdletBaseDataObject.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\TMX.Interfaces\DataTypes\Types\TestResultStatusCmdletBaseDataObject.cs">
+      <Link>DataTypes\Types\TestResultStatusCmdletBaseDataObject.cs</Link>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -115,5 +278,7 @@
     <Folder Include="Remoting\" />
     <Folder Include="TestStructure\" />
     <Folder Include="Types\" />
+    <Folder Include="Types\TestStructure\" />
+    <Folder Include="DataTypes\Types\" />
   </ItemGroup>
 </Project>
