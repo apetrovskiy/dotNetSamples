@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+# SharpDevelop 5.0
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "testXmlImport", "testXmlImport\testXmlImport.csproj", "{391E8780-E16D-487A-96E0-5B50B0F61BBD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TMX.Interfaces", "..\..\PS\STUPS\TMX\TMX.Interfaces\TMX.Interfaces.csproj", "{9C5DA25F-6A59-4F97-B107-64DD549CB800}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tmx.Core", "..\..\PS\STUPS\TMX\Tmx.Core\Tmx.Core.csproj", "{069651A0-FE15-42E2-89D5-9A761A47B143}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{391E8780-E16D-487A-96E0-5B50B0F61BBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{391E8780-E16D-487A-96E0-5B50B0F61BBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{391E8780-E16D-487A-96E0-5B50B0F61BBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{391E8780-E16D-487A-96E0-5B50B0F61BBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C5DA25F-6A59-4F97-B107-64DD549CB800}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C5DA25F-6A59-4F97-B107-64DD549CB800}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C5DA25F-6A59-4F97-B107-64DD549CB800}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C5DA25F-6A59-4F97-B107-64DD549CB800}.Release|Any CPU.Build.0 = Release|Any CPU
+		{069651A0-FE15-42E2-89D5-9A761A47B143}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{069651A0-FE15-42E2-89D5-9A761A47B143}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{069651A0-FE15-42E2-89D5-9A761A47B143}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{069651A0-FE15-42E2-89D5-9A761A47B143}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
