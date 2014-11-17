@@ -40,9 +40,6 @@
     <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Core\TestResultDetail.cs">
       <Link>TestResultDetail.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Core\TestResultsImportExport.cs">
-      <Link>TestResultsImportExport.cs</Link>
-    </Compile>
     <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Core\TestResultsSearcher.cs">
       <Link>TestResultsSearcher.cs</Link>
     </Compile>
@@ -171,6 +168,12 @@
     </Compile>
     <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Core\ExtensionMethods\ExtensionMethods.cs">
       <Link>ExtensionMethods\ExtensionMethods.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Core\TestResultsImporter.cs">
+      <Link>TestResultsImporter.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Core\TestResultsExporter.cs">
+      <Link>TestResultsExporter.cs</Link>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
