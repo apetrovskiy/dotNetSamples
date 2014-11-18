@@ -1,52 +1,12 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="../../PS/STUPS/TMX/Tmx.Core/Helpers/TMXHelper.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="../../PS/STUPS/TMX/Tmx.Server/Modules/TestTasksModule.cs">
     <Files>
-      <File FileName="../../PS/STUPS/TMX/Tmx.Server/Modules/TestRunsModule.cs" Line="1" Column="1" />
-      <File FileName="../../PS/STUPS/TMX/Tmx.Server/Modules/TestTasksModule.cs" Line="1" Column="1" />
-      <File FileName="../../PS/STUPS/TMX/Tmx.Server/Helpers/TaskSelector.cs" Line="1" Column="1" />
-      <File FileName="../../PS/STUPS/TMX/Tmx.Server/Helpers/Objects/TaskPool.cs" Line="1" Column="1" />
-      <File FileName="../../PS/STUPS/TMX/TMX.Interfaces/Remoting/ITestTask.cs" Line="1" Column="1" />
-      <File FileName="../../PS/STUPS/TMX/Tmx.Server/Helpers/WorkflowLoader.cs" Line="1" Column="1" />
-      <File FileName="../../PS/STUPS/TMX/Tmx.Server/Helpers/TestRunSelector.cs" Line="1" Column="1" />
-      <File FileName="../../PS/STUPS/TMX/Tmx.Server/Helpers/ServerWatcher.cs" Line="1" Column="1" />
-      <File FileName="../../PS/STUPS/TMX/Tmx.Server/Helpers/CommonData.cs" Line="1" Column="1" />
-      <File FileName="../../PS/STUPS/TMX/Tmx.Server/Helpers/Objects/WorkflowCollection.cs" Line="1" Column="1" />
-      <File FileName="../../PS/STUPS/TMX/Tmx.Server/Helpers/Objects/TestRunQueue.cs" Line="1" Column="1" />
-      <File FileName="../../PS/STUPS/TMX/Tmx.Server/Helpers/Objects/TestLabCollection.cs" Line="1" Column="1" />
-      <File FileName="../../PS/STUPS/TMX/Tmx.Server/Helpers/Objects/ContainerForTests.cs" Line="1" Column="1" />
-      <File FileName="../../PS/STUPS/TMX/Tmx.Server/Helpers/Objects/ClientsCollection.cs" Line="1" Column="1" />
-      <File FileName="../../PS/STUPS/TMX/Tmx.Server/Helpers/ObjectModel/GlobalSettings.cs" Line="1" Column="1" />
-      <File FileName="../../PS/STUPS/TMX/Tmx.Server/Helpers/ObjectModel/WorkflowSettings.cs" Line="1" Column="1" />
-      <File FileName="../../PS/STUPS/TMX/Tmx.Server/Helpers/Control/InternalServerControl.cs" Line="1" Column="1" />
-      <File FileName="../../PS/STUPS/TMX/Tmx.Server/Helpers/Control/ModulesLoader.cs" Line="1" Column="1" />
-      <File FileName="../../PS/STUPS/TMX/Tmx.Server/Helpers/Control/PluginsLoader.cs" Line="1" Column="1" />
-      <File FileName="../../PS/STUPS/TMX/Tmx.Server/Helpers/Control/ServerControl.cs" Line="1" Column="1" />
-      <File FileName="../../PS/STUPS/TMX/Tmx.Server/Helpers/Control/TmxServerRootPathProvider.cs" Line="1" Column="1" />
-      <File FileName="../../PS/STUPS/TMX/TMX.Interfaces/Remoting/ITestTaskCodeProxy.cs" Line="1" Column="1" />
-      <File FileName="../../PS/STUPS/TMX/TMX.Interfaces/Remoting/ListOfTestSuites.cs" Line="1" Column="1" />
-      <File FileName="../../PS/STUPS/TMX/TMX.Interfaces/Remoting/IWorkflow.cs" Line="1" Column="1" />
-      <File FileName="../../PS/STUPS/TMX/TMX.Interfaces/Remoting/ITestWorkflow.cs" Line="1" Column="1" />
-      <File FileName="../../PS/STUPS/TMX/TMX.Interfaces/Remoting/ITestTaskStatusProxy.cs" Line="1" Column="1" />
-      <File FileName="../../PS/STUPS/TMX/TMX.Interfaces/Remoting/ITestRun.cs" Line="1" Column="1" />
-      <File FileName="../../PS/STUPS/TMX/TMX.Interfaces/Remoting/ITestResultsHolder.cs" Line="1" Column="1" />
-      <File FileName="../../PS/STUPS/TMX/TMX.Interfaces/Remoting/ITestResultsDataObject.cs" Line="1" Column="1" />
-      <File FileName="../../PS/STUPS/TMX/TMX.Interfaces/Remoting/ITestLab.cs" Line="1" Column="1" />
-      <File FileName="../../PS/STUPS/TMX/TMX.Interfaces/Remoting/ITestHostGroup.cs" Line="1" Column="1" />
-      <File FileName="../../PS/STUPS/TMX/TMX.Interfaces/Remoting/ITestHost.cs" Line="1" Column="1" />
-      <File FileName="../../PS/STUPS/TMX/TMX.Interfaces/Remoting/ITestClientProxy.cs" Line="1" Column="1" />
-      <File FileName="../../PS/STUPS/TMX/TMX.Interfaces/Remoting/ITestClient.cs" Line="1" Column="1" />
-      <File FileName="../../PS/STUPS/TMX/TMX.Interfaces/Remoting/IServerCommand.cs" Line="1" Column="1" />
-      <File FileName="../../PS/STUPS/TMX/TMX.Interfaces/Remoting/ICommonDataItem.cs" Line="1" Column="1" />
-      <File FileName="../../PS/STUPS/TMX/TMX.Interfaces/Remoting/ICommonData.cs" Line="1" Column="1" />
-      <File FileName="../../PS/STUPS/TMX/TMX.Interfaces/Remoting/Enums.cs" Line="1" Column="1" />
-      <File FileName="../../PS/STUPS/TMX/TMX.Interfaces/IDatabase.cs" Line="1" Column="1" />
-      <File FileName="../../PS/STUPS/TMX/TMX.Interfaces/ITestSuitesCollection.cs" Line="1" Column="1" />
-      <File FileName="../../PS/STUPS/TMX/TMX.Interfaces/Types/TestStructure/TestStat.cs" Line="1" Column="1" />
-      <File FileName="../../PS/STUPS/TMX/TMX.Interfaces/TestStructure/ITestSuite.cs" Line="1" Column="1" />
-      <File FileName="../../PS/STUPS/TMX/Tmx.Core/ExtensionMethods/ExtensionMethods.cs" Line="1" Column="1" />
-      <File FileName="../../PS/STUPS/TMX/Tmx.Core/Helpers/StorageHelper.cs" Line="1" Column="1" />
-      <File FileName="../../PS/STUPS/TMX/Tmx.Core/Helpers/TMXHelper.cs" Line="1" Column="1" />
+      <File FileName="../../PS/STUPS/TMX/Tmx.Core/ExtensionMethods/ExtensionMethods.cs" Line="141" Column="35" />
+      <File FileName="../../PS/STUPS/TMX/TMX.Interfaces/Remoting/Enums.cs" Line="53" Column="9" />
+      <File FileName="../../PS/STUPS/TMX/Tmx.Server/Modules/TestTasksModule.cs" Line="113" Column="1" />
+      <File FileName="../../PS/STUPS/TMX/Tmx.Server/Helpers/TaskSelector.cs" Line="25" Column="82" />
+      <File FileName="../../PS/STUPS/TMX/TMX.Interfaces/Remoting/ITestTask.cs" Line="43" Column="22" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
