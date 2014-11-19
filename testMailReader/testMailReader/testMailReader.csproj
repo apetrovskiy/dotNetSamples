@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -33,6 +33,9 @@
     <LangVersion>5</LangVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Mail">
+      <HintPath>..\packages\Mail.dll.3.0.14228.1107\lib\Mail.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="OpenPop">
       <HintPath>..\packages\OpenPop.NET.2.0.6.1076\lib\net20\OpenPop.dll</HintPath>
