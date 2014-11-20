@@ -17,7 +17,7 @@ namespace testMailReader
             
             var client = new OpenPop.Pop3.Pop3Client();
             // client.Connect("pop.gmail.com", 995, true);
-            client.Connect("192.168.129.21", 25, false);
+            client.Connect("192.168.129.21", 110, false);
             client.Authenticate("report_reader@SPALab.at.local", "Lock12Lock", AuthenticationMethod.Auto);
             var count = client.GetMessageCount();
 //            Message message = client.GetMessage(count);
@@ -26,7 +26,7 @@ namespace testMailReader
 
             var pop3Client = new Pop3Client ();
             // pop3Client.ConnectSsl("pop.gmail.com", 995, "admin@bendytree.com", "YourPasswordHere");
-            pop3Client.Connect("192.168.129.21", 25, "report_reader@SPALab.at.local", "Lock12Lock");
+            pop3Client.Connect("192.168.129.21", 110, "report_reader@SPALab.at.local", "Lock12Lock");
             // pop3Client.L
             // Console.WriteLine (pop3Client.MessageCount);
             pop3Client.RetrieveMessage (1);

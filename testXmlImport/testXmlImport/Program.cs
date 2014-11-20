@@ -8,6 +8,7 @@
  */
 using System;
 using System.IO;
+using Tmx;
 using Tmx.Core;
 using Tmx.Interfaces;
 
@@ -26,6 +27,18 @@ namespace testXmlImport
             // const string filename = @"111";
             // const string filename = @"112";
             const string filename = @"113";
+            // const string filename = @"1001";
+            
+//            var testResultsExporter = new TestResultsExporter();
+//            testResultsExporter.ExportResultsToXml(
+//                new ImportExportCmdletBaseDataObject {
+//                    As = "XML",
+//                    Path = folder + filename + ".xml",
+//                    FilterAll = true
+//                },
+//                folder + filename + ".xml",
+//                TestData.TestSuites);
+            
             var testResultImporter = new TestResultsImporter();
             var dataObject = new ImportExportCmdletBaseDataObject {
                 As = "XML",
