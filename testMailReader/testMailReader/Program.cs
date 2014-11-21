@@ -33,6 +33,7 @@ namespace testMailReader
 
             var imapClient = new Imap4Client ();
             imapClient.ConnectSsl("imap.gmail.com", 993);
+            // imapClient.Login ("report_reader@SPALab.at.local", "Lock12Lock");
             imapClient.Login ("report_reader@SPALab.at.local", "Lock12Lock");
 
             // var inbox = imapClient.SelectMailbox ("inbox");
