@@ -25,10 +25,10 @@ namespace testNancyPagePosting
         }
 
         protected override DiagnosticsConfiguration DiagnosticsConfiguration {
-                        get {
-                                return new DiagnosticsConfiguration { Password = "admin" };
-                            }
-                    } 
+            get {
+                return new DiagnosticsConfiguration { Password = "admin" };
+            }
+        }
     }
 }
 

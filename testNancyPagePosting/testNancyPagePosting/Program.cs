@@ -13,7 +13,8 @@ namespace testNancyPagePosting
         {
             Console.WriteLine ("Hello World!");
 
-            var host = new NancyHost(new Uri("http://127.0.0.1:8888"));
+            // var host = new NancyHost(new Uri("http://127.0.0.1:8888"));
+            var host = new NancyHost(new Uri("http://localhost:12340"));
             host.Start();  // start hosting
 
             Console.ReadKey ();
