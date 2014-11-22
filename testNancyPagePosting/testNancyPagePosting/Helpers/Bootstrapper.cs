@@ -12,6 +12,7 @@ namespace testNancyPagePosting
     {
         protected override void ConfigureConventions (Nancy.Conventions.NancyConventions nancyConventions)
         {
+            StaticConfiguration.DisableErrorTraces = false;
             // nancyConventions.ViewLocationConventions.Add (Environment.CurrentDirectory + "/Views", "/");
             // nancyConventions.StaticContentsConventions.Add(
             //     StaticContentConventionBuilder.AddDirectory((new MyRootPathProvider()).GetRootPath() + @"Views/data", "/data")); 

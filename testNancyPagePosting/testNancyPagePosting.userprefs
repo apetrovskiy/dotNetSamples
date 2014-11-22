@@ -2,13 +2,13 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
   <MonoDevelop.Ide.Workbench ActiveDocument="testNancyPagePosting/Modules/DataModule.cs">
     <Files>
-      <File FileName="testNancyPagePosting/Program.cs" Line="1" Column="1" />
-      <File FileName="testNancyPagePosting/Modules/DataModule.cs" Line="13" Column="45" />
-      <File FileName="testNancyPagePosting/Views/data/data.htm" Line="1" Column="1" />
+      <File FileName="testNancyPagePosting/Program.cs" Line="15" Column="13" />
+      <File FileName="testNancyPagePosting/Modules/DataModule.cs" Line="11" Column="1" />
+      <File FileName="testNancyPagePosting/Views/data/data.htm" Line="11" Column="1" />
       <File FileName="testNancyPagePosting/packages.config" Line="1" Column="1" />
       <File FileName="testNancyPagePosting/Helpers/Bootstrapper.html" Line="1" Column="1" />
-      <File FileName="testNancyPagePosting/Helpers/Bootstrapper.cs" Line="28" Column="82" />
-      <File FileName="testNancyPagePosting/Views/data/h1.htm" Line="7" Column="21" />
+      <File FileName="testNancyPagePosting/Helpers/Bootstrapper.cs" Line="15" Column="60" />
+      <File FileName="testNancyPagePosting/Views/data/h1.htm" Line="1" Column="1" />
       <File FileName="testNancyPagePosting/Helpers/MyRootPathProvider.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>

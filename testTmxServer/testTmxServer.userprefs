@@ -1,15 +1,20 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="../../PS/STUPS/TMX/Tmx.Core/TestResultsImporter.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="../../PS/STUPS/TMX/Tmx.Core/Types/Remoting/TestRun.cs">
     <Files>
       <File FileName="../../PS/STUPS/TMX/Tmx.Core/ExtensionMethods/ExtensionMethods.cs" Line="1" Column="1" />
       <File FileName="../../PS/STUPS/TMX/TMX.Interfaces/Remoting/Enums.cs" Line="1" Column="1" />
       <File FileName="../../PS/STUPS/TMX/Tmx.Server/Modules/TestTasksModule.cs" Line="1" Column="1" />
       <File FileName="../../PS/STUPS/TMX/Tmx.Server/Helpers/TaskSelector.cs" Line="1" Column="1" />
       <File FileName="../../PS/STUPS/TMX/TMX.Interfaces/Remoting/ITestTask.cs" Line="1" Column="1" />
-      <File FileName="../../PS/STUPS/TMX/Tmx.Server/Helpers/Control/InternalServerControl.cs" Line="69" Column="1" />
+      <File FileName="../../PS/STUPS/TMX/Tmx.Server/Helpers/Control/InternalServerControl.cs" Line="1" Column="1" />
       <File FileName="../../PS/STUPS/TMX/Tmx.Server/Helpers/Control/TmxServerRootPathProvider.cs" Line="1" Column="1" />
       <File FileName="../../PS/STUPS/TMX/Tmx.Core/TestResultsImporter.cs" Line="55" Column="13" />
+      <File FileName="../../PS/STUPS/TMX/Tmx.Server/Modules/TestRunsModule.cs" Line="41" Column="9" />
+      <File FileName="../../PS/STUPS/TMX/Tmx.Core/Types/Remoting/TestRun.cs" Line="44" Column="1" />
+      <File FileName="../../PS/STUPS/TMX/TMX.Interfaces/Remoting/ICommonData.cs" Line="21" Column="29" />
+      <File FileName="../../PS/STUPS/TMX/Tmx.Core/Types/Remoting/CommonDataItem.cs" Line="1" Column="1" />
+      <File FileName="../../PS/STUPS/TMX/Tmx.Core/Types/Remoting/CommonData.cs" Line="30" Column="48" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
