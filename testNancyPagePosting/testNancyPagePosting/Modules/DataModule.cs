@@ -1,6 +1,7 @@
 namespace testNancyPagePosting
 {
     using System;
+    using System.Dynamic;
     using Nancy;
     using Nancy.ModelBinding;
     
@@ -45,8 +46,19 @@ namespace testNancyPagePosting
             };
 
             Get ["/data"] = parameters => {
-                // return data;
-                return View["data", data];
+                // return View["data", data];
+                dynamic data01 = new ExpandoObject();
+                data01.selector = Request.Form.workflows_name;
+                // data01.selector = parameters.workflows_name;
+                // return View["data", data01];
+                return View["data", Request.Form.workflows_name];
+            };
+
+            Put ["/data"] = parameters => {
+                dynamic data01 = new ExpandoObject();
+                // data01.selector = Request.Form.workflows_name;
+                data01.selector = parameters.workflows_name;
+                return View["data", data01];
             };
         }
     }
