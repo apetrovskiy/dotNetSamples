@@ -147,6 +147,9 @@
     <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Server\Helpers\Objects\TestRunQueue.cs">
       <Link>Helpers\Objects\TestRunQueue.cs</Link>
     </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Server\Helpers\TestRunInitializer.cs">
+      <Link>Helpers\TestRunInitializer.cs</Link>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -160,6 +163,7 @@
     <Folder Include="Helpers\Control\" />
     <Folder Include="Helpers\ObjectModel\" />
     <Folder Include="Helpers\Objects\" />
+    <Folder Include="Views\testRuns\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\..\PS\STUPS\TMX\Tmx.Server\Views\index.htm">
@@ -217,6 +221,9 @@
     <None Include="Scripts\jquery-2.1.1.min.map" />
     <None Include="..\..\..\PS\STUPS\TMX\Tmx.Server\Views\status\TestRuns.liquid">
       <Link>Views\status\TestRuns.liquid</Link>
+    </None>
+    <None Include="..\..\..\PS\STUPS\TMX\Tmx.Server\Views\testRuns\newtestRun.liquid">
+      <Link>Views\testRuns\newtestRun.liquid</Link>
     </None>
   </ItemGroup>
   <ItemGroup>
