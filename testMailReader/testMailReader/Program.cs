@@ -20,6 +20,7 @@ namespace testMailReader
             client.Connect("192.168.129.21", 110, false);
             client.Authenticate("report_reader@SPALab.at.local", "Lock12Lock", AuthenticationMethod.Auto);
             var count = client.GetMessageCount();
+            Console.WriteLine(count);
 //            Message message = client.GetMessage(count);
 //            Console.WriteLine(message.Headers.Subject);
             
