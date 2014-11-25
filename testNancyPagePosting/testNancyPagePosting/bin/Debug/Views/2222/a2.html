@@ -1,0 +1,45 @@
+
+<html>
+ <head>
+     <title></title>
+ </head>
+ <body>
+    A2
+    @Model.Info
+     <form method="POST">
+        <table border="1" disabled=true> <!-- style="width:100%> -->
+            <tr><td colspan="2" align="center"><b>Domain, Organizational Unit</b></td></tr>
+            <tr>
+                <td><input id="ADA" type="checkbox" name="ADA" checked value="true">Active Directory</input></td>
+                <td><input id="EA" type="checkbox" name="EA" checked value="true">Exchange</input></td>
+            </tr>
+            <tr>
+                <td><input id="GPA" type="checkbox" name="GPA" checked value="true">Group Policy</input></td>
+                <td><input id="NOMBA" type="checkbox" name="NOMBA" checked value="true" disabled>Non-owner Mailbox Access</input></td>
+            </tr>
+            <tr>
+                <td><input id="IUT" type="checkbox" name="IUT" checked value="true">Inactive Users Tracking</input></td>
+                <td><input id="PEA" type="checkbox" name="PEA" checked value="true">Password Expiration Alerting</input></td>
+            </tr>
+            <tr><td colspan="2" align="center"><b>Computer Collection</b></td></tr>
+            <tr>
+                <td><input id="ELA" type="checkbox" name="ELA" checked value="true">Event Log</input></td>
+                <td><input id="SQLA" type="checkbox" name="SQLA" checked value="true">SQL Server</input></td>
+            </tr>
+            <tr>
+                <td><input id="FSA" type="checkbox" name="FSA" checked value="true">File Servers</input></td>
+                <td><input id="WSA" type="checkbox" name="WSA" checked value="true">Windows Server</input></td>
+            </tr>
+            <tr>
+                <td><input id="UAVR" type="checkbox" name="UAVR" checked value="true">User Activity Video Reporter</input></td>
+            </tr>
+            <tr><td colspan="2" align="center"><b>Sharepoint, VMware</b></td></tr>
+            <tr>
+                <td><input id="SPA" type="checkbox" name="SPA" checked value="true">SharePoint</input></td>
+                <td><input id="VMA" type="checkbox" name="VMA" checked value="true">VMware</input></td>
+            </tr>
+        </table>
+        <input type="submit" value="Run test" />
+    </form>
+ </body>
+</html>

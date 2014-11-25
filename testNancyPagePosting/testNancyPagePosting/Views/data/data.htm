@@ -2,16 +2,37 @@
 <html>
  <head>
      <title>aaaa</title>
+        <script>
+            // http://www.dyn-web.com/tutorials/iframes/height/
+            function getDocHeight(doc) {
+                doc = doc || document;
+                // stackoverflow.com/questions/1145850/
+                var body = doc.body, html = doc.documentElement;
+                var height = Math.max( body.scrollHeight, body.offsetHeight, 
+                    html.clientHeight, html.scrollHeight, html.offsetHeight );
+                return height;
+            }
+            
+            function setIframeHeight(id) {
+                var ifrm = document.getElementById(id);
+                var doc = ifrm.contentDocument? ifrm.contentDocument: 
+                    ifrm.contentWindow.document;
+                ifrm.style.visibility = 'hidden';
+                ifrm.style.height = "10px"; // reset to minimal height ...
+                // IE opt. for bing/msn needs a bit added or scrollbar appears
+                ifrm.style.height = getDocHeight( doc ) + 4 + "px";
+                ifrm.style.visibility = 'visible';
+            }
+        </script>
  </head>
  <body>
     <hr>
     <h1>aaa</h1>
     <hr>
-    
+    <p id="info">@Model.Info</p>
     <h3>Please select test workflow</h3>
-     <form method="PUT">
-     
-
+     <form method="POST">
+        
         <select multiple="multiple" name="colors">
         <option> RED </option>
         <option> GREEN </option>
@@ -20,95 +41,16 @@
         <option> ORANGE </option>
         </select>
         
-        <select id="workflows_id" name="workflows_name">
+        <select id="workflows_id" name="workflow_name">
             <option>a1</option>
-            <option>a2 22  22   22</option>
+            <option>a2</option>
             <option>a3</option>
         </select>
         <input type="submit" value="Select" />
     </form>
     <h3>Test parameters</h3>
-    <form method="POST">
-        <!---
-        Username <input type="text" name="Username" />
-        <br />
-        Password <input name="Password" type="password" />
-        <br />
-        Remember Me <input name="RememberMe" type="checkbox" value="True" />
-        <br />
-        <input type="submit" value="Login" />
-        
-        
-        User 1:<input type="text" name="Name[0]" value="thecodejunkie" /> 
-        Commits <input type="text" name="Commits[0]" value="1068"/>
-        <br />
-        User 2:<input type="text" name="Name[1]" value="grumpydev" />  
-        Commits <input type="text" name="Commits[1]" value="1049"/>
-        <br />
-        User 3:<input type="text" name="Name[2]" value="jchannon" />  
-        Commits <input type="text" name="Commits[2]" value="109"/>
-        <br />
-        User 4:<input type="text" name="Name[3]" value="prabirshrestha" />  
-        Commits <input type="text" name="Commits[3]" value="75"/>
-        <br />
-        User 5:<input type="text" name="Name[4]" value="phillip-haydon" />  
-        Commits <input type="text" name="Commits[4]" value="40"/>
-        <br />
-        -->
-        <table border="1" disabled=true> <!-- style="width:100%> -->
-            <tr><td colspan="2" align="center"><b>Domain, Organizational Unit</b></td></tr>
-            <tr>
-                <td><input id="ADA" type="checkbox" name="ADA" checked value="true">Active Directory</input></td>
-                <td><input id="EA" type="checkbox" name="EA" checked value="true">Exchange</input></td>
-            </tr>
-            <tr>
-                <td><input id="GPA" type="checkbox" name="GPA" checked value="true">Group Policy</input></td>
-                <td><input id="NOMBA" type="checkbox" name="NOMBA" checked value="true" disabled>Non-owner Mailbox Access</input></td>
-            </tr>
-            <tr>
-                <td><input id="IUT" type="checkbox" name="IUT" checked value="true">Inactive Users Tracking</input></td>
-                <td><input id="PEA" type="checkbox" name="PEA" checked value="true">Password Expiration Alerting</input></td>
-            </tr>
-            <tr><td colspan="2" align="center"><b>Computer Collection</b></td></tr>
-            <tr>
-                <td><input id="ELA" type="checkbox" name="ELA" checked value="true">Event Log</input></td>
-                <td><input id="SQLA" type="checkbox" name="SQLA" checked value="true">SQL Server</input></td>
-            </tr>
-            <tr>
-                <td><input id="FSA" type="checkbox" name="FSA" checked value="true">File Servers</input></td>
-                <td><input id="WSA" type="checkbox" name="WSA" checked value="true">Windows Server</input></td>
-            </tr>
-            <tr>
-                <td><input id="UAVR" type="checkbox" name="UAVR" checked value="true">User Activity Video Reporter</input></td>
-            </tr>
-            <tr><td colspan="2" align="center"><b>Sharepoint, VMware</b></td></tr>
-            <tr>
-                <td><input id="SPA" type="checkbox" name="SPA" checked value="true">SharePoint</input></td>
-                <td><input id="VMA" type="checkbox" name="VMA" checked value="true">VMware</input></td>
-            </tr>
-        </table>
-        
-        <br />
-        
-        Full path to the previous build:<br>
-        <input type="text" id="previousBuild" name="previousBuild" placeholder="\\server.fqdn\share\path\package.msi" required size=100 disabled><br><br>
-        Full path to the current build:<br>
-        <input type="text" id="currentBuild" name="currentBuild" placeholder="\\server.fqdn\share\path\package.msi" required size=100><br><br>
-        Mail recipients <i>(ONLY ONE)</i>:<br>
-        <!-- <input type="text" id="mailRecipient" name="mailRecipient" placeholder="vassily.poopkin@netwrix.com, uncle.sharick@netwrix.com" required size=100><br><br> -->
-        <input type="text" id="mailRecipient" name="mailRecipient" placeholder="vassily.poopkin@netwrix.com" required size=100><br><br>
-        <!--- <input id="submit" type="submit" value="Submit settings" style="display: none;">           
-        </form>
-        
-        <button id="run" type="button" onclick="initServer()">Run tests</button>
-        <br><br>
-        <iframe id="report" src="./report.htm" name="report" seamless width="100%" onload="setIframeHeight(this.id)" scrolling=auto></iframe>
-        
-        <p id="output">aaaa</p>
-        
-        <input type="submit" value="Test the binding thingy"/> -->
-        <input type="submit" value="Run test" />
-    </form>
-    
+    @Model.Path
+    @Model.colors
+    <iframe id="t_id" src="@Model.Path" name="t_name" seamless width="100%" onload="setIframeHeight(this.id)" scrolling=auto></iframe>
  </body>
 </html>
