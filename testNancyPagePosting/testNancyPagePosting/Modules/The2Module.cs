@@ -4,20 +4,18 @@ namespace testNancyPagePosting
     using System.Dynamic;
     using Nancy;
     using Nancy.ModelBinding;
-    
-    public class DataModule : NancyModule
+
+    public class The2Module : NancyModule
     {
-        static string _path;
-        static string _colors;
-
-        public DataModule () // : base("/data")
+        public The2Module () : base("/2222")
         {
-            dynamic data = null;
+            Get ["/{fileName}"] = parameters => {
+                return View[parameters.fileName];
+            };
 
-            Post ["/data"] = parameters => {
+            Post["/{fileName}"] = parameters => {
                 dynamic data01 = new ExpandoObject();
                 string loadedParams = string.Empty;
-                var result = this.Bind();
                 if (null != Request.Form && 0 < Request.Form.Count) {
                     foreach(var param in Request.Form) {
                         loadedParams += param;
@@ -27,15 +25,11 @@ namespace testNancyPagePosting
                     }
                 }
                 data01.Info = loadedParams;
-                data01.Path = "/2222/" + Request.Form.workflow_name;
-                return View["data.htm", data01];
-            };
 
-            Get ["/data"] = parameters => {
-                dynamic data01 = new ExpandoObject();
-                data01.Path = _path;
-                data01.Colors = _colors;
-                return View["data.htm"]; //, data01];
+                // var testRun = new TestRun(); // with workflow fileName
+                // start test run
+
+                return View[parameters.fileName, data01];
             };
         }
     }

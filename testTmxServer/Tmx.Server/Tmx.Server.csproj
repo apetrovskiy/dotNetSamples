@@ -196,12 +196,6 @@
     <None Include="..\..\..\PS\STUPS\TMX\Tmx.Server\Views\settings\workflow.htm">
       <Link>Views\settings\workflow.htm</Link>
     </None>
-    <None Include="..\..\..\PS\STUPS\TMX\Tmx.Server\Views\status\clients.htm">
-      <Link>Views\status\clients.htm</Link>
-    </None>
-    <None Include="..\..\..\PS\STUPS\TMX\Tmx.Server\Views\status\tasks.htm">
-      <Link>Views\status\tasks.htm</Link>
-    </None>
     <None Include="..\..\..\PS\STUPS\TMX\Tmx.Server\Views\status\testClient.htm">
       <Link>Views\status\testClient.htm</Link>
     </None>
@@ -225,6 +219,19 @@
     <None Include="..\..\..\PS\STUPS\TMX\Tmx.Server\Views\testRuns\newtestRun.liquid">
       <Link>Views\testRuns\newtestRun.liquid</Link>
     </None>
+    <None Include="..\..\..\PS\STUPS\TMX\Tmx.Server\Views\status\clients.liquid">
+      <Link>Views\status\clients.liquid</Link>
+    </None>
+    <None Include="..\..\..\PS\STUPS\TMX\Tmx.Server\Views\status\tasks.liquid">
+      <Link>Views\status\tasks.liquid</Link>
+    </None>
+    <None Include="..\..\..\PS\STUPS\TMX\Tmx.Server\Views\status\testLabs.liquid">
+      <Link>Views\status\testLabs.liquid</Link>
+    </None>
+    <None Include="..\..\..\PS\STUPS\TMX\Tmx.Server\Views\results\testResults.liquid">
+      <Link>Views\results\testResults.liquid</Link>
+    </None>
+    <None Include="Views\status\testParameters.liquid" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Tmx.Core\Tmx.Core.csproj">

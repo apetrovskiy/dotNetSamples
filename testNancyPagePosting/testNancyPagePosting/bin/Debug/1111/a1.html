@@ -1,0 +1,21 @@
+
+<html>
+ <head>
+     <title></title>
+ </head>
+ <body>
+     <form method="POST">
+        A1
+        <br />
+        
+        Full path to the previous build:<br>
+        <input type="text" id="previousBuild" name="previousBuild" placeholder="\\server.fqdn\share\path\package.msi" required size=100 disabled><br><br>
+        Full path to the current build:<br>
+        <input type="text" id="currentBuild" name="currentBuild" placeholder="\\server.fqdn\share\path\package.msi" required size=100><br><br>
+        Mail recipients <i>(ONLY ONE)</i>:<br>
+        <!-- <input type="text" id="mailRecipient" name="mailRecipient" placeholder="vassily.poopkin@netwrix.com, uncle.sharick@netwrix.com" required size=100><br><br> -->
+        <input type="text" id="mailRecipient" name="mailRecipient" placeholder="vassily.poopkin@netwrix.com" required size=100><br><br>
+        <input type="submit" value="Run test" />
+    </form>
+ </body>
+</html>

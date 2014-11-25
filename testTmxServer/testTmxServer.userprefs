@@ -1,22 +1,11 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="../../PS/STUPS/TMX/Tmx.Server/Views/testRuns/newtestRun.liquid">
+  <MonoDevelop.Ide.Workbench ActiveDocument="../../PS/STUPS/TMX/Tmx.Server/Modules/ViewsTestStatusModule.cs">
     <Files>
-      <File FileName="../../PS/STUPS/TMX/Tmx.Core/ExtensionMethods/ExtensionMethods.cs" Line="1" Column="1" />
-      <File FileName="../../PS/STUPS/TMX/TMX.Interfaces/Remoting/Enums.cs" Line="1" Column="1" />
-      <File FileName="../../PS/STUPS/TMX/Tmx.Server/Modules/TestTasksModule.cs" Line="1" Column="1" />
-      <File FileName="../../PS/STUPS/TMX/Tmx.Server/Helpers/TaskSelector.cs" Line="1" Column="1" />
-      <File FileName="../../PS/STUPS/TMX/TMX.Interfaces/Remoting/ITestTask.cs" Line="1" Column="1" />
-      <File FileName="../../PS/STUPS/TMX/Tmx.Server/Helpers/Control/InternalServerControl.cs" Line="1" Column="1" />
-      <File FileName="../../PS/STUPS/TMX/Tmx.Server/Helpers/Control/TmxServerRootPathProvider.cs" Line="1" Column="1" />
-      <File FileName="../../PS/STUPS/TMX/Tmx.Core/TestResultsImporter.cs" Line="1" Column="1" />
-      <File FileName="../../PS/STUPS/TMX/Tmx.Server/Modules/TestRunsModule.cs" Line="1" Column="1" />
-      <File FileName="../../PS/STUPS/TMX/Tmx.Core/Types/Remoting/TestRun.cs" Line="1" Column="1" />
-      <File FileName="../../PS/STUPS/TMX/TMX.Interfaces/Remoting/ICommonData.cs" Line="1" Column="1" />
-      <File FileName="../../PS/STUPS/TMX/Tmx.Core/Types/Remoting/CommonDataItem.cs" Line="1" Column="1" />
-      <File FileName="../../PS/STUPS/TMX/Tmx.Core/Types/Remoting/CommonData.cs" Line="1" Column="1" />
-      <File FileName="../../PS/STUPS/TMX/Tmx.Server/Views/index.htm" Line="1" Column="1" />
-      <File FileName="../../PS/STUPS/TMX/Tmx.Server/Views/testRuns/newtestRun.liquid" Line="8" Column="24" />
+      <File FileName="../../PS/STUPS/TMX/Tmx.Server/Modules/ViewsTestStatusModule.cs" Line="68" Column="1" />
+      <File FileName="../../PS/STUPS/TMX/TMX.Interfaces/UrnList.cs" Line="120" Column="68" />
+      <File FileName="../../PS/STUPS/TMX/Tmx.Server/Modules/ViewsTestRunsModule.cs" Line="32" Column="15" />
+      <File FileName="../../PS/STUPS/TMX/Tmx.Server/Modules/ViewsTestResultsModule.cs" Line="59" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -54,6 +54,7 @@
     <Compile Include="Modules\DataModule.cs" />
     <Compile Include="Helpers\Bootstrapper.cs" />
     <Compile Include="Helpers\MyRootPathProvider.cs" />
+    <Compile Include="Modules\The2Module.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -64,11 +65,22 @@
     <None Include="Views\data\h1.htm">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="Views\2222\a2.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Views\2222\a1.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Views\2222\a3.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Modules\" />
     <Folder Include="Views\" />
     <Folder Include="Helpers\" />
     <Folder Include="Views\data\" />
+    <Folder Include="Views\2222\" />
+    <Folder Include="Views\data\3333\" />
   </ItemGroup>
 </Project>

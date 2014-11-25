@@ -15,7 +15,11 @@ namespace testNancyPagePosting
             StaticConfiguration.DisableErrorTraces = false;
             // nancyConventions.ViewLocationConventions.Add (Environment.CurrentDirectory + "/Views", "/");
             // nancyConventions.StaticContentsConventions.Add(
-            //     StaticContentConventionBuilder.AddDirectory((new MyRootPathProvider()).GetRootPath() + @"Views/data", "/data")); 
+            //     StaticContentConventionBuilder.AddDirectory((new MyRootPathProvider()).GetRootPath() + @"Views/data", "/data"));
+            nancyConventions.StaticContentsConventions.Add(
+                StaticContentConventionBuilder.AddDirectory((new MyRootPathProvider()).GetRootPath() + @"Views/data", "/data"));
+            nancyConventions.StaticContentsConventions.Add(
+                StaticContentConventionBuilder.AddDirectory((new MyRootPathProvider()).GetRootPath() + @"Views/2222", "/2222"));
             base.ConfigureConventions (nancyConventions);
         }
 
@@ -31,4 +35,3 @@ namespace testNancyPagePosting
         }
     }
 }
-
