@@ -1,13 +1,13 @@
-using OpenPop.Pop3;
-using OpenPop.Common.Logging;
-using OpenPop.Mime;
-using OpenPop.Pop3.Exceptions;
 
 namespace testMailReader
 {
     using System;
     using ActiveUp.Net.Imap4;
     using ActiveUp.Net.Mail;
+    using OpenPop.Pop3;
+    using OpenPop.Common.Logging;
+    using OpenPop.Mime;
+    using OpenPop.Pop3.Exceptions;
 
     class MainClass
     {
