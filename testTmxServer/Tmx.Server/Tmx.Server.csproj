@@ -51,6 +51,7 @@
       <HintPath>..\packages\Nancy.Viewengines.DotLiquid.0.23.2\lib\net40\Nancy.ViewEngines.DotLiquid.dll</HintPath>
     </Reference>
     <Reference Include="System.Data" />
+    <Reference Include="System.Dynamic" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -150,6 +151,8 @@
     <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Server\Helpers\TestRunInitializer.cs">
       <Link>Helpers\TestRunInitializer.cs</Link>
     </Compile>
+    <Compile Include="Helpers\ObjectModel\TestRunSettings.cs" />
+    <Compile Include="Helpers\ObjectModel\WorkflowSettings.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

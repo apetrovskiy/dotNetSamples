@@ -44,9 +44,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="..\..\..\PS\STUPS\TMX\TMX.Interfaces\UrnList.cs">
-      <Link>UrnList.cs</Link>
-    </Compile>
     <Compile Include="..\..\..\PS\STUPS\TMX\TMX.Interfaces\IDatabase.cs">
       <Link>IDatabase.cs</Link>
     </Compile>
@@ -277,6 +274,9 @@
     </Compile>
     <Compile Include="..\..\..\PS\STUPS\TMX\TMX.Interfaces\DataTypes\Types\TestResultStatusCmdletBaseDataObject.cs">
       <Link>DataTypes\Types\TestResultStatusCmdletBaseDataObject.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\TMX.Interfaces\UrlList.cs">
+      <Link>UrlList.cs</Link>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
