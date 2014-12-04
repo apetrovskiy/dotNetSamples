@@ -31,6 +31,9 @@
     <DefineConstants>TRACE</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DotLiquid">
+      <HintPath>..\packages\DotLiquid.1.8.0\lib\NET35\DotLiquid.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -45,8 +48,55 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\..\..\NancyExamples\DotLiquidExtends\ObjectModel\Product.cs">
+      <Link>ObjectModel\Product.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\NancyExamples\DotLiquidExtends\ObjectModel\Product2.cs">
+      <Link>ObjectModel\Product2.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\NancyExamples\DotLiquidExtends\ObjectModel\Product3.cs">
+      <Link>ObjectModel\Product3.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\NancyExamples\DotLiquidExtends\ObjectModel\ProductList.cs">
+      <Link>ObjectModel\ProductList.cs</Link>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\NancyExamples\DotLiquidExtends\Views\extension02.liquid">
+      <Link>Views\extension02.liquid</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\..\NancyExamples\DotLiquidExtends\Views\layout.liquid">
+      <Link>Views\layout.liquid</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\..\NancyExamples\DotLiquidExtends\Views\products_with_layout.liquid">
+      <Link>Views\products_with_layout.liquid</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\..\NancyExamples\DotLiquidExtends\Views\sorted.liquid">
+      <Link>Views\sorted.liquid</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\..\NancyExamples\DotLiquidExtends\Views\sorted2.liquid">
+      <Link>Views\sorted2.liquid</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\..\NancyExamples\DotLiquidExtends\Views\sorted3.liquid">
+      <Link>Views\sorted3.liquid</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Views\probe01.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Helpers" />
+    <Folder Include="ObjectModel" />
+    <Folder Include="Views" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
