@@ -1,0 +1,7 @@
+/projects/probe/testChartApi02/testChartApi02/obj/x86/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/projects/probe/testChartApi02/testChartApi02/obj/x86/Debug/testChartApi02.gtk-gui.gui.stetic
+/projects/probe/testChartApi02/testChartApi02/bin/Debug/testChartApi02.exe.mdb
+/projects/probe/testChartApi02/testChartApi02/bin/Debug/testChartApi02.exe
+/projects/probe/testChartApi02/testChartApi02/obj/x86/Debug/testChartApi02.exe
+/projects/probe/testChartApi02/testChartApi02/obj/x86/Debug/testChartApi02.exe.mdb
+/projects/probe/testChartApi02/testChartApi02/bin/Debug/GoogleChartSharp.dll
