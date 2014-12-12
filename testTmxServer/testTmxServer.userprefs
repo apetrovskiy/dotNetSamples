@@ -1,17 +1,8 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Tmx.Server/Helpers/ObjectModel/TestRunSettings.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Tmx.Server/Helpers/ObjectModel/WorkflowSettings.cs">
     <Files>
-      <File FileName="../../PS/STUPS/TMX/Tmx.Server/Modules/ViewsTestStatusModule.cs" Line="28" Column="45" />
-      <File FileName="../../PS/STUPS/TMX/Tmx.Server/Modules/ViewsTestResultsModule.cs" Line="38" Column="46" />
-      <File FileName="../../PS/STUPS/TMX/Tmx.Server/Helpers/Control/InternalServerControl.cs" Line="1" Column="1" />
-      <File FileName="../../PS/STUPS/TMX/Tmx.Server/Modules/ViewsTestRunsModule.cs" Line="15" Column="19" />
-      <File FileName="../../PS/STUPS/TMX/Tmx.Server/Modules/ViewsRootPageModule.cs" Line="17" Column="43" />
-      <File FileName="../../PS/STUPS/TMX/Tmx.Server/Modules/ViewsGlobalSettingsModule.cs" Line="18" Column="49" />
-      <File FileName="../../PS/STUPS/TMX/Tmx.Server/Helpers/ObjectModel/GlobalSettings.cs" Line="1" Column="1" />
-      <File FileName="Tmx.Server/Helpers/ObjectModel/TestRunSettings.cs" Line="13" Column="5" />
       <File FileName="Tmx.Server/Helpers/ObjectModel/WorkflowSettings.cs" Line="1" Column="1" />
-      <File FileName="../../PS/STUPS/TMX/Tmx.Server/Helpers/ObjectModel/WorkflowSettings.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
