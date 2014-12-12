@@ -36,7 +36,10 @@ namespace testCollComparer
         public List<object> P4 { get; set; }
         public override string ToString()
         {
-            return P1 + P2 + P3.SelectMany(item => item) + P4.SelectMany(item => item.ToString());
+            return P1 +
+            P2 +
+            (P3.Any() ? P3.Select(item => item).OrderBy(item => item).Aggregate((item1, item2) => item1 + item2) : string.Empty) +
+            (P4.Any() ? P4.Select(item => item.ToString()).OrderBy(item => item).Aggregate((item1, item2) => item1 + item2) : string.Empty);
         }
     }
     
@@ -53,7 +56,10 @@ namespace testCollComparer
         public List<object> P4 { get; set; }
         public override string ToString()
         {
-            return P1 + P2 + P3.SelectMany(item => item) + P4.SelectMany(item => item.ToString());
+            return P1 +
+            P2 +
+            (P3.Any() ? P3.Select(item => item).OrderBy(item => item).Aggregate((item1, item2) => item1 + item2) : string.Empty) +
+            (P4.Any() ? P4.Select(item => item.ToString()).OrderBy(item => item).Aggregate((item1, item2) => item1 + item2) : string.Empty);
         }
     }
     
@@ -70,7 +76,10 @@ namespace testCollComparer
                 new SomeClassA { P1 = "k", P2 = "l" },
                 new SomeClassA { P3 = new List<string> { "a", "b", "c" } },
                 new SomeClassA { P3 = new List<string> { "a", "b", "c" } },
-                new SomeClassA { P4 = new List<object> { new { a = "b" }, new { c = "d" }}}
+                new SomeClassA { P4 = new List<object> { new { a = "b" }, new { c = "d" }}},
+                new SomeClassA { P4 = new List<object> { new { a = "b" }, new { c = "d" }}},
+                new SomeClassA { P4 = new List<object> { new { e = "f" }, new { g = "h" }}},
+                new SomeClassA { P4 = new List<object> { new { i = "j" }, new { k = "l" }}}
             }.Select(item => item.ToString()).ToList();
             
             var list02 = new List<AnotherClassB> {
@@ -82,7 +91,9 @@ namespace testCollComparer
                 new AnotherClassB { P1 = "k", P2 = "l" },
                 new AnotherClassB { P3 = new List<string> { "a", "b", "c" } },
                 new AnotherClassB { P3 = new List<string> { "a", "b", "d" } },
-                new AnotherClassB { P4 = new List<object> { new { a = "b" }, new { c = "d" }}}
+                new AnotherClassB { P4 = new List<object> { new { a = "b" }, new { c = "d" }}},
+                new AnotherClassB { P4 = new List<object> { new { e = "f" }, new { g = "h" }}},
+                new AnotherClassB { P4 = new List<object> { new { i = "j" }, new { k = "m" }}}
             }.Select(item => item.ToString()).ToList();
             
             Console.WriteLine("\r\n=============== only in the first list ===============");
