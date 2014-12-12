@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+# SharpDevelop 5.0
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "testPsInAnotherAppDomain", "testPsInAnotherAppDomain\testPsInAnotherAppDomain.csproj", "{D34A5335-BC7D-4A04-9CBD-CF8DDEF5CE2F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PSRunner", "..\..\PS\STUPS\PS\PSRunner\PSRunner.csproj", "{ABA1330C-1E05-41EF-B32C-8F9E1458649F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeRunner", "..\..\CodeRunner\CodeRunner.csproj", "{B245B875-926B-4159-B04F-CAA64314E61A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D34A5335-BC7D-4A04-9CBD-CF8DDEF5CE2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D34A5335-BC7D-4A04-9CBD-CF8DDEF5CE2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D34A5335-BC7D-4A04-9CBD-CF8DDEF5CE2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D34A5335-BC7D-4A04-9CBD-CF8DDEF5CE2F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABA1330C-1E05-41EF-B32C-8F9E1458649F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABA1330C-1E05-41EF-B32C-8F9E1458649F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABA1330C-1E05-41EF-B32C-8F9E1458649F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABA1330C-1E05-41EF-B32C-8F9E1458649F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B245B875-926B-4159-B04F-CAA64314E61A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B245B875-926B-4159-B04F-CAA64314E61A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B245B875-926B-4159-B04F-CAA64314E61A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B245B875-926B-4159-B04F-CAA64314E61A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
