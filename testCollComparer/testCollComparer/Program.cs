@@ -78,9 +78,10 @@ namespace testCollComparer
                 new SomeClassA { P3 = new List<string> { "a", "b", "c" } },
                 new SomeClassA { P4 = new List<object> { new { a = "b" }, new { c = "d" }}},
                 new SomeClassA { P4 = new List<object> { new { a = "b" }, new { c = "d" }}},
+                new SomeClassA { P4 = new List<object> { new { a = "b" }, new { c = "d" }}},
                 new SomeClassA { P4 = new List<object> { new { e = "f" }, new { g = "h" }}},
                 new SomeClassA { P4 = new List<object> { new { i = "j" }, new { k = "l" }}}
-            }.Select(item => item.ToString()).ToList();
+            }.Select(item => item.ToString());
             
             var list02 = new List<AnotherClassB> {
                 new AnotherClassB { P1 = "a", P2 = "b" },
@@ -94,7 +95,10 @@ namespace testCollComparer
                 new AnotherClassB { P4 = new List<object> { new { a = "b" }, new { c = "d" }}},
                 new AnotherClassB { P4 = new List<object> { new { e = "f" }, new { g = "h" }}},
                 new AnotherClassB { P4 = new List<object> { new { i = "j" }, new { k = "m" }}}
-            }.Select(item => item.ToString()).ToList();
+            }.Select(item => item.ToString());
+            
+            Console.WriteLine("\r\n=============== are lists equal? ===============");
+            Console.WriteLine(list01.SequenceEqual(list02));
             
             Console.WriteLine("\r\n=============== only in the first list ===============");
             list01.Except(list02).ToList().ForEach(Console.WriteLine);
@@ -102,24 +106,11 @@ namespace testCollComparer
             Console.WriteLine("\r\n=============== only in the second list ===============");
             list02.Except(list01).ToList().ForEach(Console.WriteLine);
             
-            Console.WriteLine("\r\n=============== are lists equal? ===============");
-            Console.WriteLine(list01.SequenceEqual(list02));
-            
             Console.WriteLine("\r\n=============== are there duplicates in the first list? ===============");
-            var duplesInList01 = !list01.SequenceEqual(list01.Distinct().ToList());
-            Console.WriteLine(duplesInList01);
-            if (duplesInList01) {
-                Console.WriteLine("=============== duplicates in the first list ===============");
-                list01.GroupBy(item => item).SelectMany(grp => grp.Skip(1)).ToList().ForEach(Console.WriteLine);
-            }
+            list01.GroupBy(item => item).SelectMany(grp => grp.Skip(1)).ToList().ForEach(Console.WriteLine);
             
             Console.WriteLine("\r\n=============== are there duplicates in the second list? ===============");
-            var duplesInList02 = !list02.SequenceEqual(list02.Distinct().ToList());
-            Console.WriteLine(duplesInList02);
-            if (duplesInList02) {
-                Console.WriteLine("=============== duplicates in the second list ===============");
-                list02.GroupBy(item => item).SelectMany(grp => grp.Skip(1)).ToList().ForEach(Console.WriteLine);
-            }
+            list02.GroupBy(item => item).SelectMany(grp => grp.Skip(1)).ToList().ForEach(Console.WriteLine);
             
             Console.Write("Press any key to continue . . . ");
             Console.ReadKey(true);
