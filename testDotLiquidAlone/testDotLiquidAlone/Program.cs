@@ -10,6 +10,7 @@
 namespace NancyExamples
 {
     using System;
+    using System.Dynamic;
     using System.IO;
     using DotLiquid;
     
@@ -17,6 +18,8 @@ namespace NancyExamples
     {
         public static void Main(string[] args)
         {
+            bool withOneMoreLevelOfAbstraction = true;
+            
             Console.WriteLine("Hello World!");
             
             // TODO: Implement Functionality Here
@@ -28,12 +31,14 @@ namespace NancyExamples
             Template.RegisterSafeType(typeof(Guid), member => member.ToString());
             
             Template template;
-            using (var reader = new StreamReader(@"./Views/sorted.liquid")) {
+            // using (var reader = new StreamReader(@"./Views/sorted.liquid")) {
+            using (var reader = new StreamReader(@"./Views/sorted1-1.liquid")) {
                 var templateCode = reader.ReadToEnd();
                 template = Template.Parse(templateCode);
                 reader.Close();
             }
             
+            // dynamic expando = new ExpandoObject();
             var list = new ProductList ();
             list.Products.AddRange (
                 new [] {
@@ -46,8 +51,18 @@ namespace NancyExamples
                 new Product { Name = "k", Price = 11, Description = "seven" },
                 new Product { Name = "h", Price = 5, Description = "eight" }
             });
-            string result = template.Render(Hash.FromAnonymousObject(new { @Model = list }));
-            
+            // string result = template.Render(Hash.FromAnonymousObject(new { @Model = list }));
+            string result = string.Empty;
+            if (withOneMoreLevelOfAbstraction) {
+                // expando.Data = list;
+                // result = template.Render(Hash.FromAnonymousObject(new { @Model = expando }));
+                
+                // var test = new { @Model = new { Data = list } };
+                
+                result = template.Render(Hash.FromAnonymousObject(new { @Model = new { Data = list } }));
+            } else {
+                result = template.Render(Hash.FromAnonymousObject(new { @Model = list }));
+            }
             Console.WriteLine(result);
             
             Console.Write("Press any key to continue . . . ");

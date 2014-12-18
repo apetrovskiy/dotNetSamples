@@ -8,8 +8,9 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>testDotLiquidAlone</RootNamespace>
     <AssemblyName>testDotLiquidAlone</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <AppDesignerFolder>Properties</AppDesignerFolder>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -34,6 +35,9 @@
     <Reference Include="DotLiquid">
       <HintPath>..\packages\DotLiquid.1.8.0\lib\NET35\DotLiquid.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.CSharp">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -51,14 +55,14 @@
     <Compile Include="..\..\..\NancyExamples\DotLiquidExtends\ObjectModel\Product.cs">
       <Link>ObjectModel\Product.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\NancyExamples\DotLiquidExtends\ObjectModel\Product2.cs">
-      <Link>ObjectModel\Product2.cs</Link>
-    </Compile>
-    <Compile Include="..\..\..\NancyExamples\DotLiquidExtends\ObjectModel\Product3.cs">
-      <Link>ObjectModel\Product3.cs</Link>
-    </Compile>
     <Compile Include="..\..\..\NancyExamples\DotLiquidExtends\ObjectModel\ProductList.cs">
       <Link>ObjectModel\ProductList.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\NancyExamples\dotLiquidSort\ObjectModel\Product2.cs">
+      <Link>ObjectModel\Product2.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\NancyExamples\dotLiquidSort\ObjectModel\Product3.cs">
+      <Link>ObjectModel\Product3.cs</Link>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -76,20 +80,24 @@
       <Link>Views\products_with_layout.liquid</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="..\..\..\NancyExamples\DotLiquidExtends\Views\sorted.liquid">
+    <None Include="..\..\..\NancyExamples\dotLiquidSort\Views\sorted.liquid">
       <Link>Views\sorted.liquid</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="..\..\..\NancyExamples\DotLiquidExtends\Views\sorted2.liquid">
+    <None Include="..\..\..\NancyExamples\dotLiquidSort\Views\sorted2.liquid">
       <Link>Views\sorted2.liquid</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="..\..\..\NancyExamples\DotLiquidExtends\Views\sorted3.liquid">
+    <None Include="..\..\..\NancyExamples\dotLiquidSort\Views\sorted3.liquid">
       <Link>Views\sorted3.liquid</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="app.config" />
     <None Include="packages.config" />
     <None Include="Views\probe01.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Views\sorted1-1.liquid">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
