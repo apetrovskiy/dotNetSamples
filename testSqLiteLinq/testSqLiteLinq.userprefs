@@ -1,0 +1,15 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="testSqLiteLinq/Program.cs">
+    <Files>
+      <File FileName="testSqLiteLinq/Program.cs" Line="1" Column="1" />
+      <File FileName="testSqLiteLinq/ObjectModel/LowLevel.cs" Line="1" Column="1" />
+      <File FileName="testSqLiteLinq/ObjectModel/MidLevel.cs" Line="1" Column="1" />
+      <File FileName="testSqLiteLinq/ObjectModel/TopLevel.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
