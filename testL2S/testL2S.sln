@@ -1,0 +1,18 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+# SharpDevelop 5.0
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "testL2S", "testL2S\testL2S.csproj", "{B647123C-1873-4165-AD75-9385B73024DF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B647123C-1873-4165-AD75-9385B73024DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B647123C-1873-4165-AD75-9385B73024DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B647123C-1873-4165-AD75-9385B73024DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B647123C-1873-4165-AD75-9385B73024DF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

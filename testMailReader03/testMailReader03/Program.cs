@@ -31,15 +31,16 @@ namespace testMailReader03
                 
                 var d1 = DateTime.Now;
                 // var uids = client.Search(SearchCondition.Undeleted(), "INBOX");
-                // var uids = client.Search((SearchCondition.Unseen(), "INBOX");
-                var uids = client.Search(SearchCondition.Unseen(), null);
+                var uids = client.Search(SearchCondition.Unseen(), "INBOX");
+                // var uids = client.Search(SearchCondition.Unseen(), null);
+                var messages = client.GetMessages(uids, FetchOptions.Normal, true, "INBOX");
                 Console.WriteLine(uids);
                 Console.WriteLine(DateTime.Now - d1);
                 var d2 = DateTime.Now;
                 // var messages = client.GetMessages(uids, FetchOptions.HeadersOnly, false, "INBOX");
-                var messages = client.GetMessages(uids, FetchOptions.HeadersOnly, false, null);
-                Console.WriteLine(messages);
-                Console.WriteLine(DateTime.Now - d2);
+//                var messages = client.GetMessages(uids, FetchOptions.HeadersOnly, false, null);
+//                Console.WriteLine(messages);
+//                Console.WriteLine(DateTime.Now - d2);
                 
                 int i = 0;
                 foreach (var message in messages) {
