@@ -1,0 +1,18 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+# SharpDevelop 5.0
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "testTaskSched", "testTaskSched\testTaskSched.csproj", "{4A8665F3-50D3-4F62-A881-6F410BE1A000}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4A8665F3-50D3-4F62-A881-6F410BE1A000}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A8665F3-50D3-4F62-A881-6F410BE1A000}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A8665F3-50D3-4F62-A881-6F410BE1A000}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A8665F3-50D3-4F62-A881-6F410BE1A000}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
