@@ -21,16 +21,17 @@ namespace testMailReader
             client.Authenticate("report_reader@SPALab.at.local", "Lock12Lock", AuthenticationMethod.Auto);
             var count = client.GetMessageCount();
             Console.WriteLine(count);
+            var msg01 = client.GetMessage(349);
 //            Message message = client.GetMessage(count);
 //            Console.WriteLine(message.Headers.Subject);
             
 
-            var pop3Client = new Pop3Client ();
+            var pop3Client = new ActiveUp.Net.Mail.Pop3Client();
             // pop3Client.ConnectSsl("pop.gmail.com", 995, "admin@bendytree.com", "YourPasswordHere");
             pop3Client.Connect("192.168.129.21", 110, "report_reader@SPALab.at.local", "Lock12Lock");
             // pop3Client.L
             // Console.WriteLine (pop3Client.MessageCount);
-            pop3Client.RetrieveMessage (1);
+            pop3Client.RetrieveMessage (349);
 
             var imapClient = new Imap4Client ();
             imapClient.ConnectSsl("imap.gmail.com", 993);

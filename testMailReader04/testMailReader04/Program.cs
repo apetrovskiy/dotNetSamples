@@ -24,7 +24,23 @@ namespace testMailReader04
                 Console.WriteLine(result);
             }
             
-            client.Folders.Inbox.Messages.Download("UNSEEN", MessageFetchMode.Headers);
+            client.Behavior.AutoPopulateFolderMessages = true;
+            // client.Behavior.SearchAllNotSupported = 
+            client.Behavior.AutoDownloadBodyOnAccess = true;
+            client.Behavior.ExamineFolders = true;
+            // client.Behavior.MessageFetchMode = MessageFetchMode.Full;
+            client.Behavior.MessageFetchMode = MessageFetchMode.Minimal;
+            // var msgs = client.Folders.Inbox.Search("UNSEEN");
+            // var msgs = client.Folders.Inbox.Search("UNDELETED");
+            // var msgs = client.Folders.Inbox.Search("\\UNDELETED");
+            // var msgs = client.Folders.Inbox.Search("NEW");
+            var msgs = client.Folders.Inbox.Search("FLAGGED");
+            
+            var messages = client.Folders.Inbox.Messages;
+            
+            client.Folders.Inbox.Messages.Download("UNSEEN", MessageFetchMode.Full);
+            
+            
             
             Console.Write("Press any key to continue . . . ");
             Console.ReadKey(true);
