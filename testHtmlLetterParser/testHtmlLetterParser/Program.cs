@@ -13,7 +13,8 @@ namespace testHtmlLetterParser
             Console.WriteLine ("Hello World!");
 
             var doc = new HtmlDocument ();
-            doc.Load (@"../../../letters/MailDump_SPLab-7x86.SPALab.at.local.htm");
+            // doc.Load (@"../../../letters/MailDump_SPLab-7x86.SPALab.at.local.htm");
+            doc.Load (@"../../../letters/1111.htm");
             // doc.DocumentElement.SelectNodes("//input[@id=user1]");
             // doc.DocumentElement.SelectNodes("//input[@id=password1]");
             // var whatCollection = doc.DocumentNode.SelectNodes ("//td[@*]");
@@ -24,8 +25,8 @@ namespace testHtmlLetterParser
             // var whatCollection = doc.DocumentNode.SelectNodes ("//td[@id]").Where(node => node.Id == "What");
             // this works
             // var whatCollection = doc.DocumentNode.SelectNodes ("//td[@id='What']|//td[@id='Who']");
-            var whatCollection = doc.DocumentNode.SelectNodes("//td[@id='Action']");
-            whatCollection.ToList().ForEach(node => {
+            var changeCollection = doc.DocumentNode.SelectNodes("//td[@id='Action']");
+            changeCollection.ToList().ForEach(node => {
                                                 Console.WriteLine ("id={0}, text={1}", node.Id ?? string.Empty, node.InnerText ?? string.Empty);
                                                 var nextNode = node.NextSibling;
                                                 try {
@@ -47,8 +48,19 @@ namespace testHtmlLetterParser
                                                     Console.WriteLine(ee.Message);
                                                 }
                                             });
-            Console.WriteLine (whatCollection.Count());
+            Console.WriteLine (changeCollection.Count());
 
+            int counter = 0;
+            foreach (var table in doc.DocumentNode.SelectNodes ("//table")) {
+                // var tableProcessor = new TableProcessor (doc.DocumentNode.SelectNodes ("//table") [0]);
+                counter++;
+                Console.WriteLine ("===================================== {0} =====================================", counter);
+                var tableProcessor = new TableProcessor (table);
+                tableProcessor.Process ();
+                tableProcessor.Headers.ToList ().ForEach (Console.WriteLine);
+
+                int i = 0;
+            }
             Console.ReadKey ();
         }
     }
