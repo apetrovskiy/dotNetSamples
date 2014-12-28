@@ -22,12 +22,13 @@ namespace testHtmlLetterParser
         }
         
         public IEnumerable<HtmlNode> ColumnHeaders { get; set; }
-        public HtmlNodeCollection[] Rows { get; set; }
+        // public HtmlNodeCollection[] Rows { get; set; }
+        public IEnumerable<HtmlNode> Rows { get; set; }
         
         public void Process()
         {
             ColumnHeaders = getColumnHeaders();
-            
+            Rows = getRows ();
         }
 
         IEnumerable<HtmlNode> getColumnHeaders()
@@ -43,6 +44,21 @@ namespace testHtmlLetterParser
         IEnumerable<HtmlNode> getColumnHeadersAsFirstRow()
         {
             return _tableNode.Descendants().FirstOrDefault(node => node.OriginalName == "tr").Descendants().Where(node => node.OriginalName == "td");
+        }
+
+        IEnumerable<HtmlNode> getRows()
+        {
+            return _useFirstRowAsHeaders ? getAllRowsButFirst() : getAllRows();
+        }
+
+        IEnumerable<HtmlNode> getAllRows()
+        {
+            return _tableNode.Descendants ().Where (node => node.OriginalName == "tr");
+        }
+
+        IEnumerable<HtmlNode> getAllRowsButFirst()
+        {
+            return _tableNode.Descendants ().Where (node => node.OriginalName == "tr").Skip(1);
         }
     }
 }
