@@ -8,23 +8,41 @@ namespace testHtmlLetterParser
 
     public class TableProcessor
     {
-        HtmlNode _tableNode;
-
+        readonly HtmlNode _tableNode;
+        bool _useFirstRowAsHeaders;
+        
         public TableProcessor (HtmlNode tableNode)
         {
             _tableNode = tableNode;
         }
-
-        public IEnumerable<string> Headers { get; set; }
+        
+        public TableProcessor (HtmlNode tableNode, bool useFirstRowAsHeaders) : this(tableNode)
+        {
+            _useFirstRowAsHeaders = useFirstRowAsHeaders;
+        }
+        
+        public IEnumerable<HtmlNode> ColumnHeaders { get; set; }
         public HtmlNodeCollection[] Rows { get; set; }
-
+        
         public void Process()
         {
-            var descendants = _tableNode.Descendants ();
-            var headers = descendants.Where (node => node.InnerHtml.Contains ("th"));
-            var headerNames = headers.Select (headerNode => headerNode.InnerText);
+            ColumnHeaders = getColumnHeaders();
+            
+        }
 
-            Headers = _tableNode.Descendants ().Where(node => node.InnerHtml.Contains("th")).ToList().Select (headerNode => headerNode.InnerText);
+        IEnumerable<HtmlNode> getColumnHeaders()
+        {
+            return _useFirstRowAsHeaders ? getColumnHeadersAsFirstRow() : getColumnHeadersAsElementsTh();
+        }
+        
+        IEnumerable<HtmlNode> getColumnHeadersAsElementsTh()
+        {
+            return _tableNode.Descendants().Where(node => node.OriginalName == "th"); // ??
+        }
+        
+        IEnumerable<HtmlNode> getColumnHeadersAsFirstRow()
+        {
+            return _tableNode.Descendants().FirstOrDefault(node => node.OriginalName == "tr").Descendants().Where(node => node.OriginalName == "td");
         }
     }
 }

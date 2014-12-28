@@ -51,15 +51,12 @@ namespace testHtmlLetterParser
             Console.WriteLine (changeCollection.Count());
 
             int counter = 0;
-            foreach (var table in doc.DocumentNode.SelectNodes ("//table")) {
-                // var tableProcessor = new TableProcessor (doc.DocumentNode.SelectNodes ("//table") [0]);
+            foreach (var table in doc.DocumentNode.SelectNodes ("//table[@id='ChangesTable']")) {
                 counter++;
                 Console.WriteLine ("===================================== {0} =====================================", counter);
-                var tableProcessor = new TableProcessor (table);
+                var tableProcessor = new TableProcessor (table, true);
                 tableProcessor.Process ();
-                tableProcessor.Headers.ToList ().ForEach (Console.WriteLine);
-
-                int i = 0;
+                tableProcessor.ColumnHeaders.ToList ().ForEach (node => Console.WriteLine(node.InnerText));
             }
             Console.ReadKey ();
         }
