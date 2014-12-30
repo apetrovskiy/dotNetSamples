@@ -25,7 +25,7 @@ namespace testHtmlLetterParser
             // var whatCollection = doc.DocumentNode.SelectNodes ("//td[@id]").Where(node => node.Id == "What");
             // this works
             // var whatCollection = doc.DocumentNode.SelectNodes ("//td[@id='What']|//td[@id='Who']");
-            // this works
+            //this works
             /*
             var changeCollection = doc.DocumentNode.SelectNodes("//td[@id='Action']");
             changeCollection.ToList().ForEach(node => {
@@ -52,27 +52,47 @@ namespace testHtmlLetterParser
                                             });
             Console.WriteLine (changeCollection.Count());
             */
-            
+            /*
             int counter = 0;
             foreach (var table in doc.DocumentNode.SelectNodes ("//table[@id='ChangesTable']")) {
                 counter++;
                 Console.WriteLine ("===================================== {0} =====================================", counter);
                 var tableProcessor = new TableProcessor (table, true);
                 tableProcessor.Process ();
-                tableProcessor.ColumnHeaders.ToList ().ForEach (node => Console.WriteLine(node.InnerHtml.Trim())); //.InnerText.Trim()));
-                tableProcessor.Rows.ToList ().ForEach (node => Console.WriteLine(node.InnerHtml.Trim())); //.InnerText));
+                tableProcessor.ColumnHeaders.ToList ().ForEach (node => Console.WriteLine(node.InnerText));
+                tableProcessor.Rows.ToList ().ForEach (node => {
+                    string rowItems = string.Empty;
+                    Console.WriteLine(node.InnerText);
+                    Console.WriteLine("/////////////////////////////////");
+                    node.SelectNodes("//table[@id='ChangesTable']/descendant:td").ToList().ForEach(tdNode => {
+                        rowItems += "|";
+                        rowItems += tdNode.InnerText.Trim();
+                    });
+                    Console.WriteLine(rowItems);
+                    Console.WriteLine("===========================================================================================================================");
+                    Console.ReadKey();
+                });
             }
-            
-            Console.WriteLine(counter);
-            
-//            counter = 0;
-//            foreach (var table in doc.DocumentNode.SelectNodes ("//table[@id='ChangesTable']")) {
-//                counter++;
-//                Console.WriteLine ("===================================== {0} =====================================", counter);
-//                var tableProcessor = new TableProcessor (table, true);
-//                tableProcessor.Process ();
-//                tableProcessor.Rows.ToList ().ForEach (node => Console.WriteLine(node.InnerText));
-//            }
+            */
+            var tableProcessor02 = new TableProcessor(doc.DocumentNode.SelectNodes ("//table[@id='ChangesTable']").First());
+            tableProcessor02.Process ();
+
+            Console.WriteLine (tableProcessor02.ColumnHeaders.Count ());
+            foreach (var header in tableProcessor02.ColumnHeaders)
+                Console.WriteLine (header.InnerText);
+
+            tableProcessor02.ExportCsv ("/home/alexander/Documents/changes.txt");
+
+            /*
+            counter = 0;
+            foreach (var table in doc.DocumentNode.SelectNodes ("//table[@id='ChangesTable']")) {
+                counter++;
+                Console.WriteLine ("===================================== {0} =====================================", counter);
+                var tableProcessor = new TableProcessor (table, true);
+                tableProcessor.Process ();
+                tableProcessor.Rows.ToList ().ForEach (node => Console.WriteLine(node.InnerText));
+            }
+            */
             Console.ReadKey ();
         }
     }
