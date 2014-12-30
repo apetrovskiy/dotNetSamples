@@ -10,31 +10,27 @@ namespace testHtmlLetterParser
     public class TableProcessor
     {
         readonly HtmlNode _tableNode;
-        bool _useFirstRowAsHeaders;
-        
+        readonly bool _useFirstRowAsHeaders;
+        readonly string _customColumnHeaderExpression;
+        readonly string _customRowsExpression;
+        // readonly string _customRowItemsExpression;
+
         public TableProcessor (HtmlNode tableNode)
         {
             _tableNode = tableNode;
-
-            Console.WriteLine (_tableNode.Id);
-            Console.WriteLine (_tableNode.Name);
-            Console.WriteLine ("tables number = {0}", _tableNode.SelectNodes ("//table[@id='ChangesTable']").Count ());
-            var table = _tableNode.SelectNodes ("//table[@id='ChangesTable']").First();
-            // Console.WriteLine (table.SelectNodes ("//table[@id='ChangesTable']/tr").Count ());
-            Console.WriteLine ("rows number = {0}", table.SelectNodes ("./tr").Count ());
-            foreach (var rowNode in table.SelectNodes ("./tr")) {
-                Console.WriteLine ("columns number = {0}", rowNode.SelectNodes ("./td").Count ());
-                rowNode.SelectNodes ("./td").ToList ().ForEach (node => Console.WriteLine (node.InnerText));
-
-                Console.ReadKey ();
-            }
+            if (_tableNode.Descendants ().Any (descNode => descNode.OriginalName == "th"))
+                _useFirstRowAsHeaders = false;
+            else
+                _useFirstRowAsHeaders = true;
         }
-        
-        public TableProcessor (HtmlNode tableNode, bool useFirstRowAsHeaders) : this(tableNode)
+
+        public TableProcessor(HtmlNode tableNode, string columnHeadersExpression, string rowsExpression, string rowItemsExpression) : this(tableNode)
         {
-            _useFirstRowAsHeaders = useFirstRowAsHeaders;
+            _customColumnHeaderExpression = columnHeadersExpression;
+            _customRowsExpression = rowsExpression;
+            // _customRowItemsExpression = rowItemsExpression;
         }
-        
+
         public IEnumerable<HtmlNode> ColumnHeaders { get; set; }
         public IEnumerable<HtmlNode> Rows { get; set; }
         
@@ -47,24 +43,8 @@ namespace testHtmlLetterParser
         public void ExportCsv(string path)
         {
             using (var writer = new StreamWriter (path)) {
-
-                var headerItems = string.Empty;
-                ColumnHeaders.ToList ().ForEach (node => {
-                    headerItems += node.InnerText.Trim();
-                    headerItems += ",";
-                });
-                writer.WriteLine (headerItems);
-
-                Console.WriteLine ("rows.count = {0}", Rows.Count ());
-
-                Rows.ToList ().ForEach (node => {
-                    string rowItems = string.Empty;
-                    node.SelectNodes ("//self::tr/descendant::td").ToList ().ForEach (tdNode => {
-                        rowItems += tdNode.InnerText.Trim ();
-                        rowItems += ",";
-                    });
-                    writer.WriteLine(rowItems);
-                });
+                writeColumnHeaders (writer);
+                writeRows (writer);
                 writer.Flush ();
                 writer.Close ();
             }
@@ -72,12 +52,16 @@ namespace testHtmlLetterParser
 
         IEnumerable<HtmlNode> getColumnHeaders()
         {
+            if (!string.IsNullOrEmpty (_customColumnHeaderExpression))
+                return _tableNode.SelectNodes (_customColumnHeaderExpression);
             return _useFirstRowAsHeaders ? getColumnHeadersAsFirstRow() : getColumnHeadersAsElementsTh();
         }
         
         IEnumerable<HtmlNode> getColumnHeadersAsElementsTh()
         {
-            return _tableNode.Descendants().Where(node => node.OriginalName == "th"); // ??
+            // this works
+            // return _tableNode.Descendants().Where(node => node.OriginalName == "th"); // ??
+            return _tableNode.SelectNodes(".//th"); // ??
         }
         
         IEnumerable<HtmlNode> getColumnHeadersAsFirstRow()
@@ -87,17 +71,46 @@ namespace testHtmlLetterParser
 
         IEnumerable<HtmlNode> getRows()
         {
+            if (!string.IsNullOrEmpty (_customRowsExpression))
+                return _tableNode.SelectNodes (_customRowsExpression);
             return _useFirstRowAsHeaders ? getAllRowsButFirst() : getAllRows();
         }
 
         IEnumerable<HtmlNode> getAllRows()
         {
-            return _tableNode.Descendants ().Where (node => node.OriginalName == "tr");
+            // return _tableNode.Descendants ().Where (node => node.OriginalName == "tr");
+            return _tableNode.SelectNodes (".//tr");
         }
 
         IEnumerable<HtmlNode> getAllRowsButFirst()
         {
-            return _tableNode.Descendants ().Where (node => node.OriginalName == "tr").Skip(1);
+            // return _tableNode.Descendants ().Where (node => node.OriginalName == "tr").Skip(1);
+            return _tableNode.SelectNodes (".//tr").Skip (1);
+        }
+
+        void writeColumnHeaders (StreamWriter writer)
+        {
+            var headerItems = string.Empty;
+            ColumnHeaders.ToList ().ForEach (node =>  {
+                headerItems += node.InnerText.Trim ();
+                headerItems += ",";
+            });
+            writer.WriteLine (headerItems);
+        }
+
+        void writeRows (StreamWriter writer)
+        {
+            Rows.ToList ().ForEach (node =>  {
+                string rowItems = string.Empty;
+                // this works
+                // node.SelectNodes (".//td").ToList ().ForEach (tdNode =>  {
+                node.Descendants().Where(childNode => childNode.OriginalName == "td").ToList ().ForEach (tdNode =>  {
+                    rowItems += tdNode.InnerText.Trim ();
+                    // rowItems += tdNode.SelectNodes("./text()").First().InnerText;
+                    rowItems += ",";
+                });
+                writer.WriteLine (rowItems);
+            });
         }
     }
 }
