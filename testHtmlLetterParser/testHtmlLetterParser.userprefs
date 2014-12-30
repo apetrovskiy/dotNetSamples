@@ -2,8 +2,8 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
   <MonoDevelop.Ide.Workbench ActiveDocument="testHtmlLetterParser/TableProcessor.cs">
     <Files>
-      <File FileName="testHtmlLetterParser/Program.cs" Line="73" Column="73" />
-      <File FileName="testHtmlLetterParser/TableProcessor.cs" Line="36" Column="36" />
+      <File FileName="testHtmlLetterParser/Program.cs" Line="37" Column="37" />
+      <File FileName="testHtmlLetterParser/TableProcessor.cs" Line="21" Column="21" />
       <File FileName="letters/1111.htm" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
