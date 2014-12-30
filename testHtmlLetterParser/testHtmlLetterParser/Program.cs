@@ -52,7 +52,7 @@ namespace testHtmlLetterParser
                                             });
             Console.WriteLine (changeCollection.Count());
             */
-
+            /*
             int counter = 0;
             foreach (var table in doc.DocumentNode.SelectNodes ("//table[@id='ChangesTable']")) {
                 counter++;
@@ -73,6 +73,16 @@ namespace testHtmlLetterParser
                     Console.ReadKey();
                 });
             }
+            */
+            var tableProcessor02 = new TableProcessor(doc.DocumentNode.SelectNodes ("//table[@id='ChangesTable']").First());
+            tableProcessor02.Process ();
+
+            Console.WriteLine (tableProcessor02.ColumnHeaders.Count ());
+            foreach (var header in tableProcessor02.ColumnHeaders)
+                Console.WriteLine (header.InnerText);
+
+            tableProcessor02.ExportCsv ("/home/alexander/Documents/changes.txt");
+
             /*
             counter = 0;
             foreach (var table in doc.DocumentNode.SelectNodes ("//table[@id='ChangesTable']")) {
