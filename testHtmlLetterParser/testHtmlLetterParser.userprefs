@@ -1,0 +1,15 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="testHtmlLetterParser/Program.cs">
+    <Files>
+      <File FileName="testHtmlLetterParser/Program.cs" Line="23" Column="23" />
+      <File FileName="testHtmlLetterParser/TableProcessor.cs" Line="122" Column="122" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches>
+    <Watch file="testHtmlLetterParser/TableProcessor.cs" line="60" offsetX="536" offsetY="1062" expression="tdNodes" liveUpdate="False" />
+  </MonoDevelop.Ide.DebuggingService.PinnedWatches>
+</Properties>

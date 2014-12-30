@@ -50,6 +50,27 @@ namespace testHtmlLetterParser
             }
         }
 
+        public IEnumerable<Dictionary<string, string>> GetCollection()
+        {
+            var resultList = new List<Dictionary<string, string>> ();
+
+            Rows.ToList ().ForEach (rowNode => {
+                var dict = new Dictionary<string, string>();
+                int counter = 0;
+                var tdNodes = rowNode.SelectNodes(".//td");
+                if (null != tdNodes && ColumnHeaders.Count() == tdNodes.Count) {
+                    // ColumnHeaders.Select(headerNode => headerNode.InnerText).ToList().ForEach(headerName => {
+                    ColumnHeaders.Select(headerNode => headerNode.SelectNodes("./text()").FirstOrDefault().InnerText.Trim()).ToList().ForEach(headerName => {
+                        dict.Add(headerName, tdNodes[counter].SelectNodes("./text()").FirstOrDefault().InnerText.Trim());
+                        counter++;
+                    });
+                    resultList.Add(dict);
+                }
+            });
+
+            return resultList;
+        }
+
         IEnumerable<HtmlNode> getColumnHeaders()
         {
             if (!string.IsNullOrEmpty (_customColumnHeaderExpression))
@@ -103,19 +124,20 @@ namespace testHtmlLetterParser
         {
             Rows.ToList ().ForEach (node =>  {
                 string rowItems = string.Empty;
-                // this works
-                node.SelectNodes (".//td").ToList ().ForEach (tdNode =>  {
-                // node.Descendants().Where(tdNode => tdNode.OriginalName == "td" && tdNode.has).ToList ().ForEach (tdNode =>  {
-                    // rowItems += tdNode.InnerText.Trim ();
-                    // rowItems += tdNode.SelectNodes("./text()").FirstOrDefault().InnerText.Trim();
-                    if (null != tdNode.SelectNodes("./text()")) {
-                        rowItems += tdNode.SelectNodes("./text()").FirstOrDefault().InnerText.Trim();
-                        rowItems += ",";
-                    }
-                });
-                writer.WriteLine (rowItems);
+                node.SelectNodes (".//td").ToList ().ForEach (tdNode =>  rowItems += getNodeData(tdNode));
+                if (!string.IsNullOrEmpty(rowItems))
+                    writer.WriteLine (rowItems);
             });
+        }
+
+        string getNodeData(HtmlNode tdNode)
+        {
+            if (null == tdNode.SelectNodes ("./text()"))
+                return string.Empty;
+            var tdData = tdNode.SelectNodes ("./text()").FirstOrDefault ().InnerText.Trim ();
+            if (string.IsNullOrEmpty (tdData))
+                return string.Empty;
+            return tdData + ",";
         }
     }
 }
-

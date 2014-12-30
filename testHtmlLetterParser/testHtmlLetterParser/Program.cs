@@ -106,6 +106,12 @@ namespace testHtmlLetterParser
                 tableProcessor.Rows.ToList ().ForEach (node => Console.WriteLine(node.InnerText));
             }
             */
+
+            // var tableProcessor03 = new TableProcessor (doc.DocumentNode.SelectNodes ("//table[@id='ChangesTable']").First());
+            var tableProcessor03 = new TableProcessor (doc.DocumentNode.SelectNodes ("//table[@id='ChangesTable']").Skip(1).First());
+            tableProcessor03.Process ();
+            var list = tableProcessor03.GetCollection ();
+
             Console.ReadKey ();
         }
     }
