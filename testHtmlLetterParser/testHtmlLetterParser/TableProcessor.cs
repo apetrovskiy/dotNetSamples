@@ -88,26 +88,30 @@ namespace testHtmlLetterParser
             return _tableNode.SelectNodes (".//tr").Skip (1);
         }
 
-        void writeColumnHeaders (StreamWriter writer)
+        void writeColumnHeaders (TextWriter writer)
         {
             var headerItems = string.Empty;
             ColumnHeaders.ToList ().ForEach (node =>  {
-                headerItems += node.InnerText.Trim ();
+                // headerItems += node.InnerText.Trim ();
+                headerItems += node.SelectNodes("./text()").FirstOrDefault().InnerText.Trim ();
                 headerItems += ",";
             });
             writer.WriteLine (headerItems);
         }
 
-        void writeRows (StreamWriter writer)
+        void writeRows (TextWriter writer)
         {
             Rows.ToList ().ForEach (node =>  {
                 string rowItems = string.Empty;
                 // this works
-                // node.SelectNodes (".//td").ToList ().ForEach (tdNode =>  {
-                node.Descendants().Where(childNode => childNode.OriginalName == "td").ToList ().ForEach (tdNode =>  {
-                    rowItems += tdNode.InnerText.Trim ();
-                    // rowItems += tdNode.SelectNodes("./text()").First().InnerText;
-                    rowItems += ",";
+                node.SelectNodes (".//td").ToList ().ForEach (tdNode =>  {
+                // node.Descendants().Where(tdNode => tdNode.OriginalName == "td" && tdNode.has).ToList ().ForEach (tdNode =>  {
+                    // rowItems += tdNode.InnerText.Trim ();
+                    // rowItems += tdNode.SelectNodes("./text()").FirstOrDefault().InnerText.Trim();
+                    if (null != tdNode.SelectNodes("./text()")) {
+                        rowItems += tdNode.SelectNodes("./text()").FirstOrDefault().InnerText.Trim();
+                        rowItems += ",";
+                    }
                 });
                 writer.WriteLine (rowItems);
             });
