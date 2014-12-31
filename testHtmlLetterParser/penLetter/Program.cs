@@ -23,9 +23,15 @@ namespace penLetterParser
             
             var tables = doc.DocumentNode.SelectNodes("//table");
             
-            var tableProcessor = new TableProcessor (doc.DocumentNode.SelectNodes ("//table").First());
+            var tableProcessor = new TableProcessor(
+                doc.DocumentNode.SelectNodes ("//table").First(),
+                // "//table//td[. = 'User name']|//table//td[. = 'Email']|//table//td[. = 'Expires in']",
+                "self::td",
+                "",
+                "self::td");
             tableProcessor.Process ();
             var list = tableProcessor.GetCollection ();
+            tableProcessor.ExportCsv ("/home/alexander/Documents/pen_changes.txt");
             
             Console.Write("Press any key to continue . . . ");
             Console.ReadKey(true);
