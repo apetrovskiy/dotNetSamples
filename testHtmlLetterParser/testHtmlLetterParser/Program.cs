@@ -19,7 +19,14 @@ namespace testHtmlLetterParser
             // doc.Load(@"../../../letters/MailDump_SPLab-2008R2.SPALab.at.local.htm");
             // doc.Load(@"../../../letters/MailDump_SPLab-2012.SPALab.at.local.htm");
             // doc.Load(@"../../../letters/MailDump_SPLab-2012R2.SPALab.at.local.htm");
-            doc.Load(@"../../../letters/MailDump_SPLab-7x86.SPALab.at.local.htm");
+            // doc.Load(@"../../../letters/MailDump_SPLab-7x86.SPALab.at.local.htm");
+            
+//            doc.Load(@"../../../letters/7.0.33.0/MailDump_SPLab-10.SPALab.at.local.htm");
+//            doc.Load(@"../../../letters/7.0.33.0/MailDump_SPLab-7x86.SPALab.at.local.htm");
+//            doc.Load(@"../../../letters/7.0.33.0/MailDump_SPLab-2008R2.SPALab.at.local.htm");
+//            doc.Load(@"../../../letters/7.0.33.0/MailDump_SPLab-2012.SPALab.at.local.htm");
+//            doc.Load(@"../../../letters/7.0.33.0/MailDump_SPLab-2012R2.SPALab.at.local.htm");
+            doc.Load(@"../../../letters/7.0.33.0/MailDump_SPLab-81x86.SPALab.at.local.htm");
             
             
             // doc.DocumentElement.SelectNodes("//input[@id=user1]");
@@ -111,6 +118,8 @@ namespace testHtmlLetterParser
             var tableProcessor03 = new TableProcessor (doc.DocumentNode.SelectNodes ("//table[@id='ChangesTable']").Skip(1).First());
             tableProcessor03.Process ();
             var list = tableProcessor03.GetCollection ();
+            
+            var tableProcessorPen = new TableProcessor(doc.DocumentNode.SelectNodes("//table[not(@id)]").FirstOrDefault());
 
             Console.ReadKey ();
         }

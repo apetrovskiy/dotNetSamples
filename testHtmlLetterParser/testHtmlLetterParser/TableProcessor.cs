@@ -14,23 +14,20 @@ namespace testHtmlLetterParser
         readonly string _customColumnHeaderExpression;
         readonly string _customRowsExpression;
         // readonly string _customRowItemsExpression;
-
+        
         public TableProcessor (HtmlNode tableNode)
         {
             _tableNode = tableNode;
-            if (_tableNode.Descendants ().Any (descNode => descNode.OriginalName == "th"))
-                _useFirstRowAsHeaders = false;
-            else
-                _useFirstRowAsHeaders = true;
+            _useFirstRowAsHeaders = _tableNode.Descendants().All(descNode => descNode.OriginalName != "th");
         }
-
+        
         public TableProcessor(HtmlNode tableNode, string columnHeadersExpression, string rowsExpression, string rowItemsExpression) : this(tableNode)
         {
             _customColumnHeaderExpression = columnHeadersExpression;
             _customRowsExpression = rowsExpression;
             // _customRowItemsExpression = rowItemsExpression;
         }
-
+        
         public IEnumerable<HtmlNode> ColumnHeaders { get; set; }
         public IEnumerable<HtmlNode> Rows { get; set; }
         
@@ -39,7 +36,7 @@ namespace testHtmlLetterParser
             ColumnHeaders = getColumnHeaders();
             Rows = getRows ();
         }
-
+        
         public void ExportCsv(string path)
         {
             using (var writer = new StreamWriter (path)) {
@@ -49,7 +46,7 @@ namespace testHtmlLetterParser
                 writer.Close ();
             }
         }
-
+        
         public IEnumerable<Dictionary<string, string>> GetCollection()
         {
             var resultList = new List<Dictionary<string, string>> ();

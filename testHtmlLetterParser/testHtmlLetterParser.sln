@@ -1,8 +1,10 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
-# SharpDevelop 5.0
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+# SharpDevelop 5.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "testHtmlLetterParser", "testHtmlLetterParser\testHtmlLetterParser.csproj", "{2BB68AC5-D036-4B9D-BD06-5F8960C88C2B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "penLetterParser", "penLetter\penLetterParser.csproj", "{3285E22A-3538-47D0-9709-CE9AABED33F4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -14,6 +16,10 @@ Global
 		{2BB68AC5-D036-4B9D-BD06-5F8960C88C2B}.Debug|x86.Build.0 = Debug|x86
 		{2BB68AC5-D036-4B9D-BD06-5F8960C88C2B}.Release|x86.ActiveCfg = Release|x86
 		{2BB68AC5-D036-4B9D-BD06-5F8960C88C2B}.Release|x86.Build.0 = Release|x86
+		{3285E22A-3538-47D0-9709-CE9AABED33F4}.Debug|x86.ActiveCfg = Debug|x86
+		{3285E22A-3538-47D0-9709-CE9AABED33F4}.Debug|x86.Build.0 = Debug|x86
+		{3285E22A-3538-47D0-9709-CE9AABED33F4}.Release|x86.ActiveCfg = Release|x86
+		{3285E22A-3538-47D0-9709-CE9AABED33F4}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = testHtmlLetterParser\testHtmlLetterParser.csproj
