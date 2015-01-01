@@ -19,9 +19,9 @@ namespace penLetterParser
         public static void Main(string[] args)
         {
             var doc = new HtmlDocument();
-            doc.Load(@"../../../letters/7.0.33.0/pen_81x86.htm ");
+            doc.Load(@"../../../letters/7.0.33.0/pen_81x86.htm");
             
-            var tables = doc.DocumentNode.SelectNodes("//table");
+            // var tables = doc.DocumentNode.SelectNodes("//table");
             
             var tableProcessor = new TableProcessor(
                 doc.DocumentNode.SelectNodes ("//table").First(),
