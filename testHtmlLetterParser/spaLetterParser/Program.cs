@@ -1,7 +1,9 @@
-﻿using System;
-
+﻿
 namespace spaLetterParser
 {
+    using System;
+    using System.Linq;
+
     class MainClass
     {
         public static void Main (string[] args)

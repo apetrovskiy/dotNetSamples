@@ -1,7 +1,9 @@
-﻿using System;
-
+﻿
 namespace adaLetterParser
 {
+    using System;
+    using System.Linq;
+
     class MainClass
     {
         public static void Main (string[] args)

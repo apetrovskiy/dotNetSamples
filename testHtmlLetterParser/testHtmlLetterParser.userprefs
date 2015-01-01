@@ -1,10 +1,20 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="penLetter/Program.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="uavrLetterParser/Program.cs">
     <Files>
-      <File FileName="testHtmlLetterParser/Program.cs" Line="13" Column="13" />
-      <File FileName="testHtmlLetterParser/TableProcessor.cs" Line="1" Column="1" />
-      <File FileName="penLetter/Program.cs" Line="63" Column="63" />
+      <File FileName="testHtmlLetterParser/Program.cs" Line="1" Column="1" />
+      <File FileName="testHtmlLetterParser/TableProcessor.cs" Line="79" Column="79" />
+      <File FileName="penLetter/Program.cs" Line="17" Column="17" />
+      <File FileName="fsaLetterParser/Program.cs" Line="1" Column="1" />
+      <File FileName="iutLetterParser/Program.cs" Line="43" Column="43" />
+      <File FileName="sqlaLetterParser/Program.cs" Line="1" Column="1" />
+      <File FileName="adaLetterParser/Program.cs" Line="5" Column="5" />
+      <File FileName="eaLetterParser/Program.cs" Line="1" Column="1" />
+      <File FileName="elmLetterParser/Program.cs" Line="1" Column="1" />
+      <File FileName="spaLetterParser/Program.cs" Line="1" Column="1" />
+      <File FileName="wsaLetterParser/Program.cs" Line="1" Column="1" />
+      <File FileName="vmaLetterParser/Program.cs" Line="1" Column="1" />
+      <File FileName="uavrLetterParser/Program.cs" Line="5" Column="5" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
