@@ -1,9 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="gpaLetterParser/Program.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="testHtmlLetterParser/TableProcessor.cs">
     <Files>
       <File FileName="testHtmlLetterParser/Program.cs" Line="1" Column="1" />
-      <File FileName="testHtmlLetterParser/TableProcessor.cs" Line="1" Column="1" />
+      <File FileName="testHtmlLetterParser/TableProcessor.cs" Line="5" Column="5" />
       <File FileName="penLetter/Program.cs" Line="1" Column="1" />
       <File FileName="fsaLetterParser/Program.cs" Line="1" Column="1" />
       <File FileName="iutLetterParser/Program.cs" Line="1" Column="1" />
@@ -14,7 +14,7 @@
       <File FileName="spaLetterParser/Program.cs" Line="1" Column="1" />
       <File FileName="wsaLetterParser/Program.cs" Line="1" Column="1" />
       <File FileName="vmaLetterParser/Program.cs" Line="1" Column="1" />
-      <File FileName="uavrLetterParser/Program.cs" Line="5" Column="5" />
+      <File FileName="uavrLetterParser/Program.cs" Line="1" Column="1" />
       <File FileName="gpaLetterParser/Program.cs" Line="19" Column="19" />
     </Files>
   </MonoDevelop.Ide.Workbench>
