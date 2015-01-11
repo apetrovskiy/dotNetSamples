@@ -1,8 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Tmx.Server/Helpers/ObjectModel/WorkflowSettings.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="../../PS/STUPS/TMX/TMX.Interfaces/Delegates/Delegates.cs">
     <Files>
       <File FileName="Tmx.Server/Helpers/ObjectModel/WorkflowSettings.cs" Line="1" Column="1" />
+      <File FileName="../../PS/STUPS/TMX/TMX.Interfaces/Delegates/Delegates.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

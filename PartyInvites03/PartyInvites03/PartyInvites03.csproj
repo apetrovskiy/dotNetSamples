@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>PartyInvites03</RootNamespace>
     <AssemblyName>PartyInvites03</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>

@@ -1,6 +1,10 @@
 ﻿@inherits System.Web.Mvc.WebViewPage
-
+@using System.Drawing;
+@using System.Web.Mvc;
+@using System.Web.Mvc.Html;
+@using System.Web.Mvc.Ajax;
 @{
+    System.Web.Mvc.Html.LinkExtensions.ActionLink(
     Layout = null;
 }
 <!DOCTYPE html>
@@ -11,7 +15,51 @@
     </head>
     <body>
         <div>
-            Hello World (from the view)
+            <!-- Hello World (from the view) -->
+            @ViewBag.Greeting World (from the view)
+            <p>We're going to have an exciting party.<br />
+            (To do: sell it better. Add pictures or something.)
+            </p>
+
+            @Html.Raw("fff") <!-- this works -->
+            <br /><br />via this<br />
+            @@this.Html.ActionLink("aa", "bb")
+            <br /><br />traditional<br />
+            @@Html.ActionLink("aa", "bb")
+            <br /><br />the object<br />
+            @Html.ToString()
+            <br /><br />linkext direct call<br />
+            @@LinkExtensions.ActionLink(@Html, "cc", "dd")
+
+            <br /><br />miscellanea<br />
+            @Html.GetHashCode()
+            @Html.ViewBag
+            @Html.ViewContext
+            @Html.Value("aaa")
+            @Html.GetType().Name
+            @Html.Name("aaaa")
+            @Html.Display("ffff")
+            @@Html.DisplayForModel()
+            @@Html.Editor("editor")
+            @@Html.TextArea("text_area")
+            @@Html.TextBox("text_box")
+            @@Html.CheckBox("chk_box")
+            @Html.DisplayText("d_text")
+            
+            <br /><br />this<br />
+            @this
+
+            <br /><br />dissecting this<br />
+            @@this.Html.ActionLink("testLink", "tl")
+            @this.Html.DisplayName("disp_name") <!-- this works -->
+            @this.Html.Display("display")
+            @{ MvcForm form = @Html.BeginForm();
+            @Html.Label("label")
+            form.EndForm();
+            // form.Name = "f1";
+            // @Html.TextBox("f1");
+            // @Html.EndForm();
+            }
         </div>
     </body>
 </html>

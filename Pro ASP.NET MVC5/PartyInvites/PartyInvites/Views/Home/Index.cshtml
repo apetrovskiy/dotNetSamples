@@ -1,0 +1,25 @@
+﻿@inherits System.Web.Mvc.WebViewPage
+@using System.Drawing;
+@using System.Web.Mvc.Html;
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Index</title>
+</head>
+    <body>
+        <div>
+            <!-- Hello World (from the view) -->
+            @ViewBag.Greeting World (from the view)
+            <p>We're going to have an exciting party.<br />
+            (To do: sell it better. Add pictures or something.)
+            </p>
+
+            @Html.ActionLink("RSVP Now", "RsvpForm", "Home")
+        </div>
+    </body>
+</html>
+
