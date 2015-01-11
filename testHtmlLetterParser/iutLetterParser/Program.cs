@@ -15,15 +15,17 @@ namespace iutLetterParser
             
             var tableProcessor = new TableProcessor (
                                      doc.DocumentNode.SelectNodes ("//table").First (),
-                // "//table//td[. = 'User name']|//table//td[. = 'Email']|//table//td[. = 'Expires in']",
                                      ".", // "self::td",
                                      "",
                                      "."); // "self::td");
             tableProcessor.Process ();
-            var list = tableProcessor.GetCollection ();
+            
             tableProcessor.ExportCsv ("/home/alexander/Documents/iut_changes.txt");
             
-            Console.WriteLine ("Hello World!");
+            var list = tableProcessor.GetCollection ();
+            foreach (var dict in list)
+                foreach (var key in dict.Keys)
+                    Console.WriteLine ("{0}\t=\t{1}", key, dict[key]);
         }
     }
 }

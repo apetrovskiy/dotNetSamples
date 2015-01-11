@@ -21,20 +21,19 @@ namespace penLetterParser
             var doc = new HtmlDocument();
             doc.Load(@"../../../letters/7.0.33.0/pen_81x86.htm");
             
-            // var tables = doc.DocumentNode.SelectNodes("//table");
-            
             var tableProcessor = new TableProcessor(
                 doc.DocumentNode.SelectNodes ("//table").First(),
-                // "//table//td[. = 'User name']|//table//td[. = 'Email']|//table//td[. = 'Expires in']",
                 ".", // "self::td",
                 "",
                 "."); // "self::td");
             tableProcessor.Process ();
-            var list = tableProcessor.GetCollection ();
+            
             tableProcessor.ExportCsv ("/home/alexander/Documents/pen_changes.txt");
             
-            Console.Write("Press any key to continue . . . ");
-            Console.ReadKey(true);
+            var list = tableProcessor.GetCollection ();
+            foreach (var dict in list)
+                foreach (var key in dict.Keys)
+                    Console.WriteLine ("{0}\t=\t{1}", key, dict[key]);
         }
     }
 }

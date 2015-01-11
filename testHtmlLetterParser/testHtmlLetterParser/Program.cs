@@ -5,13 +5,13 @@ namespace testHtmlLetterParser
     using System.Linq;
     using System.Xml.Linq;
     using HtmlAgilityPack;
-
+    
     class MainClass
     {
         public static void Main (string[] args)
         {
             Console.WriteLine ("Hello World!");
-
+            
             var doc = new HtmlDocument ();
             // doc.Load (@"../../../letters/MailDump_SPLab-7x86.SPALab.at.local.htm");
             // this works
@@ -95,7 +95,7 @@ namespace testHtmlLetterParser
             foreach (var tableNode in doc.DocumentNode.SelectNodes ("//table[@id='ChangesTable']")) {
                 var tableProcessor02 = new TableProcessor(tableNode);
                 tableProcessor02.Process ();
-    
+                
                 Console.WriteLine (tableProcessor02.ColumnHeaders.Count ());
                 foreach (var header in tableProcessor02.ColumnHeaders)
                     // Console.WriteLine (header.InnerText);
@@ -113,14 +113,14 @@ namespace testHtmlLetterParser
                 tableProcessor.Rows.ToList ().ForEach (node => Console.WriteLine(node.InnerText));
             }
             */
-
+            
             // var tableProcessor03 = new TableProcessor (doc.DocumentNode.SelectNodes ("//table[@id='ChangesTable']").First());
             var tableProcessor03 = new TableProcessor (doc.DocumentNode.SelectNodes ("//table[@id='ChangesTable']").Skip(1).First());
             tableProcessor03.Process ();
             var list = tableProcessor03.GetCollection ();
             
             var tableProcessorPen = new TableProcessor(doc.DocumentNode.SelectNodes("//table[not(@id)]").FirstOrDefault());
-
+            
             Console.ReadKey ();
         }
     }

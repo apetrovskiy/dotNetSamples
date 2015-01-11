@@ -17,15 +17,17 @@ namespace gpaLetterParser
 
             var tableProcessor = new TableProcessor(
                 doc.DocumentNode.SelectNodes ("//table").First(),
-                // "//table//td[. = 'User name']|//table//td[. = 'Email']|//table//td[. = 'Expires in']",
                 ".",
                 "",
                 ".");
             tableProcessor.Process ();
-            var list = tableProcessor.GetCollection ();
+            
             tableProcessor.ExportCsv ("/home/alexander/Documents/gpa_errors.txt");
-
-            Console.WriteLine ("Hello World!");
+            
+            var list = tableProcessor.GetCollection ();
+            foreach (var dict in list)
+                foreach (var key in dict.Keys)
+                    Console.WriteLine ("{0}\t=\t{1}", key, dict[key]);
         }
     }
 }
