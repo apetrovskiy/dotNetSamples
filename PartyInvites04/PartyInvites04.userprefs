@@ -1,0 +1,15 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="/usr/bin/google-chrome-unstable" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="PartyInvites04/Views/Home/Index.cshtml">
+    <Files>
+      <File FileName="PartyInvites04/Controllers/HomeController.cs" Line="10" Column="10" />
+      <File FileName="PartyInvites04/Global.asax.cs" Line="13" Column="13" />
+      <File FileName="PartyInvites04/App_Start/RouteConfig.cs" Line="26" Column="26" />
+      <File FileName="PartyInvites04/Views/Home/Index.cshtml" Line="25" Column="25" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
