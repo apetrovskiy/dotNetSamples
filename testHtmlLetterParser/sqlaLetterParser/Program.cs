@@ -15,12 +15,15 @@ namespace sqlaLetterParser
             
             var doc = new HtmlDocument();
             doc.Load(@"../../../letters/sqla_2008R2.htm");
+            // doc.Load(@"../../../letters/sqla_empty_2008R2.htm");
             
             var tableProcessor = new TableProcessor(
-                doc.DocumentNode.SelectNodes ("//table[@id='ChangesTable']").First(),
+                doc.DocumentNode,
+                "//table[@id='ChangesTable']",
                 "./text()",
-                "",
-                "./text()");
+                "./text()",
+                "Action", "Object Type");
+            
             tableProcessor.Process ();
             
             tableProcessor.ExportCsv ("/home/alexander/Documents/sqla_changes.txt");
@@ -29,6 +32,11 @@ namespace sqlaLetterParser
             foreach (var dict in list)
                 foreach (var key in dict.Keys)
                     Console.WriteLine ("{0}\t=\t{1}", key, dict[key]);
+            
+            var aaa = tableProcessor.ColumnHeaders.ToList();
+            var bbb = tableProcessor.ColumnHeaderNames.ToList();
+            
+            Console.ReadKey ();
         }
     }
 }

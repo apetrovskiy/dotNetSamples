@@ -14,12 +14,13 @@ namespace gpaLetterParser
 
             var doc = new HtmlDocument();
             doc.Load(@"../../../letters/gpa_errors_2008R2.htm");
-
+            
             var tableProcessor = new TableProcessor(
-                doc.DocumentNode.SelectNodes ("//table").First(),
+                doc.DocumentNode,
+                "//table",
                 ".",
-                "",
-                ".");
+                ".",
+                "Location", "Type", "Message");
             tableProcessor.Process ();
             
             tableProcessor.ExportCsv ("/home/alexander/Documents/gpa_errors.txt");
@@ -28,6 +29,8 @@ namespace gpaLetterParser
             foreach (var dict in list)
                 foreach (var key in dict.Keys)
                     Console.WriteLine ("{0}\t=\t{1}", key, dict[key]);
+            
+            Console.ReadKey ();
         }
     }
 }

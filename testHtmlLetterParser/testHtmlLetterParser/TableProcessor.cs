@@ -12,7 +12,7 @@ namespace testHtmlLetterParser
         readonly HtmlNode _tableNode;
         readonly bool _useFirstRowAsHeaders;
         readonly string _customColumnHeaderExpression = "./text()";
-        readonly string _customRowsExpression;
+        // readonly string _customRowsExpression;
         readonly string _customRowItemsExpression = "./text()";
         
         public TableProcessor (HtmlNode tableNode)
@@ -21,19 +21,36 @@ namespace testHtmlLetterParser
             _useFirstRowAsHeaders = _tableNode.Descendants().All(descNode => descNode.OriginalName != "th");
         }
         
-        public TableProcessor(HtmlNode tableNode, string columnHeadersExpression, string rowsExpression, string rowItemsExpression) : this(tableNode)
+        public TableProcessor (HtmlNode documentNode, string tableExpression) : this(getTableFromDocument(documentNode, tableExpression))
+        {
+        }
+        
+        // public TableProcessor(HtmlNode documentNode, string tableExpression, string columnHeadersExpression, string rowsExpression, string rowItemsExpression) : this(documentNode, tableExpression)
+        public TableProcessor(HtmlNode documentNode, string tableExpression, string columnHeadersExpression, string rowItemsExpression) : this(documentNode, tableExpression)
         {
             _customColumnHeaderExpression = columnHeadersExpression;
-            _customRowsExpression = rowsExpression;
+            // _customRowsExpression = rowsExpression;
             _customRowItemsExpression = rowItemsExpression;
         }
         
+        // public TableProcessor(HtmlNode documentNode, string tableExpression, string columnHeadersExpression, string rowsExpression, string rowItemsExpression, params string[] columnNames)
+        //    : this(documentNode, tableExpression, columnHeadersExpression, rowsExpression, rowItemsExpression)
+        public TableProcessor(HtmlNode documentNode, string tableExpression, string columnHeadersExpression, string rowItemsExpression, params string[] columnNames)
+            : this(documentNode, tableExpression, columnHeadersExpression, rowItemsExpression)
+        {
+            if (null == columnNames || 0 == columnNames.Length) return;
+            var existingColumnNames = getColumnHeaderNames();
+            if (columnNames.Any(columnName => !existingColumnNames.Contains(columnName))) throw new Exception("This is not the table you need");
+        }
+        
         public IEnumerable<HtmlNode> ColumnHeaders { get; set; }
+        public IEnumerable<string> ColumnHeaderNames { get; set; }
         public IEnumerable<HtmlNode> Rows { get; set; }
         
         public void Process()
         {
             ColumnHeaders = getColumnHeaders();
+            ColumnHeaderNames = getColumnHeaderNames();
             Rows = getRows ();
         }
         
@@ -67,6 +84,14 @@ namespace testHtmlLetterParser
             return resultList;
         }
         
+        static HtmlNode getTableFromDocument(HtmlNode documentNode, string tableExpression)
+        {
+            var tableCollection = documentNode.SelectNodes(tableExpression);
+//            if (null == tableCollection) //throw new Exception("Could not find the table of your interest by expression " + tableExpression);
+//                return new HtmlNode(HtmlNodeType.Element, documentNode, 0);
+            return null == tableCollection ? new HtmlNode(HtmlNodeType.Element, documentNode.OwnerDocument, 0) : tableCollection.First();
+        }
+        
         IEnumerable<HtmlNode> getColumnHeaders()
         {
             return _useFirstRowAsHeaders ? getColumnHeadersAsFirstRow() : getColumnHeadersAsElementsTh();
@@ -80,6 +105,13 @@ namespace testHtmlLetterParser
         IEnumerable<HtmlNode> getColumnHeadersAsFirstRow()
         {
             return _tableNode.Descendants().FirstOrDefault(node => node.OriginalName == "tr").Descendants().Where(node => node.OriginalName == "td");
+        }
+        
+        IEnumerable<string> getColumnHeaderNames()
+        {
+            return _useFirstRowAsHeaders ? 
+                getColumnHeadersAsFirstRow().Select(columnNode => columnNode.SelectNodes(_customColumnHeaderExpression).FirstOrDefault().InnerText.Trim()) :
+                getColumnHeadersAsElementsTh().Select(columnNode => columnNode.InnerText);
         }
         
         IEnumerable<HtmlNode> getRows()

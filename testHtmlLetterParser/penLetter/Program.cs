@@ -1,6 +1,6 @@
 ﻿/*
  * Created by SharpDevelop.
- * User: alexa_000
+ * User: Alexander Petrovskiy
  * Date: 12/31/2014
  * Time: 6:14 PM
  * 
@@ -22,10 +22,12 @@ namespace penLetterParser
             doc.Load(@"../../../letters/7.0.33.0/pen_81x86.htm");
             
             var tableProcessor = new TableProcessor(
-                doc.DocumentNode.SelectNodes ("//table").First(),
+                doc.DocumentNode,
+                "//table",
                 ".", // "self::td",
-                "",
-                "."); // "self::td");
+                ".", // "self::td");
+                "User name", "Email", "Expires in");
+           
             tableProcessor.Process ();
             
             tableProcessor.ExportCsv ("/home/alexander/Documents/pen_changes.txt");
@@ -34,6 +36,8 @@ namespace penLetterParser
             foreach (var dict in list)
                 foreach (var key in dict.Keys)
                     Console.WriteLine ("{0}\t=\t{1}", key, dict[key]);
+            
+            Console.ReadKey ();
         }
     }
 }

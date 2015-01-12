@@ -17,9 +17,9 @@ namespace fsaLetterParser
             doc.Load(@"../../../letters/fsa_7x86.htm");
             
             var tableProcessor = new TableProcessor(
-                doc.DocumentNode.SelectNodes ("//table[@id='ChangesTable']").First(),
+                doc.DocumentNode,
+                "//table[@id='ChangesTable']",
                 "./text()",
-                "",
                 "./text()");
             tableProcessor.Process ();
             
@@ -29,6 +29,8 @@ namespace fsaLetterParser
             foreach (var dict in list)
                 foreach (var key in dict.Keys)
                     Console.WriteLine ("{0}\t=\t{1}", key, dict[key]);
+            
+            Console.ReadKey ();
         }
     }
 }
