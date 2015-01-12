@@ -1,5 +1,6 @@
 ﻿@inherits System.Web.Mvc.WebViewPage
 @using System.Drawing;
+@using System.Reflection;
 @using System.Web.Mvc.Html;
 @{
     Layout = null;
@@ -18,7 +19,19 @@
             (To do: sell it better. Add pictures or something.)
             </p>
 
-            @Html.ActionLink("RSVP Now", "RsvpForm", "Home")
+            @@Html.ActionLink("RSVP Now", "RsvpForm", "Home")
+            @@Html.ActionLink("RSVP Now", "RsvpForm")
+
+            @{
+                foreach (var assm in System.AppDomain.CurrentDomain.GetAssemblies()) {
+                    // assm.GetType().Name;
+                }
+            }
+
+            @foreach (var item in System.AppDomain.CurrentDomain.GetAssemblies())
+            {
+                <div>item.FullName</div>
+            }
         </div>
     </body>
 </html>

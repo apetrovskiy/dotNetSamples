@@ -74,6 +74,7 @@
     <Content Include="Global.asax" />
     <Content Include="packages.config" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.asax.cs">
@@ -90,7 +91,4 @@
       </Properties>
     </MonoDevelop>
   </ProjectExtensions>
-  <ItemGroup>
-    <None Include="Views\Web.config__" />
-  </ItemGroup>
 </Project>

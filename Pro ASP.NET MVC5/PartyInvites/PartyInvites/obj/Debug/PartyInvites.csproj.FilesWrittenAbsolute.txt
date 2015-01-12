@@ -10,3 +10,4 @@
 /projects/probe/Pro ASP.NET MVC5/PartyInvites/PartyInvites/bin/PartyInvites.dll
 /projects/probe/Pro ASP.NET MVC5/PartyInvites/PartyInvites/obj/Debug/PartyInvites.dll
 /projects/probe/Pro ASP.NET MVC5/PartyInvites/PartyInvites/obj/Debug/PartyInvites.dll.mdb
+/projects/probe/Pro ASP.NET MVC5/PartyInvites/PartyInvites/obj/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
