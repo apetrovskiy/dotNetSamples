@@ -104,6 +104,11 @@ namespace testHtmlLetterParser
         
         IEnumerable<HtmlNode> getColumnHeadersAsFirstRow()
         {
+            var rowNodes = _tableNode.Descendants().FirstOrDefault(node => node.OriginalName == "tr");
+            var columnNodes = rowNodes.Descendants().Where(node => node.OriginalName == "td");
+            
+            var columnNames = columnNodes.SelectMany(node => node.InnerText.Trim());
+            
             return _tableNode.Descendants().FirstOrDefault(node => node.OriginalName == "tr").Descendants().Where(node => node.OriginalName == "td");
         }
         
