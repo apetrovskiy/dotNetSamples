@@ -21,7 +21,9 @@ namespace gpaLetterParser
                 ".",
                 ".",
                 "Location", "Type", "Message");
-            tableProcessor.Process ();
+            
+            Console.WriteLine("is table processor ready? {0}", tableProcessor.Ready);
+            if (!tableProcessor.Ready) return;
             
             tableProcessor.ExportCsv ("/home/alexander/Documents/gpa_errors.txt");
             

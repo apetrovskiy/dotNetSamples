@@ -20,7 +20,8 @@ namespace iutLetterParser
                                      ".", // "self::td");
                                      "Account Name", "E-Mail");
             
-            tableProcessor.Process ();
+            Console.WriteLine("is table processor ready? {0}", tableProcessor.Ready);
+            if (!tableProcessor.Ready) return;
             
             tableProcessor.ExportCsv ("/home/alexander/Documents/iut_changes.txt");
             

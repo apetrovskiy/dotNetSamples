@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
 # SharpDevelop 5.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "testHtmlLetterParser", "testHtmlLetterParser\testHtmlLetterParser.csproj", "{2BB68AC5-D036-4B9D-BD06-5F8960C88C2B}"
 EndProject
@@ -27,6 +27,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "uavrLetterParser", "uavrLetterParser\uavrLetterParser.csproj", "{FA18E4E1-CA38-46AF-AF49-F85050304F15}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fsaLetterParser", "fsaLetterParser\fsaLetterParser.csproj", "{DF77F320-B2E6-4F86-AFBC-62541222C062}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bulkProcessor", "bulkProcessor\bulkProcessor.csproj", "{EC4F3CD3-BCE2-4CCC-A1F6-CFEE1C8AAE99}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -86,6 +88,10 @@ Global
 		{DF77F320-B2E6-4F86-AFBC-62541222C062}.Debug|x86.Build.0 = Debug|x86
 		{DF77F320-B2E6-4F86-AFBC-62541222C062}.Release|x86.ActiveCfg = Release|x86
 		{DF77F320-B2E6-4F86-AFBC-62541222C062}.Release|x86.Build.0 = Release|x86
+		{EC4F3CD3-BCE2-4CCC-A1F6-CFEE1C8AAE99}.Debug|x86.ActiveCfg = Debug|x86
+		{EC4F3CD3-BCE2-4CCC-A1F6-CFEE1C8AAE99}.Debug|x86.Build.0 = Debug|x86
+		{EC4F3CD3-BCE2-4CCC-A1F6-CFEE1C8AAE99}.Release|x86.ActiveCfg = Release|x86
+		{EC4F3CD3-BCE2-4CCC-A1F6-CFEE1C8AAE99}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = penLetter\penLetterParser.csproj

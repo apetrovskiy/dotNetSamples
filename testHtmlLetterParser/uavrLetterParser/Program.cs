@@ -22,7 +22,8 @@ namespace uavrLetterParser
                                      ".", // "self::td");
                                      "Date", "Start time", "End time", "Duration", "Computer", "User");
             
-            tableProcessor.Process ();
+            Console.WriteLine("is table processor ready? {0}", tableProcessor.Ready);
+            if (!tableProcessor.Ready) return;
             
             tableProcessor.ExportCsv ("/home/alexander/Documents/uavr_changes.txt");
             

@@ -27,8 +27,9 @@ namespace penLetterParser
                 ".", // "self::td",
                 ".", // "self::td");
                 "User name", "Email", "Expires in");
-           
-            tableProcessor.Process ();
+            
+            Console.WriteLine("is table processor ready? {0}", tableProcessor.Ready);
+            if (!tableProcessor.Ready) return;
             
             tableProcessor.ExportCsv ("/home/alexander/Documents/pen_changes.txt");
             

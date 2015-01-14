@@ -94,11 +94,9 @@ namespace testHtmlLetterParser
             int counter = 0;
             foreach (var tableNode in doc.DocumentNode.SelectNodes ("//table[@id='ChangesTable']")) {
                 var tableProcessor02 = new TableProcessor(tableNode);
-                tableProcessor02.Process ();
                 
                 Console.WriteLine (tableProcessor02.ColumnHeaders.Count ());
                 foreach (var header in tableProcessor02.ColumnHeaders)
-                    // Console.WriteLine (header.InnerText);
                     Console.WriteLine (header.SelectNodes ("./text()").First ().InnerText);
                 
                 tableProcessor02.ExportCsv ("/home/alexander/Documents/changes" + counter++ + ".txt");
@@ -116,7 +114,6 @@ namespace testHtmlLetterParser
             
             // var tableProcessor03 = new TableProcessor (doc.DocumentNode.SelectNodes ("//table[@id='ChangesTable']").First());
             var tableProcessor03 = new TableProcessor (doc.DocumentNode.SelectNodes ("//table[@id='ChangesTable']").Skip(1).First());
-            tableProcessor03.Process ();
             var list = tableProcessor03.GetCollection ();
             
             var tableProcessorPen = new TableProcessor(doc.DocumentNode.SelectNodes("//table[not(@id)]").FirstOrDefault());
