@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using PartyInvites05.Models;
 
 namespace PartyInvites05.Controllers
 {
@@ -23,9 +24,20 @@ namespace PartyInvites05.Controllers
             return View();
         }
 
+        [HttpGet]
         public ViewResult RsvpForm()
         {
             return View();
+        }
+
+        [HttpPost]
+        public ViewResult RsvpForm(GuestResponse guestResponse)
+        {
+            // return View("Thanks", guestResponse);
+            if (ModelState.IsValid)
+                return View("Thanks", guestResponse);
+            else
+                return View();
         }
     }
 }

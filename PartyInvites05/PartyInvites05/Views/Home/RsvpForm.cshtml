@@ -9,21 +9,53 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
+    <link href="~/Content/Styles.css" rel="stylesheet" />
     <title>RsvpForm</title>
 </head>
 <body>
-    @using (Html.BeginForm()) { 
-        <p>Your name: @Html.TextBoxFor(x => x.Name)</p>
-        <p>Your rmail: @Html.TextBoxFor(x => x.Email)</p>
-        <p>Your phone: @Html.TextBoxFor(x => x.Phone)</p>
-        <p>
-            Will you attend?
-            @Html.DropDownListFor(x => x.WillAttend, new[] { 
+    <div class="panel panel-success">
+        <div class="panel-heading text-center"><h4>RSVP</h4></div>
+        <div class="panel-body">
+            @using (Html.BeginForm())
+            {
+                @Html.ValidationSummary()
+                <div class="form-group">
+                    <label>Your name:</label>
+                    @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+                </div>
+                @*<p>Your name: @Html.TextBoxFor(x => x.Name)</p>*@
+                <div class="form-group">
+                    <label>Your email:</label>
+                    @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+                </div>
+                @*<p>Your rmail: @Html.TextBoxFor(x => x.Email)</p>*@
+                <div class="form-group">
+                    <label>Your phone:</label>
+                    @Html.TextBoxFor(x => x.Phone, new { @class = "form-control" })
+                </div>
+                @*<p>Your phone: @Html.TextBoxFor(x => x.Phone)</p>*@
+                <div class="form-group">
+                    <label>Will you attend?</label>
+                    @Html.DropDownListFor(x => x.WillAttend, new[] { 
+                        new SelectListItem() { Text = "Yes, I'll be there", Value = bool.TrueString },
+                        new SelectListItem() { Text = "No, I can't come", Value = bool.FalseString }
+                    }, "Choose an option", new { @class = "form-control" })
+                </div>
+                @*<p>
+                    Will you attend?
+                    @Html.DropDownListFor(x => x.WillAttend, new[] {
                 new SelectListItem() { Text = "Yes, I'll be there", Value = bool.TrueString },
                 new SelectListItem() { Text = "No, I can't come", Value = bool.FalseString }
             }, "Choose an option")
-        </p>
-        <input type="submit" value="Submit RSVP" />
-    }
+                </p>*@
+                <div class="text-center">
+                    <input class="btn btn-success" type="submit" value="Submit RSVP" />
+                </div>
+                @*<input type="submit" value="Submit RSVP" />*@
+            }
+        </div>
+    </div>
 </body>
 </html>
