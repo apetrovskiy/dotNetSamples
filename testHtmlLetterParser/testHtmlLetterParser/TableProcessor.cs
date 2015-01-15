@@ -12,7 +12,6 @@ namespace testHtmlLetterParser
         readonly HtmlNode _tableNode;
         readonly bool _useFirstRowAsHeaders;
         readonly string _customColumnHeaderExpression = "./text()";
-        // readonly string _customRowsExpression;
         readonly string _customRowItemsExpression = "./text()";
         
         public TableProcessor (HtmlNode tableNode)
@@ -73,20 +72,6 @@ namespace testHtmlLetterParser
         public IEnumerable<Dictionary<string, string>> GetCollection()
         {
             var resultList = new List<Dictionary<string, string>> ();
-            /*
-            Rows.ToList ().ForEach (rowNode => {
-                var dict = new Dictionary<string, string>();
-                int counter = 0;
-                var tdNodes = rowNode.SelectNodes(".//td");
-                if (null != tdNodes && ColumnHeaders.Count() == tdNodes.Count) {
-                    ColumnHeaders.Select(headerNode => headerNode.SelectNodes(_customColumnHeaderExpression).FirstOrDefault().InnerText.Trim()).ToList().ForEach(headerName => {
-                        dict.Add(headerName, tdNodes[counter].SelectNodes(_customRowItemsExpression).FirstOrDefault().InnerText.Trim());
-                        counter++;
-                    });
-                    resultList.Add(dict);
-                }
-            });
-            */
             Rows.ToList ().ForEach (rowNode => {
                 var dict = getDictionaryOfTdNodes(rowNode);
                 if (0 < dict.Count) resultList.Add(dict);
@@ -97,17 +82,6 @@ namespace testHtmlLetterParser
         
         public bool Exists(string action, string objectType, string what, string where, string who) // , string workstation) // DateTime when,
         {
-            /*
-            var changes = GetChanges(collectorType);
-            if (null == changes || !changes.Any()) return false;
-            return changes.Any(change => 
-                               compareStringData(change.ObjectPath, objectPath) &&
-                               compareStringData(change.ObjectType, objectType) &&
-                               change.What == what &&
-                               compareStringData(change.Who, who) &&
-                               compareStringData(change.Where, where) &&
-                               compareStringData(change.Workstation, workstation));
-            */
             var changes = GetCollection();
             if (null == changes || !changes.Any()) return false;
             return changes.Any(change => 
@@ -116,16 +90,23 @@ namespace testHtmlLetterParser
                                compareStringData(change, "What Changed", what) &&
                                compareStringData(change, "Where Changed", where) &&
                                compareStringData(change, "Who Changed", who)
-                               // compareStringData(change, "When Changed", when) &&
-                               // compareStringData(change, "What Changed", workstation));
+                              );
+        }
+        
+        public bool Exists(string hostname, string username)
+        {
+            var changes = GetCollection();
+            if (null == changes || !changes.Any()) return false;
+            return changes.Any(change => 
+                               compareStringData(change, "Computer", hostname) &&
+                               compareStringData(change, "User", username)
                               );
         }
         
         bool compareStringData(Dictionary<string, string> change, string key, string value)
         {
             var existingKey = change.Keys.First(k => 0 == string.Compare(k, key, StringComparison.OrdinalIgnoreCase));
-            if (string.IsNullOrEmpty(existingKey)) return false;
-            return change.Values.Any(v => 0 == string.Compare(v, value, StringComparison.OrdinalIgnoreCase));
+            return !string.IsNullOrEmpty(existingKey) && change.Values.Any(v => 0 == string.Compare(v, value, StringComparison.OrdinalIgnoreCase));
         }
         
         Dictionary<string, string> getDictionaryOfTdNodes(HtmlNode rowNode)
@@ -134,13 +115,10 @@ namespace testHtmlLetterParser
             int counter = 0;
             var tdNodes = rowNode.SelectNodes(".//td");
             if (null != tdNodes && ColumnHeaders.Count() == tdNodes.Count) {
-                // ColumnHeaders.Select(headerNode => headerNode.SelectNodes(_customColumnHeaderExpression).FirstOrDefault().InnerText.Trim()).ToList().ForEach(headerName => {
                 ColumnHeaderNames.ToList().ForEach(headerName => {
-                    // dict.Add(headerName, tdNodes[counter].SelectNodes(_customRowItemsExpression).FirstOrDefault().InnerText.Trim());
                     dict.Add(headerName, selectRowItemNode(tdNodes[counter]));
                     counter++;
                 });
-                // resultList.Add(dict);
                 return dict;
             }
             return dict;
@@ -159,8 +137,6 @@ namespace testHtmlLetterParser
         static HtmlNode getTableFromDocument(HtmlNode documentNode, string tableExpression)
         {
             var tableCollection = documentNode.SelectNodes(tableExpression);
-//            if (null == tableCollection) //throw new Exception("Could not find the table of your interest by expression " + tableExpression);
-//                return new HtmlNode(HtmlNodeType.Element, documentNode, 0);
             return null == tableCollection ? new HtmlNode(HtmlNodeType.Element, documentNode.OwnerDocument, 0) : tableCollection.First();
         }
         
