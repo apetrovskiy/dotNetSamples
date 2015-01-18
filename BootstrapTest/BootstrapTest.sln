@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BootstrapTest", "BootstrapTest\BootstrapTest.csproj", "{6189C35D-6858-40E8-80BE-2A2F4769E5C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BootstrapTest.Tests", "BootstrapTest.Tests\BootstrapTest.Tests.csproj", "{A31A310F-188B-4610-B60D-F6DD2B3D5A2B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6189C35D-6858-40E8-80BE-2A2F4769E5C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6189C35D-6858-40E8-80BE-2A2F4769E5C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6189C35D-6858-40E8-80BE-2A2F4769E5C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6189C35D-6858-40E8-80BE-2A2F4769E5C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A31A310F-188B-4610-B60D-F6DD2B3D5A2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A31A310F-188B-4610-B60D-F6DD2B3D5A2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A31A310F-188B-4610-B60D-F6DD2B3D5A2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A31A310F-188B-4610-B60D-F6DD2B3D5A2B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
