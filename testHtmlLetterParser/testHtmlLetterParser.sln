@@ -30,6 +30,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fsaLetterParser", "fsaLette
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bulkProcessor", "bulkProcessor\bulkProcessor.csproj", "{EC4F3CD3-BCE2-4CCC-A1F6-CFEE1C8AAE99}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "testInitialDataCollection", "testInitialDataCollection\testInitialDataCollection.csproj", "{735CE873-43C4-460A-A913-36CE7FD4AA5C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -92,6 +94,10 @@ Global
 		{EC4F3CD3-BCE2-4CCC-A1F6-CFEE1C8AAE99}.Debug|x86.Build.0 = Debug|x86
 		{EC4F3CD3-BCE2-4CCC-A1F6-CFEE1C8AAE99}.Release|x86.ActiveCfg = Release|x86
 		{EC4F3CD3-BCE2-4CCC-A1F6-CFEE1C8AAE99}.Release|x86.Build.0 = Release|x86
+		{735CE873-43C4-460A-A913-36CE7FD4AA5C}.Debug|x86.ActiveCfg = Debug|x86
+		{735CE873-43C4-460A-A913-36CE7FD4AA5C}.Debug|x86.Build.0 = Debug|x86
+		{735CE873-43C4-460A-A913-36CE7FD4AA5C}.Release|x86.ActiveCfg = Release|x86
+		{735CE873-43C4-460A-A913-36CE7FD4AA5C}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = penLetter\penLetterParser.csproj

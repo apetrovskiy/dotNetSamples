@@ -13,6 +13,7 @@ namespace testHtmlLetterParser
         readonly bool _useFirstRowAsHeaders;
         readonly string _customColumnHeaderExpression = "./text()";
         readonly string _customRowItemsExpression = "./text()";
+        readonly bool _noHeaders;
         
         public TableProcessor (HtmlNode tableNode)
         {
@@ -25,6 +26,7 @@ namespace testHtmlLetterParser
         
         public TableProcessor(HtmlNode tableNode, string columnHeadersExpression, string rowItemsExpression) : this(tableNode)
         {
+            _noHeaders = string.IsNullOrEmpty(columnHeadersExpression);
             _customColumnHeaderExpression = columnHeadersExpression;
             _customRowItemsExpression = rowItemsExpression;
         }
@@ -35,6 +37,7 @@ namespace testHtmlLetterParser
         
         public TableProcessor(HtmlNode documentNode, string tableExpression, string columnHeadersExpression, string rowItemsExpression) : this(documentNode, tableExpression)
         {
+            _noHeaders = string.IsNullOrEmpty(columnHeadersExpression);
             _customColumnHeaderExpression = columnHeadersExpression;
             _customRowItemsExpression = rowItemsExpression;
         }
@@ -42,7 +45,9 @@ namespace testHtmlLetterParser
         public TableProcessor(HtmlNode documentNode, string tableExpression, string columnHeadersExpression, string rowItemsExpression, params string[] columnNames)
             : this(documentNode, tableExpression, columnHeadersExpression, rowItemsExpression)
         {
-            if (null == columnNames || 0 == columnNames.Length) return;
+            _noHeaders = string.IsNullOrEmpty(columnHeadersExpression);
+            // if (null == columnNames || 0 == columnNames.Length) return;
+            if (_noHeaders) return;
             var existingColumnNames = getColumnHeaderNames();
             if (columnNames.Any(columnName => !existingColumnNames.Contains(columnName))) throw new Exception("This is not the table you need");
         }
@@ -103,7 +108,7 @@ namespace testHtmlLetterParser
                               );
         }
         
-        bool compareStringData(Dictionary<string, string> change, string key, string value)
+        bool compareStringData(IDictionary<string, string> change, string key, string value)
         {
             var existingKey = change.Keys.First(k => 0 == string.Compare(k, key, StringComparison.OrdinalIgnoreCase));
             return !string.IsNullOrEmpty(existingKey) && change.Values.Any(v => 0 == string.Compare(v, value, StringComparison.OrdinalIgnoreCase));
@@ -119,6 +124,21 @@ namespace testHtmlLetterParser
                     dict.Add(headerName, selectRowItemNode(tdNodes[counter]));
                     counter++;
                 });
+                return dict;
+            }
+            
+            if (null != tdNodes && !ColumnHeaders.Any()) {
+                int columnCode = 0;
+//                ColumnHeaderNames.ToList().ForEach(headerName => {
+//                    dict.Add(headerName, selectRowItemNode(tdNodes[counter]));
+//                    counter++;
+//                });
+//                
+                tdNodes.ToList().ForEach(tdNode => {
+                                             dict.Add(columnCode++.ToString(), selectRowItemNode(tdNodes[counter]));
+                                             counter++;
+                                         });
+                
                 return dict;
             }
             return dict;
