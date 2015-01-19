@@ -20,6 +20,7 @@ namespace testHtmlLetterParser
             if (!tableNode.Descendants().Any()) return; // throw new Exception("There are no table or no descendants in the table");
             _tableNode = tableNode;
             _useFirstRowAsHeaders = _tableNode.Descendants().All(descNode => descNode.OriginalName != "th");
+            // _useFirstRowAsHeaders = _tableNode.Descendants().All(descNode => descNode.OriginalName != "th") && !_noHeaders;
             processTable();
             Ready = true;
         }
@@ -37,7 +38,8 @@ namespace testHtmlLetterParser
         
         public TableProcessor(HtmlNode documentNode, string tableExpression, string columnHeadersExpression, string rowItemsExpression) : this(documentNode, tableExpression)
         {
-            _noHeaders = string.IsNullOrEmpty(columnHeadersExpression);
+            // _noHeaders = string.IsNullOrEmpty(columnHeadersExpression);
+            // _noHeaders = noHeaders;
             _customColumnHeaderExpression = columnHeadersExpression;
             _customRowItemsExpression = rowItemsExpression;
         }
@@ -146,11 +148,12 @@ namespace testHtmlLetterParser
         
         string selectRowItemNode(HtmlNode tdNode)
         {
+            /*
             var rowItemNodes = tdNode.SelectNodes(_customRowItemsExpression);
             var firstNode = tdNode.SelectNodes(_customRowItemsExpression).FirstOrDefault();
             var text = tdNode.SelectNodes(_customRowItemsExpression).FirstOrDefault().InnerText;
             var trimmedText = tdNode.SelectNodes(_customRowItemsExpression).FirstOrDefault().InnerText.Trim();
-            
+            */
             return tdNode.SelectNodes(_customRowItemsExpression).FirstOrDefault().InnerText.Trim();
         }
         
@@ -162,7 +165,16 @@ namespace testHtmlLetterParser
         
         IEnumerable<HtmlNode> getColumnHeaders()
         {
+            Console.WriteLine (_customColumnHeaderExpression);
+            Console.WriteLine (_customRowItemsExpression);
+
             return _useFirstRowAsHeaders ? getColumnHeadersAsFirstRow() : getColumnHeadersAsElementsTh();
+            // return _noHeaders ? generateHeaders() : (_useFirstRowAsHeaders ? getColumnHeadersAsFirstRow() : getColumnHeadersAsElementsTh());
+        }
+
+        IEnumerable<HtmlNode> generateHeaders()
+        {
+            return new List<HtmlNode> ();
         }
         
         IEnumerable<HtmlNode> getColumnHeadersAsElementsTh()
