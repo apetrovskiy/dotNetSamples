@@ -21,9 +21,14 @@ namespace testSendingMailWithAmpersands
             // var NewMail = new MailAddress("netwrix.r&d.spb.qc.at.msi@netwrix.com");
             // var NewMail = new MailAddress("netwrix.r&d.spb.qc.at.suite@netwrix.com");
             // var NewMail = new MailAddress("netwrix.rnd.spb.qc.at.msi@netwrix.com");
-            var NewMail = new MailAddress("netwrix.rnd.spb.qc.at.suite@netwrix.com");
+            // var NewMail = new MailAddress("netwrix.rnd.spb.qc.at.suite@netwrix.com");
+            // var NewMail = new MailAddress("netwrix.rnd.spb.qc.at.msi@netwrix.com"); // 001
+            // var NewMail = new MailAddress("netwrix.r&d.spb.qc.at.msi@netwrix.com"); // 002
+            // var NewMail = new MailAddress("netwrix.r&d.spb.qc.at.suite@netwrix.com"); // 003
+            // var NewMail = new MailAddress("netwrix.rnd.spb.qc.at.suite@netwrix.com"); // 004
+            var NewMail = new MailAddress("netwrix.rnd.spb.qc.at.msi@netwrix.com"); // 005
             mail.To.Add(NewMail);
-            mail.Subject = "Autotest report. MSI Checker. 333";
+            mail.Subject = "Autotest report. MSI Checker. 005";
             mail.SubjectEncoding = System.Text.Encoding.UTF8;
             /*
             StreamReader reader = new StreamReader(path);
