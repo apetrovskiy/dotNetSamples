@@ -2,16 +2,17 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
   <MonoDevelop.Ide.Workbench ActiveDocument="testHtmlLetterParser.Tests/TableHeadersTextFixture.cs">
     <Files>
-      <File FileName="testHtmlLetterParser.Tests/TableHeadersTextFixture.cs" Line="1" Column="1" />
-      <File FileName="testHtmlLetterParser.Tests/RowCountTestFixture.cs" Line="46" Column="46" />
-      <File FileName="testHtmlLetterParser/TableProcessor.cs" Line="1" Column="1" />
+      <File FileName="testHtmlLetterParser.Tests/TableHeadersTextFixture.cs" Line="42" Column="42" />
+      <File FileName="testHtmlLetterParser.Tests/RowCountTestFixture.cs" Line="9" Column="9" />
+      <File FileName="testHtmlLetterParser/TableProcessor.cs" Line="19" Column="19" />
     </Files>
     <Pads>
       <Pad Id="MonoDevelop.NUnit.TestPad">
         <State expanded="True">
           <Node name="testHtmlLetterParser.Tests" expanded="True">
-            <Node name="testHtmlLetterParaer" expanded="True">
+            <Node name="testHtmlLetterParter" expanded="True">
               <Node name="Tests" expanded="True">
+                <Node name="RowCountTestFixture" expanded="True" />
                 <Node name="TableHeadersTextFixture" expanded="True">
                   <Node name="GeneratedHeaders" selected="True" />
                 </Node>
@@ -23,15 +24,7 @@
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/projects/probe/testHtmlLetterParser/testHtmlLetterParser.Tests/TableHeadersTextFixture.cs" line="55" column="36" />
-      <Breakpoint file="/projects/probe/testHtmlLetterParser/testHtmlLetterParser/TableProcessor.cs" line="24" column="23" />
-      <Breakpoint file="/projects/probe/testHtmlLetterParser/testHtmlLetterParser/TableProcessor.cs" line="43" column="32" />
-      <Breakpoint file="/projects/probe/testHtmlLetterParser/testHtmlLetterParser/TableProcessor.cs" line="41" column="53" />
-      <Breakpoint file="/projects/probe/testHtmlLetterParser/testHtmlLetterParser.Tests/TableHeadersTextFixture.cs" line="54" column="44" />
-      <Breakpoint file="/projects/probe/testHtmlLetterParser/testHtmlLetterParser/TableProcessor.cs" line="171" column="16" />
-      <Breakpoint file="/projects/probe/testHtmlLetterParser/testHtmlLetterParser/TableProcessor.cs" line="14" column="49" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches>
     <Watch file="testHtmlLetterParser/TableProcessor.cs" line="60" offsetX="536" offsetY="1062" expression="tdNodes" liveUpdate="False" />
