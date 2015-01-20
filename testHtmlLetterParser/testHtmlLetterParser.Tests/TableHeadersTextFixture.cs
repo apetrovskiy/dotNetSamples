@@ -30,6 +30,7 @@ namespace testHtmlLetterParter.Tests
         {
             var doc = GIVEN_HtmlDocument (Page.TableWithThNodes);
             var tableProcessor = new TableProcessor(doc.DocumentNode.SelectNodes("//table").First());
+            Assert.AreEqual(true, tableProcessor.Ready);
             Assert.AreEqual (2, tableProcessor.ColumnHeaders.Count ());
             Assert.AreEqual (2, tableProcessor.ColumnHeaderNames.Count ());
             Assert.AreEqual ("Col1", tableProcessor.ColumnHeaderNames.First ());
@@ -48,7 +49,7 @@ namespace testHtmlLetterParter.Tests
         {
             var doc = GIVEN_HtmlDocument (Page.TableWithTdNodesAsHeaders);
             var tableProcessor = new TableProcessor(doc.DocumentNode.SelectNodes("//table").First());
-            // tableProcessor.
+            Assert.AreEqual(true, tableProcessor.Ready);
             Assert.AreEqual (2, tableProcessor.ColumnHeaders.Count ());
             Assert.AreEqual (2, tableProcessor.ColumnHeaderNames.Count ());
             Assert.AreEqual ("row1col1", tableProcessor.ColumnHeaderNames.First ());
@@ -67,6 +68,7 @@ namespace testHtmlLetterParter.Tests
         {
             var doc = GIVEN_HtmlDocument (Page.TableWithoutHeaders);
             var tableProcessor = new TableProcessor(doc.DocumentNode.SelectNodes("//table").First(), false) { RowItemExpression = "." };
+            Assert.AreEqual(true, tableProcessor.Ready);
             Assert.AreEqual (2, tableProcessor.ColumnHeaderNames.Count ());
             Assert.AreEqual("1", tableProcessor.ColumnHeaderNames.First());
             Assert.AreEqual("2", tableProcessor.ColumnHeaderNames.Last());
@@ -85,6 +87,7 @@ namespace testHtmlLetterParter.Tests
             var doc = GIVEN_HtmlDocument (Page.TableWithoutHeadersAndWithVariantNumberOfColumns);
             // var tableProcessor = new TableProcessor(doc.DocumentNode.SelectNodes("//table").First()) { NoColumnHeaders = true, RowItemExpression = "." };
             var tableProcessor = new TableProcessor(doc.DocumentNode.SelectNodes("//table").First(), false) { RowItemExpression = "./td" };
+            Assert.AreEqual(true, tableProcessor.Ready);
             Assert.AreEqual (4, tableProcessor.ColumnHeaderNames.Count ());
             Assert.AreEqual("1", tableProcessor.ColumnHeaderNames.First());
             Assert.AreEqual("2", tableProcessor.ColumnHeaderNames.Skip(1).First());

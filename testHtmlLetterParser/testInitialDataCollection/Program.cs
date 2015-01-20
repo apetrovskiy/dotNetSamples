@@ -27,16 +27,8 @@ namespace testInitialDataCollection
             
             var doc = new HtmlDocument();
             doc.Load(@"../../../letters/1.1.1.119/ada_initial.htm");
-            /*1
-            var tableProcessor = new TableProcessor(
-                doc.DocumentNode,
-                "//table[@id='FirstCollectionTable']",
-                "",
-                ".");
-            */
             
-            var tableProcessor = new TableProcessor(doc.DocumentNode.SelectNodes("//table[@id='FirstCollectionTable']").First()) {
-                ColumnHeaderExpression = "",
+            var tableProcessor = new TableProcessor(doc.DocumentNode.SelectNodes("//table[@id='FirstCollectionTable']").First(), false) {
                 RowItemExpression = "."
             };
             
@@ -50,10 +42,7 @@ namespace testInitialDataCollection
                 foreach (var key in dict.Keys)
                     Console.WriteLine ("{0}\t=\t{1}", key, dict[key]);
             
-            // $tableProcessor.Exists("Modified", "File", "\tests\test01.txt", "$(hostname)", "$($env:USERDOMAIN)\$($env:USERNAME)");
-            // $tableProcessor.Exists("Success", "File", "\tests\test01.txt", "$(hostname)", "$($env:USERDOMAIN)\$($env:USERNAME)");
-            var isModifiedRecorded = tableProcessor.Exists("Modified", "File", @"\tests\test01.txt", "splab-7x86", @"spanew\suite_admin");
-            var isSuccessRecorded = tableProcessor.Exists("Success", "File", @"\tests\test01.txt", "splab-7x86", @"spanew\suite_admin");
+            var isFound = tableProcessor.Exists(1, "Initial analysis completed. You will receive the first report on the next data collection.");
             
             Console.Write("Press any key to continue . . . ");
             Console.ReadKey(true);

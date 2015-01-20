@@ -93,6 +93,13 @@ namespace testHtmlLetterParser
                               );
         }
         
+        public bool Exists(int columnNumber, string data)
+        {
+            var changes = GetCollection();
+            if (null == changes || !changes.Any()) return false;
+            return changes.Any(change => data == change[columnNumber.ToString()]);
+        }
+        
         bool compareStringData(IDictionary<string, string> change, string key, string value)
         {
             var existingKey = change.Keys.First(k => 0 == string.Compare(k, key, StringComparison.OrdinalIgnoreCase));
