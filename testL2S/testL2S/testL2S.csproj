@@ -1,7 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
   <PropertyGroup>
+<<<<<<< HEAD
     <ProjectGuid>{B7C67EBF-3012-4844-9D21-C40F2BAFCC30}</ProjectGuid>
+=======
+    <ProjectGuid>{B647123C-1873-4165-AD75-9385B73024DF}</ProjectGuid>
+>>>>>>> 9f968410adde0b431d4d999e81c2a2dc1f3f738b
     <ProjectTypeGuids>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -48,8 +52,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+=======
+    <Compile Include="Mapping\Changes.cs" />
+    <Compile Include="Mapping\Events.cs" />
+    <Compile Include="MyContext.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Mapping" />
+  </ItemGroup>
+>>>>>>> 9f968410adde0b431d4d999e81c2a2dc1f3f738b
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

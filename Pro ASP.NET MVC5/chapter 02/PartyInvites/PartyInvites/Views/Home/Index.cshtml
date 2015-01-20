@@ -1,0 +1,38 @@
+﻿@inherits System.Web.Mvc.WebViewPage
+@using System.Drawing;
+@using System.Reflection;
+@using System.Web.Mvc.Html;
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Index</title>
+</head>
+    <body>
+        <div>
+            <!-- Hello World (from the view) -->
+            @ViewBag.Greeting World (from the view)
+            <p>We're going to have an exciting party.<br />
+            (To do: sell it better. Add pictures or something.)
+            </p>
+
+            @@Html.ActionLink("RSVP Now", "RsvpForm", "Home")
+            @@Html.ActionLink("RSVP Now", "RsvpForm")
+
+            @{
+                foreach (var assm in System.AppDomain.CurrentDomain.GetAssemblies()) {
+                    // assm.GetType().Name;
+                }
+            }
+
+            @foreach (var item in System.AppDomain.CurrentDomain.GetAssemblies())
+            {
+                <div>item.FullName</div>
+            }
+        </div>
+    </body>
+</html>
+

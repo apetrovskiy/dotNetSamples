@@ -1,0 +1,33 @@
+﻿<Properties StartupItem="penLetter/penLetterParser.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="testHtmlLetterParser.Tests/TableHeadersTextFixture.cs">
+    <Files>
+      <File FileName="testHtmlLetterParser.Tests/TableHeadersTextFixture.cs" Line="42" Column="42" />
+      <File FileName="testHtmlLetterParser.Tests/RowCountTestFixture.cs" Line="9" Column="9" />
+      <File FileName="testHtmlLetterParser/TableProcessor.cs" Line="19" Column="19" />
+    </Files>
+    <Pads>
+      <Pad Id="MonoDevelop.NUnit.TestPad">
+        <State expanded="True">
+          <Node name="testHtmlLetterParser.Tests" expanded="True">
+            <Node name="testHtmlLetterParter" expanded="True">
+              <Node name="Tests" expanded="True">
+                <Node name="RowCountTestFixture" expanded="True" />
+                <Node name="TableHeadersTextFixture" expanded="True">
+                  <Node name="GeneratedHeaders" selected="True" />
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches>
+    <Watch file="testHtmlLetterParser/TableProcessor.cs" line="60" offsetX="536" offsetY="1062" expression="tdNodes" liveUpdate="False" />
+    <Watch file="testHtmlLetterParser/TableProcessor.cs" line="64" offsetX="458" offsetY="1134" expression="ColumnHeaders" liveUpdate="False" />
+  </MonoDevelop.Ide.DebuggingService.PinnedWatches>
+</Properties>

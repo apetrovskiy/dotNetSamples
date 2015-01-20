@@ -1,0 +1,12 @@
+/projects/probe/testSqliteLinq02/testSqliteLinq02/obj/x86/Debug/.NETFramework,Version=v4.0.AssemblyAttribute.cs
+/projects/probe/testSqliteLinq02/testSqliteLinq02/bin/Debug/testSqliteLinq02.exe.config
+/projects/probe/testSqliteLinq02/testSqliteLinq02/bin/Debug/testSqliteLinq02.exe.mdb
+/projects/probe/testSqliteLinq02/testSqliteLinq02/bin/Debug/testSqliteLinq02.exe
+/projects/probe/testSqliteLinq02/testSqliteLinq02/obj/x86/Debug/testSqliteLinq02.exe
+/projects/probe/testSqliteLinq02/testSqliteLinq02/obj/x86/Debug/testSqliteLinq02.exe.mdb
+/projects/probe/testSqliteLinq02/testSqliteLinq02/bin/Debug/System.Data.SQLite.Linq.dll
+/projects/probe/testSqliteLinq02/testSqliteLinq02/bin/Debug/EntityFramework.dll
+/projects/probe/testSqliteLinq02/testSqliteLinq02/bin/Debug/EntityFramework.SqlServer.dll
+/projects/probe/testSqliteLinq02/testSqliteLinq02/bin/Debug/System.Data.SQLite.EF6.dll
+/projects/probe/testSqliteLinq02/testSqliteLinq02/bin/Debug/linq2db.dll
+/projects/probe/testSqliteLinq02/testSqliteLinq02/bin/Debug/System.Data.SQLite.dll

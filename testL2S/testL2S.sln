@@ -1,8 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
+<<<<<<< HEAD
 # SharpDevelop 5.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "testL2S", "testL2S\testL2S.csproj", "{B7C67EBF-3012-4844-9D21-C40F2BAFCC30}"
+=======
+# SharpDevelop 5.0
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "testL2S", "testL2S\testL2S.csproj", "{B647123C-1873-4165-AD75-9385B73024DF}"
+>>>>>>> 9f968410adde0b431d4d999e81c2a2dc1f3f738b
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -10,9 +15,16 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+<<<<<<< HEAD
 		{B7C67EBF-3012-4844-9D21-C40F2BAFCC30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B7C67EBF-3012-4844-9D21-C40F2BAFCC30}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B7C67EBF-3012-4844-9D21-C40F2BAFCC30}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B7C67EBF-3012-4844-9D21-C40F2BAFCC30}.Release|Any CPU.Build.0 = Release|Any CPU
+=======
+		{B647123C-1873-4165-AD75-9385B73024DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B647123C-1873-4165-AD75-9385B73024DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B647123C-1873-4165-AD75-9385B73024DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B647123C-1873-4165-AD75-9385B73024DF}.Release|Any CPU.Build.0 = Release|Any CPU
+>>>>>>> 9f968410adde0b431d4d999e81c2a2dc1f3f738b
 	EndGlobalSection
 EndGlobal

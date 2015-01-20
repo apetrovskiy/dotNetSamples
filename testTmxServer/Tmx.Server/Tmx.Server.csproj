@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>10.0.0</ProductVersion>
+    <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{3E575B6F-BA0A-4169-A94B-58DFC26767E8}</ProjectGuid>
     <OutputType>Library</OutputType>
@@ -85,39 +85,6 @@
     <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Server\Helpers\WorkflowLoader.cs">
       <Link>Helpers\WorkflowLoader.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Server\Helpers\Control\InternalServerControl.cs">
-      <Link>Helpers\Control\InternalServerControl.cs</Link>
-    </Compile>
-    <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Server\Helpers\Control\ModulesLoader.cs">
-      <Link>Helpers\Control\ModulesLoader.cs</Link>
-    </Compile>
-    <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Server\Helpers\Control\PluginsLoader.cs">
-      <Link>Helpers\Control\PluginsLoader.cs</Link>
-    </Compile>
-    <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Server\Helpers\Control\ServerControl.cs">
-      <Link>Helpers\Control\ServerControl.cs</Link>
-    </Compile>
-    <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Server\Helpers\Control\TmxServerRootPathProvider.cs">
-      <Link>Helpers\Control\TmxServerRootPathProvider.cs</Link>
-    </Compile>
-    <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Server\Helpers\ObjectModel\GlobalSettings.cs">
-      <Link>Helpers\ObjectModel\GlobalSettings.cs</Link>
-    </Compile>
-    <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Server\Helpers\ObjectModel\WorkflowSettings.cs">
-      <Link>Helpers\ObjectModel\WorkflowSettings.cs</Link>
-    </Compile>
-    <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Server\Helpers\Objects\ClientsCollection.cs">
-      <Link>Helpers\Objects\ClientsCollection.cs</Link>
-    </Compile>
-    <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Server\Helpers\Objects\ContainerForTests.cs">
-      <Link>Helpers\Objects\ContainerForTests.cs</Link>
-    </Compile>
-    <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Server\Helpers\Objects\TaskPool.cs">
-      <Link>Helpers\Objects\TaskPool.cs</Link>
-    </Compile>
-    <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Server\Helpers\Objects\WorkflowCollection.cs">
-      <Link>Helpers\Objects\WorkflowCollection.cs</Link>
-    </Compile>
     <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Server\Modules\TestRunsModule.cs">
       <Link>Modules\TestRunsModule.cs</Link>
     </Compile>
@@ -136,23 +103,30 @@
     <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Server\Modules\ViewsTestStatusModule.cs">
       <Link>Modules\ViewsTestStatusModule.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Server\Helpers\CommonData.cs">
-      <Link>Helpers\CommonData.cs</Link>
-    </Compile>
     <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Server\Helpers\TestRunSelector.cs">
       <Link>Helpers\TestRunSelector.cs</Link>
-    </Compile>
-    <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Server\Helpers\Objects\TestLabCollection.cs">
-      <Link>Helpers\Objects\TestLabCollection.cs</Link>
-    </Compile>
-    <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Server\Helpers\Objects\TestRunQueue.cs">
-      <Link>Helpers\Objects\TestRunQueue.cs</Link>
     </Compile>
     <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Server\Helpers\TestRunInitializer.cs">
       <Link>Helpers\TestRunInitializer.cs</Link>
     </Compile>
-    <Compile Include="Helpers\ObjectModel\TestRunSettings.cs" />
-    <Compile Include="Helpers\ObjectModel\WorkflowSettings.cs" />
+    <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Server\Interfaces\IMailSettings.cs">
+      <Link>Interfaces\IMailSettings.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Server\Interfaces\ISettings.cs">
+      <Link>Interfaces\ISettings.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Server\ObjectModel\Data\MailSettings.cs">
+      <Link>ObjectModel\Data\MailSettings.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Server\ObjectModel\Settings\TestRunSettings.cs">
+      <Link>ObjectModel\Settings\TestRunSettings.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Server\Helpers\Mailer.cs">
+      <Link>Helpers\Mailer.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\PS\STUPS\TMX\Tmx.Server\Modules\ViewsTestWorkflowParametersModule.cs">
+      <Link>Modules\ViewsTestWorkflowParametersModule.cs</Link>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -163,20 +137,15 @@
     <Folder Include="Views\results\" />
     <Folder Include="Views\settings\" />
     <Folder Include="Views\status\" />
-    <Folder Include="Helpers\Control\" />
-    <Folder Include="Helpers\ObjectModel\" />
-    <Folder Include="Helpers\Objects\" />
     <Folder Include="Views\testRuns\" />
+    <Folder Include="Interfaces\" />
+    <Folder Include="ObjectModel\" />
+    <Folder Include="ObjectModel\Data\" />
+    <Folder Include="ObjectModel\Settings\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\..\PS\STUPS\TMX\Tmx.Server\Views\index.htm">
       <Link>Views\index.htm</Link>
-    </None>
-    <None Include="..\..\..\PS\STUPS\TMX\Tmx.Server\Views\results\overview.htm">
-      <Link>Views\results\overview.htm</Link>
-    </None>
-    <None Include="..\..\..\PS\STUPS\TMX\Tmx.Server\Views\results\overview.liquid">
-      <Link>Views\results\overview.liquid</Link>
     </None>
     <None Include="..\..\..\PS\STUPS\TMX\Tmx.Server\Views\Scripts\jquery-2.1.1.js">
       <Link>Views\Scripts\jquery-2.1.1.js</Link>
@@ -212,29 +181,36 @@
       <Link>Views\status\workflows.htm</Link>
     </None>
     <None Include="packages.config" />
-    <None Include="Scripts\jquery-2.1.1-vsdoc.js" />
-    <None Include="Scripts\jquery-2.1.1.js" />
-    <None Include="Scripts\jquery-2.1.1.min.js" />
-    <None Include="Scripts\jquery-2.1.1.min.map" />
-    <None Include="..\..\..\PS\STUPS\TMX\Tmx.Server\Views\status\TestRuns.liquid">
-      <Link>Views\status\TestRuns.liquid</Link>
-    </None>
     <None Include="..\..\..\PS\STUPS\TMX\Tmx.Server\Views\testRuns\newtestRun.liquid">
       <Link>Views\testRuns\newtestRun.liquid</Link>
-    </None>
-    <None Include="..\..\..\PS\STUPS\TMX\Tmx.Server\Views\status\clients.liquid">
-      <Link>Views\status\clients.liquid</Link>
-    </None>
-    <None Include="..\..\..\PS\STUPS\TMX\Tmx.Server\Views\status\tasks.liquid">
-      <Link>Views\status\tasks.liquid</Link>
     </None>
     <None Include="..\..\..\PS\STUPS\TMX\Tmx.Server\Views\status\testLabs.liquid">
       <Link>Views\status\testLabs.liquid</Link>
     </None>
-    <None Include="..\..\..\PS\STUPS\TMX\Tmx.Server\Views\results\testResults.liquid">
-      <Link>Views\results\testResults.liquid</Link>
+    <None Include="..\..\..\PS\STUPS\TMX\Tmx.Server\Views\results\overview_.htm">
+      <Link>Views\results\overview_.htm</Link>
     </None>
-    <None Include="Views\status\testParameters.liquid" />
+    <None Include="..\..\..\PS\STUPS\TMX\Tmx.Server\Views\results\overview_.liquid">
+      <Link>Views\results\overview_.liquid</Link>
+    </None>
+    <None Include="..\..\..\PS\STUPS\TMX\Tmx.Server\Views\testRuns\cancelTestRun.liquid">
+      <Link>Views\testRuns\cancelTestRun.liquid</Link>
+    </None>
+    <None Include="..\..\..\PS\STUPS\TMX\Tmx.Server\Views\testRuns\clients.liquid">
+      <Link>Views\testRuns\clients.liquid</Link>
+    </None>
+    <None Include="..\..\..\PS\STUPS\TMX\Tmx.Server\Views\testRuns\tasks.liquid">
+      <Link>Views\testRuns\tasks.liquid</Link>
+    </None>
+    <None Include="..\..\..\PS\STUPS\TMX\Tmx.Server\Views\testRuns\testParameters.liquid">
+      <Link>Views\testRuns\testParameters.liquid</Link>
+    </None>
+    <None Include="..\..\..\PS\STUPS\TMX\Tmx.Server\Views\testRuns\testResults.liquid">
+      <Link>Views\testRuns\testResults.liquid</Link>
+    </None>
+    <None Include="..\..\..\PS\STUPS\TMX\Tmx.Server\Views\testRuns\TestRuns.liquid">
+      <Link>Views\testRuns\TestRuns.liquid</Link>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Tmx.Core\Tmx.Core.csproj">

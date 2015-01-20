@@ -28,6 +28,8 @@ namespace testMailReader02
 //            Message message = client.GetMessage(count);
 //            Console.WriteLine(message.Headers.Subject);
             
+            var msg = client.GetMessage(349);
+            
             var list = client.GetMessageInfos();
             Console.WriteLine(list.Count);
             Console.ReadKey(true);

@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "testSqliteEntity01", "testSqliteEntity01\testSqliteEntity01.csproj", "{6FC0B457-A355-4AFE-849C-166DAEB57262}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6FC0B457-A355-4AFE-849C-166DAEB57262}.Debug|x86.ActiveCfg = Debug|x86
+		{6FC0B457-A355-4AFE-849C-166DAEB57262}.Debug|x86.Build.0 = Debug|x86
+		{6FC0B457-A355-4AFE-849C-166DAEB57262}.Release|x86.ActiveCfg = Release|x86
+		{6FC0B457-A355-4AFE-849C-166DAEB57262}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = testSqliteEntity01\testSqliteEntity01.csproj
+	EndGlobalSection
+EndGlobal

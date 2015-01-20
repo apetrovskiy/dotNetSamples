@@ -1,0 +1,26 @@
+﻿
+<html>
+    <head>
+        <title>sorted products</title>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Description</th>
+            </tr>
+            {% assign sortedProducts = @Model.Data.Products | sort:'Name' %}
+            {% for product in sortedProducts -%}
+            <tr>
+                <td>{{ product.Name }}</td>
+                <td>{{ product.Price }}</td>
+                <td>{{ product.Description }}</td>
+            </tr>
+            {% endfor -%}
+        </table>
+        User host address: {{ @Model.Data.UserHostAddress }}<br>
+        User name: {{ @Model.Data.Username }}<br>
+        Hostname: {{ @Model.Data.Hostname }}<br>
+    </body>
+</html>
