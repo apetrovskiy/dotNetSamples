@@ -20,7 +20,8 @@ namespace testHtmlLetterParser
         
         public TableProcessor (HtmlNode tableNode, bool useFirstRowAsColumnHeaders)
         {
-            if (!tableNode.Descendants().Any()) return; // throw new Exception("There are no table or no descendants in the table");
+            // if (!tableNode.Descendants().Any()) return; // throw new Exception("There are no table or no descendants in the table");
+            if (!tableNode.Descendants().Any()) throw new Exception("There are no table or no descendants in the table");
             
             _tableNode = tableNode;
             ColumnHeaderExpression = _customColumnHeaderExpression;
@@ -136,12 +137,6 @@ namespace testHtmlLetterParser
             return tdNode.SelectNodes(RowItemExpression).FirstOrDefault().InnerText.Trim();
         }
         
-        static HtmlNode getTableFromDocument(HtmlNode documentNode, string tableExpression)
-        {
-            var tableCollection = documentNode.SelectNodes(tableExpression);
-            return null == tableCollection ? new HtmlNode(HtmlNodeType.Element, documentNode.OwnerDocument, 0) : tableCollection.First();
-        }
-        
         IEnumerable<HtmlNode> getColumnHeaders()
         {
             return _thElementsPresented ? getColumnHeadersAsElementsTh() : (UseFirstRowAsColumnHeaders ? getColumnHeadersAsFirstRow() : generateColumnHeaders());
@@ -151,15 +146,11 @@ namespace testHtmlLetterParser
         {
             var headersList = new List<HtmlNode>();
             var numberOfColumns = Rows.Max(row => row.SelectNodes(RowItemExpression).Count());
-            for(int i = 0; i < numberOfColumns; i++) {
-                headersList.Add(new HtmlNode(HtmlNodeType.Element, _tableNode.OwnerDocument, i + 1) { Name = "tr", InnerHtml = (i + 1).ToString() });
-                /*
-                var newNode = new HtmlNode(HtmlNodeType.Element, _tableNode.OwnerDocument, i + 1);
-                newNode.Name = "tr";
-                newNode.InnerHtml = (i + 1).ToString();
-                headersList.Add(newNode);
-                */
-            }
+            for (int i = 0; i < numberOfColumns; i++)
+                headersList.Add(new HtmlNode(HtmlNodeType.Element, _tableNode.OwnerDocument, i + 1) {
+                    Name = "tr",
+                    InnerHtml = (i + 1).ToString()
+                });
             return headersList;
         }
         

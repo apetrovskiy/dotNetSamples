@@ -64,6 +64,14 @@ namespace testHtmlLetterParter.Tests
             </body>
         </html>
         ";
+        
+        public const string TableThatIsEmpty = @"
+        <html>
+            <body>
+                <table />
+            </body>
+        </html>
+        ";
     }
 }
 
