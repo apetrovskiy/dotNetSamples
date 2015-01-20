@@ -13,13 +13,11 @@ namespace iutLetterParser
             var doc = new HtmlDocument();
             doc.Load(@"../../../letters/iut_7x86.htm");
             
-            var tableProcessor = new TableProcessor (
-                                     doc.DocumentNode,
-                                     "//table",
-                                     ".", // "self::td",
-                                     ".", // "self::td");
-                                     "Account Name", "E-Mail");
-            
+            var tableProcessor = new TableProcessor(doc.DocumentNode.SelectNodes("//table").First()) {
+                ColumnHeaderExpression = ".", // "self::td",
+                RowItemExpression = ".", // "self::td");
+                ColumnNames = new[] { "Account Name", "E-Mail" }
+            };
             Console.WriteLine("is table processor ready? {0}", tableProcessor.Ready);
             if (!tableProcessor.Ready) return;
             

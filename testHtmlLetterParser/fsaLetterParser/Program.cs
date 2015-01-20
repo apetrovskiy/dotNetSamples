@@ -18,13 +18,10 @@ namespace fsaLetterParser
             var doc = new HtmlDocument();
             doc.Load(@"../../../letters/7.0.35.0/fsa_7x86.htm");
             
-            var tableProcessor = new TableProcessor(
-                doc.DocumentNode,
-                "//table[@id='ChangesTable']",
-                "./text()",
-                // "./text()");
-                "./pre|./text()");
-            
+            var tableProcessor = new TableProcessor(doc.DocumentNode.SelectNodes("//table[@id='ChangesTable']").First()) {
+                ColumnHeaderExpression = "./text()",
+                RowItemExpression = "./pre|./text()"
+            };
             Console.WriteLine("is table processor ready? {0}", tableProcessor.Ready);
             if (!tableProcessor.Ready) return;
             

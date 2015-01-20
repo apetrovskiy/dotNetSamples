@@ -16,12 +16,11 @@ namespace vmaLetterParser
             var doc = new HtmlDocument();
             doc.Load(@"../../../letters/7.0.34.0/vma_change.htm");
             
-            var tableProcessor = new TableProcessor (
-                                     doc.DocumentNode,
-                                     "//table[@id='ChangesTable']",
-                                     "./text()",
-                                     "./text()"); // ,
+            var tableProcessor = new TableProcessor(doc.DocumentNode.SelectNodes("//table[@id='ChangesTable']").First()) {
+                ColumnHeaderExpression = "./text()",
+                RowItemExpression = "./text()" // ,
                                      // "Action", "Object Type");
+            };
             
             Console.WriteLine("is table processor ready? {0}", tableProcessor.Ready);
             if (!tableProcessor.Ready) return;

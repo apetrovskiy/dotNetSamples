@@ -10,49 +10,32 @@ namespace testHtmlLetterParser
     public class TableProcessor
     {
         readonly HtmlNode _tableNode;
-        readonly bool _useFirstRowAsHeaders;
-        readonly string _customColumnHeaderExpression = "./text()";
-        readonly string _customRowItemsExpression = "./text()";
-        readonly bool _noHeaders;
+        const string _customColumnHeaderExpression = "./text()";
+        const string _customRowItemsExpression = "./td"; // |./text()";
+        readonly bool _thElementsPresented;
         
-        public TableProcessor (HtmlNode tableNode)
+        public TableProcessor(HtmlNode tableNode) : this(tableNode, true)
+        {
+        }
+        
+        public TableProcessor (HtmlNode tableNode, bool useFirstRowAsColumnHeaders)
         {
             if (!tableNode.Descendants().Any()) return; // throw new Exception("There are no table or no descendants in the table");
+            
             _tableNode = tableNode;
-            _useFirstRowAsHeaders = _tableNode.Descendants().All(descNode => descNode.OriginalName != "th");
-            // _useFirstRowAsHeaders = _tableNode.Descendants().All(descNode => descNode.OriginalName != "th") && !_noHeaders;
+            ColumnHeaderExpression = _customColumnHeaderExpression;
+            RowItemExpression = _customRowItemsExpression;
+            UseFirstRowAsColumnHeaders = useFirstRowAsColumnHeaders;
+            _thElementsPresented = _tableNode.Descendants().Any(descNode => descNode.OriginalName == "th");
+            
             processTable();
             Ready = true;
         }
         
-        public TableProcessor(HtmlNode tableNode, string columnHeadersExpression, string rowItemsExpression) : this(tableNode)
-        {
-            _noHeaders = string.IsNullOrEmpty(columnHeadersExpression);
-            _customColumnHeaderExpression = columnHeadersExpression;
-            _customRowItemsExpression = rowItemsExpression;
-        }
-        
-        public TableProcessor (HtmlNode documentNode, string tableExpression) : this(getTableFromDocument(documentNode, tableExpression))
-        {
-        }
-        
-        public TableProcessor(HtmlNode documentNode, string tableExpression, string columnHeadersExpression, string rowItemsExpression) : this(documentNode, tableExpression)
-        {
-            // _noHeaders = string.IsNullOrEmpty(columnHeadersExpression);
-            // _noHeaders = noHeaders;
-            _customColumnHeaderExpression = columnHeadersExpression;
-            _customRowItemsExpression = rowItemsExpression;
-        }
-        
-        public TableProcessor(HtmlNode documentNode, string tableExpression, string columnHeadersExpression, string rowItemsExpression, params string[] columnNames)
-            : this(documentNode, tableExpression, columnHeadersExpression, rowItemsExpression)
-        {
-            _noHeaders = string.IsNullOrEmpty(columnHeadersExpression);
-            // if (null == columnNames || 0 == columnNames.Length) return;
-            if (_noHeaders) return;
-            var existingColumnNames = getColumnHeaderNames();
-            if (columnNames.Any(columnName => !existingColumnNames.Contains(columnName))) throw new Exception("This is not the table you need");
-        }
+        public bool UseFirstRowAsColumnHeaders { get; set; }
+        public string ColumnHeaderExpression { get; set; }
+        public string RowItemExpression { get; set; }
+        public string[] ColumnNames { get; set; }
         
         public IEnumerable<HtmlNode> ColumnHeaders { get; set; }
         public IEnumerable<string> ColumnHeaderNames { get; set; }
@@ -61,9 +44,9 @@ namespace testHtmlLetterParser
         
         void processTable()
         {
+            Rows = getRows();
             ColumnHeaders = getColumnHeaders();
             ColumnHeaderNames = getColumnHeaderNames();
-            Rows = getRows ();
         }
         
         public void ExportCsv(string path)
@@ -131,11 +114,6 @@ namespace testHtmlLetterParser
             
             if (null != tdNodes && !ColumnHeaders.Any()) {
                 int columnCode = 0;
-//                ColumnHeaderNames.ToList().ForEach(headerName => {
-//                    dict.Add(headerName, selectRowItemNode(tdNodes[counter]));
-//                    counter++;
-//                });
-//                
                 tdNodes.ToList().ForEach(tdNode => {
                                              dict.Add(columnCode++.ToString(), selectRowItemNode(tdNodes[counter]));
                                              counter++;
@@ -148,13 +126,7 @@ namespace testHtmlLetterParser
         
         string selectRowItemNode(HtmlNode tdNode)
         {
-            /*
-            var rowItemNodes = tdNode.SelectNodes(_customRowItemsExpression);
-            var firstNode = tdNode.SelectNodes(_customRowItemsExpression).FirstOrDefault();
-            var text = tdNode.SelectNodes(_customRowItemsExpression).FirstOrDefault().InnerText;
-            var trimmedText = tdNode.SelectNodes(_customRowItemsExpression).FirstOrDefault().InnerText.Trim();
-            */
-            return tdNode.SelectNodes(_customRowItemsExpression).FirstOrDefault().InnerText.Trim();
+            return tdNode.SelectNodes(RowItemExpression).FirstOrDefault().InnerText.Trim();
         }
         
         static HtmlNode getTableFromDocument(HtmlNode documentNode, string tableExpression)
@@ -165,16 +137,23 @@ namespace testHtmlLetterParser
         
         IEnumerable<HtmlNode> getColumnHeaders()
         {
-            Console.WriteLine (_customColumnHeaderExpression);
-            Console.WriteLine (_customRowItemsExpression);
-
-            return _useFirstRowAsHeaders ? getColumnHeadersAsFirstRow() : getColumnHeadersAsElementsTh();
-            // return _noHeaders ? generateHeaders() : (_useFirstRowAsHeaders ? getColumnHeadersAsFirstRow() : getColumnHeadersAsElementsTh());
+            return _thElementsPresented ? getColumnHeadersAsElementsTh() : (UseFirstRowAsColumnHeaders ? getColumnHeadersAsFirstRow() : generateColumnHeaders());
         }
-
-        IEnumerable<HtmlNode> generateHeaders()
+        
+        IEnumerable<HtmlNode> generateColumnHeaders()
         {
-            return new List<HtmlNode> ();
+            var headersList = new List<HtmlNode>();
+            var numberOfColumns = Rows.Max(row => row.SelectNodes(RowItemExpression).Count());
+            for(int i = 0; i < numberOfColumns; i++) {
+                headersList.Add(new HtmlNode(HtmlNodeType.Element, _tableNode.OwnerDocument, i + 1) { Name = "tr", InnerHtml = (i + 1).ToString() });
+                /*
+                var newNode = new HtmlNode(HtmlNodeType.Element, _tableNode.OwnerDocument, i + 1);
+                newNode.Name = "tr";
+                newNode.InnerHtml = (i + 1).ToString();
+                headersList.Add(newNode);
+                */
+            }
+            return headersList;
         }
         
         IEnumerable<HtmlNode> getColumnHeadersAsElementsTh()
@@ -184,24 +163,21 @@ namespace testHtmlLetterParser
         
         IEnumerable<HtmlNode> getColumnHeadersAsFirstRow()
         {
-//            var rowNodes = _tableNode.Descendants().FirstOrDefault(node => node.OriginalName == "tr");
-//            var columnNodes = rowNodes.Descendants().Where(node => node.OriginalName == "td");
-//            
-//            var columnNames = columnNodes.SelectMany(node => node.InnerText.Trim());
-            
             return _tableNode.Descendants().FirstOrDefault(node => node.OriginalName == "tr").Descendants().Where(node => node.OriginalName == "td");
         }
         
         IEnumerable<string> getColumnHeaderNames()
         {
-            return _useFirstRowAsHeaders ? 
-                getColumnHeadersAsFirstRow().Select(columnNode => columnNode.SelectNodes(_customColumnHeaderExpression).FirstOrDefault().InnerText.Trim()) :
-                getColumnHeadersAsElementsTh().Select(columnNode => columnNode.InnerText);
+            if (_thElementsPresented) return getColumnHeadersAsElementsTh().Select(columnNode => columnNode.InnerText);
+            return UseFirstRowAsColumnHeaders ?
+                getColumnHeadersAsFirstRow().Select(columnNode => columnNode.SelectNodes(ColumnHeaderExpression).FirstOrDefault().InnerText.Trim()) :
+                ColumnHeaders.Select(columnNode => columnNode.InnerText);
         }
         
         IEnumerable<HtmlNode> getRows()
         {
-            return _useFirstRowAsHeaders ? getAllRowsButFirst() : getAllRows();
+            if (_thElementsPresented || !UseFirstRowAsColumnHeaders) return getAllRows();
+            return getAllRowsButFirst();
         }
         
         IEnumerable<HtmlNode> getAllRows()
@@ -219,7 +195,7 @@ namespace testHtmlLetterParser
             var headerItems = string.Empty;
             ColumnHeaders.ToList ().ForEach (node =>  {
                 headerItems += "\"";
-                headerItems += node.SelectNodes(_customColumnHeaderExpression).FirstOrDefault().InnerText.Trim ();
+                headerItems += node.SelectNodes(ColumnHeaderExpression).FirstOrDefault().InnerText.Trim ();
                 headerItems += "\",";
             });
             writer.WriteLine (headerItems);
@@ -237,9 +213,9 @@ namespace testHtmlLetterParser
         
         string getNodeData(HtmlNode tdNode)
         {
-            if (null == tdNode.SelectNodes (_customRowItemsExpression))
+            if (null == tdNode.SelectNodes (RowItemExpression))
                 return string.Empty;
-            var tdData = tdNode.SelectNodes (_customRowItemsExpression).FirstOrDefault ().InnerText.Trim ();
+            var tdData = tdNode.SelectNodes (RowItemExpression).FirstOrDefault ().InnerText.Trim ();
             return "\"" + tdData + "\",";
         }
     }

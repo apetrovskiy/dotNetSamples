@@ -27,12 +27,18 @@ namespace testInitialDataCollection
             
             var doc = new HtmlDocument();
             doc.Load(@"../../../letters/1.1.1.119/ada_initial.htm");
-            
+            /*1
             var tableProcessor = new TableProcessor(
                 doc.DocumentNode,
                 "//table[@id='FirstCollectionTable']",
                 "",
                 ".");
+            */
+            
+            var tableProcessor = new TableProcessor(doc.DocumentNode.SelectNodes("//table[@id='FirstCollectionTable']").First()) {
+                ColumnHeaderExpression = "",
+                RowItemExpression = "."
+            };
             
             Console.WriteLine("is table processor ready? {0}", tableProcessor.Ready);
             if (!tableProcessor.Ready) return;

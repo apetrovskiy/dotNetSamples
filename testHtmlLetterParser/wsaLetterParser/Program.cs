@@ -16,16 +16,15 @@ namespace wsaLetterParser
             
             var doc = new HtmlDocument();
             // doc.Load(@"../../../letters/7.0.33.0/wsa_81x86.htm");
-            // doc.Load(@"../../../letters/7.0.35.0/wsa_7x86.htm");
-            doc.Load(@"../../../letters/7.0.35.0/wsa_empty_7x86.htm");
+            doc.Load(@"../../../letters/7.0.35.0/wsa_7x86.htm");
+            // doc.Load(@"../../../letters/7.0.35.0/wsa_empty_7x86.htm");
             
-            var tableProcessor = new TableProcessor(
-                doc.DocumentNode,
-                "//table[@id='ChangesTable']",
-                "./text()",
+            var tableProcessor = new TableProcessor(doc.DocumentNode.SelectNodes("//table[@id='ChangesTable']").First()) {
+                ColumnHeaderExpression = "./text()",
                 // "./text()",
-                "./pre|./text()");
+                RowItemExpression = "./pre|./text()"
                 // "Action", "Object Type");
+            };
             
             Console.WriteLine("is table processor ready? {0}", tableProcessor.Ready);
             if (!tableProcessor.Ready) return;

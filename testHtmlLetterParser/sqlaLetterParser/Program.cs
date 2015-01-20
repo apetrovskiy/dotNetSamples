@@ -18,21 +18,11 @@ namespace sqlaLetterParser
             // doc.Load(@"../../../letters/sqla_2008R2.htm");
             // doc.Load(@"../../../letters/sqla_empty_2008R2.htm");
             doc.Load(@"../../../letters/1.1.1.111/sqla_2012.htm");
-            /*
-            var tableProcessor = new TableProcessor(
-                doc.DocumentNode,
-                "//table[@id='ChangesTable']",
-                "./text()",
-                "./text()",
-                "Action", "Object Type");
-            */
             
-            var tableProcessor = new TableProcessor(
-                doc.DocumentNode,
-                "//table[@id='ChangesTable']",
-                "./text()",
-                // "./text()");
-                "./pre|./text()");
+            var tableProcessor = new TableProcessor(doc.DocumentNode.SelectNodes("//table[@id='ChangesTable']").First()) {
+                ColumnHeaderExpression = "./text()",
+                RowItemExpression = "./pre|./text()"
+            };
             
             Console.WriteLine("is table processor ready? {0}", tableProcessor.Ready);
             if (!tableProcessor.Ready) return;

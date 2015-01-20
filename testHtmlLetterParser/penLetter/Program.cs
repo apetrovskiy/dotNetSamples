@@ -21,12 +21,11 @@ namespace penLetterParser
             var doc = new HtmlDocument();
             doc.Load(@"../../../letters/7.0.33.0/pen_81x86.htm");
             
-            var tableProcessor = new TableProcessor(
-                doc.DocumentNode,
-                "//table",
-                ".", // "self::td",
-                ".", // "self::td");
-                "User name", "Email", "Expires in");
+            var tableProcessor = new TableProcessor(doc.DocumentNode.SelectNodes("//table").First()) {
+                ColumnHeaderExpression = ".", // "self::td",
+                RowItemExpression = ".", // "self::td");
+                ColumnNames = new[] { "User name", "Email", "Expires in" }
+            };
             
             Console.WriteLine("is table processor ready? {0}", tableProcessor.Ready);
             if (!tableProcessor.Ready) return;
