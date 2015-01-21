@@ -1,5 +1,5 @@
 ﻿<Properties StartupItem="BootstrapTest03/BootstrapTest03.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="/usr/bin/google-chrome-unstable" />
   <MonoDevelop.Ide.Workbench ActiveDocument="BootstrapTest03/Views/Test/Test01.cshtml">
     <Files>
       <File FileName="BootstrapTest03/Controllers/HomeController.cs" Line="1" Column="1" />
