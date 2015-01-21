@@ -21,7 +21,6 @@ namespace wsaLetterParser
             
             var tableProcessor = new TableProcessor(doc.DocumentNode.SelectNodes("//table[@id='ChangesTable']").First()) {
                 ColumnHeaderExpression = "./text()",
-                // "./text()",
                 RowItemExpression = "./pre|./text()"
                 // "Action", "Object Type");
             };

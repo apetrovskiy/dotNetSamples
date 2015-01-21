@@ -34,7 +34,6 @@ namespace bulkProcessor
             int counter = 30;
             foreach (var tableNode in tableCollection) {
                 counter++;
-                // var tableProcessor = new TableProcessor(tableNode, "./text()", "./pre|./text()");
                 var tableProcessor = new TableProcessor(tableNode) { ColumnHeaderExpression = "./text()", RowItemExpression = "./pre|./text()" };
                 Console.WriteLine("is table processor ready? {0}", tableProcessor.Ready);
                 if (!tableProcessor.Ready) continue;
