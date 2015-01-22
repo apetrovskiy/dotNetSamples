@@ -3,25 +3,9 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="testHtmlLetterParser.Tests/TableHeadersTextFixture.cs">
     <Files>
       <File FileName="testHtmlLetterParser.Tests/TableHeadersTextFixture.cs" Line="42" Column="42" />
-      <File FileName="testHtmlLetterParser.Tests/RowCountTestFixture.cs" Line="9" Column="9" />
-      <File FileName="testHtmlLetterParser/TableProcessor.cs" Line="19" Column="19" />
+      <File FileName="testHtmlLetterParser.Tests/RowCountTestFixture.cs" Line="1" Column="1" />
+      <File FileName="testHtmlLetterParser/TableProcessor.cs" Line="1" Column="1" />
     </Files>
-    <Pads>
-      <Pad Id="MonoDevelop.NUnit.TestPad">
-        <State expanded="True">
-          <Node name="testHtmlLetterParser.Tests" expanded="True">
-            <Node name="testHtmlLetterParter" expanded="True">
-              <Node name="Tests" expanded="True">
-                <Node name="RowCountTestFixture" expanded="True" />
-                <Node name="TableHeadersTextFixture" expanded="True">
-                  <Node name="GeneratedHeaders" selected="True" />
-                </Node>
-              </Node>
-            </Node>
-          </Node>
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

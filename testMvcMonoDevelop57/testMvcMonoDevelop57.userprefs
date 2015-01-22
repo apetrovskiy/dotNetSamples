@@ -1,0 +1,12 @@
+﻿<Properties StartupItem="testMvcMonoDevelop57/testMvcMonoDevelop57.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="/usr/bin/google-chrome-unstable" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="testMvcMonoDevelop57/Global.asax.cs">
+    <Files>
+      <File FileName="testMvcMonoDevelop57/Global.asax.cs" Line="30" Column="30" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
