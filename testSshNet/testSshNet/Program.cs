@@ -7,21 +7,22 @@
  * To change this template use Tools | Options | Coding | Edit Standard Headers.
  */
 
-namespace testSshSharp
+namespace testSshNet
 {
     using System;
+    using System.Collections.Generic;
     using Renci.SshNet;
     
     class Program
     {
         public static void Main(string[] args)
         {
-            const string vmId = @"(?m)(?n)(?<=^)\d+(?=\s\s+)";
-            const string vmName = @"(?m)(?n)(?<=^[\d]+\s+)[^\s].*[^\s](?=\s+\[)";
-            const string vmFile = @"(?m)(?n)(?<=.*\s+)\[[^\]]+\].*\.vmx(?=\s\s+\w)";
-            const string vmGuestOs = @"";
-            const string vmVersion = @"";
-            const string vmAnnotation = @"";
+//            const string vmId = @"(?m)(?n)(?<=^)\d+(?=\s\s+)";
+//            const string vmName = @"(?m)(?n)(?<=^[\d]+\s+)[^\s].*[^\s](?=\s+\[)";
+//            const string vmFile = @"(?m)(?n)(?<=.*\s+)\[[^\]]+\].*\.vmx(?=\s\s+\w)";
+//            const string vmGuestOs = @"";
+//            const string vmVersion = @"";
+//            const string vmAnnotation = @"";
             
             var connInfo = new ConnectionInfo(
                                "172.28.1.11",
@@ -32,6 +33,8 @@ namespace testSshSharp
                         "root",
                         new [] { new PrivateKeyFile(@"e:\putty\my_esxi.key", "=1qwerty") }),
                 });
+            
+            var vms = new List<IEsxiVirtualMachine>();
             
             using (var client = new SshClient(connInfo)) {
                 client.Connect();
@@ -45,9 +48,16 @@ namespace testSshSharp
                     Console.WriteLine(cmd.CommandText);
                     Console.WriteLine("Return value = {0}", cmd.ExitStatus);
                     Console.WriteLine(result);
+                    
+                    var plainDataConverter = new PlainDataConverter();
+                    vms = plainDataConverter.GetMachines(result);
                 }
                 
                client.Disconnect();
+            }
+            
+            foreach (var vm in vms) {
+                Console.WriteLine("id = {0}, name = {1}, path = {2}", vm.Id, vm.Name, vm.Path);
             }
             
             Console.Write("Press any key to continue . . . ");
