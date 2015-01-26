@@ -16,5 +16,25 @@ namespace LanguageFeatures.Models
             }
             return total;
         }
+
+        public static IEnumerable<Product> FilterByCategory(this IEnumerable<Product> productEnum, string categoryParam)
+        {
+            foreach (Product product in productEnum)
+            {
+                if (product.Category == categoryParam)
+                {
+                    yield return product;
+                }
+            }
+        }
+
+        public static IEnumerable<Product> Filter(this IEnumerable<Product> productEnum, Func<Product, bool> selectorParam)
+        {
+            foreach (Product product in productEnum)
+            {
+                if (selectorParam(product))
+                    yield return product;
+            }
+        }
     }
 }
