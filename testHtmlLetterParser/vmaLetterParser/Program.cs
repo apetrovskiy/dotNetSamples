@@ -12,13 +12,21 @@ namespace vmaLetterParser
         {
             // "C:\Projects\probe\testHtmlLetterParser\letters\7.0.34.0\Netwrix Auditor VMware Change Summary - https172.28.1.11.htm"
             // C:\Projects\probe\testHtmlLetterParser\letters\7.0.34.0\vma_change.htm
+            // C:\Projects\probe\testHtmlLetterParser\letters\7.0.39.0\VMA.2008R2.htm
+            // C:\Projects\probe\testHtmlLetterParser\letters\7.0.39.0\VMA.2012.htm
+            // C:\Projects\probe\testHtmlLetterParser\letters\7.0.39.0\VMA.7x86.htm
+            // C:\Projects\probe\testHtmlLetterParser\letters\7.0.39.0\VMA.81x86.htm
             
             var doc = new HtmlDocument();
-            doc.Load(@"../../../letters/7.0.34.0/vma_change.htm");
+            // doc.Load(@"../../../letters/7.0.34.0/vma_change.htm");
+            // doc.Load(@"../../../letters/7.0.39.0/VMA.2008R2.htm");
+            // doc.Load(@"../../../letters/7.0.39.0/VMA.2012.htm");
+            // doc.Load(@"../../../letters/7.0.39.0/VMA.7x86.htm");
+            doc.Load(@"../../../letters/7.0.39.0/VMA.81x86.htm");
             
             var tableProcessor = new TableProcessor(doc.DocumentNode.SelectNodes("//table[@id='ChangesTable']").First()) {
                 ColumnHeaderExpression = "./text()",
-                RowItemExpression = "./text()" // ,
+                RowItemExpression = @"./pre|./text()" // "./text()" // ,
                                      // "Action", "Object Type");
             };
             
