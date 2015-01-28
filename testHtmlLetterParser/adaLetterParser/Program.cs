@@ -25,7 +25,7 @@ namespace adaLetterParser
             Console.WriteLine("is table processor ready? {0}", tableProcessor.Ready);
             if (!tableProcessor.Ready) return;
             
-            tableProcessor.ExportCsv ("/home/alexander/Documents/ada_changes.txt");
+            tableProcessor.ExportCsv (@"../../../reports/ada_changes.txt");
             
             var list = tableProcessor.GetCollection ();
             foreach (var dict in list)

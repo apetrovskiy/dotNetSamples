@@ -21,7 +21,7 @@ namespace iutLetterParser
             Console.WriteLine("is table processor ready? {0}", tableProcessor.Ready);
             if (!tableProcessor.Ready) return;
             
-            tableProcessor.ExportCsv ("/home/alexander/Documents/iut_changes.txt");
+            tableProcessor.ExportCsv (@"../../../reports/iut_changes.txt");
             
             var list = tableProcessor.GetCollection ();
             foreach (var dict in list)

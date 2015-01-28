@@ -73,9 +73,21 @@ namespace testHtmlLetterParser
         
         public bool Exists(string action, string objectType, string what, string where, string who) // , string workstation) // DateTime when,
         {
+            /*
             var changes = GetCollection();
             if (null == changes || !changes.Any()) return false;
             return changes.Any(change => 
+                               compareStringData(change, "Action", action) &&
+                               compareStringData(change, "Object Type", objectType) &&
+                               compareStringData(change, "What Changed", what) &&
+                               compareStringData(change, "Where Changed", where) &&
+                               compareStringData(change, "Who Changed", who)
+                              );
+            */
+            var changes = GetCollection();
+            var changesArray = changes as Dictionary<string, string>[] ?? changes.ToArray();
+            if (null == changes || !changesArray.Any()) return false;
+            return changesArray.Any(change =>
                                compareStringData(change, "Action", action) &&
                                compareStringData(change, "Object Type", objectType) &&
                                compareStringData(change, "What Changed", what) &&
@@ -86,9 +98,18 @@ namespace testHtmlLetterParser
         
         public bool Exists(string hostname, string username)
         {
+            /*
             var changes = GetCollection();
             if (null == changes || !changes.Any()) return false;
             return changes.Any(change => 
+                               compareStringData(change, "Computer", hostname) &&
+                               compareStringData(change, "User", username)
+                              );
+            */
+            var changes = GetCollection();
+            var changesArray = changes as Dictionary<string, string>[] ?? changes.ToArray();
+            if (null == changes || !changesArray.Any()) return false;
+            return changesArray.Any(change =>
                                compareStringData(change, "Computer", hostname) &&
                                compareStringData(change, "User", username)
                               );
@@ -96,9 +117,15 @@ namespace testHtmlLetterParser
         
         public bool Exists(int columnNumber, string data)
         {
+            /*
             var changes = GetCollection();
             if (null == changes || !changes.Any()) return false;
             return changes.Any(change => data == change[columnNumber.ToString()]);
+            */
+            var changes = GetCollection();
+            var changesArray = changes as Dictionary<string, string>[] ?? changes.ToArray();
+            if (null == changes || !changesArray.Any()) return false;
+            return changesArray.Any(change => data == change[columnNumber.ToString()]);
         }
         
         bool compareStringData(IDictionary<string, string> change, string key, string value)

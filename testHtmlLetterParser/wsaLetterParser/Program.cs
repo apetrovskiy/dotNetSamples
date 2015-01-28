@@ -28,7 +28,7 @@ namespace wsaLetterParser
             Console.WriteLine("is table processor ready? {0}", tableProcessor.Ready);
             if (!tableProcessor.Ready) return;
             
-            tableProcessor.ExportCsv ("/home/alexander/Documents/wsa_changes.txt");
+            tableProcessor.ExportCsv (@"../../../reports/wsa_changes.txt");
             
             var list = tableProcessor.GetCollection ();
             foreach (var dict in list)

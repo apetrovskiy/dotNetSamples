@@ -37,7 +37,7 @@ namespace bulkProcessor
                 var tableProcessor = new TableProcessor(tableNode) { ColumnHeaderExpression = "./text()", RowItemExpression = "./pre|./text()" };
                 Console.WriteLine("is table processor ready? {0}", tableProcessor.Ready);
                 if (!tableProcessor.Ready) continue;
-                tableProcessor.ExportCsv("/home/alexander/Documents/many_changes" + counter + ".txt");
+                tableProcessor.ExportCsv(@"../../../reports/many_changes" + counter + ".txt");
                 
                 var list = tableProcessor.GetCollection ();
                 foreach (var dict in list)

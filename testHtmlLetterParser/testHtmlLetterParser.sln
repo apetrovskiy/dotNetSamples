@@ -1,7 +1,9 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
 # SharpDevelop 5.1
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "testHtmlLetterParser", "testHtmlLetterParser\testHtmlLetterParser.csproj", "{2BB68AC5-D036-4B9D-BD06-5F8960C88C2B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "penLetterParser", "penLetter\penLetterParser.csproj", "{3285E22A-3538-47D0-9709-CE9AABED33F4}"
@@ -33,6 +35,13 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "testInitialDataCollection", "testInitialDataCollection\testInitialDataCollection.csproj", "{735CE873-43C4-460A-A913-36CE7FD4AA5C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "testHtmlLetterParser.Tests", "testHtmlLetterParser.Tests\testHtmlLetterParser.Tests.csproj", "{85891F94-BED9-4B24-8FED-C5DA441DEE99}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{31169F9D-EC50-44FF-8E1E-6D384BBCAA04}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -104,5 +113,8 @@ Global
 		{85891F94-BED9-4B24-8FED-C5DA441DEE99}.Debug|x86.Build.0 = Debug|Any CPU
 		{85891F94-BED9-4B24-8FED-C5DA441DEE99}.Release|x86.ActiveCfg = Release|Any CPU
 		{85891F94-BED9-4B24-8FED-C5DA441DEE99}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 EndGlobal

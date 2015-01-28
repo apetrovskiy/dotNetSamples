@@ -99,7 +99,7 @@ namespace testHtmlLetterParser
                 foreach (var header in tableProcessor02.ColumnHeaders)
                     Console.WriteLine (header.SelectNodes ("./text()").First ().InnerText);
                 
-                tableProcessor02.ExportCsv ("/home/alexander/Documents/changes" + counter++ + ".txt");
+                tableProcessor02.ExportCsv (@"../../../reports/changes" + counter++ + ".txt");
             }
             /*
             counter = 0;

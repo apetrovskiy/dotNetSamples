@@ -35,7 +35,7 @@ namespace testInitialDataCollection
             Console.WriteLine("is table processor ready? {0}", tableProcessor.Ready);
             if (!tableProcessor.Ready) return;
             
-            // tableProcessor.ExportCsv ("/home/alexander/Documents/fsa_changes.txt");
+            // tableProcessor.ExportCsv (@"../../../reports/fsa_changes.txt");
             
             var list = tableProcessor.GetCollection ();
             foreach (var dict in list)
