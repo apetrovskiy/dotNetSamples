@@ -22,7 +22,8 @@ namespace vmaLetterParser
             // doc.Load(@"../../../letters/7.0.39.0/VMA.2008R2.htm");
             // doc.Load(@"../../../letters/7.0.39.0/VMA.2012.htm");
             // doc.Load(@"../../../letters/7.0.39.0/VMA.7x86.htm");
-            doc.Load(@"../../../letters/7.0.39.0/VMA.81x86.htm");
+            // doc.Load(@"../../../letters/7.0.39.0/VMA.81x86.htm");
+            doc.Load(@"../../../letters/7.0.39.0/1.htm");
             
             var tableProcessor = new TableProcessor(doc.DocumentNode.SelectNodes("//table[@id='ChangesTable']").First()) {
                 ColumnHeaderExpression = "./text()",
@@ -39,6 +40,8 @@ namespace vmaLetterParser
             foreach (var dict in list)
                 foreach (var key in dict.Keys)
                     Console.WriteLine ("{0}\t=\t{1}", key, dict[key]);
+            
+            var result = tableProcessor.Exists("Added", "VirtualMachine", @"\ha-folder-root\ha-datacenter\vm\SPLab-2008R2", "https://172.28.1.11:443", "root");
             
             Console.ReadKey ();
         }

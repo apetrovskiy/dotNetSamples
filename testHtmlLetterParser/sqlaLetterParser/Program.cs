@@ -13,15 +13,17 @@ namespace sqlaLetterParser
             // C:\Projects\probe\testHtmlLetterParser\letters\sqla_2008R2.htm
             // C:\Projects\probe\testHtmlLetterParser\letters\sqla_empty_2008R2.htm
             // C:\Projects\probe\testHtmlLetterParser\letters\1.1.1.111\sqla_2012.htm
+            // C:\Projects\probe\testHtmlLetterParser\letters\1.1.1.125\SQLA.2008R2.htm
             
             var doc = new HtmlDocument();
             // doc.Load(@"../../../letters/sqla_2008R2.htm");
             // doc.Load(@"../../../letters/sqla_empty_2008R2.htm");
-            doc.Load(@"../../../letters/1.1.1.111/sqla_2012.htm");
+            // doc.Load(@"../../../letters/1.1.1.111/sqla_2012.htm");
+            doc.Load(@"../../../letters/1.1.1.125/SQLA.2008R2.htm");
             
             var tableProcessor = new TableProcessor(doc.DocumentNode.SelectNodes("//table[@id='ChangesTable']").First()) {
                 ColumnHeaderExpression = "./text()",
-                RowItemExpression = "./pre|./text()"
+                RowItemExpression = "./pre|./text()" //"./pre|./text()"
             };
             
             Console.WriteLine("is table processor ready? {0}", tableProcessor.Ready);
