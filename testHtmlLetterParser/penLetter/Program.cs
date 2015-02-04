@@ -18,10 +18,17 @@ namespace penLetterParser
     {
         public static void Main(string[] args)
         {
-            var doc = new HtmlDocument();
-            doc.Load(@"../../../letters/7.0.33.0/pen_81x86.htm");
+            // C:\Projects\probe\testHtmlLetterParser\letters\1.1.1.135\pen.2012.htm
+            // C:\Projects\probe\testHtmlLetterParser\letters\1.1.1.135\pen.2012R2.htm
+            // C:\Projects\probe\testHtmlLetterParser\letters\1.1.1.135\pen.81x86.htm
             
-            var tableProcessor = new TableProcessor(doc.DocumentNode.SelectNodes("//table").First()) {
+            var doc = new HtmlDocument();
+            // doc.Load(@"../../../letters/7.0.33.0/pen_81x86.htm");
+            // doc.Load(@"../../../letters/1.1.1.135/pen.2012.htm");
+            // doc.Load(@"../../../letters/1.1.1.135/pen.2012R2.htm");
+            doc.Load(@"../../../letters/1.1.1.135/pen.81x86.htm");
+            
+            var tableProcessor = new TableProcessor(doc.DocumentNode.SelectNodes("//table[@id='OuterChangesTable']").First()) {
                 ColumnHeaderExpression = ".", // "self::td",
                 RowItemExpression = ".", // "self::td");
                 ColumnNames = new[] { "User name", "Email", "Expires in" }
