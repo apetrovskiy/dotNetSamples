@@ -11,9 +11,17 @@ namespace uavrLetterParser
         public static void Main (string[] args)
         {
             // C:\Projects\probe\testHtmlLetterParser\letters\1.1.1.218\UAVR.htm
+            // C:\Projects\probe\testHtmlLetterParser\letters\1.1.1.168\uavr_2008R2.htm
+            // C:\Projects\probe\testHtmlLetterParser\letters\1.1.1.168\uavr_2012.htm
+            // C:\Projects\probe\testHtmlLetterParser\letters\1.1.1.168\uavr_2012R2.htm
+            // C:\Projects\probe\testHtmlLetterParser\letters\1.1.1.168\uavr_7x86.htm
+            // C:\Projects\probe\testHtmlLetterParser\letters\1.1.1.168\uavr_8.1x86.htm
             
             var doc = new HtmlDocument();
-            doc.Load(@"../../../letters/1.1.1.218/UAVR.htm");
+            // doc.Load(@"../../../letters/1.1.1.218/UAVR.htm");
+            // doc.Load(@"../../../letters/1.1.1.168/UAVR_2008R2.htm");
+            doc.Load(@"../../../letters/1.1.1.168/UAVR_2012R2.htm");
+            var hostname = "SPLab-2012R2"; //"splab-2012r2"; // "splab-2008r2";
             
             var tableProcessor = new TableProcessor(doc.DocumentNode.SelectNodes("//table").First()) {
                 ColumnHeaderExpression = ".", // "self::td",
@@ -30,6 +38,10 @@ namespace uavrLetterParser
             foreach (var dict in list)
                 foreach (var key in dict.Keys)
                     Console.WriteLine ("{0}\t=\t{1}", key, dict[key]);
+            
+            Console.WriteLine(
+                tableProcessor.Exists(hostname +  ".spalab.at.local", @"SPANEW\suite_admin")
+               );
             
             Console.ReadKey ();
         }
