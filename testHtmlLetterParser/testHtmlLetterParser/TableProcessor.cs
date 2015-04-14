@@ -71,19 +71,27 @@ namespace testHtmlLetterParser
             return resultList;
         }
         
-        public bool Exists(string action, string objectType, string what, string where, string who) // , string workstation) // DateTime when,
+//        public bool Exists(string action, string objectType, string what, string where, string who) // , string workstation) // DateTime when,
+//        {
+//            var changes = GetCollection();
+//            var changesArray = changes as Dictionary<string, string>[] ?? changes.ToArray();
+//            if (null == changes || !changesArray.Any()) return false;
+//            return changesArray.Any(change =>
+//                               CompareStringData(change, "Action", action) &&
+//                               CompareStringData(change, "Object Type", objectType) &&
+//                               /*
+//                               CompareStringData(change, "What Changed", what) &&
+//                               CompareStringData(change, "Where Changed", where) &&
+//                               CompareStringData(change, "Who Changed", who)
+//                               */
+//                               CompareStringData(change, "What", what) &&
+//                               CompareStringData(change, "Where", where) &&
+//                               CompareStringData(change, "Who", who)
+//                              );
+//        }
+        
+        public bool Exists(string action, string objectType, string what, string where, string who, string workstation) // DateTime when,
         {
-            /*
-            var changes = GetCollection();
-            if (null == changes || !changes.Any()) return false;
-            return changes.Any(change => 
-                               compareStringData(change, "Action", action) &&
-                               compareStringData(change, "Object Type", objectType) &&
-                               compareStringData(change, "What Changed", what) &&
-                               compareStringData(change, "Where Changed", where) &&
-                               compareStringData(change, "Who Changed", who)
-                              );
-            */
             var changes = GetCollection();
             var changesArray = changes as Dictionary<string, string>[] ?? changes.ToArray();
             if (null == changes || !changesArray.Any()) return false;
@@ -97,20 +105,13 @@ namespace testHtmlLetterParser
                                */
                                CompareStringData(change, "What", what) &&
                                CompareStringData(change, "Where", where) &&
-                               CompareStringData(change, "Who", who)
+                               CompareStringData(change, "Who", who) &&
+                               CompareStringData(change, "Workstation", workstation)
                               );
         }
         
         public bool Exists(string hostname, string username)
         {
-            /*
-            var changes = GetCollection();
-            if (null == changes || !changes.Any()) return false;
-            return changes.Any(change => 
-                               compareStringData(change, "Computer", hostname) &&
-                               compareStringData(change, "User", username)
-                              );
-            */
             var changes = GetCollection();
             var changesArray = changes as Dictionary<string, string>[] ?? changes.ToArray();
             if (null == changes || !changesArray.Any()) return false;
@@ -122,11 +123,6 @@ namespace testHtmlLetterParser
         
         public bool Exists(int columnNumber, string data)
         {
-            /*
-            var changes = GetCollection();
-            if (null == changes || !changes.Any()) return false;
-            return changes.Any(change => data == change[columnNumber.ToString()]);
-            */
             var changes = GetCollection();
             var changesArray = changes as Dictionary<string, string>[] ?? changes.ToArray();
             if (null == changes || !changesArray.Any()) return false;
@@ -135,6 +131,11 @@ namespace testHtmlLetterParser
         
         bool CompareStringData(IDictionary<string, string> change, string key, string value)
         {
+            // 20150402
+            // TODO: experimental
+            if (!change.Keys.Contains(key))
+                return true;
+            
             var existingKey = change.Keys.First(k => 0 == string.Compare(k, key, StringComparison.OrdinalIgnoreCase));
             return !string.IsNullOrEmpty(existingKey) && change.Values.Any(v => 0 == string.Compare(v, value, StringComparison.OrdinalIgnoreCase));
         }

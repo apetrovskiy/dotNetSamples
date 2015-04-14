@@ -1,15 +1,19 @@
 ﻿/*
  * Created by SharpDevelop.
  * User: alexa_000
- * Date: 11/9/2014
- * Time: 3:48 PM
+ * Date: 14/04/2015
+ * Time: 08:09 p.m.
  * 
  * To change this template use Tools | Options | Coding | Edit Standard Headers.
  */
-using System;
 
-namespace testDateTime
+namespace testNancyCollection
 {
+    using System;
+    using Nancy.Diagnostics;
+    using Nancy.Hosting.Self;
+    using test.Interfaces;
+    
     class Program
     {
         public static void Main(string[] args)
@@ -17,15 +21,10 @@ namespace testDateTime
             Console.WriteLine("Hello World!");
             
             // TODO: Implement Functionality Here
-            var dateTimeAsString = "2014-11-08T15:36:44.4134433-08:00";
-            var dateTime = Convert.ToDateTime(dateTimeAsString);
             
-            Console.WriteLine(DateTime.MinValue);
-            
-            var newDateTime = new DateTime();
-            Console.WriteLine(newDateTime);
-            
-            Console.WriteLine(DateTime.MinValue == newDateTime);
+            var host = new NancyHost(new Uri(Constants.BaseUrl));
+            // DiagnosticsHook.Disable();
+            host.Start();
             
             Console.Write("Press any key to continue . . . ");
             Console.ReadKey(true);

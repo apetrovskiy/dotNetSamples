@@ -21,6 +21,10 @@ namespace sqlaLetterParser
             // doc.Load(@"../../../letters/1.1.1.111/sqla_2012.htm");
             // doc.Load(@"../../../letters/1.1.1.125/SQLA.2008R2.htm");
             doc.Load(@"../../../letters/1.1.1.183/sqla_2012.htm");
+            doc.Load(@"../../../letters/1.1.1.369/2008R2_SQLA.htm");
+            
+            const string hostname = "splab-2008r2";
+            const string fqdn = hostname + ".spalab.at.local";
             
             var tableProcessor = new TableProcessor(doc.DocumentNode.SelectNodes("//table[@id='ChangesTable']").First()) {
                 ColumnHeaderExpression = "./text()",
@@ -40,8 +44,8 @@ namespace sqlaLetterParser
             var aaa = tableProcessor.ColumnHeaders.ToList();
             var bbb = tableProcessor.ColumnHeaderNames.ToList();
             
-            var isTableRecorded = tableProcessor.Exists("Added", "Table", @"Databases\test01\Tables\dbo.ddd", "localhost", @"spanew\suite_admin");
-            var isTableContentRecorded = tableProcessor.Exists("Added", "Data Row", @"Databases\test01\Tables\dbo.bbb\Data Row", "localhost", @"spanew\suite_admin");
+            var isTableRecorded = tableProcessor.Exists("Added", "Table", @"Databases\test01\Tables\dbo.ddd", "localhost", @"spanew\suite_admin", hostname);
+            var isTableContentRecorded = tableProcessor.Exists("Added", "Data Row", @"Databases\test01\Tables\dbo.bbb\Data Row", "localhost", @"spanew\suite_admin", hostname);
 
             Console.WriteLine(isTableRecorded);
             Console.WriteLine(isTableContentRecorded);
