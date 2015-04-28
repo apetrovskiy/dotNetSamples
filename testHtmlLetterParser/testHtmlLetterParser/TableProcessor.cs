@@ -10,8 +10,8 @@ namespace testHtmlLetterParser
     public class TableProcessor
     {
         readonly HtmlNode _tableNode;
-        const string _customColumnHeaderExpression = "./text()";
-        const string _customRowItemsExpression = "./td"; // |./text()";
+        const string CustomColumnHeaderExpression = "./text()";
+        const string CustomRowItemsExpression = "./td"; // |./text()";
         readonly bool _thElementsPresented;
         
         public TableProcessor(HtmlNode tableNode) : this(tableNode, true)
@@ -24,12 +24,12 @@ namespace testHtmlLetterParser
             if (!tableNode.Descendants().Any()) throw new Exception("There are no table or no descendants in the table");
             
             _tableNode = tableNode;
-            ColumnHeaderExpression = _customColumnHeaderExpression;
-            RowItemExpression = _customRowItemsExpression;
+            ColumnHeaderExpression = CustomColumnHeaderExpression;
+            RowItemExpression = CustomRowItemsExpression;
             UseFirstRowAsColumnHeaders = useFirstRowAsColumnHeaders;
             _thElementsPresented = _tableNode.Descendants().Any(descNode => descNode.OriginalName == "th");
             
-            processTable();
+            ProcessTable();
             Ready = true;
         }
         
@@ -43,18 +43,18 @@ namespace testHtmlLetterParser
         public IEnumerable<HtmlNode> Rows { get; set; }
         public bool Ready { get; set; }
         
-        void processTable()
+        void ProcessTable()
         {
-            Rows = getRows();
-            ColumnHeaders = getColumnHeaders();
-            ColumnHeaderNames = getColumnHeaderNames();
+            Rows = GetRows();
+            ColumnHeaders = GetColumnHeaders();
+            ColumnHeaderNames = GetColumnHeaderNames();
         }
         
         public void ExportCsv(string path)
         {
             using (var writer = new StreamWriter (path)) {
-                writeColumnHeaders (writer);
-                writeRows (writer);
+                WriteColumnHeaders (writer);
+                WriteRows (writer);
                 writer.Flush ();
                 writer.Close ();
             }
@@ -64,84 +64,90 @@ namespace testHtmlLetterParser
         {
             var resultList = new List<Dictionary<string, string>> ();
             Rows.ToList ().ForEach (rowNode => {
-                var dict = getDictionaryOfTdNodes(rowNode);
+                var dict = GetDictionaryOfTdNodes(rowNode);
                 if (0 < dict.Count) resultList.Add(dict);
             });
             
             return resultList;
         }
         
-        public bool Exists(string action, string objectType, string what, string where, string who) // , string workstation) // DateTime when,
+//        public bool Exists(string action, string objectType, string what, string where, string who) // , string workstation) // DateTime when,
+//        {
+//            var changes = GetCollection();
+//            var changesArray = changes as Dictionary<string, string>[] ?? changes.ToArray();
+//            if (null == changes || !changesArray.Any()) return false;
+//            return changesArray.Any(change =>
+//                               CompareStringData(change, "Action", action) &&
+//                               CompareStringData(change, "Object Type", objectType) &&
+//                               /*
+//                               CompareStringData(change, "What Changed", what) &&
+//                               CompareStringData(change, "Where Changed", where) &&
+//                               CompareStringData(change, "Who Changed", who)
+//                               */
+//                               CompareStringData(change, "What", what) &&
+//                               CompareStringData(change, "Where", where) &&
+//                               CompareStringData(change, "Who", who)
+//                              );
+//        }
+        
+        public bool Exists(string action, string objectType, string what, string where, string who, string workstation) // DateTime when,
         {
-            /*
-            var changes = GetCollection();
-            if (null == changes || !changes.Any()) return false;
-            return changes.Any(change => 
-                               compareStringData(change, "Action", action) &&
-                               compareStringData(change, "Object Type", objectType) &&
-                               compareStringData(change, "What Changed", what) &&
-                               compareStringData(change, "Where Changed", where) &&
-                               compareStringData(change, "Who Changed", who)
-                              );
-            */
             var changes = GetCollection();
             var changesArray = changes as Dictionary<string, string>[] ?? changes.ToArray();
             if (null == changes || !changesArray.Any()) return false;
             return changesArray.Any(change =>
-                               compareStringData(change, "Action", action) &&
-                               compareStringData(change, "Object Type", objectType) &&
-                               compareStringData(change, "What Changed", what) &&
-                               compareStringData(change, "Where Changed", where) &&
-                               compareStringData(change, "Who Changed", who)
+                               CompareStringData(change, "Action", action) &&
+                               CompareStringData(change, "Object Type", objectType) &&
+                               /*
+                               CompareStringData(change, "What Changed", what) &&
+                               CompareStringData(change, "Where Changed", where) &&
+                               CompareStringData(change, "Who Changed", who)
+                               */
+                               CompareStringData(change, "What", what) &&
+                               CompareStringData(change, "Where", where) &&
+                               CompareStringData(change, "Who", who) &&
+                               CompareStringData(change, "Workstation", workstation)
                               );
         }
         
         public bool Exists(string hostname, string username)
         {
-            /*
-            var changes = GetCollection();
-            if (null == changes || !changes.Any()) return false;
-            return changes.Any(change => 
-                               compareStringData(change, "Computer", hostname) &&
-                               compareStringData(change, "User", username)
-                              );
-            */
             var changes = GetCollection();
             var changesArray = changes as Dictionary<string, string>[] ?? changes.ToArray();
             if (null == changes || !changesArray.Any()) return false;
             return changesArray.Any(change =>
-                               compareStringData(change, "Computer", hostname) &&
-                               compareStringData(change, "User", username)
+                               CompareStringData(change, "Computer", hostname) &&
+                               CompareStringData(change, "User", username)
                               );
         }
         
         public bool Exists(int columnNumber, string data)
         {
-            /*
-            var changes = GetCollection();
-            if (null == changes || !changes.Any()) return false;
-            return changes.Any(change => data == change[columnNumber.ToString()]);
-            */
             var changes = GetCollection();
             var changesArray = changes as Dictionary<string, string>[] ?? changes.ToArray();
             if (null == changes || !changesArray.Any()) return false;
             return changesArray.Any(change => data == change[columnNumber.ToString()]);
         }
         
-        bool compareStringData(IDictionary<string, string> change, string key, string value)
+        bool CompareStringData(IDictionary<string, string> change, string key, string value)
         {
+            // 20150402
+            // TODO: experimental
+            if (!change.Keys.Contains(key))
+                return true;
+            
             var existingKey = change.Keys.First(k => 0 == string.Compare(k, key, StringComparison.OrdinalIgnoreCase));
             return !string.IsNullOrEmpty(existingKey) && change.Values.Any(v => 0 == string.Compare(v, value, StringComparison.OrdinalIgnoreCase));
         }
         
-        Dictionary<string, string> getDictionaryOfTdNodes(HtmlNode rowNode)
+        Dictionary<string, string> GetDictionaryOfTdNodes(HtmlNode rowNode)
         {
             var dict = new Dictionary<string, string>();
             int counter = 0;
             var tdNodes = rowNode.SelectNodes(".//td");
             if (null != tdNodes && ColumnHeaders.Count() == tdNodes.Count) {
                 ColumnHeaderNames.ToList().ForEach(headerName => {
-                    dict.Add(headerName, selectRowItemNode(tdNodes[counter]));
+                    dict.Add(headerName, SelectRowItemNode(tdNodes[counter]));
                     counter++;
                 });
                 return dict;
@@ -150,7 +156,7 @@ namespace testHtmlLetterParser
             if (null != tdNodes && !ColumnHeaders.Any()) {
                 int columnCode = 0;
                 tdNodes.ToList().ForEach(tdNode => {
-                                             dict.Add(columnCode++.ToString(), selectRowItemNode(tdNodes[counter]));
+                                             dict.Add(columnCode++.ToString(), SelectRowItemNode(tdNodes[counter]));
                                              counter++;
                                          });
                 
@@ -159,17 +165,17 @@ namespace testHtmlLetterParser
             return dict;
         }
         
-        string selectRowItemNode(HtmlNode tdNode)
+        string SelectRowItemNode(HtmlNode tdNode)
         {
             return tdNode.SelectNodes(RowItemExpression).FirstOrDefault().InnerText.Trim();
         }
         
-        IEnumerable<HtmlNode> getColumnHeaders()
+        IEnumerable<HtmlNode> GetColumnHeaders()
         {
-            return _thElementsPresented ? getColumnHeadersAsElementsTh() : (UseFirstRowAsColumnHeaders ? getColumnHeadersAsFirstRow() : generateColumnHeaders());
+            return _thElementsPresented ? GetColumnHeadersAsElementsTh() : (UseFirstRowAsColumnHeaders ? GetColumnHeadersAsFirstRow() : GenerateColumnHeaders());
         }
         
-        IEnumerable<HtmlNode> generateColumnHeaders()
+        IEnumerable<HtmlNode> GenerateColumnHeaders()
         {
             var headersList = new List<HtmlNode>();
             var numberOfColumns = Rows.Max(row => row.SelectNodes(RowItemExpression).Count());
@@ -181,41 +187,41 @@ namespace testHtmlLetterParser
             return headersList;
         }
         
-        IEnumerable<HtmlNode> getColumnHeadersAsElementsTh()
+        IEnumerable<HtmlNode> GetColumnHeadersAsElementsTh()
         {
             return _tableNode.SelectNodes(".//th"); // ??
         }
         
-        IEnumerable<HtmlNode> getColumnHeadersAsFirstRow()
+        IEnumerable<HtmlNode> GetColumnHeadersAsFirstRow()
         {
             return _tableNode.Descendants().FirstOrDefault(node => node.OriginalName == "tr").Descendants().Where(node => node.OriginalName == "td");
         }
         
-        IEnumerable<string> getColumnHeaderNames()
+        IEnumerable<string> GetColumnHeaderNames()
         {
-            if (_thElementsPresented) return getColumnHeadersAsElementsTh().Select(columnNode => columnNode.InnerText);
+            if (_thElementsPresented) return GetColumnHeadersAsElementsTh().Select(columnNode => columnNode.InnerText);
             return UseFirstRowAsColumnHeaders ?
-                getColumnHeadersAsFirstRow().Select(columnNode => columnNode.SelectNodes(ColumnHeaderExpression).FirstOrDefault().InnerText.Trim()) :
+                GetColumnHeadersAsFirstRow().Select(columnNode => columnNode.SelectNodes(ColumnHeaderExpression).FirstOrDefault().InnerText.Trim()) :
                 ColumnHeaders.Select(columnNode => columnNode.InnerText);
         }
         
-        IEnumerable<HtmlNode> getRows()
+        IEnumerable<HtmlNode> GetRows()
         {
-            if (_thElementsPresented || !UseFirstRowAsColumnHeaders) return getAllRows();
-            return getAllRowsButFirst();
+            if (_thElementsPresented || !UseFirstRowAsColumnHeaders) return GetAllRows();
+            return GetAllRowsButFirst();
         }
         
-        IEnumerable<HtmlNode> getAllRows()
+        IEnumerable<HtmlNode> GetAllRows()
         {
             return _tableNode.SelectNodes (".//tr");
         }
         
-        IEnumerable<HtmlNode> getAllRowsButFirst()
+        IEnumerable<HtmlNode> GetAllRowsButFirst()
         {
             return _tableNode.SelectNodes (".//tr").Skip (1);
         }
         
-        void writeColumnHeaders (TextWriter writer)
+        void WriteColumnHeaders (TextWriter writer)
         {
             var headerItems = string.Empty;
             ColumnHeaders.ToList ().ForEach (node =>  {
@@ -226,17 +232,17 @@ namespace testHtmlLetterParser
             writer.WriteLine (headerItems);
         }
         
-        void writeRows (TextWriter writer)
+        void WriteRows (TextWriter writer)
         {
             Rows.ToList ().ForEach (node =>  {
                 string rowItems = string.Empty;
-                node.SelectNodes (".//td").ToList ().ForEach (tdNode =>  rowItems += getNodeData(tdNode));
+                node.SelectNodes (".//td").ToList ().ForEach (tdNode =>  rowItems += GetNodeData(tdNode));
                 if (!string.IsNullOrEmpty(rowItems))
                     writer.WriteLine (rowItems);
             });
         }
         
-        string getNodeData(HtmlNode tdNode)
+        string GetNodeData(HtmlNode tdNode)
         {
             if (null == tdNode.SelectNodes (RowItemExpression))
                 return string.Empty;

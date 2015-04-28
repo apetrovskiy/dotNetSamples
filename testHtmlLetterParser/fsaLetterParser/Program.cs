@@ -16,7 +16,12 @@ namespace fsaLetterParser
             // C:\Projects\probe\testHtmlLetterParser\letters\7.0.35.0\fsa_7x86.htm
             
             var doc = new HtmlDocument();
-            doc.Load(@"../../../letters/7.0.35.0/fsa_7x86.htm");
+            // doc.Load(@"../../../letters/7.0.35.0/fsa_7x86.htm");
+            // doc.Load(@"../../../letters/7.0.35.0/fsa_7x86.htm");
+            doc.Load(@"../../../letters/1.1.1.369/2008R2_FSA.htm");
+            
+            const string hostname = "splab-2008r2";
+            const string fqdn = hostname + ".spalab.at.local";
             
             var tableProcessor = new TableProcessor(doc.DocumentNode.SelectNodes("//table[@id='ChangesTable']").First()) {
                 ColumnHeaderExpression = "./text()",
@@ -34,8 +39,8 @@ namespace fsaLetterParser
             
             // $tableProcessor.Exists("Modified", "File", "\tests\test01.txt", "$(hostname)", "$($env:USERDOMAIN)\$($env:USERNAME)");
             // $tableProcessor.Exists("Success", "File", "\tests\test01.txt", "$(hostname)", "$($env:USERDOMAIN)\$($env:USERNAME)");
-            var isModifiedRecorded = tableProcessor.Exists("Modified", "File", @"\tests\test01.txt", "splab-7x86", @"spanew\suite_admin");
-            var isSuccessRecorded = tableProcessor.Exists("Success", "File", @"\tests\test01.txt", "splab-7x86", @"spanew\suite_admin");
+            Console.WriteLine(tableProcessor.Exists("Modified", "File", @"\tests\test01.txt", hostname, @"spanew\suite_admin", ""));
+            Console.WriteLine(tableProcessor.Exists("Read", "File", @"\tests\test01.txt", hostname, @"spanew\suite_admin", ""));
             
             Console.ReadKey ();
         }
