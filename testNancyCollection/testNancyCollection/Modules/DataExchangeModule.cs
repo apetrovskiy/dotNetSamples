@@ -21,19 +21,18 @@ namespace testNancyCollection.Modules
     {
         static DataExchange _dataExchange;
         
-        public DataExchangeModule() : base(Constants.BaseUrl)
+        public DataExchangeModule() : base()
         {
             Post[Constants.OutputDataUrl] = data => {
-                Console.WriteLine("000001");
+                Console.WriteLine("POST");
                 _dataExchange = this.Bind<DataExchange>();
-                Console.WriteLine("000002");
-                Console.WriteLine(_dataExchange.StringData);
+                _dataExchange.PrintOut();
                 return HttpStatusCode.Created;
             };
             
             Get[Constants.InputDataUrl] = _ => {
-                Console.WriteLine("000003");
-                Console.WriteLine(_dataExchange.StringData);
+                Console.WriteLine("GET");
+                _dataExchange.PrintOut();
                 return _dataExchange;
             };
         }

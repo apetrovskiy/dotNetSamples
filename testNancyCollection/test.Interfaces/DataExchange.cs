@@ -17,6 +17,13 @@ namespace test.Interfaces
     /// </summary>
     public class DataExchange : IDataExchange
     {
+        public DataExchange()
+        {
+            // ArrayObjectData = new object[];
+            // ListObjectData = new List<object>();
+            // qu
+        }
+        
         public string StringData { get; set; }
         public int IntData { get; set; }
         public List<string> ListStringData { get; set; }
@@ -25,5 +32,8 @@ namespace test.Interfaces
         public string[] ArrayStringData { get; set; }
         public int[] ArrayIntData { get; set; }
         public object[] ArrayObjectData { get; set; }
+        // public Queue<string> QueueStringData { get; set; }
+        // public Queue<int> QueueIntData { get; set; }
+        // public Queue<object> QueueObjectData { get; set; }
     }
 }

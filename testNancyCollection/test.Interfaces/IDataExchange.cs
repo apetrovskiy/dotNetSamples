@@ -25,5 +25,8 @@ namespace test.Interfaces
         string[] ArrayStringData { get; set; }
         int[] ArrayIntData { get; set; }
         object[] ArrayObjectData { get; set; }
+        // Queue<string> QueueStringData { get; set; }
+        // Queue<int> QueueIntData { get; set; }
+        // Queue<object> QueueObjectData { get; set; }
     }
 }
