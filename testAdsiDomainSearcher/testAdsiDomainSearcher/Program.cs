@@ -45,13 +45,13 @@ namespace testAdsiDomainSearcher
                 search.PropertiesToLoad.Add("displayname");//first name
                 search.SearchScope = SearchScope.Subtree;
                 SearchResult result;
-                SearchResultCollection resultCol = search.FindAll();
-                if (resultCol != null)
+                var searchResultCollection = search.FindAll();
+                if (searchResultCollection != null)
                 {
-                    for (int counter = 0; counter < resultCol.Count; counter++)
+                    for (int counter = 0; counter < searchResultCollection.Count; counter++)
                     {
                         string UserNameEmailString = string.Empty;
-                        result = resultCol[counter];
+                        result = searchResultCollection[counter];
 //                        if (result.Properties.Contains("samaccountname") && 
 //                                 // result.Properties.Contains("mail") && 
 //                            result.Properties.Contains("displayname"))
