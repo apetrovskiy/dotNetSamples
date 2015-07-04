@@ -43,6 +43,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{31169F
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nombaLetterParser", "nombaLetterParser\nombaLetterParser.csproj", "{079FC2AE-376F-46C8-AB2B-A064DE2F35D6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -113,6 +115,10 @@ Global
 		{85891F94-BED9-4B24-8FED-C5DA441DEE99}.Debug|x86.Build.0 = Debug|Any CPU
 		{85891F94-BED9-4B24-8FED-C5DA441DEE99}.Release|x86.ActiveCfg = Release|Any CPU
 		{85891F94-BED9-4B24-8FED-C5DA441DEE99}.Release|x86.Build.0 = Release|Any CPU
+		{079FC2AE-376F-46C8-AB2B-A064DE2F35D6}.Debug|x86.ActiveCfg = Debug|x86
+		{079FC2AE-376F-46C8-AB2B-A064DE2F35D6}.Debug|x86.Build.0 = Debug|x86
+		{079FC2AE-376F-46C8-AB2B-A064DE2F35D6}.Release|x86.ActiveCfg = Release|x86
+		{079FC2AE-376F-46C8-AB2B-A064DE2F35D6}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -40,11 +40,18 @@ namespace wsaLetterParser
             // $tableProcessor.Exists("Modified", "Local Group", "System Information\Local Groups\Users", "$(hostname)", "$($env:USERDOMAIN)\$($env:USERNAME)");
             // $tableProcessor.Exists("Modified", "Local User", "System Information\Local Users\test01", "$(hostname)", "$($env:USERDOMAIN)\$($env:USERNAME)");
             // $tableProcessor.Exists("Modified", "Registry Key", "Registry\HKEY_LOCAL_MACHINE\system\CurrentControlSet\services\test01", "$(hostname)", "System");
+            /*
             var isModified01Recorded = tableProcessor.Exists("Modified", "Registry Key", @"Registry\HKEY_LOCAL_MACHINE\system\ControlSet001\services\test01", "splab-7x86", @"spanew\suite_admin");
             var isAdded01Recorded = tableProcessor.Exists("Added", "Local User", @"System Information\Local Users\test01", "splab-7x86", @"spanew\suite_admin");
             var isModified02Recorded = tableProcessor.Exists("Modified", "Local Group", @"System Information\Local Groups\Users", "splab-7x86", @"spanew\suite_admin");
             var isModified03Recorded = tableProcessor.Exists("Modified", "Local User", @"System Information\Local Users\test01", "splab-7x86", @"spanew\suite_admin");
             var isModified04Recorded = tableProcessor.Exists("Modified", "Registry Key", @"Registry\HKEY_LOCAL_MACHINE\system\CurrentControlSet\services\test01", "splab-7x86", @"System");
+            */
+            var isModified01Recorded = tableProcessor.Exists("Modified", "Registry Key", @"Registry\HKEY_LOCAL_MACHINE\system\ControlSet001\services\test01", "splab-7x86", @"spanew\suite_admin", "");
+            var isAdded01Recorded = tableProcessor.Exists("Added", "Local User", @"System Information\Local Users\test01", "splab-7x86", @"spanew\suite_admin", "");
+            var isModified02Recorded = tableProcessor.Exists("Modified", "Local Group", @"System Information\Local Groups\Users", "splab-7x86", @"spanew\suite_admin", "");
+            var isModified03Recorded = tableProcessor.Exists("Modified", "Local User", @"System Information\Local Users\test01", "splab-7x86", @"spanew\suite_admin", "");
+            var isModified04Recorded = tableProcessor.Exists("Modified", "Registry Key", @"Registry\HKEY_LOCAL_MACHINE\system\CurrentControlSet\services\test01", "splab-7x86", @"System", "");
             
             Console.ReadKey ();
         }

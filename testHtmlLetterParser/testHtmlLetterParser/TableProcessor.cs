@@ -20,7 +20,6 @@ namespace testHtmlLetterParser
         
         public TableProcessor (HtmlNode tableNode, bool useFirstRowAsColumnHeaders)
         {
-            // if (!tableNode.Descendants().Any()) return; // throw new Exception("There are no table or no descendants in the table");
             if (!tableNode.Descendants().Any()) throw new Exception("There are no table or no descendants in the table");
             
             _tableNode = tableNode;
@@ -194,7 +193,12 @@ namespace testHtmlLetterParser
         
         IEnumerable<HtmlNode> GetColumnHeadersAsFirstRow()
         {
-            return _tableNode.Descendants().FirstOrDefault(node => node.OriginalName == "tr").Descendants().Where(node => node.OriginalName == "td");
+            // 20150703
+            // return _tableNode.Descendants().FirstOrDefault(node => node.OriginalName == "tr").Descendants().Where(node => node.OriginalName == "td");
+            var theFirstRow = _tableNode.Descendants().FirstOrDefault(node => node.OriginalName == "tr");
+            return null == theFirstRow ? 
+                _tableNode.Descendants().Where(node => node.OriginalName == "td") :
+                _tableNode.Descendants().FirstOrDefault(node => node.OriginalName == "tr").Descendants().Where(node => node.OriginalName == "td");
         }
         
         IEnumerable<string> GetColumnHeaderNames()
@@ -218,7 +222,12 @@ namespace testHtmlLetterParser
         
         IEnumerable<HtmlNode> GetAllRowsButFirst()
         {
-            return _tableNode.SelectNodes (".//tr").Skip (1);
+            // 20150703
+            // return _tableNode.SelectNodes (".//tr").Skip (1);
+            
+            
+            var rowNodes = _tableNode.SelectNodes (".//tr|.//td/..");
+            return rowNodes.Skip(1);
         }
         
         void WriteColumnHeaders (TextWriter writer)

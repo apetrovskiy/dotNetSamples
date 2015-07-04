@@ -41,7 +41,8 @@ namespace vmaLetterParser
                 foreach (var key in dict.Keys)
                     Console.WriteLine ("{0}\t=\t{1}", key, dict[key]);
             
-            var result = tableProcessor.Exists("Added", "VirtualMachine", @"\ha-folder-root\ha-datacenter\vm\SPLab-2008R2", "https://172.28.1.11:443", "root");
+            // var result = tableProcessor.Exists("Added", "VirtualMachine", @"\ha-folder-root\ha-datacenter\vm\SPLab-2008R2", "https://172.28.1.11:443", "root");
+            var result = tableProcessor.Exists("Added", "VirtualMachine", @"\ha-folder-root\ha-datacenter\vm\SPLab-2008R2", "https://172.28.1.11:443", "root", "");
             
             Console.ReadKey ();
         }
