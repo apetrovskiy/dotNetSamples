@@ -170,6 +170,6 @@ obj
 *.log
 *.dll
 *.exe
-packages.config
+# packages.config
 debug
 release
