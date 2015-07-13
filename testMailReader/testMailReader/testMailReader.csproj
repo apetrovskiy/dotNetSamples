@@ -34,12 +34,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Mail">
-      <HintPath>..\packages\Mail.dll.3.0.14228.1107\lib\Mail.dll</HintPath>
+      <HintPath>..\packages\Mail.dll.3.0.15091.1036\lib\Mail.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenPop">
+      <HintPath>..\packages\OpenPop.NET.2.0.6.1116\lib\net40\OpenPop.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="OpenPop">
-      <HintPath>..\packages\OpenPop.NET.2.0.6.1076\lib\net20\OpenPop.dll</HintPath>
-    </Reference>
     <Reference Include="ActiveUp.Net.Common">
       <HintPath>..\packages\MailSystem.NET.2.0.1\lib\ActiveUp.Net.Common.dll</HintPath>
     </Reference>

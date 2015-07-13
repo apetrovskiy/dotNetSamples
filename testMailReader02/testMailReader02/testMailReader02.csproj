@@ -33,7 +33,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="OpenPop">
-      <HintPath>..\packages\OpenPop.NET.2.0.6.1076\lib\net20\OpenPop.dll</HintPath>
+      <HintPath>..\packages\OpenPop.NET.2.0.6.1116\lib\net20\OpenPop.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
