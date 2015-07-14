@@ -21,7 +21,32 @@ namespace testMailReader
             client.Authenticate("report_reader@SPALab.at.local", "Lock12Lock", AuthenticationMethod.Auto);
             var count = client.GetMessageCount();
             Console.WriteLine(count);
-            var msg01 = client.GetMessage(349);
+            // var msg01 = client.GetMessage(349);
+            var msg01 = client.GetMessage(42);
+            foreach (var msgInfo in client.GetMessageInfos()) {
+                Console.WriteLine(msgInfo.Identifier + " " + msgInfo.Number + " " + msgInfo.Size);
+            }
+            for (int i = 1; i <= client.GetMessageCount(); i++) {
+                Console.WriteLine(client.GetMessage(i).Headers.Subject);
+            }
+            // this works
+//            for (int i = 1; i <= 10; i++) {
+//                client.DeleteMessage(i);
+//            }
+            
+            foreach (var capKey in client.Capabilities().Keys) {
+                Console.WriteLine(capKey);
+                Console.WriteLine(client.Capabilities()[capKey]);
+            }
+            
+            Console.WriteLine(client.GetMessageCount());
+            
+            // client.DeleteAllMessages();
+            Console.WriteLine(client.GetMessageCount());
+            client.Disconnect();
+            client.Dispose();
+            
+            
 //            Message message = client.GetMessage(count);
 //            Console.WriteLine(message.Headers.Subject);
             
