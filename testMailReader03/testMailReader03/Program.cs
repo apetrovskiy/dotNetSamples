@@ -10,6 +10,10 @@
 namespace testMailReader03
 {
     using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Linq;
+    using System.Text;
     using S22.Imap;
     
     class Program
@@ -42,12 +46,26 @@ namespace testMailReader03
 //                Console.WriteLine(messages);
 //                Console.WriteLine(DateTime.Now - d2);
                 
-                int i = 0;
-                foreach (var message in messages) {
-                    i++;
-                    Console.WriteLine(message.Subject);
+                var msg = messages.FirstOrDefault();
+                var encoding = null == msg ? Encoding.UTF8 : msg.BodyEncoding;
+                using (var writer = new StreamWriter(@"c:\1\mail.htm", false, encoding)) {
+                    int i = 0;
+                    foreach (var message in messages) {
+                        i++;
+                        Console.WriteLine(message.Subject);
+                        writer.WriteLine(message.Subject);
+                        writer.WriteLine(message.Body);
+                    }
+                    writer.Flush();
+                    writer.Close();
+                    
+                    Console.WriteLine(i);
                 }
-                Console.WriteLine(i);
+                
+                foreach (var uid in uids)
+                    client.DeleteMessage(uid, null);
+                
+                client.Expunge(null);
             }
             
             Console.Write("Press any key to continue . . . ");
