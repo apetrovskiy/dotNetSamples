@@ -19,10 +19,17 @@
                                  new Product { Name = "Soccer ball", Category = "Soccer", Price = 19.50M },
                                  new Product { Name = "Corner flag", Category = "Soccer", Price = 34.95M }
                              };
-        // 4
+        // 04
         IValueCalculator calc;
 
-        public HomeController(IValueCalculator calcParam)
+        // <09
+        //public HomeController(IValueCalculator calcParam)
+        //{
+        //    calc = calcParam;
+        //}
+
+        // 09
+        public HomeController(IValueCalculator calcParam, IValueCalculator calc2)
         {
             calc = calcParam;
         }
@@ -37,7 +44,7 @@
             // var kernel = new StandardKernel();
             // kernel.Bind<IValueCalculator>().To<LinqValueCalculator>();
             // var calc = kernel.Get<IValueCalculator>();
-            // 4
+            // 04
 
             var cart = new ShoppingCart(calc) { Products = products };
             var totalValue = cart.CalculateProductTotal();

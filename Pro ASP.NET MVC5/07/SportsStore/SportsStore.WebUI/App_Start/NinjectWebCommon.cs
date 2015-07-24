@@ -10,6 +10,8 @@ namespace SportsStore.WebUI.App_Start
 
     using Ninject;
     using Ninject.Web.Common;
+    using System.Web.Mvc;
+    using SportsStore.WebUI.Infrastructure;
 
     public static class NinjectWebCommon 
     {
@@ -61,6 +63,7 @@ namespace SportsStore.WebUI.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
+            DependencyResolver.SetResolver(new NinjectDependencyResolver(kernel));
         }        
     }
 }

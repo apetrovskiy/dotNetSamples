@@ -10,7 +10,7 @@ namespace EssentialTools.Models
         decimal ApplyDiscount(decimal totalParam);
     }
 
-    // 5
+    // 05
     // public class DefaultDiscountHelper : IDiscountHelper
     // {
     //     public decimal ApplyDiscount(decimal totalParam)
@@ -19,7 +19,7 @@ namespace EssentialTools.Models
     //     }
     // }
 
-    // 6
+    // 06
     //public class DefaultDiscountHelper : IDiscountHelper
     //{
     //    public decimal DiscountSize { get; set; }
@@ -30,7 +30,7 @@ namespace EssentialTools.Models
     //    }
     //}
 
-    // 7
+    // 07
     public class DefaultDiscountHelper : IDiscountHelper
     {
         decimal discountSize;
