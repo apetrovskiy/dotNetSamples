@@ -15,24 +15,25 @@
     [TestClass]
     public class UnitTest1
     {
+        // IProductRepository _repository;
+        static ProductController _controller;
+
+        [ClassInitialize]
+        public static void Init(TestContext testContext)
+        {
+            // _repository = GetRepository();
+            _controller = GetProductController();
+        }
+
         [TestMethod]
         public void Can_Paginate()
         {
             // Arrange
-            var mock = new Mock<IProductRepository>();
-            mock.Setup(m => m.Products).Returns(new Product[] { 
-                new Product { ProductId = 1, Name = "P1" },
-                new Product { ProductId = 2, Name = "P2" },
-                new Product { ProductId = 3, Name = "P3" },
-                new Product { ProductId = 4, Name = "P4" },
-                new Product { ProductId = 5, Name = "P5" }
-            });
-            var controller = new ProductController(mock.Object);
-            controller.PageSize = 3;
+            // var controller = GetProductController();
 
             // Act
             // var result = (IEnumerable<Product>)controller.List(2).Model;
-            var result = (ProductsListViewModel)controller.List(2).Model;
+            var result = (ProductsListViewModel)_controller.List(2).Model;
 
             // Assert
             // var prodArray = result.ToArray();
@@ -72,6 +73,7 @@
         public void Can_Send_Pagination_View_Model()
         {
             // Arrange
+            /*
             var mock = new Mock<IProductRepository>();
             mock.Setup(m => m.Products).Returns(new Product[] {
                 new Product { ProductId = 1, Name = "P1" },
@@ -82,9 +84,11 @@
             });
             var controller = new ProductController(mock.Object);
             controller.PageSize = 3;
+            */
+            // var controller = GetProductController();
 
             // Act
-            var result = (ProductsListViewModel)controller.List(2).Model;
+            var result = (ProductsListViewModel)_controller.List(2).Model;
 
             // Assert
             var pageInfo = result.PagingInfo;
@@ -92,6 +96,21 @@
             Assert.AreEqual(pageInfo.ItemsPerPage, 3);
             Assert.AreEqual(pageInfo.TotalItems, 5);
             Assert.AreEqual(pageInfo.TotalPages, 2);
+        }
+
+        static ProductController GetProductController()
+        {
+            var mock = new Mock<IProductRepository>();
+            mock.Setup(m => m.Products).Returns(new Product[] { 
+                new Product { ProductId = 1, Name = "P1" },
+                new Product { ProductId = 2, Name = "P2" },
+                new Product { ProductId = 3, Name = "P3" },
+                new Product { ProductId = 4, Name = "P4" },
+                new Product { ProductId = 5, Name = "P5" }
+            });
+            var controller = new ProductController(mock.Object);
+            controller.PageSize = 3;
+            return controller;
         }
     }
 }

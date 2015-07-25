@@ -7,10 +7,23 @@
     @*<link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <script src="~/Scripts/modernizr-2.6.2.js"></script>*@
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
 </head>
 <body>
-    <div>
+    @*<div>
         @RenderBody()
+    </div>*@
+    <div class="navbar navbar-inverse" role="navigation">
+        <a class="navbar-brand" href="#">SPORTS STORE</a>
+    </div>
+    <div class="row panel">
+        <div id="categories" class="col-xs-3">
+            Put something useful here later
+        </div>
+        <div class="col-xs-8">
+            @RenderBody()
+        </div>
     </div>
 
     @*<script src="~/Scripts/jquery-1.10.2.min.js"></script>
