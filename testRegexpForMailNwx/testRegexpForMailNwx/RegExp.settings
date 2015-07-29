@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SettingsFile CurrentProfile="(Default)" GeneratedClassNamespace="testRegexpForMailNwx" GeneratedClassName="RegExp" xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings>
+    <Setting Name="PatternAdded" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">(?m)(?&lt;=^[\W^]*?)Added\s(?&lt;Added&gt;[^\:]+)\:\s+\"(?&lt;NewValue&gt;[^\"]+)\"</Value>
+    </Setting>
+    <Setting Name="PatternKeyValue" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">(?m)(?n)(?&lt;=^[\W^]*?)(?&lt;Key&gt;[^\:]+)\:\s+\"(?&lt;Value&gt;[^\"]+)\"</Value>
+    </Setting>
+    <Setting Name="PatternRemoved" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">(?m)(?&lt;=^[\W^]*?)Removed\s(?&lt;Removed&gt;[^\:]+)\:\s+\"(?&lt;OldValue&gt;[^\"]+)\"</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
