@@ -18,19 +18,12 @@
             _repository = productRepository;
         }
 
-        // public ViewResult List()
-        public ViewResult List(int page = 1)
+        public ViewResult List(string category, int page = 1)
         {
-            // return View(_repository.Products);
-            /*
-            return View(_repository.Products
-                        .OrderBy(p => p.ProductId)
-                        .Skip((page - 1) * PageSize)
-                        .Take(PageSize));
-            */
             var model = new ProductsListViewModel
             {
                 Products = _repository.Products
+                .Where(p => p.Category == null || p.Category == category)
                 .OrderBy(p => p.ProductId)
                 .Skip((page - 1) * PageSize)
                 .Take(PageSize),
@@ -39,7 +32,8 @@
                     CurrentPage = page,
                     ItemsPerPage = PageSize,
                     TotalItems = _repository.Products.Count()
-                }
+                },
+                CurrentCategory = category
             };
             return View(model);
         }

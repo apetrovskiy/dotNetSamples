@@ -15,16 +15,30 @@
 
             routes.MapRoute(
                 name: null,
-                url: "Page{page}",
-                defaults: new { Controller = "Product", action = "List" }
+                url: "",
+                defaults: new { Controller = "Product", action = "List", category = (string)null, page = 1 }
                 );
 
             routes.MapRoute(
-                name: "Default",
-                url: "{controller}/{action}/{id}",
-                // defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
-                defaults: new { controller = "Product", action = "List", id = UrlParameter.Optional }
+                name: null,
+                url: "Page{page}",
+                defaults: new { Controller = "Product", action = "List", category = (string)null }
+                );
+
+            routes.MapRoute(
+                name: null,
+                url: "{category}",
+                defaults: new { Controller = "Product", action = "List", page = 1 }
+                );
+
+            routes.MapRoute(
+                name: null,
+                url: "{category}/Page{page}",
+                defaults: new { Controller = "Product", action = "List" },
+                constraints: new { page = @"\d+" }
             );
+
+            routes.MapRoute(null, "{controller}/{action}");
         }
     }
 }
