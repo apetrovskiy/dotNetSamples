@@ -68,7 +68,8 @@ namespace testPostToOwa
                         
                         
                         // values["trusted"] = "4";
-                       { "isUtf8", "1" }
+                       { "isUtf8", "1" },
+                       { "trusted", "4" }
                     };
                 
                     var content = new FormUrlEncodedContent(values);
