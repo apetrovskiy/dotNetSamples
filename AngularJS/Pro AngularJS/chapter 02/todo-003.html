@@ -16,7 +16,7 @@
             ]
         };
 
-        var todoApp = angular.module("todoApp", []);
+        var todoApp = velocityAngular.module("todoApp", []);
 
         todoApp.controller("ToDoCtrl", function ($scope) {
             $scope.todo = model;
@@ -25,10 +25,7 @@
 </head>
 <body data-ng-controller="ToDoCtrl">
 <div class="page-header">
-    <h1>
-        {{todo.user}}'s To Do List
-        <span class="label label-default">{{todo.items.length}}</span>
-    </h1>
+    <h1>To Do List</h1>
 </div>
 <div class="panel">
     <div class="input-group">
@@ -45,10 +42,6 @@
         </tr>
         </thead>
         <tbody>
-        <tr data-ng-repeat="item in todo.items">
-            <td>{{item.action}}</td>
-            <td>{{item.done}}</td>
-        </tr>
         </tbody>
     </table>
 </div>
