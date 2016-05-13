@@ -1,0 +1,18 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+# SharpDevelop 5.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "testHexConversion", "testHexConversion\testHexConversion.csproj", "{044B0D09-1D5A-430E-93A2-3F8646D330BF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{044B0D09-1D5A-430E-93A2-3F8646D330BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{044B0D09-1D5A-430E-93A2-3F8646D330BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{044B0D09-1D5A-430E-93A2-3F8646D330BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{044B0D09-1D5A-430E-93A2-3F8646D330BF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

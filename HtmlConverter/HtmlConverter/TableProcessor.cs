@@ -62,6 +62,11 @@ namespace HtmlConverter
         public IEnumerable<Dictionary<string, string>> GetCollection()
         {
             var resultList = new List<Dictionary<string, string>> ();
+
+            // 20160405
+            if (null == Rows || !Rows.Any())
+                return resultList;
+
             Rows.ToList ().ForEach (rowNode => {
                 var dict = GetDictionaryOfTdNodes(rowNode);
                 if (0 < dict.Count) resultList.Add(dict);
@@ -166,7 +171,10 @@ namespace HtmlConverter
         
         string SelectRowItemNode(HtmlNode tdNode)
         {
-            return tdNode.SelectNodes(RowItemExpression).FirstOrDefault().InnerText.Trim();
+            // 20160405
+            // return tdNode.SelectNodes(RowItemExpression).FirstOrDefault().InnerText.Trim();
+            var collection = tdNode.SelectNodes(RowItemExpression);
+            return null == collection ? string.Empty : collection.FirstOrDefault().InnerText.Trim();
         }
         
         IEnumerable<HtmlNode> GetColumnHeaders()
