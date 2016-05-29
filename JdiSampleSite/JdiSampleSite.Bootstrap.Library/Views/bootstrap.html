@@ -3,12 +3,26 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
     <title>Bootstrap root (Views)</title>
+    <style>
+        .btn a { color: white; text-decoration: none }
+        body { background-color: #F1F1F1; }
+    </style>
 </head>
 <body>
 <h1>Bootstrap root is here!</h1>
     @Each @Model.Groups
         @Current
     @EndEach
+    <div class="text-center">
+        <div class="btn btn-success">
+            aaa<br />
+            <input accept="aaa" class="btn btn-default" /><br/>
+            <button name="Button" class="btn btn-error">Button</button><br />
+            <a href="/" class="btn btn-success">A</a>
+        </div>
+    </div>
 </body>
 </html>

@@ -59,11 +59,14 @@
     </Compile>
     <Compile Include="BundleConfig.cs" />
     <Compile Include="Data\GroupsCollection.cs" />
+    <Compile Include="Data\UsersCollection.cs" />
     <Compile Include="Models\Abstract\IGroup.cs" />
     <Compile Include="Models\Abstract\IUser.cs" />
     <Compile Include="Models\Group.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Modules\DefaultModule.cs" />
+    <Compile Include="Modules\GroupsModule.cs" />
+    <Compile Include="Modules\UsersModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -91,6 +94,12 @@
     <Content Include="Scripts\jquery-2.2.3.js" />
     <Content Include="Scripts\jquery-2.2.3.min.js" />
     <Content Include="Views\bootstrap.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Views\Groups.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Views\Users.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
