@@ -6,20 +6,9 @@
     <title></title>
 </head>
 <body>
-    @Model.Groups
-    <br />
-    <hr />
-    <br />
-    @Each @Model.Groups
-        <br />
-        @Current.Name @Current[Name] @Current[name] @Current['Name'] @Current['name']
-    @EndEach
-    <br />
-    <hr />
-    <br />
     @Each.Groups
     <br />
-    @Current.Name @Current[Name] @Current[name] @Current['Name'] @Current['name']
+        @Current.Id @Current.Name
     @EndEach
 </body>
 </html>

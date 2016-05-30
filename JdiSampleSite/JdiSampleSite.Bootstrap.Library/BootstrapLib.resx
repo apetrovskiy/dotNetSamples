@@ -117,7 +117,28 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Group" xml:space="preserve">
+    <value>/{id:guid}</value>
+  </data>
+  <data name="Groups" xml:space="preserve">
+    <value>/groups</value>
+  </data>
   <data name="RootUrl" xml:space="preserve">
     <value>/bootstrap</value>
+  </data>
+  <data name="User" xml:space="preserve">
+    <value>/{id:guid}</value>
+  </data>
+  <data name="UserBirthDate" xml:space="preserve">
+    <value>BirthDate</value>
+  </data>
+  <data name="UserFirstName" xml:space="preserve">
+    <value>FirstName</value>
+  </data>
+  <data name="UserLastName" xml:space="preserve">
+    <value>LastName</value>
+  </data>
+  <data name="Users" xml:space="preserve">
+    <value>/users</value>
   </data>
 </root>

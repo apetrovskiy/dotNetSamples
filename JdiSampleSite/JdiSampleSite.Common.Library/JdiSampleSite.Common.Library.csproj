@@ -44,10 +44,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\ILibrarySettings.cs" />
     <Compile Include="DurandalNancyBootstrapper.cs" />
     <Compile Include="Modules\FirstDurandalNancyModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RootPathProvider.cs" />
+    <Compile Include="Settings\CommonLibSettings.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Content\bootstrap-theme.css.map" />

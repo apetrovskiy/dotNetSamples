@@ -7,7 +7,7 @@
         Guid Id { get; set; }
         string FirstName { get; set; }
         string LastName { get; set; }
-        DateTime BirthDate { get; set; }
+       DateTime BirthDate { get; set; }
         string City { get; set; }
         // 
     }
