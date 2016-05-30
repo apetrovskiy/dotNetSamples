@@ -17,13 +17,15 @@
             Get[BootstrapLib.User] = parameters => GetUser(parameters.id);
         }
 
-        Negotiator CreateNewUser(IUser partialUser)
+        Negotiator CreateNewUser(IUser userInfo)
         {
             UsersCollection.AddUser(new User
             {
-                FirstName = partialUser.FirstName,
-                LastName = partialUser.LastName,
-                BirthDate = partialUser.BirthDate
+                FirstName = userInfo.FirstName,
+                LastName = userInfo.LastName,
+                BirthDate = userInfo.BirthDate,
+                City = userInfo.City,
+                Email = userInfo.Email
             });
 
             return Negotiate.WithStatusCode(HttpStatusCode.Created).WithView("users");

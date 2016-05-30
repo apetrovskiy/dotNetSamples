@@ -11,14 +11,20 @@
 
     public class NewUserModuleTests
     {
+        readonly Guid _guid01 = Guid.NewGuid();
         const string FirstName01 = "Mickey";
         const string LastName01 = "Mouse";
-        readonly Guid _guid01 = Guid.NewGuid();
         readonly DateTime _birthDate01 = new DateTime(1938, 8, 8);
+        const string City01 = "New York";
+        const string @Email01 = "micky@hotmail.com";
+
+        readonly Guid _guid02 = Guid.NewGuid();
         const string FirstName02 = "Donald";
         const string LastName02 = "Duck";
-        readonly Guid _guid02 = Guid.NewGuid();
         readonly DateTime _birthDate02 = new DateTime(1941, 1, 1);
+        const string City02 = "Seattle";
+        const string @Email02 = "donald.duck@gmail.com";
+
         Browser _browser;
         BrowserResponse _response;
 
@@ -37,7 +43,7 @@
         public void NewEmptyUser()
         {
             UsersCollection.Users.Clear();
-            var user = GivenNewUser(FirstName01, LastName01, _birthDate01);
+            var user = GivenNewUser(FirstName01, LastName01, _birthDate01, City01, Email01);
             WhenPostingUser(user);
             ThenThereIsUserInTheUsersCollection(user);
         }
@@ -46,7 +52,7 @@
         public void GetUser()
         {
             UsersCollection.Users.Clear();
-            var user = GivenNewUser(FirstName02, LastName02, _birthDate02);
+            var user = GivenNewUser(FirstName02, LastName02, _birthDate02, City02, Email02);
             user.Id = _guid02;
             UsersCollection.AddUser(user);
 
@@ -56,13 +62,15 @@
         }
 
 
-        IUser GivenNewUser(string firstName, string lastName, DateTime birthDate)
+        IUser GivenNewUser(string firstName, string lastName, DateTime birthDate, string city, string email)
         {
             return new User
             {
                 FirstName = firstName,
                 LastName = lastName,
-                BirthDate = birthDate
+                BirthDate = birthDate,
+                City = city,
+                Email = email
             };
         }
 
@@ -92,16 +100,18 @@
                 UsersCollection.Users.Exists(
                     user =>
                         user.FirstName == userExpected.FirstName && user.LastName == userExpected.LastName &&
-                        user.BirthDate == userExpected.BirthDate));
+                        user.BirthDate == userExpected.BirthDate && user.City == userExpected.City && user.Email == userExpected.Email));
         }
 
         void ThenThereIsUserLoadedFromTheUsersCollection(IUser user)
         {
             var actualUser = _response.Body.DeserializeJson<User>();
+            Assert.Equal(user.Id, actualUser.Id);
             Assert.Equal(user.FirstName, actualUser.FirstName);
             Assert.Equal(user.LastName, actualUser.LastName);
             Assert.Equal(user.BirthDate, actualUser.BirthDate);
-            Assert.Equal(user.Id, actualUser.Id);
+            Assert.Equal(user.City, actualUser.City);
+            Assert.Equal(user.Email, actualUser.Email);
         }
     }
 }

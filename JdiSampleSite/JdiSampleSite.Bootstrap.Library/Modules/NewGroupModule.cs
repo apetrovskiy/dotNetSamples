@@ -25,7 +25,7 @@
 
         Negotiator CreateNewGroup(IGroup partialGroup)
         {
-            GroupsCollection.Groups.Add(new Group
+            GroupsCollection.AddGroup(new Group
             {
                 Name = partialGroup.Name
             });

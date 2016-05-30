@@ -44,7 +44,7 @@
             GroupsCollection.Groups.Clear();
             var @group = GivenNewGroup(Name02);
             @group.Id = _guid02;
-            GroupsCollection.Groups.Add(@group);
+            GroupsCollection.AddGroup(@group);
 
             WhenGettingGroup(_guid02);
 

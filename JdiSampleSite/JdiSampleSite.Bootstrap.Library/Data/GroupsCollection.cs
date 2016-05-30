@@ -5,6 +5,11 @@
 
     public class GroupsCollection
     {
-        public static List<IGroup> Groups { get; set; } = new List<IGroup>();
+        public static List<IGroup> Groups { get; private set; } = new List<IGroup>();
+
+        public static void AddGroup(IGroup group)
+        {
+            Groups.Add(group);
+        }
     }
 }
