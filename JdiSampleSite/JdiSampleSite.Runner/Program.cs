@@ -23,13 +23,11 @@
             var typesWithLibrariesSettings = AppDomain.CurrentDomain.GetAssemblies()
                 .Where(assm => assm.FullName.Contains("Library"))
                 .SelectMany(assm => assm.GetTypes()).Where(type => type.GetInterfaces().Contains(typeof(ILibrarySettings)));
-            // typesWithLibrariesSettings.ToList().ForEach(type => type.GetMethod("Apply").Invoke(type, new object[]{}));
 
             typesWithLibrariesSettings.ToList().ForEach(type =>
             {
-                Console.WriteLine(type.Name);
-                Console.WriteLine(type.Namespace);
-                // type.GetMethod("Apply").Invoke(type, new object[] {});
+                //Console.WriteLine(type.Name);
+                //Console.WriteLine(type.Namespace);
                 type.GetMethod("Apply").Invoke(Activator.CreateInstance(type), null);
 
             });

@@ -2,10 +2,41 @@
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="utf-8" />
-    <title></title>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/yeti.bootstrap.min.css" rel="stylesheet" />
+    <title>User</title>
+    <style>
+        .btn a {
+            color: white;
+            text-decoration: none;
+        }
+
+        body {
+            background-color: #F1F1F1;
+        }
+    </style>
 </head>
 <body>
+    <h1>New user</h1>
 
+    <form method="POST">
+        <input type="hidden" name="_method" value="PUT" />
+        <label for="firstName">First name:</label><br>
+        <input id="firstNameId" name="firstName" value="@Model.FirstName"><br>
+        <label for="lastName">Last name:</label><br>
+        <input id="lastNameId" name="lastName" value="@Model.LastName"><br>
+        <label for="city">City:</label><br>
+        <input id="cityId" name="city" value="@Model.City"><br>
+        <label for="email">Email:</label><br>
+        <input id="emailId" name="email" type="email" value="@Model.Email"><br>
+
+        <input type="submit" value="Create" class="btn btn-success btn-default"/>
+    </form>
+
+    <script src="~/Scripts/jquery-2.2.3.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
 </body>
 </html>

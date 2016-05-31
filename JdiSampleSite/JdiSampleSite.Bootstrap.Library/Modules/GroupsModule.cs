@@ -1,13 +1,14 @@
 ﻿namespace JdiSampleSite.Bootstrap.Library.Modules
 {
     using System.Dynamic;
-    using Data;
+    using Common.Library;
+    using Common.Library.Data;
     using Nancy;
     using Nancy.Responses.Negotiation;
 
     public class GroupsModule : NancyModule
     {
-        public GroupsModule() : base(BootstrapLib.RootUrl + BootstrapLib.Groups)
+        public GroupsModule() : base(Constants.BootstrapRootUrl + Constants.Groups)
         {
             Get["/"] = _ => DisplayGroups();
         }

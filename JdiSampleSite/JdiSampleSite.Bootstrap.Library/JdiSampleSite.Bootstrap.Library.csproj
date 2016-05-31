@@ -61,18 +61,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BootstrapLib.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BootstrapLib.resx</DependentUpon>
-    </Compile>
-    <Compile Include="BundleConfig.cs" />
-    <Compile Include="Data\GroupsCollection.cs" />
-    <Compile Include="Data\UsersCollection.cs" />
-    <Compile Include="Models\Abstract\IGroup.cs" />
-    <Compile Include="Models\Abstract\IUser.cs" />
-    <Compile Include="Models\Group.cs" />
-    <Compile Include="Models\User.cs" />
     <Compile Include="Modules\DefaultModule.cs" />
     <Compile Include="Modules\GroupsModule.cs" />
     <Compile Include="Modules\NewGroupModule.cs" />
@@ -99,6 +87,18 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\cerulean.bootstrap.min.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\sandstone.bootstrap.min.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\superhero.bootstrap.min.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\yeti.bootstrap.min.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -120,12 +120,6 @@
     <Content Include="Views\Users.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="BootstrapLib.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>BootstrapLib.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

@@ -8,9 +8,13 @@
     using Epam.JDI.Core.Interfaces.Common;
     using Epam.JDI.Core.Interfaces.Complex;
     using HtmlAgilityPack;
+    using ObjectModel;
+    using ObjectModel.Abstract;
 
     public class ElementToMemberConvertor
     {
+        ICodeEntry _codeEntry;
+
         public string Convert(HtmlNode node) // where T : IElement
         {
             Type resultType;
@@ -72,6 +76,83 @@ public {1} {2};
             if (classString.Contains("checkbox"))
                 return "checkbox";
             return string.Empty;
+        }
+
+        public ICodeEntry ConvertToCodeEntry(HtmlNode node)
+        {
+            _codeEntry = new CodeEntry();
+
+            _codeEntry.HtmlMemberType = ConvertHtmlElementTypeToInternalMemberType(node.Name);
+            CreateIdLocator(node);
+            CreateNameLocator(node);
+            CreateClassLocator(node);
+            CreateTagLocator(node);
+            CreateLinkTextLocator(node);
+            CreateCssLocaltor(node);
+            CreateXpathLocaltor(node);
+
+            return _codeEntry;
+        }
+
+        void CreateCssLocaltor(HtmlNode node)
+        {
+            
+        }
+
+        void CreateClassLocator(HtmlNode node)
+        {
+            CreateDomLocatorByAttribute(node, "class", SearchTypes.className);
+        }
+
+        void CreateTagLocator(HtmlNode node)
+        {
+            CreateDomLocatorByAttribute(node, "tag", SearchTypes.tagName);
+        }
+
+        void CreateIdLocator(HtmlNode node)
+        {
+            CreateDomLocatorByAttribute(node, "id", SearchTypes.id);
+        }
+
+        void CreateNameLocator(HtmlNode node)
+        {
+            CreateDomLocatorByAttribute(node, "name", SearchTypes.name);
+        }
+
+        void CreateLinkTextLocator(HtmlNode node)
+        {
+            CreateDomLocatorByAttribute(node, "href", SearchTypes.linkText);
+        }
+
+        void CreateDomLocatorByAttribute(HtmlNode node, string attributeName, SearchTypes searchType)
+        {
+            if (!node.Attributes.Contains(attributeName))
+                return;
+            var attributeValue = node.Attributes[attributeName].Value;
+            _codeEntry.Locators.Add(new LocatorDef
+            {
+                Attribute = FindTypes.FindBy,
+                SearchType = searchType,
+                SearchString = attributeValue
+            });
+        }
+
+        void CreateXpathLocaltor(HtmlNode node)
+        {
+            
+        }
+
+        ElementTypes ConvertHtmlElementTypeToInternalMemberType(string elementType)
+        {
+            switch (elementType.ToLower())
+            {
+                case "button":
+                    return ElementTypes.Button;
+                case "input":
+                    return ElementTypes.Input;
+                default:
+                    return ElementTypes.Unknown;
+            }
         }
     }
 }

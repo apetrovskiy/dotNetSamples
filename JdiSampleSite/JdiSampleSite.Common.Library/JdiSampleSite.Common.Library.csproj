@@ -45,7 +45,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\ILibrarySettings.cs" />
+    <Compile Include="Constants.Designer.cs">
+      <DependentUpon>Constants.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Data\GroupsCollection.cs" />
+    <Compile Include="Data\UsersCollection.cs" />
     <Compile Include="DurandalNancyBootstrapper.cs" />
+    <Compile Include="Models\Abstract\IGroup.cs" />
+    <Compile Include="Models\Abstract\IUser.cs" />
+    <Compile Include="Models\Group.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Modules\FirstDurandalNancyModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RootPathProvider.cs" />
@@ -107,6 +118,12 @@
   <ItemGroup>
     <Folder Include="App\viewmodels\" />
     <Folder Include="App\views\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Constants.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Constants.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

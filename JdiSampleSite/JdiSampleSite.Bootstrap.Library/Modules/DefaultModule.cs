@@ -1,11 +1,12 @@
 ﻿namespace JdiSampleSite.Bootstrap.Library.Modules
 {
     using System.Dynamic;
-    using Data;
+    using Common.Library;
+    using Common.Library.Data;
     using Nancy;
     public class DefaultModule : NancyModule
     {
-        public DefaultModule() : base(BootstrapLib.RootUrl)
+        public DefaultModule() : base(Constants.BootstrapRootUrl)
         {
             // Get["/"] = _ => "Bootstrap root is here!";
             Get["/"] = _ =>

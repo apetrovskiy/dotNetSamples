@@ -2,10 +2,11 @@
 {
     using System;
     using Bootstrap.Library;
-    using Bootstrap.Library.Data;
-    using Bootstrap.Library.Models;
-    using Bootstrap.Library.Models.Abstract;
     using Bootstrap.Library.Modules;
+    using Common.Library;
+    using Common.Library.Data;
+    using Common.Library.Models;
+    using Common.Library.Models.Abstract;
     using Nancy.Testing;
     using Xunit;
 
@@ -20,19 +21,22 @@
 
         public NewGroupModuleTests()
         {
-            GroupsCollection.Groups.Clear();
+            // GroupsCollection.Groups.Clear();
+            GroupsCollection.Clear();
             _browser = new Browser(with => with.Modules(typeof(NewGroupModule)));
         }
 
         ~NewGroupModuleTests()
         {
-            GroupsCollection.Groups.Clear();
+            // GroupsCollection.Groups.Clear();
+            GroupsCollection.Clear();
         }
 
         [Fact]
         public void NewEmptyGroup()
         {
-            GroupsCollection.Groups.Clear();
+            // GroupsCollection.Groups.Clear();
+            GroupsCollection.Clear();
             var group = GivenNewGroup(Name01);
             WhenPostingGroup(group);
             ThenThereIsGroupInTheGroupsCollection(group);
@@ -41,7 +45,8 @@
         [Fact]
         public void GetGroup()
         {
-            GroupsCollection.Groups.Clear();
+            // GroupsCollection.Groups.Clear();
+            GroupsCollection.Clear();
             var @group = GivenNewGroup(Name02);
             @group.Id = _guid02;
             GroupsCollection.AddGroup(@group);
@@ -61,7 +66,7 @@
 
         void WhenPostingGroup(IGroup group)
         {
-            _response = _browser.Post(BootstrapLib.RootUrl + BootstrapLib.Groups + "/", with =>
+            _response = _browser.Post(Constants.BootstrapRootUrl + Constants.Groups + "/", with =>
             {
                 with.JsonBody(group);
                 with.Accept("application/json");
@@ -70,7 +75,7 @@
 
         void WhenGettingGroup(Guid groupId)
         {
-            _response = _browser.Get(BootstrapLib.RootUrl + BootstrapLib.Groups + "/" + groupId, with =>
+            _response = _browser.Get(Constants.BootstrapRootUrl + Constants.Groups + "/" + groupId, with =>
             {
                 with.Accept("application/json");
             });
