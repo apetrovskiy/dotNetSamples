@@ -21,7 +21,8 @@
         {
             dynamic data = new ExpandoObject();
             data.Users = UsersCollection.Users;
-            return View["users", data];
+            // return View[Constants.ViewNameUsers, data];
+            return Negotiate.WithView(Constants.ViewNameUsers).WithModel((ExpandoObject)data).WithStatusCode(HttpStatusCode.OK).WithFullNegotiation();
             // return Negotiate.WithStatusCode(HttpStatusCode.OK).WithView("users").WithModel<ExpandoObject>(data);
         }
 
@@ -38,7 +39,8 @@
             // return View["user", data].WithModel(user).WithStatusCode(HttpStatusCode.OK).WithFullNegotiation();
             // return View["user", data].WithStatusCode(HttpStatusCode.OK).WithFullNegotiation();
             // return View["user", data];
-            return View["user", user];
+            // return View[Constants.ViewNameUser, user];
+            return Negotiate.WithView(Constants.ViewNameUser).WithModel((User)user).WithStatusCode(HttpStatusCode.OK).WithFullNegotiation();
         }
     }
 }

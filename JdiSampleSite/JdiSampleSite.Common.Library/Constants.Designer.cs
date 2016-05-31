@@ -97,33 +97,6 @@ namespace JdiSampleSite.Common.Library {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to BirthDate.
-        /// </summary>
-        public static string UserBirthDate {
-            get {
-                return ResourceManager.GetString("UserBirthDate", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to FirstName.
-        /// </summary>
-        public static string UserFirstName {
-            get {
-                return ResourceManager.GetString("UserFirstName", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to LastName.
-        /// </summary>
-        public static string UserLastName {
-            get {
-                return ResourceManager.GetString("UserLastName", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to /user.
         /// </summary>
         public static string UserPage {
@@ -138,6 +111,42 @@ namespace JdiSampleSite.Common.Library {
         public static string Users {
             get {
                 return ResourceManager.GetString("Users", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to group.
+        /// </summary>
+        public static string ViewNameGroup {
+            get {
+                return ResourceManager.GetString("ViewNameGroup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to groups.
+        /// </summary>
+        public static string ViewNameGroups {
+            get {
+                return ResourceManager.GetString("ViewNameGroups", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to user.
+        /// </summary>
+        public static string ViewNameUser {
+            get {
+                return ResourceManager.GetString("ViewNameUser", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to users.
+        /// </summary>
+        public static string ViewNameUsers {
+            get {
+                return ResourceManager.GetString("ViewNameUsers", resourceCulture);
             }
         }
     }

@@ -18,7 +18,8 @@
             dynamic data = new ExpandoObject();
             data.Groups = GroupsCollection.Groups;
             // return Negotiate.WithStatusCode(HttpStatusCode.OK).WithModel(data);
-            return View["groups", data];
+            // return View[Constants.ViewNameGroups, data];
+            return Negotiate.WithView(Constants.ViewNameGroups).WithModel((ExpandoObject)data).WithStatusCode(HttpStatusCode.OK).WithFullNegotiation();
         }
     }
 }

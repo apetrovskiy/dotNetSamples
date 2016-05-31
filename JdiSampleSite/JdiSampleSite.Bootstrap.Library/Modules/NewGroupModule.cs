@@ -9,7 +9,7 @@
     using Nancy;
     using Nancy.ModelBinding;
     using Nancy.Responses.Negotiation;
-
+    using System.Dynamic;
     public class NewGroupModule : NancyModule
     {
         public NewGroupModule() : base(Constants.BootstrapRootUrl + Constants.Groups)
@@ -21,7 +21,7 @@
         Negotiator GetGroup(Guid groupId)
         {
             var group = GroupsCollection.Groups.FirstOrDefault(grp => grp.Id == groupId) ?? new Group();
-            return Negotiate.WithStatusCode(HttpStatusCode.OK).WithModel(group);
+            return Negotiate.WithStatusCode(HttpStatusCode.OK).WithModel((Group)group).WithView(Constants.ViewNameGroup).WithFullNegotiation();
         }
 
         Negotiator CreateNewGroup(IGroup partialGroup)
@@ -30,7 +30,9 @@
             {
                 Name = partialGroup.Name
             });
-            return Negotiate.WithStatusCode(HttpStatusCode.Created).WithView("groups");
+            dynamic data = new ExpandoObject();
+            data.Groups = GroupsCollection.Groups;
+            return Negotiate.WithStatusCode(HttpStatusCode.Created).WithView(Constants.ViewNameGroups).WithModel((ExpandoObject)data).WithFullNegotiation();
         }
     }
 }
