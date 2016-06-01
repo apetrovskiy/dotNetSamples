@@ -17,6 +17,8 @@
 
         void InitCollections()
         {
+            GroupsCollection.Init();
+            
             GroupsCollection.Groups.AddRange(
                 new List<IGroup> {
                 new Group
@@ -48,7 +50,9 @@
                     }
                 }
                 });
-
+            
+            UsersCollection.Init();
+            
             GroupsCollection.Groups.ToList().ForEach(group => UsersCollection.Users.AddRange(group.Members));
         }
     }

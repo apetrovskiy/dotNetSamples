@@ -5,16 +5,25 @@
 
     public class GroupsCollection
     {
-        public static List<IGroup> Groups { get; private set; } = new List<IGroup>();
+        public static List<IGroup> Groups { get; private set; }
 
         public static void AddGroup(IGroup group)
         {
+            Init();
             Groups.Add(group);
         }
 
         public static void Clear()
         {
+            Init();
             Groups.Clear();
+        }
+        
+        public static void Init()
+        {
+            if (null != Groups)
+                return;
+            Groups= new List<IGroup>();
         }
     }
 }
