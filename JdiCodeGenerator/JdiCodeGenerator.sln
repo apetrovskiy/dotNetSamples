@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JdiCodeGenerator.Core", "JdiCodeGenerator.Core\JdiCodeGenerator.Core.csproj", "{BA031019-F185-472C-BE8C-CD53BE4823EC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{18EAB0EC-0D5C-45BC-84A9-7D3854150AED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JdiCodeGenerator.Tests", "Tests\JdiCodeGenerator.Tests\JdiCodeGenerator.Tests.csproj", "{7B96A8CE-D149-4911-A31D-484BA31CAD53}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JdiCodeGenerator.ExampleRunner", "JdiCodeGenerator.ExampleRunner\JdiCodeGenerator.ExampleRunner.csproj", "{0CAD787A-50E5-4135-A01E-D2F641E08988}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BA031019-F185-472C-BE8C-CD53BE4823EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA031019-F185-472C-BE8C-CD53BE4823EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA031019-F185-472C-BE8C-CD53BE4823EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA031019-F185-472C-BE8C-CD53BE4823EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B96A8CE-D149-4911-A31D-484BA31CAD53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B96A8CE-D149-4911-A31D-484BA31CAD53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B96A8CE-D149-4911-A31D-484BA31CAD53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B96A8CE-D149-4911-A31D-484BA31CAD53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CAD787A-50E5-4135-A01E-D2F641E08988}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CAD787A-50E5-4135-A01E-D2F641E08988}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CAD787A-50E5-4135-A01E-D2F641E08988}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CAD787A-50E5-4135-A01E-D2F641E08988}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7B96A8CE-D149-4911-A31D-484BA31CAD53} = {18EAB0EC-0D5C-45BC-84A9-7D3854150AED}
+	EndGlobalSection
+EndGlobal
