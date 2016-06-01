@@ -24,21 +24,27 @@
 
         public NewUserModuleTests()
         {
-            // UsersCollection.Users.Clear();
             UsersCollection.Clear();
             _browser = new Browser(with => with.Modules(typeof(NewUserModule)));
         }
 
         ~NewUserModuleTests()
         {
-            // UsersCollection.Users.Clear();
             UsersCollection.Clear();
         }
 
         [Fact]
-        public void NewEmptyUser()
+        public void NewUserViaPut()
         {
-            // UsersCollection.Users.Clear();
+            UsersCollection.Clear();
+            var user = GivenNewUser(FirstName01, LastName01, _birthDate01, City01, Email01);
+            WhenPuttingNewUser(user);
+            ThenThereIsUserInTheUsersCollection(user);
+        }
+
+        [Fact]
+        public void NewUserViaPost()
+        {
             UsersCollection.Clear();
             var user = GivenNewUser(FirstName01, LastName01, _birthDate01, City01, Email01);
             WhenPostingUser(user);
@@ -57,10 +63,18 @@
             };
         }
 
+        void WhenPuttingNewUser(IUser user)
+        {
+            _response = _browser.Put(Constants.BootstrapRootUrl + Constants.Users + "/", with =>
+            {
+                with.JsonBody(user);
+                with.Accept("application/json");
+            });
+        }
+
         void WhenPostingUser(IUser user)
         {
-            // _response = _browser.Post(Constants.BootstrapRootUrl + Constants.Users + "/", with =>
-            _response = _browser.Put(Constants.BootstrapRootUrl + Constants.Users + "/", with =>
+            _response = _browser.Post(Constants.BootstrapRootUrl + Constants.Users + "/", with =>
             {
                 with.JsonBody(user);
                 with.Accept("application/json");

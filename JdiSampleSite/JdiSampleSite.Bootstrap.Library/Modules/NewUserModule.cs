@@ -15,10 +15,12 @@
     {
         public NewUserModule() : base(Constants.BootstrapRootUrl + Constants.Users)
         {
-            // Post["/"] = _ => CreateNewOrUpdateExistingUser(this.Bind<User>());
+            Post["/"] = _ => CreateNewOrUpdateExistingUser(this.Bind<User>());
+            // this works
             Put["/"] = _ => CreateNewOrUpdateExistingUser(this.Bind<User>());
             // Post[Constants.UserPage] = _ => CreateNewOrUpdateExistingUser(this.Bind<User>());
-            Put[Constants.UserPage] = _ => CreateNewOrUpdateExistingUser(this.Bind<User>());
+            // this works
+            // Put[Constants.UserPage] = _ => CreateNewOrUpdateExistingUser(this.Bind<User>());
             Put[Constants.User] = _ => CreateNewOrUpdateExistingUser(this.Bind<User>());
             // Put[Constants.User] = _ => 
             Get[Constants.UserPage] = _ => View[Constants.ViewNameUser, new User()];
@@ -34,7 +36,11 @@
             {
                 UsersCollection.AddUser(userInfo);
                 // return Negotiate.WithView(Constants.ViewNameUsers).WithFullNegotiation().WithModel((ExpandoObject)data).WithStatusCode(HttpStatusCode.TemporaryRedirect).WithHeader("Location", Constants.BootstrapRootUrl + Constants.Users);
-                return Negotiate.WithView(Constants.ViewNameUsers).WithModel((ExpandoObject)data).WithStatusCode(HttpStatusCode.TemporaryRedirect).WithHeader("Location", Constants.BootstrapRootUrl + Constants.Users).WithCookies(cookies).WithFullNegotiation();
+                // return Negotiate.WithView(Constants.ViewNameUsers).WithModel((ExpandoObject)data).WithStatusCode(HttpStatusCode.TemporaryRedirect).WithHeader("Location", Constants.BootstrapRootUrl + Constants.Users).WithCookies(cookies).WithFullNegotiation();
+
+                // this redirects too many times
+                // return Negotiate.WithView(Constants.ViewNameUsers).WithModel((ExpandoObject)data).WithStatusCode(HttpStatusCode.TemporaryRedirect).WithHeader("Location", Constants.BootstrapRootUrl + Constants.Users).WithCookies(cookies).WithFullNegotiation();
+                return Negotiate.WithView(Constants.ViewNameUsers).WithModel((ExpandoObject)data).WithStatusCode(HttpStatusCode.Created).WithFullNegotiation();
             }
 
             //var user = UsersCollection.Users.First(usr => usr.Id == userInfo.Id) ?? new User();
@@ -55,7 +61,10 @@
             // return Negotiate.WithStatusCode(HttpStatusCode.Created).WithView("users");
             //return View["users"];
             // return Negotiate.WithView(Constants.ViewNameUsers).WithFullNegotiation().WithModel((ExpandoObject)data).WithStatusCode(HttpStatusCode.TemporaryRedirect).WithHeader("Location", Constants.BootstrapRootUrl + Constants.Users);
-            return Negotiate.WithView(Constants.ViewNameUsers).WithModel((ExpandoObject)data).WithStatusCode(HttpStatusCode.TemporaryRedirect).WithHeader("Location", Constants.BootstrapRootUrl + Constants.Users).WithCookies(cookies).WithFullNegotiation();
+
+            // this redirects too many times
+            // return Negotiate.WithView(Constants.ViewNameUsers).WithModel((ExpandoObject)data).WithStatusCode(HttpStatusCode.TemporaryRedirect).WithHeader("Location", Constants.BootstrapRootUrl + Constants.Users).WithCookies(cookies).WithFullNegotiation();
+            return Negotiate.WithView(Constants.ViewNameUsers).WithModel((ExpandoObject)data).WithStatusCode(HttpStatusCode.OK).WithFullNegotiation();
             // return Negotiate.WithStatusCode(HttpStatusCode.Created).WithView("users.html");
         }
     }

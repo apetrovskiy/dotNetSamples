@@ -22,8 +22,9 @@
 <body>
     <h1>New user</h1>
 
-    <form method="POST">
-        <input type="hidden" name="_method" value="PUT" />
+    <form action="/bootstrap/users" method="POST">
+        <!--<input type="hidden" name="redirect" value="/bootstrap/users" />-->
+        <!--<input type="hidden" name="_method" value="PUT" />-->
         <label for="firstName">First name:</label><br>
         <input id="firstNameId" name="firstName" value="@Model.FirstName"><br>
         <label for="lastName">Last name:</label><br>
