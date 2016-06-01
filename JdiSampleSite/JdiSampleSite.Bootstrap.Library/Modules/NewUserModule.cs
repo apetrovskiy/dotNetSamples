@@ -55,7 +55,7 @@
 
             // UsersCollection.Users.Where(usr => usr.Id == userInfo.Id).ToList().ForEach(usr => usr = userInfo);
             var existingUser = UsersCollection.Users.First(usr => usr.Id == userInfo.Id);
-            UsersCollection.Users.Remove(existingUser);
+            UsersCollection.Users.RemoveAll(usr => usr.Id == userInfo.Id);
             UsersCollection.AddUser(userInfo);
 
             // return Negotiate.WithStatusCode(HttpStatusCode.Created).WithView("users");
