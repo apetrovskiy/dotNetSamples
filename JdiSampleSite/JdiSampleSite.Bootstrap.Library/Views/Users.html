@@ -25,44 +25,43 @@
             <h1>Users<small> that are here</small></</h1>
         </div>
     </div>
-    <div class="panel panel-default">
+    <div class="panel panel-default container-fluid">
         <div class="panel-heading">
             ATTENTION
         </div>
         <div class="panel-body">
-            Lorem ipsum dolor sit ametnim ...
-
             @Each.Users
             <br />
             <div class="row">
-                <div class="col-md-6 col-lg-6 col-sm-2 col-xs-1 col-xs-offset-3 text-center">
+                <div class="col-sm-2 col-md-2 col-lg-1">
                     <p><a href="/bootstrap/users/@Current.Id">Edit</a></p>
                 </div>
-                <div class="col-md-6 col-lg-6 col-sm-2 col-xs-1 col-xs-offset-3 text-center">
+                <div class="col-sm-2 col-md-2 col-lg-1">
                     <p>@Current.FirstName</p>
                 </div>
-                <div class="col-md-6 col-lg-6 col-sm-2 col-xs-1 col-xs-offset-3 text-center">
+                <div class="col-sm-2 col-md-2 col-lg-1">
                     <p>@Current.LastName</p>
                 </div>
-                <div class="col-md-6 col-lg-6 col-sm-2 col-xs-1 col-xs-offset-3 text-center">
+                <div class="col-sm-4 col-md-4 col-lg-2">
                     <p>@Current.BirthDate</p>
                 </div>
-                <div class="col-md-6 col-lg-6 col-sm-2 col-xs-1 col-xs-offset-3 text-center">
+                <div class="col-sm-2 col-md-2 col-lg-1">
                     <p>@Current.City</p>
                 </div>
-                <div class="col-md-6 col-lg-6 col-sm-2 col-xs-1 col-xs-offset-3 text-center">
+                <div class="col-sm-2 col-md-2 col-lg-1">
                     <p>@Current.Email</p>
                 </div>
             </div>
             @EndEach
         </div>
+
         <div class="panel-footer">
             <a href="#" class="btn btn-danger btn-sm">Agree</a>
             <a href="#" class="btn btn-default btn-sm">Decline</a>
         </div>
     </div>
 <div class="container-fluid">
-    @Each.Users
+    <!--@Each.Users
     <br/>
     <div class="row">
         <div class="col-md-6 col-lg-6 col-sm-2 col-xs-1 col-xs-offset-3 text-center">
@@ -84,7 +83,7 @@
             <p>@Current.Email</p>
         </div>
     </div>
-    @EndEach
+    @EndEach-->
 
     <a href="/bootstrap/users/user" id="createUserId" name="createUser" class="btn btn-success">New user</a>
 </div>

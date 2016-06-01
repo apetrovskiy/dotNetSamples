@@ -27,7 +27,7 @@
                     Members = new List<IUser>
                     {
                         new User { FirstName = "John", LastName = "Smith", BirthDate = new DateTime(1900, 1, 1), City = "London" },
-                        new User { FirstName = "John", LastName = "Joe", BirthDate = new DateTime(1953, 11, 12), City = "New York" }
+                        new User { FirstName = "John", LastName = "Doe", BirthDate = new DateTime(1953, 11, 12), City = "New York" }
                     }
                 },
                 new Group
@@ -44,9 +44,9 @@
                     Name = "Group04",
                     Members = new List<IUser>
                     {
-                        new User { FirstName = "John", LastName = "Joe", BirthDate = new DateTime(1953, 11, 12), City = "New York" },
-                        new User { FirstName = "John", LastName = "Joe", BirthDate = new DateTime(1953, 11, 12), City = "New York" },
-                        new User { FirstName = "John", LastName = "Joe", BirthDate = new DateTime(1953, 11, 12), City = "New York" }
+                        new User { FirstName = "John", LastName = "Doe", BirthDate = new DateTime(1953, 11, 13), City = "New York" },
+                        new User { FirstName = "John", LastName = "Doe", BirthDate = new DateTime(1953, 11, 14), City = "New York" },
+                        new User { FirstName = "John", LastName = "Doe", BirthDate = new DateTime(1953, 11, 15), City = "New York" }
                     }
                 }
                 });
