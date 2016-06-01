@@ -23,7 +23,7 @@
             var convertor = new ElementToMemberConvertor();
             var objtypeDefinitions = _docNode.Descendants().Select(node => convertor.ConvertToCodeEntry(node));
 
-            var listNotToDisplay = new[] {"html", "head", "body", "#comment", "#text", "div", "meta", "p", "h1", "h2", "h3", "h4", "h5", "h6", "small", "font", "script", "i", "br", "hr", "style", "title", "li", "ul", "img", "span", "noscript"};
+            var listNotToDisplay = new[] {"html", "head", "body", "#comment", "#text", "div", "meta", "p", "h1", "h2", "h3", "h4", "h5", "h6", "small", "font", "script", "i", "br", "hr", "style", "title", "li", "ul", "img", "span", "noscript", "label"};
 
             objtypeDefinitions.ForEach(def =>
             {
