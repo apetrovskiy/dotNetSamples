@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\ILibrarySettings.cs" />
+    <Compile Include="Constants.cs" />
     <Compile Include="Constants.Designer.cs">
       <DependentUpon>Constants.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -53,6 +54,7 @@
     <Compile Include="Data\GroupsCollection.cs" />
     <Compile Include="Data\UsersCollection.cs" />
     <Compile Include="DurandalNancyBootstrapper.cs" />
+    <Compile Include="Frameworks.cs" />
     <Compile Include="Models\Abstract\IGroup.cs" />
     <Compile Include="Models\Abstract\IUser.cs" />
     <Compile Include="Models\Group.cs" />

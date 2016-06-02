@@ -10,10 +10,12 @@
     using Common.Library.Models;
     using Common.Library.Models.Abstract;
     using Nancy.ModelBinding;
+    using Settings;
 
     public class NewUserModule : NancyModule
     {
         public NewUserModule() : base(Constants.BootstrapRootUrl + Constants.Users)
+        // public NewUserModule() : base(BootstrapLibSettings.Path.FrameworkRoot + Constants.Users)
         {
             Post["/"] = _ => CreateNewOrUpdateExistingUser(this.Bind<User>());
             // this works

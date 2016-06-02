@@ -5,10 +5,12 @@
     using Common.Library.Data;
     using Nancy;
     using Nancy.Responses.Negotiation;
+    using Settings;
 
     public class GroupsModule : NancyModule
     {
         public GroupsModule() : base(Constants.BootstrapRootUrl + Constants.Groups)
+        // public GroupsModule() : base(BootstrapLibSettings.Path.FrameworkRoot + Constants.Groups)
         {
             Get["/"] = _ => DisplayGroups();
         }

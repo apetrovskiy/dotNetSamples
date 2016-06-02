@@ -70,6 +70,15 @@ namespace JdiSampleSite.Common.Library {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to /foundation5.
+        /// </summary>
+        public static string FoundationRootUrl {
+            get {
+                return ResourceManager.GetString("FoundationRootUrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to /{id:guid}.
         /// </summary>
         public static string Group {

@@ -12,8 +12,11 @@
     {
         public void Apply()
         {
+            Path = new FrameworkPath(Frameworks.NoFramework);
             InitCollections();
         }
+
+        public static FrameworkPath Path { get; set; }
 
         void InitCollections()
         {

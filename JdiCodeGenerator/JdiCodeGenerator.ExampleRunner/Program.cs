@@ -2,7 +2,10 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Linq;
     using Core.Helpers;
+    using Core.ImportExport;
+    using Core.ObjectModel.Abstract;
 
     class Program
     {
@@ -12,7 +15,7 @@
             {
                 "http://localhost:1234/bootstrap/users",
                 "http://localhost:1234/bootstrap/users/user",
-
+                
                 "http://presentation.creative-tim.com/",
                 "http://www.crit-research.it/",
                 "http://www.blackbox.cool/",
@@ -40,11 +43,11 @@
                 "http://www.littlehj.com/",
                 "http://thefounderspledge.org/",
 
-                "http://www.folchstudio.com/",
+                // "http://www.folchstudio.com/",
                 "https://maple.com/",
                 "http://www.racefurniture.com.au/",
                 "http://www1.nyc.gov/html/onenyc/",
-                // "http://goranfactory.com/",
+                "http://goranfactory.com/",
 
                 "http://ronagam.com/",
                 "http://www.clusta.com/",
@@ -66,15 +69,28 @@
                 "http://spikenode.com/",
                 "http://guizion.com/",
                 "https://www.glaz-displayschutz.de/"
-
+                
             };
+            var listNotToDisplay = new[] { "html", "head", "body", "#comment", "#text", "div", "meta", "p", "h1", "h2", "h3", "h4", "h5", "h6", "small", "font", "script", "i", "br", "hr", "style", "title", "li", "ul", "img", "span", "noscript" };
+            // const string FolderForExportFiles = ".";
+            const string FolderForExportFiles = @"D:\333";
             var loader = new PageLoader();
+            var exporter = new CodeEntriesExporter();
+            var importer = new CodeEntriesImporter();
+            int fileNumber = 0;
             list.ForEach(url =>
             {
                 Console.WriteLine("===============================================================================");
                 Console.WriteLine("================{0}================", url);
                 Console.WriteLine("===============================================================================");
-                loader.DisplayTypesFromPage(url);
+                var codeEntries = loader.GetCodeEntries(url, listNotToDisplay);
+                var entries = codeEntries as IList<ICodeEntry> ?? codeEntries.ToList();
+                entries.ToList().ForEach(elementDefinition => Console.WriteLine(elementDefinition.GenerateCodeForEntry(SupportedLanguages.Java)));
+
+                exporter.WriteToFile(entries, FolderForExportFiles + @"\" + ++fileNumber);
+                var importedEntries = importer.LoadFromFile(FolderForExportFiles + @"\" + fileNumber);
+                exporter.WriteToFile(importedEntries, FolderForExportFiles + @"\" + (100 + fileNumber));
+
             });
 
             Console.WriteLine("Completed!");

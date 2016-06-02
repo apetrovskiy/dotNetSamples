@@ -141,4 +141,10 @@
   <data name="ElementTypeHtml" xml:space="preserve">
     <value>html</value>
   </data>
+  <data name="ElementTypeComment" xml:space="preserve">
+    <value>#comment</value>
+  </data>
+  <data name="ElementTypeText" xml:space="preserve">
+    <value>#text</value>
+  </data>
 </root>

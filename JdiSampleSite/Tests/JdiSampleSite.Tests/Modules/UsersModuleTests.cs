@@ -90,6 +90,25 @@
             ThenThereIsUserLoadedFromTheUsersCollection(UsersCollection.Users[0]);
         }
 
+        [Fact]
+        public void RemoveUserById()
+        {
+            UsersCollection.Clear();
+            UsersCollection.AddUser(new User
+            {
+                FirstName = FirstName02,
+                LastName = LastName02,
+                BirthDate = _birthDate02,
+                City = City02,
+                Email = Email02,
+                Id = _guid02
+            });
+
+            WhenDeletingUser(_guid02);
+
+            ThenThereAreNoUsersFromTheUsersCollection();
+        }
+
         void GivenThereAreNoUsersInTheUsersCollection()
         {
             UsersCollection.Clear();
@@ -125,6 +144,14 @@
         void WhenGettingUser(Guid userId)
         {
             _response = _browser.Get(Constants.BootstrapRootUrl + Constants.Users + "/" + userId, with =>
+            {
+                with.Accept("application/json");
+            });
+        }
+
+        void WhenDeletingUser(Guid userId)
+        {
+            _response = _browser.Delete(Constants.BootstrapRootUrl + Constants.Users + "/" + userId, with =>
             {
                 with.Accept("application/json");
             });

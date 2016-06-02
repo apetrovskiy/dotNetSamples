@@ -3,6 +3,7 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    using Common.Library;
     using Common.Library.Abstract;
     using Common.Library.Data;
     using Common.Library.Models;
@@ -53,7 +54,10 @@
         //}
         public void Apply()
         {
-            
+            Path = new FrameworkPath(Frameworks.Bootstrap);
+
         }
+
+        public static FrameworkPath Path { get; set; }
     }
 }

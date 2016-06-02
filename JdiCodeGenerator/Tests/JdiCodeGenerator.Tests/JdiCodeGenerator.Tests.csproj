@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Convertors\ElementToMemberConvertorTests.cs" />
+    <Compile Include="Helpers\NameGenerationTests.cs" />
     <Compile Include="ObjectModel\CodeEntryTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

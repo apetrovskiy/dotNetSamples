@@ -5,11 +5,15 @@
     using System.Linq;
     using Abstract;
     using Epam.JDI.Core.Interfaces.Base;
+    using Newtonsoft.Json;
+    using Newtonsoft.Json.Serialization;
 
     public class CodeEntry : ICodeEntry
     {
         public Guid Id { get; set; }
-        public List<ILocatorDefinition> Locators { get; set; }
+        // [JsonProperty(ItemConverterType = typeof(IEnumerable<LocatorDefinition>))]
+        // public List<ILocatorDefinition> Locators { get; set; }
+        public List<LocatorDefinition> Locators { get; set; }
         public string MemberName { get; set; }
         public ElementTypes HtmlMemberType { get; set; }
         public string MemberType { get; set; }
@@ -17,18 +21,33 @@
         // temporarily!
         public string Type { get; set; }
 
+        SupportedLanguages _language;
+
         public CodeEntry()
         {
             Id = Guid.NewGuid();
-            Locators = new List<ILocatorDefinition>();
+            // Locators = new List<ILocatorDefinition>();
+            Locators = new List<LocatorDefinition>();
         }
-        public string GenerateCodeEntry()
+
+        //[JsonConstructor]
+        //public CodeEntry(IEnumerable<ILocatorDefinition> locatorDefinitions) : this()
+        //{
+            
+        //}
+
+        // public string GenerateCodeForEntry()
+        public string GenerateCodeForEntry(SupportedLanguages language)
         {
             var result = string.Empty;
 
+            // TODO: for the future use
+            _language = language;
+
             FilterOutWrongLocators();
 
-            GenerateEntryTitle();
+            // TODO: temporarily
+            // GenerateEntryTitle();
 
             result = GenerateCodeEntryWithBestLocator();
 
@@ -64,7 +83,7 @@
             //public {3} {4}
             //",
             //                locator.Attribute,
-            //                locator.SearchType,
+            //                locator.searchTypePreference,
             //                locator.SearchString,
             //                // MemberType.GetType().Name,
             //                MemberType,
@@ -76,17 +95,17 @@
             {
                 //if (!string.IsNullOrEmpty(result))
                 //    result += "\r\n";
-                result += string.Format("\r\n@{0}({1}=\"{2}\")", locator.Attribute, locator.SearchType, locator.SearchString);
+                result += string.Format("\r\n@{0}({1}=\"{2}\")", locator.Attribute, locator.SearchTypePreference, locator.SearchString);
             } );
             var overallResult = string.IsNullOrEmpty(result) ? result : result + string.Format("\r\npublic {0} {1}",
                 MemberType,
                 MemberName);
 
 
-            if (Locators.Any(locator => locator.SearchType == SearchTypes.xpath))
+            if (Locators.Any(locator => locator.SearchTypePreference == SearchTypePreferences.xpath))
             {
                 var xpath =
-                    Locators.Where(locator => locator.SearchType == SearchTypes.xpath)
+                    Locators.Where(locator => locator.SearchTypePreference == SearchTypePreferences.xpath)
                         .Select(locator => locator.SearchString).First();
                 //if (!xpath.ToLower().Contains("body"))
                 //    Console.WriteLine(

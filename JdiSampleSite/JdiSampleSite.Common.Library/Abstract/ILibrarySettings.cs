@@ -3,5 +3,6 @@
     public interface ILibrarySettings
     {
         void Apply();
+        // FrameworkPath Path { get; set; }
     }
 }

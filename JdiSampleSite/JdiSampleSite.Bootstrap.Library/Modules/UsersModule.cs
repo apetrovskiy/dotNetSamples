@@ -6,41 +6,49 @@
     using Common.Library;
     using Common.Library.Data;
     using Common.Library.Models;
+    using Common.Library.Models.Abstract;
     using Nancy;
     using Nancy.Responses.Negotiation;
+    using Settings;
 
     public class UsersModule : NancyModule
     {
         public UsersModule() : base(Constants.BootstrapRootUrl + Constants.Users)
+        // public UsersModule() : base(BootstrapLibSettings.Path.FrameworkRoot + Constants.Users)
         {
             Get["/"] = _ => DisplayUsers();
             Get[Constants.User] = parameters => GetUser(parameters.id);
+            Delete[Constants.User] = parameters => RemoveUser(parameters.id);
         }
 
         Negotiator DisplayUsers()
         {
-            dynamic data = new ExpandoObject();
-            data.Users = UsersCollection.Users;
-            // return View[Constants.ViewNameUsers, data];
-            return Negotiate.WithView(Constants.ViewNameUsers).WithModel((ExpandoObject)data).WithStatusCode(HttpStatusCode.OK).WithFullNegotiation();
-            // return Negotiate.WithStatusCode(HttpStatusCode.OK).WithView("users").WithModel<ExpandoObject>(data);
+            return Negotiate.WithView(Constants.ViewNameUsers).WithModel(GetUsers()).WithStatusCode(HttpStatusCode.OK).WithFullNegotiation();
         }
 
         Negotiator GetUser(Guid id)
         {
-            var user = UsersCollection.Users.FirstOrDefault(usr => usr.Id == id) ?? new User();
-            // return null == user ? View["error"] : View["user", user];
-            // return Negotiate.WithStatusCode(HttpStatusCode.OK).WithModel(user);
-            //dynamic data = new ExpandoObject();
-            //data.FirstName = user.FirstName;
-            //data.LastName = user.LastName;
-            // data.User = user;
-            // return View["user", user].WithModel(user).WithStatusCode(HttpStatusCode.OK).WithFullNegotiation();
-            // return View["user", data].WithModel(user).WithStatusCode(HttpStatusCode.OK).WithFullNegotiation();
-            // return View["user", data].WithStatusCode(HttpStatusCode.OK).WithFullNegotiation();
-            // return View["user", data];
-            // return View[Constants.ViewNameUser, user];
+            var user = GetUserById(id);
             return Negotiate.WithView(Constants.ViewNameUser).WithModel((User)user).WithStatusCode(HttpStatusCode.OK).WithFullNegotiation();
+        }
+
+        Negotiator RemoveUser(Guid id)
+        {
+            var user = GetUserById(id);
+            UsersCollection.Users.RemoveAll(usr => usr.Id == user.Id);
+            return Negotiate.WithView(Constants.ViewNameUsers).WithModel(GetUsers()).WithStatusCode(HttpStatusCode.NoContent).WithFullNegotiation();
+        }
+
+        IUser GetUserById(Guid id)
+        {
+            return UsersCollection.Users.FirstOrDefault(usr => usr.Id == id) ?? new User();
+        }
+
+        ExpandoObject GetUsers()
+        {
+            dynamic data = new ExpandoObject();
+            data.Users = UsersCollection.Users;
+            return data;
         }
     }
 }

@@ -10,9 +10,12 @@
     using Nancy.ModelBinding;
     using Nancy.Responses.Negotiation;
     using System.Dynamic;
+    using Settings;
+
     public class NewGroupModule : NancyModule
     {
         public NewGroupModule() : base(Constants.BootstrapRootUrl + Constants.Groups)
+        // public NewGroupModule() : base(BootstrapLibSettings.Path.FrameworkRoot + Constants.Groups)
         {
             Post["/"] = _ => CreateNewGroup(this.Bind<Group>());
             Get[Constants.Group] = parameters => GetGroup(parameters.id);

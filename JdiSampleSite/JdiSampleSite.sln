@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JdiSampleSite.Tests", "Test
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JdiSampleSite.Bootstrap.Library", "JdiSampleSite.Bootstrap.Library\JdiSampleSite.Bootstrap.Library.csproj", "{A0431F13-E041-44DF-A8CA-9405C88B3C8C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JdiSampleSite.Foundation5.Library", "JdiSampleSite.Foundation5.Library\JdiSampleSite.Foundation5.Library.csproj", "{CFF1E8CA-B3EF-4082-ADB9-73646F92D9F7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,10 @@ Global
 		{A0431F13-E041-44DF-A8CA-9405C88B3C8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A0431F13-E041-44DF-A8CA-9405C88B3C8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A0431F13-E041-44DF-A8CA-9405C88B3C8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFF1E8CA-B3EF-4082-ADB9-73646F92D9F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFF1E8CA-B3EF-4082-ADB9-73646F92D9F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFF1E8CA-B3EF-4082-ADB9-73646F92D9F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFF1E8CA-B3EF-4082-ADB9-73646F92D9F7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

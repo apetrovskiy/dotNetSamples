@@ -115,6 +115,15 @@ namespace JdiCodeGenerator.Core {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to #comment.
+        /// </summary>
+        internal static string ElementTypeComment {
+            get {
+                return ResourceManager.GetString("ElementTypeComment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to head.
         /// </summary>
         internal static string ElementTypeHead {
@@ -129,6 +138,15 @@ namespace JdiCodeGenerator.Core {
         internal static string ElementTypeHtml {
             get {
                 return ResourceManager.GetString("ElementTypeHtml", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to #text.
+        /// </summary>
+        internal static string ElementTypeText {
+            get {
+                return ResourceManager.GetString("ElementTypeText", resourceCulture);
             }
         }
     }

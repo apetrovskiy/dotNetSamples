@@ -120,6 +120,9 @@
   <data name="BootstrapRootUrl" xml:space="preserve">
     <value>/bootstrap</value>
   </data>
+  <data name="FoundationRootUrl" xml:space="preserve">
+    <value>/foundation5</value>
+  </data>
   <data name="Group" xml:space="preserve">
     <value>/{id:guid}</value>
   </data>

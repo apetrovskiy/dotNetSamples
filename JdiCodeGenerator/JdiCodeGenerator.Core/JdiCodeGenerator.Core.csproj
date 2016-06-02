@@ -83,16 +83,36 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Helpers\ElementToMemberConvertor.cs" />
-    <Compile Include="Helpers\ExtensionMethods.cs" />
+    <Compile Include="Helpers\ExtensionMethodsForImportExport.cs" />
+    <Compile Include="Helpers\HtmlElementToCodeEntryConvertor.cs" />
+    <Compile Include="Helpers\ExtensionMethodsForCodeEntries.cs" />
+    <Compile Include="Helpers\ExtensionMethodsForHtmlElements.cs" />
+    <Compile Include="Helpers\ExtensionMethodsForNodes.cs" />
     <Compile Include="Helpers\PageLoader.cs" />
+    <Compile Include="ImportExport\CodeEntriesExporter.cs" />
+    <Compile Include="ImportExport\CodeEntriesImporter.cs" />
+    <Compile Include="ImportExport\DtoJsonConverter.cs" />
     <Compile Include="ObjectModel\Abstract\ElementTypes.cs" />
     <Compile Include="ObjectModel\Abstract\FindTypes.cs" />
     <Compile Include="ObjectModel\Abstract\ICodeEntry.cs" />
     <Compile Include="ObjectModel\Abstract\ILocatorDefinition.cs" />
-    <Compile Include="ObjectModel\Abstract\SearchTypes.cs" />
+    <Compile Include="ObjectModel\Abstract\INodeAnalysisPlugin.cs" />
+    <Compile Include="ObjectModel\Abstract\NamingPreferences.cs" />
+    <Compile Include="ObjectModel\Abstract\SearchTypePreferences.cs" />
+    <Compile Include="ObjectModel\Abstract\SupportedLanguages.cs" />
     <Compile Include="ObjectModel\CodeEntry.cs" />
-    <Compile Include="ObjectModel\LocatorDef.cs" />
+    <Compile Include="ObjectModel\LocatorDefinition.cs" />
+    <Compile Include="ObjectModel\Plugins\AngularJsPlugin.cs" />
+    <Compile Include="ObjectModel\Plugins\BootstrapAndCompetitors\BoilerplatePlugin.cs" />
+    <Compile Include="ObjectModel\Plugins\BootstrapAndCompetitors\BootstrapPlugin.cs" />
+    <Compile Include="ObjectModel\Plugins\BootstrapAndCompetitors\FoundationPlugin.cs" />
+    <Compile Include="ObjectModel\Plugins\BootstrapAndCompetitors\InkPlugin.cs" />
+    <Compile Include="ObjectModel\Plugins\BootstrapAndCompetitors\KickStartPlugin.cs" />
+    <Compile Include="ObjectModel\Plugins\BootstrapAndCompetitors\KickstrapPlugin.cs" />
+    <Compile Include="ObjectModel\Plugins\BootstrapAndCompetitors\PurePlugin.cs" />
+    <Compile Include="ObjectModel\Plugins\BootstrapAndCompetitors\YuiPlugin.cs" />
+    <Compile Include="ObjectModel\Plugins\BootstrapAndCompetitors\ZimitPlugin.cs" />
+    <Compile Include="ObjectModel\Plugins\ReactJsPlugin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WebNames.Designer.cs">
       <AutoGen>True</AutoGen>
