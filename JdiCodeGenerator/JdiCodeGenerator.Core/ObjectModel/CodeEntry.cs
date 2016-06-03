@@ -5,8 +5,6 @@
     using System.Linq;
     using Abstract;
     using Epam.JDI.Core.Interfaces.Base;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Serialization;
 
     public class CodeEntry : ICodeEntry
     {

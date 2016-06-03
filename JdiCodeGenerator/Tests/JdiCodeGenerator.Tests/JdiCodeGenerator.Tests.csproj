@@ -68,8 +68,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Convertors\ElementToMemberConvertorTests.cs" />
+    <Compile Include="Example\StringTests2.cs" />
+    <Compile Include="Example\StringTests3.cs" />
+    <Compile Include="Helpers\BestChoiceTests.cs" />
+    <Compile Include="Helpers\ExcludeListTests.cs" />
     <Compile Include="Helpers\NameGenerationTests.cs" />
+    <Compile Include="Helpers\SettingNamesTests.cs" />
     <Compile Include="ObjectModel\CodeEntryTests.cs" />
+    <Compile Include="Plugins\BoilerplateTests.cs" />
+    <Compile Include="Plugins\BootstrapTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

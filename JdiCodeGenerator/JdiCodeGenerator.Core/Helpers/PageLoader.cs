@@ -1,9 +1,7 @@
 ﻿namespace JdiCodeGenerator.Core.Helpers
 {
-    using System;
     using System.Collections.Generic;
     using System.Linq;
-    using Epam.JDI.Commons;
     using HtmlAgilityPack;
     using ObjectModel.Abstract;
 
@@ -20,8 +18,13 @@
         public IEnumerable<ICodeEntry> GetCodeEntries(string url, IEnumerable<string> excludeList)
         {
             LoadPage(url);
+            return GetCodeEntries(_docNode, excludeList);
+        }
+
+        IEnumerable<ICodeEntry> GetCodeEntries(HtmlNode docNode, IEnumerable<string> excludeList)
+        {
             var convertor = new HtmlElementToCodeEntryConvertor();
-            return _docNode.Descendants()
+            return docNode.Descendants()
                 .Select(node => convertor.ConvertToCodeEntry(node))
                 .Where(codeEntry => !excludeList.Contains(codeEntry.Type))
                 .SetBestChoice()

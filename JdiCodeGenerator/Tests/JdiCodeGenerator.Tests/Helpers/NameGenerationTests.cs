@@ -1,6 +1,5 @@
 ﻿namespace JdiCodeGenerator.Tests.Helpers
 {
-    using System;
     using Xunit;
     using JdiCodeGenerator.Core.Helpers;
 
@@ -14,7 +13,7 @@
         }
 
         [Theory]
-        [InlineData("", "")]
+        [InlineData("", "NoName")]
         [InlineData("abc", "Abc")]
         [InlineData("ab cd", "AbCd")]
         [InlineData("aaa bbb,ccc", "AaaBbbCcc")]
@@ -32,8 +31,8 @@
 
         [InlineData("-aaa", "Aaa")]
         [InlineData("aaa-bbb-ccc", "AaaBbbCcc")]
-        [InlineData("-", "")]
-        [InlineData("--", "")]
+        [InlineData("-", "NoName")]
+        [InlineData("--", "NoName")]
         [InlineData("aaa--bb.*c", "AaaBbC")]
 
         [InlineData("a/", "A")]
@@ -47,6 +46,7 @@
         [InlineData("a@", "A")]
         [InlineData("a@a", "AA")]
         [InlineData("http://www.test.com", "HttpWwwTestCom")]
+        [Trait("Category", "NameGeneration")]
         public void EmptyString(string input, string expected)
         {
             GivenSourceName(input);

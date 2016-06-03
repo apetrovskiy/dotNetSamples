@@ -57,7 +57,7 @@ public {1} {2};
         internal static string ToPascalCase(this string wronglyFormattedString)
         {
             if (string.IsNullOrEmpty(wronglyFormattedString))
-                return wronglyFormattedString;
+                return NoName;
 
             const int lowerA = 97;
             const int lowerZ = 122;
@@ -97,6 +97,9 @@ public {1} {2};
                 }
             });
 
+            if (string.IsNullOrEmpty(wronglyFormattedString))
+                return NoName;
+
             return wronglyFormattedString;
         }
 
@@ -126,10 +129,14 @@ public {1} {2};
         className,
         */
 
-        static string GenerateNameBasedOnNamingPreferences(this ICodeEntry codeEntry)
+        internal const string NoName = "NoName";
+        internal static string GenerateNameBasedOnNamingPreferences(this ICodeEntry codeEntry)
         {
+            
+            if (string.IsNullOrEmpty(codeEntry.MemberType))
+                codeEntry.MemberType = "noTypeDetected";
             if (!codeEntry.Locators.Any())
-                return codeEntry.MemberType + "NoName";
+                return codeEntry.MemberType + NoName;
             if (codeEntry.Locators.Any(locator => locator.SearchTypePreference == SearchTypePreferences.name))
                 return codeEntry.MemberType + codeEntry.Locators.First(locator => locator.SearchTypePreference == SearchTypePreferences.name).SearchString.ToPascalCase();
 
@@ -145,7 +152,7 @@ public {1} {2};
             if (codeEntry.Locators.Any(locator => locator.SearchTypePreference == SearchTypePreferences.className))
                 return codeEntry.MemberType + codeEntry.Locators.First(locator => locator.SearchTypePreference == SearchTypePreferences.className).SearchString.ToPascalCase();
 
-            return codeEntry.MemberType + "NoName";
+            return codeEntry.MemberType + NoName;
         }
     }
 }
