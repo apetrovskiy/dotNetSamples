@@ -28,7 +28,7 @@
                 .Select(node => convertor.ConvertToCodeEntry(node))
                 .Where(codeEntry => !excludeList.Contains(codeEntry.Type))
                 .SetBestChoice()
-                .SetNames();
+                .SetDistinguishNamesForMembers();
         }
     }
 }

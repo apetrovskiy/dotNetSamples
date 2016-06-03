@@ -4,16 +4,14 @@
     using System.Collections.Generic;
     using System.Linq;
     using Abstract;
-    using Epam.JDI.Core.Interfaces.Base;
 
     public class CodeEntry : ICodeEntry
     {
         public Guid Id { get; set; }
-        // [JsonProperty(ItemConverterType = typeof(IEnumerable<LocatorDefinition>))]
-        // public List<ILocatorDefinition> Locators { get; set; }
         public List<LocatorDefinition> Locators { get; set; }
         public string MemberName { get; set; }
-        public ElementTypes HtmlMemberType { get; set; }
+        public HtmlElementTypes HtmlMemberType { get; set; }
+        public JdiElementTypes JdiMemberType { get; set; }
         public string MemberType { get; set; }
 
         // temporarily!
@@ -24,17 +22,9 @@
         public CodeEntry()
         {
             Id = Guid.NewGuid();
-            // Locators = new List<ILocatorDefinition>();
             Locators = new List<LocatorDefinition>();
         }
 
-        //[JsonConstructor]
-        //public CodeEntry(IEnumerable<ILocatorDefinition> locatorDefinitions) : this()
-        //{
-            
-        //}
-
-        // public string GenerateCodeForEntry()
         public string GenerateCodeForEntry(SupportedLanguages language)
         {
             var result = string.Empty;
@@ -44,20 +34,9 @@
 
             FilterOutWrongLocators();
 
-            // TODO: temporarily
-            // GenerateEntryTitle();
-
             result = GenerateCodeEntryWithBestLocator();
 
             return result;
-        }
-
-        void GenerateEntryTitle()
-        {
-            // TODO: make real calculation
-            MemberType = string.Format("{0}", typeof(IElement).Name);
-            var memberTypeWithoutInterface = MemberType.Substring(1);
-            MemberName = string.Format("{0}Suffix", memberTypeWithoutInterface.Substring(0, 1).ToLower() + memberTypeWithoutInterface.Substring(1));
         }
 
         void FilterOutWrongLocators()
@@ -69,46 +48,22 @@
             });
         }
 
-        string GenerateCodeEntryWithBestLocator()
+        internal string GenerateCodeEntryWithBestLocator()
         {
             if (!Locators.Any())
                 return string.Empty;
 
-            // TODO: temporarily!!!!
-            //            var locator = Locators.First();
-            //            return string.Format(@"
-            //@{0}({1}=""{2}"")
-            //public {3} {4}
-            //",
-            //                locator.Attribute,
-            //                locator.searchTypePreference,
-            //                locator.SearchString,
-            //                // MemberType.GetType().Name,
-            //                MemberType,
-            //                MemberName);
-
+            var bestLocator = Locators.First(locator => locator.IsBestChoice);
             var result = string.Empty;
-            // var result = "\r";
-            Locators.ForEach(locator =>
-            {
-                //if (!string.IsNullOrEmpty(result))
-                //    result += "\r\n";
-                result += string.Format("\r\n@{0}({1}=\"{2}\")", locator.Attribute, locator.SearchTypePreference, locator.SearchString);
-            } );
-            var overallResult = string.IsNullOrEmpty(result) ? result : result + string.Format("\r\npublic {0} {1}",
-                MemberType,
-                MemberName);
+            if (SupportedLanguages.Java == _language)
+                result = string.Format("\r\n@{0}({1}=\"{2}\")", bestLocator.Attribute, bestLocator.SearchTypePreference, bestLocator.SearchString);
+            if (SupportedLanguages.CSharp == _language)
+                result = string.Format("\r\n[{0}({1}=\"{2}\")]", bestLocator.Attribute, bestLocator.SearchTypePreference, bestLocator.SearchString);
 
+            var overallResult = string.Empty;
 
-            if (Locators.Any(locator => locator.SearchTypePreference == SearchTypePreferences.xpath))
-            {
-                var xpath =
-                    Locators.Where(locator => locator.SearchTypePreference == SearchTypePreferences.xpath)
-                        .Select(locator => locator.SearchString).First();
-                //if (!xpath.ToLower().Contains("body"))
-                //    Console.WriteLine(
-                //        "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< There is no BODY >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
-            }
+            if (SupportedLanguages.Java == _language || SupportedLanguages.CSharp == _language)
+                overallResult = string.IsNullOrEmpty(result) ? result : result + string.Format("\r\npublic {0} {1};", "I" + JdiMemberType, MemberName);
 
             return overallResult;
         }

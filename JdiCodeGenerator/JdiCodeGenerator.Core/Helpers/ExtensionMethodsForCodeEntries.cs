@@ -1,6 +1,5 @@
 ﻿namespace JdiCodeGenerator.Core.Helpers
 {
-    using System;
     using System.Collections.Generic;
     using System.Linq;
     using Epam.JDI.Commons;
@@ -8,40 +7,6 @@
 
     public static class ExtensionMethodsForCodeEntries
     {
-        [Obsolete("This was applicable only to the initial version")]
-        public static string GenerateCodeString(this Type type, string classString)
-        {
-            var memberName = type.Name + PrepareClassStringToBeMemberName(classString);
-            return string.Format(
-                @"
-@FindBy(css = '{0}')
-public {1} {2};
-", classString, type.Name, memberName);
-        }
-
-        [Obsolete("This was applicable only to the initial version")]
-        static string PrepareClassStringToBeMemberName(string classString)
-        {
-            if (string.IsNullOrEmpty(classString))
-                return new Random().Next().ToString();
-            classString = classString.Replace(" ", string.Empty);
-            classString = classString.Replace(".", string.Empty);
-            classString = classString.Replace("-", string.Empty);
-            return classString;
-        }
-
-        [Obsolete("This was applicable only to the initial version")]
-        static string GetExactClass(this string classString)
-        {
-            if (classString.Contains("btn"))
-                return "btn";
-            if (classString.Contains("radio"))
-                return "radio";
-            if (classString.Contains("checkbox"))
-                return "checkbox";
-            return string.Empty;
-        }
-
         static readonly List<char> WrongCharacters = new List<char> {
             ' ',
             '-',
@@ -52,7 +17,15 @@ public {1} {2};
             '\\',
             '*',
             ':',
-            '@'
+            '@',
+            '(',
+            ')',
+            '[',
+            ']',
+            '?',
+            '=',
+            '&',
+            '+'
             };
         internal static string ToPascalCase(this string wronglyFormattedString)
         {
@@ -111,13 +84,19 @@ public {1} {2};
             return entries;
         }
 
-        public static IEnumerable<ICodeEntry> SetNames(this IEnumerable<ICodeEntry> codeEntries)
+        public static IEnumerable<ICodeEntry> SetDistinguishNamesForMembers(this IEnumerable<ICodeEntry> codeEntries)
         {
-            // TODO: write the code
-            // NamingPreferences
-            // return codeEntries;
-            codeEntries.ForEach(codeEntry => codeEntry.MemberName = codeEntry.GenerateNameBasedOnNamingPreferences());
-            return codeEntries;
+            var distinguishNamesForMembers = codeEntries as ICodeEntry[] ?? codeEntries.ToArray();
+            distinguishNamesForMembers.ForEach(codeEntry => codeEntry.MemberName = codeEntry.GenerateNameBasedOnNamingPreferences());
+            distinguishNamesForMembers
+                .GroupBy(codeEntryName => codeEntryName.MemberName)
+                .Select(grouping =>
+                {
+                    int i = 0;
+                    grouping.ToList().Skip(1).ForEach(item => { item.MemberName += ++i; });
+                    return grouping;
+                }).SelectMany(grouping => grouping.Select(item => item)).ToList();
+            return distinguishNamesForMembers;
         }
 
         /*
@@ -130,11 +109,11 @@ public {1} {2};
         */
 
         internal const string NoName = "NoName";
+        internal const string NoTypeDetected = "noTypeDetected";
         internal static string GenerateNameBasedOnNamingPreferences(this ICodeEntry codeEntry)
         {
-            
             if (string.IsNullOrEmpty(codeEntry.MemberType))
-                codeEntry.MemberType = "noTypeDetected";
+                codeEntry.MemberType = NoTypeDetected;
             if (!codeEntry.Locators.Any())
                 return codeEntry.MemberType + NoName;
             if (codeEntry.Locators.Any(locator => locator.SearchTypePreference == SearchTypePreferences.name))

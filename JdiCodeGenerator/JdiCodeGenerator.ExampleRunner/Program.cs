@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.IO;
     using System.Linq;
     using Core.Helpers;
     using Core.ImportExport;
@@ -43,7 +44,7 @@
                 "http://www.littlehj.com/",
                 "http://thefounderspledge.org/",
 
-                // "http://www.folchstudio.com/",
+                "http://www.folchstudio.com/",
                 "https://maple.com/",
                 "http://www.racefurniture.com.au/",
                 "http://www1.nyc.gov/html/onenyc/",
@@ -71,7 +72,7 @@
                 "https://www.glaz-displayschutz.de/"
                 
             };
-            var listNotToDisplay = new[] { "html", "head", "body", "#comment", "#text", "div", "meta", "p", "h1", "h2", "h3", "h4", "h5", "h6", "small", "font", "script", "i", "br", "hr", "style", "title", "li", "ul", "img", "span", "noscript" };
+            var listNotToDisplay = new[] { "html", "head", "body", "#comment", "#text", "div", "meta", "p", "h1", "h2", "h3", "h4", "h5", "h6", "small", "font", "script", "i", "br", "hr", "strong", "style", "title", "li", "ul", "img", "span", "noscript" };
             // const string FolderForExportFiles = ".";
             const string FolderForExportFiles = @"D:\333";
             var loader = new PageLoader();
@@ -85,11 +86,24 @@
                 Console.WriteLine("===============================================================================");
                 var codeEntries = loader.GetCodeEntries(url, listNotToDisplay);
                 var entries = codeEntries as IList<ICodeEntry> ?? codeEntries.ToList();
-                entries.ToList().ForEach(elementDefinition => Console.WriteLine(elementDefinition.GenerateCodeForEntry(SupportedLanguages.Java)));
+                using (var writer = new StreamWriter(FolderForExportFiles + @"\" + (300 + fileNumber)))
+                {
+                    writer.WriteLine(@"// {0}", url);
+                    entries.ToList().ForEach(elementDefinition =>
+                    {
+                        // Console.WriteLine(elementDefinition.GenerateCodeForEntry(SupportedLanguages.Java));
+                        var codeEntryString = elementDefinition.GenerateCodeForEntry(SupportedLanguages.Java);
+                        Console.WriteLine(codeEntryString);
+                        writer.WriteLine(codeEntryString);
 
-                exporter.WriteToFile(entries, FolderForExportFiles + @"\" + ++fileNumber);
-                var importedEntries = importer.LoadFromFile(FolderForExportFiles + @"\" + fileNumber);
-                exporter.WriteToFile(importedEntries, FolderForExportFiles + @"\" + (100 + fileNumber));
+                    });
+                    writer.Flush();
+                    writer.Close();
+                }
+
+                exporter.WriteToFile(entries, FolderForExportFiles + @"\" + (100 + ++fileNumber));
+                var importedEntries = importer.LoadFromFile(FolderForExportFiles + @"\" + (100 + fileNumber));
+                exporter.WriteToFile(importedEntries, FolderForExportFiles + @"\" + (200 + fileNumber));
 
             });
 

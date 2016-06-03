@@ -46,6 +46,11 @@
         [InlineData("a@", "A")]
         [InlineData("a@a", "AA")]
         [InlineData("http://www.test.com", "HttpWwwTestCom")]
+
+        [InlineData("file(0)", "File0")]
+        [InlineData("file[0]", "File0")]
+        [InlineData("http://site:111/page.htm?param1=2&param2=word", "HttpSite111PageHtmParam12Param2Word")]
+        [InlineData("http://site:111/page.htm?param1=2+param2=word", "HttpSite111PageHtmParam12Param2Word")]
         [Trait("Category", "NameGeneration")]
         public void EmptyString(string input, string expected)
         {

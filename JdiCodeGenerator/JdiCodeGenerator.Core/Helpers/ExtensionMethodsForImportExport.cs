@@ -14,7 +14,6 @@
             if (null == codeEntries || !entries.Any())
                 return new List<string>();
 
-            // return entries.ToList().Select(item => JsonConvert.SerializeObject(item, new DtoJsonConverter()));
             return entries.ToList().Select(JsonConvert.SerializeObject);
         }
 
@@ -24,11 +23,11 @@
             if(null == serializedCodeEntries || !entries.Any())
                 return new List<ICodeEntry>();
 
-            var settings = new JsonSerializerSettings();
-            settings.NullValueHandling = NullValueHandling.Include;
-            settings.MissingMemberHandling = MissingMemberHandling.Ignore;
-            // settings.ObjectCreationHandling = 
-            // settings.TypeNameHandling = 
+            //var settings = new JsonSerializerSettings
+            //{
+            //    NullValueHandling = NullValueHandling.Include,
+            //    MissingMemberHandling = MissingMemberHandling.Ignore
+            //};
             return entries.ToList().Select(JsonConvert.DeserializeObject<CodeEntry>);
         }
     }

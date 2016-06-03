@@ -72,8 +72,10 @@
     <Compile Include="Example\StringTests3.cs" />
     <Compile Include="Helpers\BestChoiceTests.cs" />
     <Compile Include="Helpers\ExcludeListTests.cs" />
+    <Compile Include="Helpers\GenerateCodeEntryWithBestLocatorTests.cs" />
     <Compile Include="Helpers\NameGenerationTests.cs" />
     <Compile Include="Helpers\SettingNamesTests.cs" />
+    <Compile Include="Mocks\HtmlNodeMock.cs" />
     <Compile Include="ObjectModel\CodeEntryTests.cs" />
     <Compile Include="Plugins\BoilerplateTests.cs" />
     <Compile Include="Plugins\BootstrapTests.cs" />

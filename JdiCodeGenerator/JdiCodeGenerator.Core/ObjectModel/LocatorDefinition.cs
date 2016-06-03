@@ -2,7 +2,7 @@
 {
     using Abstract;
 
-    public class LocatorDefinition // : ILocatorDefinition
+    public class LocatorDefinition
     {
         public bool IsBestChoice { get; set; }
         public bool IsUnique { get; set; }

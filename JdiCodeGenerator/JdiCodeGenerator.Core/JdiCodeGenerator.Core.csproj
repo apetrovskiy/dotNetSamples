@@ -92,11 +92,12 @@
     <Compile Include="ImportExport\CodeEntriesExporter.cs" />
     <Compile Include="ImportExport\CodeEntriesImporter.cs" />
     <Compile Include="ImportExport\DtoJsonConverter.cs" />
-    <Compile Include="ObjectModel\Abstract\ElementTypes.cs" />
+    <Compile Include="ObjectModel\Abstract\HtmlElementTypes.cs" />
     <Compile Include="ObjectModel\Abstract\FindTypes.cs" />
     <Compile Include="ObjectModel\Abstract\ICodeEntry.cs" />
     <Compile Include="ObjectModel\Abstract\ILocatorDefinition.cs" />
     <Compile Include="ObjectModel\Abstract\IFrameworkAlingmentAnalysisPlugin.cs" />
+    <Compile Include="ObjectModel\Abstract\JdiElementTypes.cs" />
     <Compile Include="ObjectModel\Abstract\NamingPreferences.cs" />
     <Compile Include="ObjectModel\Abstract\SearchTypePreferences.cs" />
     <Compile Include="ObjectModel\Abstract\SupportedLanguages.cs" />
@@ -112,6 +113,7 @@
     <Compile Include="ObjectModel\Plugins\BootstrapAndCompetitors\Pure.cs" />
     <Compile Include="ObjectModel\Plugins\BootstrapAndCompetitors\Yui.cs" />
     <Compile Include="ObjectModel\Plugins\BootstrapAndCompetitors\Zimit.cs" />
+    <Compile Include="ObjectModel\Plugins\General.cs" />
     <Compile Include="ObjectModel\Plugins\ReactJs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WebNames.Designer.cs">

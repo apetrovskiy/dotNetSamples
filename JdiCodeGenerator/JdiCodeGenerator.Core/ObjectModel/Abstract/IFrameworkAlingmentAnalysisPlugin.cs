@@ -1,7 +1,9 @@
 ﻿namespace JdiCodeGenerator.Core.ObjectModel.Abstract
 {
+    using HtmlAgilityPack;
+
     public interface IFrameworkAlingmentAnalysisPlugin
     {
-        void Analyze();
+        JdiElementTypes Analyze(HtmlNode node);
     }
 }

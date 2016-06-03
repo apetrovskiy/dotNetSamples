@@ -18,12 +18,48 @@
             return node.Attributes.First(attribute => attribute.Name.ToLower() == attributeName).Value;
         }
 
-        public static string GetOriginalNameOfElement(this HtmlNode node)
+        public static JdiElementTypes ConvertHtmlTypeToJdiType(this HtmlNode node)
         {
-            return !String.IsNullOrEmpty(node.OriginalName) ? node.OriginalName : "*";
+            // var result = JdiElementTypes.Element;
+
+            // var htmlNodeType = new General().Analyze(node.OriginalName);
+            
+            // result = node.ApplyGeneralAnalyzer();
+
+            // TODO: switch it on
+            return node.ApplyApplicableAnalyzers();
+
+            // return result;
         }
 
-        // public static ILocatorDefinition CreateDomLocatorByAttribute(this HtmlNode node, string attributeName, SearchTypePreferences searchTypePreference)
+        internal static JdiElementTypes ApplyApplicableAnalyzers(this HtmlNode node)
+        {
+            var result = JdiElementTypes.Element;
+
+            // TODO: write code here
+            // // apply General
+
+            // apply all applicable
+            // TODO: use the selection the user provided
+            var typesOfAnalyzers = AppDomain.CurrentDomain.GetAssemblies()
+                .Where(assm => assm.FullName.Contains("JdiCodeGenerator.Core"))
+                .SelectMany(assm => assm.GetTypes())
+                .Where(type => type.GetInterfaces().Contains(typeof(IFrameworkAlingmentAnalysisPlugin)));
+
+            typesOfAnalyzers.ToList().ForEach(type =>
+            {
+                result = (JdiElementTypes)type.GetMethod("Analyze").Invoke(Activator.CreateInstance(type), new object[] { node });
+
+            });
+
+            return result;
+        }
+
+        public static string GetOriginalNameOfElement(this HtmlNode node)
+        {
+            return !string.IsNullOrEmpty(node.OriginalName) ? node.OriginalName : "*";
+        }
+
         public static LocatorDefinition CreateDomLocatorByAttribute(this HtmlNode node, string attributeName, SearchTypePreferences searchTypePreference)
         {
             if (!node.Attributes.Contains(attributeName))
@@ -37,7 +73,6 @@
             };
         }
 
-        // public static ILocatorDefinition CreateCssLocator(this HtmlNode node)
         public static LocatorDefinition CreateCssLocator(this HtmlNode node)
         {
             var searchString = node.GenerateElementCss();
@@ -51,7 +86,6 @@
             };
         }
 
-        // public static ILocatorDefinition CreateXpathLocator(this HtmlNode node)
         public static LocatorDefinition CreateXpathLocator(this HtmlNode node)
         {
             var searchString = node.GenerateElementXpath();
@@ -89,14 +123,6 @@
                 HtmlNodeType.Text == node.NodeType)
                 return false;
             return true;
-        }
-
-        [Obsolete("This was applicable only to the initial version")]
-        static string GetClassString(this HtmlNode node)
-        {
-            if (!node.HasAttributes)
-                return string.Empty;
-            return !node.HasAttribute(WebNames.AttributeNameClass) ? string.Empty : node.GetAttributeValue(WebNames.AttributeNameClass);
         }
     }
 }

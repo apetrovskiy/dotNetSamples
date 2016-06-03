@@ -39,47 +39,29 @@
             return result;
         }
 
-        // public static ILocatorDefinition CreateClassLocator(this HtmlNode node)
         public static LocatorDefinition CreateClassLocator(this HtmlNode node)
         {
             return node.CreateDomLocatorByAttribute(WebNames.AttributeNameClass, SearchTypePreferences.className);
         }
 
-        // public static ILocatorDefinition CreateTagLocator(this HtmlNode node)
         public static LocatorDefinition CreateTagLocator(this HtmlNode node)
         {
             return node.CreateDomLocatorByAttribute(WebNames.AttributeNameTag, SearchTypePreferences.tagName);
         }
 
-        // public static ILocatorDefinition CreateIdLocator(this HtmlNode node)
         public static LocatorDefinition CreateIdLocator(this HtmlNode node)
         {
             return node.CreateDomLocatorByAttribute(WebNames.AttributeNameId, SearchTypePreferences.id);
         }
 
-        // public static ILocatorDefinition CreateNameLocator(this HtmlNode node)
         public static LocatorDefinition CreateNameLocator(this HtmlNode node)
         {
             return node.CreateDomLocatorByAttribute(WebNames.AttributeNameName, SearchTypePreferences.name);
         }
 
-        // public static ILocatorDefinition CreateLinkTextLocator(this HtmlNode node)
         public static LocatorDefinition CreateLinkTextLocator(this HtmlNode node)
         {
             return node.CreateDomLocatorByAttribute(WebNames.AttributeNameHref, SearchTypePreferences.linkText);
-        }
-
-        public static ElementTypes ConvertHtmlElementTypeToInternalMemberType(this string elementType)
-        {
-            switch (elementType.ToLower())
-            {
-                case "button":
-                    return ElementTypes.Button;
-                case "input":
-                    return ElementTypes.Input;
-                default:
-                    return ElementTypes.Unknown;
-            }
         }
     }
 }

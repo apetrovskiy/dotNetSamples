@@ -1,11 +1,16 @@
 ﻿namespace JdiCodeGenerator.Core.ObjectModel.Plugins
 {
     using Abstract;
-    public class AngularJs : IFrameworkAlingmentAnalysisPlugin
+    using HtmlAgilityPack;
+
+    public class AngularJs // : IFrameworkAlingmentAnalysisPlugin
     {
-        public void Analyze()
+        public HtmlElementTypes Analyze(HtmlNode node)
         {
-            
+            var result = HtmlElementTypes.Unknown;
+
+
+            return result;
         }
     }
 }

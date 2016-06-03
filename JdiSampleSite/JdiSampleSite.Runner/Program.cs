@@ -14,7 +14,6 @@
             {
                 InitLibraries();
                 host.Start();
-                // InitLibraries();
                 Console.WriteLine("Running on http://localhost:1234");
                 Console.ReadLine();
             }
@@ -28,8 +27,6 @@
 
             typesWithLibrariesSettings.ToList().ForEach(type =>
             {
-                //Console.WriteLine(type.Name);
-                //Console.WriteLine(type.Namespace);
                 type.GetMethod("Apply").Invoke(Activator.CreateInstance(type), null);
 
             });
