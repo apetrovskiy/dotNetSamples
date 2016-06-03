@@ -114,10 +114,10 @@
     <Content Include="Views\Groups.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Views\User.html">
+    <Content Include="Views\bootstrap\User.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Views\Users.html">
+    <Content Include="Views\bootstrap\Users.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

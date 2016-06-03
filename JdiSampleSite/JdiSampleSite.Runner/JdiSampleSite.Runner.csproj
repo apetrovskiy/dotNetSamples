@@ -67,6 +67,10 @@
       <Project>{760e2d3b-21cf-4171-a240-fc5eb28f5958}</Project>
       <Name>JdiSampleSite.Common.Library</Name>
     </ProjectReference>
+    <ProjectReference Include="..\JdiSampleSite.Foundation5.Library\JdiSampleSite.Foundation5.Library.csproj">
+      <Project>{cff1e8ca-b3ef-4082-adb9-73646f92d9f7}</Project>
+      <Name>JdiSampleSite.Foundation5.Library</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

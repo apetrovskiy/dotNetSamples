@@ -60,6 +60,8 @@
     <Compile Include="Models\Group.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Modules\FirstDurandalNancyModule.cs" />
+    <Compile Include="Modules\NewUserModule.cs" />
+    <Compile Include="Modules\UsersModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RootPathProvider.cs" />
     <Compile Include="Settings\CommonLibSettings.cs" />

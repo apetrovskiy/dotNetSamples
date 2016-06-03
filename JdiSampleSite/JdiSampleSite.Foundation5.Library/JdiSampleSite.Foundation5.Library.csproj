@@ -44,14 +44,20 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Settings\FoundationLibSettings.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\JdiSampleSite.Common.Library\JdiSampleSite.Common.Library.csproj">
       <Project>{760E2D3B-21CF-4171-A240-FC5EB28F5958}</Project>
       <Name>JdiSampleSite.Common.Library</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\foundation\user.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Views\foundation\users.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
