@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/yeti.bootstrap.min.css" rel="stylesheet" />
+    <title>User</title>
+    <style>
+        .btn a {
+            color: white;
+            text-decoration: none;
+        }
+
+        body {
+            background-color: #F1F1F1;
+        }
+    </style>
+</head>
+<body>
+    <h1>New user</h1>
+    <form class="form">
+        <div class="form-group highlight">
+            <label for="nameField">Name</label>
+            <input type="text" class="form-control" id="nameField" placeholder="Your Name"/>
+        </div>
+        <input class="form-control" type="text" placeholder="Disabled input here..." disabled>
+    </form>
+
+    <div class="well well-sm">
+        <form class="form-inline">
+            <div class="form-group">
+                <input type="email" class="form-control" id="emailField"
+                       ➥placeholder="Enter email">
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control"
+                       ➥id="passwordField" placeholder="Password">
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox"> Remember me
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" value="Male">
+                    Male
+                </label>
+            </div>
+            <button type="submit" class="btn btn-primary">
+                Sign in
+            </button>
+        </form>
+    </div>
+
+    <div class="container-fluid">
+        <form action="/bootstrap/users" method="POST" class="form-horizontal" ">
+            <!--<input type="hidden" name="redirect" value="/bootstrap/users"/>-->
+            <!--<input type="hidden" name="_method" value="PUT"/>-->
+            <input type="hidden" id="id" name="id" value="@Model.Id" class="form-control">
+            <div class="form-group has-success">
+                <label for="firstNameId" class="control-label col-xs-2 col-sm-2 col-md-2 col-lg-2">First name:</label>
+                <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+                    <input id="firstNameId" name="firstName" value="@Model.FirstName" class="form-control">
+                </div>
+            </div>
+            <div class="form-group has-error">
+                <label for="lastNameId" class="control-label col-xs-2 col-sm-2 col-md-2 col-lg-2">Last name:</label>
+                <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+                    <input id="lastNameId" name="lastName" value="@Model.LastName" class="form-control">
+                </div>
+            </div>
+            <div class="form-group has-warning">
+                <label for="cityId" class="col-xs-2 col-sm-2 col-md-2 col-lg-2">City:</label>
+                <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+                    <input id="cityId" name="city" value="@Model.City" class="form-control">
+                </div>
+            </div>
+            <div class="form-group has-feedback">
+                <label for="emailId" class="col-xs-2 col-sm-2 col-md-2 col-lg-2">Email:</label>
+                <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+                    <span class="help-block">Email structure is adressee@site.domain</span>
+                    <input id="emailId" name="email" type="email" value="@Model.Email" class="form-control">
+                </div>
+            </div>
+            <input type="submit" value="Create" class="btn btn-success"/>
+            <button type="submit" class="btn btn-primary">Create</button>
+            <button type="reset" class="btn btn-default">Reset</button>
+        </form>
+    </div>
+    <script src="~/Scripts/jquery-2.2.3.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+</body>
+</html>

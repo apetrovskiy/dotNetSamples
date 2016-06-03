@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/cerulean.bootstrap.min.css" rel="stylesheet" />
+    <title>Users</title>
+    <style>
+        .btn a {
+            color: white;
+            text-decoration: none;
+        }
+
+        body {
+            background-color: #F1F1F1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="page-header">
+            <h1>Users<small> that are here</small></</h1>
+        </div>
+    </div>
+<div class="panel panel-default container-fluid">
+    <div class="panel-heading">
+        ATTENTION
+    </div>
+    <div class="panel-body">
+        @Each.Users
+        <br/>
+        <div class="row">
+            <div class="col-sm-2 col-md-2 col-lg-1">
+                <p>
+                    <a href="/bootstrap/users/@Current.Id">Edit</a>
+                </p>
+            </div>
+            <div class="col-sm-2 col-md-2 col-lg-1">
+                <form action="/bootstrap/users/@Current.Id" method="POST">
+                    <input type="hidden" name="_method" value="DELETE"/>
+                    <td>
+                        <input type="submit" value="Delete"/>
+                    </td>
+                </form>
+            </div>
+            <div class="col-sm-2 col-md-2 col-lg-1">
+                <p>@Current.FirstName</p>
+            </div>
+            <div class="col-sm-2 col-md-2 col-lg-1">
+                <p>@Current.LastName</p>
+            </div>
+            <div class="col-sm-4 col-md-4 col-lg-2the ">
+                <p>@Current.BirthDate</p>
+            </div>
+            <div class="col-sm-2 col-md-2 col-lg-1">
+                <p>@Current.City</p>
+            </div>
+            <div class="col-sm-2 col-md-2 col-lg-1">
+                <p>@Current.Email</p>
+            </div>
+        </div>
+        @EndEach
+    </div>
+
+    <div class="panel-footer">
+        <a href="#" class="btn btn-danger btn-sm">Agree</a>
+        <a href="#" class="btn btn-default btn-sm">Decline</a>
+    </div>
+</div>
+<div class="btn-group" role="group" aria-label="...">
+    <a href="/bootstrap/users/user" id="createUserId" name="createUser" class="btn btn-success">New user</a>
+    <a href="/bootstrap/users" id="createUserId" name="createUser" class="btn btn-success">New user</a>
+    <button type="button" class="btn btn-default">Left</button>
+    <button type="button" class="btn btn-default">Middle</button>
+    <button type="button" class="btn btn-default">Right</button>
+</div>
+<!--<div class="container-fluid">
+
+    <a href="/bootstrap/users/user" id="createUserId" name="createUser" class="btn btn-success">New user</a>
+</div>-->
+
+
+    <div class="dropdown">
+        <a data-toggle="dropdown" data-target="#" href="http://www.google.com">
+            Dropdown <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+            <li><a href="#">Link 1</a></li>
+            <li><a href="#">Link 2</a></li>
+            <li><a href="#">Link 3</a></li>
+            <li><a href="#">Link 4</a></li>
+        </ul>
+    </div>
+
+
+<script src="~/Scripts/jquery-2.2.3.js"></script>
+<script src="~/Scripts/bootstrap.js"></script>
+</body>
+</html>
