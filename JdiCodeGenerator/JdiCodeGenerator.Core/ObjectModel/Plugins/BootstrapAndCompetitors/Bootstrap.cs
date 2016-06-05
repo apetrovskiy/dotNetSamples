@@ -1,10 +1,35 @@
 ﻿namespace JdiCodeGenerator.Core.ObjectModel.Plugins.BootstrapAndCompetitors
 {
+    using System;
+    using System.Collections.Generic;
     using Abstract;
     using HtmlAgilityPack;
 
     public class Bootstrap : IFrameworkAlingmentAnalysisPlugin
     {
+        public IEnumerable<IRule> Rules { get; set; }
+
+        public Bootstrap()
+        {
+            Rules = new List<IRule>
+            {
+                new Rule
+                {
+                    SourceType = HtmlElementTypes.Input,
+                    TargetType = JdiElementTypes.TextField,
+                    Conditions = new List<IRuleCondition>
+                    {
+                        new RuleCondition
+                        {
+                            Relationship = NodeRelationships.Self,
+                            Marker = Markers.Class,
+                            MarkerValue = "form-control"
+                        }
+                    }
+                }
+            };
+        }
+
         public JdiElementTypes Analyze(HtmlNode node)
         {
             // var result = JdiElementTypes.Element;
