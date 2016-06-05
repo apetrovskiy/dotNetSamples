@@ -7,8 +7,8 @@
     <ProjectGuid>{AAB3E8C0-F488-4955-A4C1-0B3B2088AC4F}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>JdiSampleSite.Runner</RootNamespace>
-    <AssemblyName>JdiSampleSite.Runner</AssemblyName>
+    <RootNamespace>JdiSampleSite.ConsoleRunner</RootNamespace>
+    <AssemblyName>JdiSampleSite.ConsoleRunner</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -51,8 +51,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\JdiSampleSite.Common.Library\Properties\AssemblyInfo.cs">
+      <Link>Properties\AssemblyInfo.cs</Link>
+    </Compile>
     <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

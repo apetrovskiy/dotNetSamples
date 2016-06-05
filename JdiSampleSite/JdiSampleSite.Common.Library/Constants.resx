@@ -129,6 +129,9 @@
   <data name="Groups" xml:space="preserve">
     <value>/groups</value>
   </data>
+  <data name="RootPath" xml:space="preserve">
+    <value>/{RootPath}</value>
+  </data>
   <data name="User" xml:space="preserve">
     <value>/{id:guid}</value>
   </data>
@@ -137,6 +140,9 @@
   </data>
   <data name="Users" xml:space="preserve">
     <value>/users</value>
+  </data>
+  <data name="ViewNameDefault" xml:space="preserve">
+    <value>default</value>
   </data>
   <data name="ViewNameGroup" xml:space="preserve">
     <value>group</value>

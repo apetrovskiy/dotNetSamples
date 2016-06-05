@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JdiSampleSite.Runner", "JdiSampleSite.Runner\JdiSampleSite.Runner.csproj", "{AAB3E8C0-F488-4955-A4C1-0B3B2088AC4F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JdiSampleSite.ConsoleRunner", "JdiSampleSite.ConsoleRunner\JdiSampleSite.ConsoleRunner.csproj", "{AAB3E8C0-F488-4955-A4C1-0B3B2088AC4F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JdiSampleSite.Common.Library", "JdiSampleSite.Common.Library\JdiSampleSite.Common.Library.csproj", "{760E2D3B-21CF-4171-A240-FC5EB28F5958}"
 EndProject

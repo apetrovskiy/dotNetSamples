@@ -59,7 +59,10 @@
     <Compile Include="Models\Abstract\IUser.cs" />
     <Compile Include="Models\Group.cs" />
     <Compile Include="Models\User.cs" />
+    <Compile Include="Modules\DefaultModule.cs" />
     <Compile Include="Modules\FirstDurandalNancyModule.cs" />
+    <Compile Include="Modules\GroupsModule.cs" />
+    <Compile Include="Modules\NewGroupModule.cs" />
     <Compile Include="Modules\NewUserModule.cs" />
     <Compile Include="Modules\UsersModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

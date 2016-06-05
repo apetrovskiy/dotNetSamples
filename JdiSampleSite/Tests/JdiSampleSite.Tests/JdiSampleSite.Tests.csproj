@@ -94,11 +94,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\..\JdiSampleSite.Common.Library\Properties\AssemblyInfo.cs">
+      <Link>Properties\AssemblyInfo.cs</Link>
+    </Compile>
     <Compile Include="Modules\GroupsModuleTests.cs" />
     <Compile Include="Modules\NewGroupModuleTests.cs" />
     <Compile Include="Modules\NewUserModuleTests.cs" />
     <Compile Include="Modules\UsersModuleTests.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

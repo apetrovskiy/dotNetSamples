@@ -97,6 +97,15 @@ namespace JdiSampleSite.Common.Library {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to /{RootPath}.
+        /// </summary>
+        public static string RootPath {
+            get {
+                return ResourceManager.GetString("RootPath", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to /{id:guid}.
         /// </summary>
         public static string User {
@@ -120,6 +129,15 @@ namespace JdiSampleSite.Common.Library {
         public static string Users {
             get {
                 return ResourceManager.GetString("Users", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to default.
+        /// </summary>
+        public static string ViewNameDefault {
+            get {
+                return ResourceManager.GetString("ViewNameDefault", resourceCulture);
             }
         }
         
