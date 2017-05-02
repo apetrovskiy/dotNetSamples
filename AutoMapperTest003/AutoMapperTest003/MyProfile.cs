@@ -16,6 +16,7 @@
         {
             this.CreateMap<Class1, Class2>()
                 .ForMember("FirstName", d => d.UseValue("AAA"))
+                .ForMember("LastName", d => d.UseValue("BBB"))
                 ; // .ForMember(d => d.FirstName = "Aaa");
         }
     }

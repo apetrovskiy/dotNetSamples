@@ -19,19 +19,6 @@ namespace testSpecFlow002
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
     [NUnit.Framework.DescriptionAttribute("Feature01")]
-    [NUnit.Framework.CategoryAttribute("BeforeTestRun")]
-    [NUnit.Framework.CategoryAttribute("BeforeFeature")]
-    [NUnit.Framework.CategoryAttribute("AfterFeature")]
-    [NUnit.Framework.CategoryAttribute("AfterTestRun")]
-    [NUnit.Framework.CategoryAttribute("tag01")]
-    [NUnit.Framework.CategoryAttribute("Before")]
-    [NUnit.Framework.CategoryAttribute("After")]
-    [NUnit.Framework.CategoryAttribute("BeforeScenario")]
-    [NUnit.Framework.CategoryAttribute("AfterScenario")]
-    [NUnit.Framework.CategoryAttribute("BeforeScenarioBlock")]
-    [NUnit.Framework.CategoryAttribute("AfterScenarioBlock")]
-    [NUnit.Framework.CategoryAttribute("BeforeStep")]
-    [NUnit.Framework.CategoryAttribute("AfterStep")]
     public partial class Feature01Feature
     {
         
@@ -45,20 +32,7 @@ namespace testSpecFlow002
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
             TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Feature01", "\tIn order to avoid silly mistakes\r\n\tAs a math idiot\r\n\tI want to be told the sum o" +
-                    "f two numbers", ProgrammingLanguage.CSharp, new string[] {
-                        "BeforeTestRun",
-                        "BeforeFeature",
-                        "AfterFeature",
-                        "AfterTestRun",
-                        "tag01",
-                        "Before",
-                        "After",
-                        "BeforeScenario",
-                        "AfterScenario",
-                        "BeforeScenarioBlock",
-                        "AfterScenarioBlock",
-                        "BeforeStep",
-                        "AfterStep"});
+                    "f two numbers", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -92,26 +66,28 @@ namespace testSpecFlow002
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Add two numbers")]
+        [NUnit.Framework.CategoryAttribute("ScenarioName")]
         public virtual void AddTwoNumbers()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add two numbers", ((string[])(null)));
-#line 8
-this.ScenarioSetup(scenarioInfo);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add two numbers", new string[] {
+                        "ScenarioName"});
 #line 9
- testRunner.Given("I have entered 50 into the calculator", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line 10
- testRunner.And("I have entered 70 into the calculator", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given("I have entered 50 into the calculator", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 11
- testRunner.And("I have entered 80 into the calculator", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I have entered 70 into the calculator", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 12
- testRunner.When("I press add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("I have entered 80 into the calculator", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 13
- testRunner.And("I press add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 15
- testRunner.Then("the result should be 200 on the screen", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 16
  testRunner.When("I press add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 14
+ testRunner.And("I press add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 16
+ testRunner.Then("the result should be 200 on the screen", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 17
+ testRunner.When("I press add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 18
  testRunner.Then("the result should be 200 on the screen", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

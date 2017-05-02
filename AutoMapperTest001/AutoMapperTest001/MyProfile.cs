@@ -1,7 +1,8 @@
 ﻿namespace AutoMapperTest001
 {
     using AutoMapper;
-    public class MyProfile : Profile
+
+    class MyProfile : Profile
     {
         public MyProfile()
         {

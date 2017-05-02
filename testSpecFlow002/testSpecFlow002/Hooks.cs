@@ -30,10 +30,22 @@
             Console.WriteLine("BeforeScenarioBlock");
         }
 
+        [BeforeScenario()]
+        public void BeforeAnyScenario()
+        {
+            Console.WriteLine("BeforeScenario Any");
+        }
+
+        [BeforeScenario("ScenarioName")]
+        public void BeforeScenarioByName()
+        {
+            Console.WriteLine("BeforeScenario ScenarioName");
+        }
+
         [BeforeScenario("BeforeScenario")]
         public void BeforeScenario()
         {
-            Console.WriteLine("BeforeScenario");
+            Console.WriteLine("BeforeScenario BeforeScenario");
         }
 
         [BeforeStep("BeforeStep")]
@@ -51,7 +63,19 @@
         [AfterScenario("AfterScenario")]
         public void AfterScenario()
         {
-            Console.WriteLine("AfterScenario");
+            Console.WriteLine("AfterScenario AfterScenario");
+        }
+
+        [AfterScenario()]
+        public void AfterAnyScenario()
+        {
+            Console.WriteLine("AfterScenario Any");
+        }
+
+        [AfterScenario("ScenarioName")]
+        public void AfterScenarioByName()
+        {
+            Console.WriteLine("AfterScenario ScenarioName");
         }
 
         [AfterScenarioBlock("AfterScenarioBlock")]
@@ -60,10 +84,16 @@
             Console.WriteLine("AfterScenarioBlock");
         }
 
+        [AfterFeature]
+        public static void AfterAnyFeature()
+        {
+            Console.WriteLine("AfterFeature Any");
+        }
+
         [AfterFeature("AfterFeature")]
         public static void AfterFeature()
         {
-            Console.WriteLine("AfterFeature");
+            Console.WriteLine("AfterFeature AfterFeature");
         }
 
         [AfterTestRun()]

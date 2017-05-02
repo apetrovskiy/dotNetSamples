@@ -1,10 +1,11 @@
-﻿@BeforeTestRun @BeforeFeature @AfterFeature @AfterTestRun @tag01 @Before @After @BeforeScenario @AfterScenario @BeforeScenarioBlock @AfterScenarioBlock @BeforeStep @AfterStep
+﻿#@BeforeTestRun @BeforeFeature @AfterFeature @AfterTestRun @tag01 @Before @After @BeforeScenario @AfterScenario @BeforeScenarioBlock @AfterScenarioBlock @BeforeStep @AfterStep
 Feature: Feature01
 	In order to avoid silly mistakes
 	As a math idiot
 	I want to be told the sum of two numbers
 
 # @tag01 @Before @After @BeforeScenario @AfterScenario @BeforeScenarioBlock @AfterScenarioBlock @BeforeStep @AfterStep
+@ScenarioName
 Scenario: Add two numbers
 	Given I have entered 50 into the calculator
 	And I have entered 70 into the calculator
