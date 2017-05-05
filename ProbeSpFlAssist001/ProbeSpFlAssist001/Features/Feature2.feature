@@ -5,9 +5,13 @@
 
 @mytag
 Scenario Outline: Add two numbers
+	#@given1
 	Given I have entered <first> into the calculator
+	#@given2
 	And I have entered <second> into the calculator
+	#@when1
 	When I press add
+	#@then1
 	Then the result should be <result> on the screen
 
 	Examples: 
