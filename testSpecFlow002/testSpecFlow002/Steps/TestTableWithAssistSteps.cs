@@ -1,6 +1,4 @@
-﻿
-
-namespace testSpecFlow002
+﻿namespace testSpecFlow002
 {
     using System;
     using TechTalk.SpecFlow;

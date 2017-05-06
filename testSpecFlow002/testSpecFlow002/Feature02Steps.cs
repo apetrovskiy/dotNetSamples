@@ -1,7 +1,4 @@
-﻿using System;
-using TechTalk.SpecFlow;
-
-namespace testSpecFlow002
+﻿namespace testSpecFlow002
 {
     using System.Collections.Generic;
     using System.Linq;
