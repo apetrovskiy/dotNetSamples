@@ -21,7 +21,7 @@ namespace testNbehaveWithCastle
         [Test]
         public void should_add_1_plus_1_correctly()
         {
-            Feature.AddScenario("title2")
+            Feature.AddScenario()
                 .WithHelperObject<AddNumbers>()
                 .Given("I have entered 1 into the calculator")
                 .And("I have entered 1 into the calculator")
