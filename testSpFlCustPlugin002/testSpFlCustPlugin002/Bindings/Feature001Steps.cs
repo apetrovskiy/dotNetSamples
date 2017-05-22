@@ -1,5 +1,6 @@
 ﻿namespace testSpFlCustPlugin002.Bindings
 {
+    using System.Threading;
     using TechTalk.SpecFlow;
 
     [Binding]
@@ -16,7 +17,8 @@
             // additional string/Table parameters can be defined on the step definition
             // method. 
 
-            ScenarioContext.Current.Pending();
+            // ScenarioContext.Current.Pending();
+            Thread.Sleep(2000);
         }
 
         [When("I press add")]
@@ -24,7 +26,8 @@
         {
             //TODO: implement act (action) logic
 
-            ScenarioContext.Current.Pending();
+            // ScenarioContext.Current.Pending();
+            Thread.Sleep(2000);
         }
 
         [Then("the result should be (.*) on the screen")]
@@ -32,7 +35,8 @@
         {
             //TODO: implement assert (verification) logic
 
-            ScenarioContext.Current.Pending();
+            // ScenarioContext.Current.Pending();
+            Thread.Sleep(2000);
         }
     }
 }
