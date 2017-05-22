@@ -85,6 +85,12 @@
     </Compile>
     <Compile Include="Feature02Steps.cs" />
     <Compile Include="Hooks.cs" />
+    <Compile Include="MethodOutput.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MethodOutput.feature</DependentUpon>
+    </Compile>
+    <Compile Include="MethodOutputSteps.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Steps\TestTableAsDictionarySteps.cs" />
     <Compile Include="TestTableAsDictionary.feature.cs">
@@ -100,7 +106,9 @@
     <Compile Include="Steps\TestTableWithAssistSteps.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Feature01.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Feature01.feature.cs</LastGenOutput>
@@ -108,6 +116,10 @@
     <None Include="Feature02.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Feature02.feature.cs</LastGenOutput>
+    </None>
+    <None Include="MethodOutput.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>MethodOutput.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
     <None Include="TestTableAsDictionary.feature">
@@ -121,6 +133,20 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ProbeGen.SpecFlowPlugin\ProbeGen.SpecFlowPlugin.csproj">
+      <Project>{42c96d84-d57f-42d5-895f-d009d7bbd0ea}</Project>
+      <Name>ProbeGen.SpecFlowPlugin</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProbeRuntime.SpecFlowPlugin\ProbeRuntime.SpecFlowPlugin.csproj">
+      <Project>{894155c1-5240-42ac-9c38-dcf234870aa5}</Project>
+      <Name>ProbeRuntime.SpecFlowPlugin</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProbeRuntimeGen.SpecFlowPlugin\ProbeRuntimeGen.SpecFlowPlugin.csproj">
+      <Project>{3cd971c8-35e4-4c64-b1b6-d8fcef150b63}</Project>
+      <Name>ProbeRuntimeGen.SpecFlowPlugin</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\SpecFlow.Plus.Excel.1.4.2\build\SpecFlow.Plus.Excel.targets" Condition="Exists('..\packages\SpecFlow.Plus.Excel.1.4.2\build\SpecFlow.Plus.Excel.targets')" />

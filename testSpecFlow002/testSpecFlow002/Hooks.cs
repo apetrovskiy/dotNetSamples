@@ -2,10 +2,27 @@
 {
     using System;
     using TechTalk.SpecFlow;
+    using TechTalk.SpecFlow.Bindings;
 
     [Binding]
     public class Hooks
     {
+        private readonly FeatureContext featureContext;
+        private readonly ScenarioContext scenarioContext;
+        // private readonly ScenarioBlock scenarioBlock;
+        // private readonly StepContext stepContext;
+
+        // public Hooks(FeatureContext featureContext, ScenarioContext scenarioContext, ScenarioBlock scenarioBlock, StepContext stepContext)
+        // public Hooks(FeatureContext featureContext, ScenarioContext scenarioContext, StepContext stepContext)
+        public Hooks(FeatureContext featureContext, ScenarioContext scenarioContext)
+        // public Hooks(FeatureContext featureContext, ScenarioContext scenarioContext, ScenarioBlock scenarioBlock)
+        {
+            this.featureContext = featureContext;
+            this.scenarioContext = scenarioContext;
+            // this.scenarioBlock = scenarioBlock;
+            // this.stepContext = stepContext;
+        }
+
         [Before("tag01")]
         public void Before()
         {
@@ -52,6 +69,26 @@
         public void BeforeStep()
         {
             Console.WriteLine("BeforeStep");
+        }
+
+        [AfterScenarioBlock()]
+        public void AfterAnyBlock()
+        {
+            Console.WriteLine("AfterScearioBlock any");
+        }
+
+        [AfterStep()]
+        public void AfterAnyStep()
+        {
+            Console.WriteLine("AfterStep any");
+            // this.featureContext.FeatureInfo.
+            // this.featureContext.
+            // this.scenarioContext.ScenarioInfo.
+            // this.scenarioContext.TestError.Message
+            // this.scenarioContext.ScenarioInfo.
+            // this.scenarioBlock.
+            // this.stepContext.
+            // this.stepContext.
         }
 
         [AfterStep("AfterStep")]
