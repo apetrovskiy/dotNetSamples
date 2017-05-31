@@ -57,6 +57,8 @@
         public void BeforeScenarioByName()
         {
             Console.WriteLine("BeforeScenario ScenarioName");
+            StaticData.InitialValue = StaticData.Flag;
+            Console.WriteLine("Flag = {0}", StaticData.Flag);
         }
 
         [BeforeScenario("BeforeScenario")]
@@ -113,6 +115,9 @@
         public void AfterScenarioByName()
         {
             Console.WriteLine("AfterScenario ScenarioName");
+            StaticData.Flag = StaticData.InitialValue;
+            StaticData.InitialValue = false;
+            Console.WriteLine("Flag = {0}", StaticData.Flag);
         }
 
         [AfterScenarioBlock("AfterScenarioBlock")]

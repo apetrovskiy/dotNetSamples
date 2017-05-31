@@ -3,6 +3,8 @@ using TechTalk.SpecFlow;
 
 namespace testSpecFlow002
 {
+    using NUnit.Framework;
+
     [Binding]
     public class Feature01Steps
     {
@@ -27,6 +29,7 @@ namespace testSpecFlow002
                 Console.WriteLine("OK");
             else
                 Console.WriteLine("not OK");
+            Assert.AreEqual(p0, _numbers);
         }
 
     }
