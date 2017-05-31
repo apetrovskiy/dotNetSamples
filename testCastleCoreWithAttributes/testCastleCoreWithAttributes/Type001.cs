@@ -2,8 +2,8 @@
 {
     public class Type001
     {
-        public int IntData { get; set; }
-        public string StrData { get; set; }
-        public bool? BoolData { get; set; }
+        public virtual int IntData { get; set; }
+        public virtual string StrData { get; set; }
+        public virtual bool? BoolData { get; set; }
     }
 }
