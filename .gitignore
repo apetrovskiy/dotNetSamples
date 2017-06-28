@@ -173,3 +173,5 @@ obj
 # packages.config
 debug
 release
+
+packages/
