@@ -76,30 +76,40 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BackgroundWithExamples.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BackgroundWithExamples.feature</DependentUpon>
+    </Compile>
     <Compile Include="Feature01.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Feature01.feature</DependentUpon>
     </Compile>
-    <Compile Include="Feature01Steps.cs" />
+    <Compile Include="Steps\Feature01Steps.cs" />
     <Compile Include="Feature02.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Feature02.feature</DependentUpon>
     </Compile>
-    <Compile Include="Feature02Steps.cs" />
+    <Compile Include="Steps\Feature02Steps.cs" />
     <Compile Include="FeatureWithOutlines.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>FeatureWithOutlines.feature</DependentUpon>
     </Compile>
     <Compile Include="Hooks.cs" />
+    <Compile Include="Lambda.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Lambda.feature</DependentUpon>
+    </Compile>
     <Compile Include="MethodOutput.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>MethodOutput.feature</DependentUpon>
     </Compile>
-    <Compile Include="MethodOutputSteps.cs" />
+    <Compile Include="Steps\MethodOutputSteps.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StaticData.cs" />
     <Compile Include="Steps\CommonSteps.cs" />
@@ -120,6 +130,10 @@
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
+    <None Include="BackgroundWithExamples.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>BackgroundWithExamples.feature.cs</LastGenOutput>
+    </None>
     <None Include="Feature01.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Feature01.feature.cs</LastGenOutput>
@@ -131,6 +145,10 @@
     <None Include="FeatureWithOutlines.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>FeatureWithOutlines.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Lambda.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Lambda.feature.cs</LastGenOutput>
     </None>
     <None Include="MethodOutput.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
