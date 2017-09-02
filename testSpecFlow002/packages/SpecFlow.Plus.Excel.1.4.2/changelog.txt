@@ -1,0 +1,98 @@
+﻿1.4.2 - 2016/07/21
+
+Remove PowerShell Scrips and move adding of the MSBuild targets file to NuGet infrastructure
+
+
+1.4.1 - 2016/07/20
+
+Sign PowerShell Scripts
+
+
+
+1.4.0 - 2016/05/25
+
+Upgrade to SpecFlow 2.1
+
+
+
+1.2.0 - 2014/04/23
+
+This is the first production release. The component can be purchased as part of 
+SpecFlow+. See http://www.specflow.org/plus/ for details.
+
+Evaluation: You can evaluate all features of SpecFlow+ Excel for free. 
+In evaluation mode, an extra scenario is generated with title 
+"SpecFlow+ Excel Evaluation Mode". Please purchase at 
+http://www.specflow.org/plus/ to remove this limitation.
+See http://www.specflow.org/plus/Evaluation for details.
+
+Documentation: Please also check the new documentation pages at 
+http://www.specflow.org/plus/documentation.
+
+Migration from beta releases:
+The name and the ID of the nuget package has been changed to 
+SpecFlow.Plus.Excel. There is an updated compatibility package created with the 
+old name, that only contains a dependency to the new package, but we recommend 
+to use the new package directly.
+
+
+New Features:
+#15683: Support for longer scenario titles (worksheet names are restricted to 
+        31 characters). When you enter "Scenario:" or "Scenario Outline:" in a 
+        cell in the first column, the content of the second column cell in the 
+        same row will be used as scenario title. See "Basic Scenario" feature 
+        for details.
+#16232: The feature does not need to be tagged to be able to extend scenario 
+        outline examples from Excel. (Previously an @external-source tag was 
+        necessary.)
+#16254: Allow including generated feature files (from Excel) to the project 
+        without making them sub-items of the Excel file. The generated feature 
+        files are named like MyCalculation.feature.xlsx.feature.
+#16227: Allow specifying worksheet name for Excel examples using the 
+        @source:MyExcelFile.xlsx:Sheet1 format. 
+        If worksheet name is not specified, the plugin tries to use a sheet 
+		named like the scenario outline or uses the first worksheet if there is
+		no match.
+
+Fixed issues:
+#15203: Loading scenario outline examples does not work with unit test provider 
+        'SpecRun+NUnit' and 'SpecRun+MsTest'.
+#16210: Unable to use Excel examples from NUnit. NUnit does not support 
+        category names including '-'. The tag is not necessary anymore, see 
+        #16232.
+#15682: Feature files are re-generated unnecessarily because of .NET version 
+        differences.
+#16240: ForceGeneration has to be set to use Excel examples.
+#13833: New and renamed files are not processed by build-time generation
+
+
+1.1.0 - 2014/01/16
+
+New Features:
+#13710: Background can be defined a worksheet with name "Background" (or the 
+        equivalent in the feature language)
+#13813: The plugin generates a plain-text feature file in addition to the test 
+        class in order to help navigation, debugging, etc.
+      - The generation can be switched off by specifying a "skip-feature-file" 
+        tag on the feature excel. 
+      - When the generated feature file is included into the project, the 
+        "Custom Tool" setting has to be cleared out in the project node, and it 
+        has to be added as a sub-item of the excel file to avoid duplicate 
+        generation.
+
+Fixed issues:
+#13709: Decimal placeholders are generated according to the machine culture not 
+        to the feature language
+#13712: Tables containing merged cells may cause table parts not processed
+#13726: Double test platform configuration (SpecRun+NUnit) generates code that 
+        does not compile
+#13760: Data type formatting is not applied for cells calculated with formulas
+
+Known issues:
+#13833: he build target in Visual Studio 2013 is not notified when a new file is
+added or a file is removed. As a workaround, you need to re-open Visual Studio.
+
+
+1.0.0 - 2013/12/13
+
+Initial release
