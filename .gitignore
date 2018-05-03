@@ -166,12 +166,15 @@ pip-log.txt
 ## project-specific
 ######################
 
-obj
 *.log
 *.dll
 *.exe
 # packages.config
-debug
-release
+[Oo]bj
+[Bb]in
+[Dd]ebug*/
+[Rr]elease*/
+v15
+# https://stackoverflow.com/questions/4308610/how-to-ignore-certain-files-in-git
 
 packages/
