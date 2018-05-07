@@ -12,6 +12,9 @@ namespace testTour00001
         {
             testExceptionSyntax();
             testStringFormats();
+            MyFun2<int>.F();
+            MyFan3.Run();
+            Employee.Run();
 
             Console.ReadKey();
         }
@@ -60,5 +63,100 @@ namespace testTour00001
     {
         public string Name { get; set; }
         public DateTime DateOfBirth { get; set; }
+    }
+
+    public class Fun1
+    {
+        protected int x;
+
+        static void Funny(Fun1 a, MyFun1 b)
+        {
+            a.x = 1;
+            b.x = 1;
+        }
+    }
+
+    public class MyFun1 : Fun1
+    {
+        static void Funny(Fun1 a, MyFun1 b)
+        {
+            // a.x = 1;
+            b.x = 1;
+        }
+    }
+
+    class Fun2<T>
+    {
+        protected T x;
+    }
+
+    class MyFun2<T> : Fun2<T>
+    {
+        public static void F()
+        {
+            MyFun2<T> dt = new MyFun2<T>();
+            MyFun2<int> di = new MyFun2<int>();
+            MyFun2<string> ds = new MyFun2<string>();
+            dt.x = default(T);
+            di.x = 76;
+            ds.x = "fun";
+        }
+    }
+
+    class MyFan3
+    {
+        static void Fun()
+        {
+            Console.WriteLine("Fun()");
+        }
+
+        static void Fun(object x)
+        {
+            Console.WriteLine("Fun(object)");
+        }
+
+        static void Fun(int x)
+        {
+            Console.WriteLine("Fun(int)");
+        }
+
+        static void Fun(double x)
+        {
+            Console.WriteLine("Fun(double)");
+        }
+
+        public static void Run()
+        {
+            Fun("1.0");
+        }
+    }
+
+    class Employee
+    {
+        private static int nextEmpID;
+        private int empID;
+
+        public Employee()
+        {
+            empID = nextEmpID++;
+        }
+
+        public static int GetNextEmpID()
+        {
+            return nextEmpID;
+        }
+
+        public static void SetNextEmpID(int value)
+        {
+            nextEmpID = value;
+        }
+
+        public static void Run()
+        {
+            Employee.SetNextEmpID(76);
+            Employee e1 = new Employee();
+            Employee e2 = new Employee();
+            Console.WriteLine(Employee.GetNextEmpID());
+        }
     }
 }
