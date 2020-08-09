@@ -1,4 +1,7 @@
 namespace MathService
 
 module MyMath =
-    let squaresOfOdds xs = Seq.empty<int>
+    let private isOdd x = x % 2 <> 0
+    let squaresOfOdds xs =
+        xs
+        |> Seq.filter isOdd

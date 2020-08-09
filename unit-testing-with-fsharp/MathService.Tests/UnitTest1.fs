@@ -8,6 +8,7 @@ type TestClass () =
     member this.TestMethodPassing() =
         Assert.True(true)
     
+    [<Ignore("")>]
     [<Test>]
     member this.FailEveryTime() = Assert.True(false)
 
@@ -16,6 +17,12 @@ type TestClass () =
         let expected = Seq.empty<int> |> Seq.toList
         let actual = MyMath.squaresOfOdds [2; 4; 6; 8; 10]
         Assert.AreEqual(expected, actual)
+
+    [<Test>]
+    member this.TestOnesAndEvens() =
+        let expected = [1; 1; 1; 1]
+        let actual = MyMath.squaresOfOdds [2; 1; 4; 1; 6; 1; 8; 1; 10]
+        Assert.That(actual, Is.EqualTo(expected))
 
 (*
 [<SetUp>]
