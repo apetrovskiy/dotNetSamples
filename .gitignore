@@ -178,3 +178,5 @@ v15
 # https://stackoverflow.com/questions/4308610/how-to-ignore-certain-files-in-git
 
 packages/
+*.db
+unit-testing-with-fsharp/.ionide/symbolCache.db
