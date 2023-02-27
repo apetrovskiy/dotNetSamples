@@ -95,7 +95,7 @@
     "babel-eslint": "^8.2.2",
     "babel-plugin-istanbul": "^4.1.5",
     "babel-plugin-transform-es2015-modules-strip": "^0.1.1",
-    "bundlesize": "^0.16.0",
+    "bundlesize": "^0.18.1",
     "clean-css-cli": "^4.1.11",
     "cross-env": "^5.1.4",
     "eslint": "^4.19.0",
