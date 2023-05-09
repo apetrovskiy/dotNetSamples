@@ -2,6 +2,7 @@
 // #error version
 using System.Reflection;
 using static System.Console;
+using System.Xml;
 
 WriteLine(Environment.CurrentDirectory);
 WriteLine(Environment.OSVersion.VersionString);
@@ -61,5 +62,15 @@ WriteLine(json);
 WriteLine($"int uses {sizeof(int)} bytes and can store numbers in the range {int.MinValue:N0} to {int.MaxValue:N0}.");
 WriteLine($"double uses {sizeof(double)} bytes and can store numbers in the range {double.MinValue:N0} to {double.MaxValue:N0}.");
 WriteLine($"decimal uses {sizeof(decimal)} and can store numbers in the range {decimal.MinValue:N0} to {decimal.MaxValue:N0}.");
+
+// PR
+WriteLine($"using doubles {0.1} + {0.2} {(0.1 + 0.2 == 0.3 ? "equals" : "does not equal")} {0.3}");
+WriteLine($"using decimals {0.1m} + {0.2M} {(0.1M + 0.2M == 0.3M ? "equals" : "does not equal")} {0.3M}");
+
+dynamic something = new[] { 3, 5, 7 }; // 12; // "Ahmed";
+WriteLine($"Length is {something.Length}");
+
+var xmlDoc = new XmlDocument();
+var file1 = File.CreateText("something1.txt");
 
 class aaa { }
