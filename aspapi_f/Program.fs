@@ -24,13 +24,14 @@ module Program =
 
         builder.Services.AddControllers()
         builder.Services.AddEndpointsApiExplorer()
-        // builder.Services.AddSwaggerGen()
+        builder.Services.AddSwaggerGen()
 
         let app = builder.Build()
 
-        // if app.Environment.IsDevelopment() then
-        //     app.UseSwagger()
-        //     app.UseSwaggerUI()
+        // TODO: use conditional expression
+        // let t = if app.Environment.IsDevelopment() then
+        app.UseSwagger()
+        app.UseSwaggerUI()
 
         app.UseHttpsRedirection()
 
