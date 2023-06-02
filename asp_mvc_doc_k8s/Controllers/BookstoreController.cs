@@ -4,6 +4,7 @@
 
 namespace asp_mvc_doc_k8s.Controllers;
 
+using asp_mvc_doc_k8s.Middleware.Exceptions;
 using asp_mvc_doc_k8s.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -26,7 +27,7 @@ public class BookstoreController : ControllerBase
         var book = _books.FirstOrDefault(b => b.Id == id);
         if (book == null)
         {
-            return NotFound();
+            throw new BookstoreException($"Book with id {id} not found.");
         }
         return Ok(book);
     }

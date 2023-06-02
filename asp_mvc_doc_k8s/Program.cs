@@ -1,3 +1,5 @@
+using asp_mvc_doc_k8s.Middleware;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -20,6 +22,8 @@ if (app.Environment.IsDevelopment())
 app.UseRouting();
 
 app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
+
+app.UseMiddleware<ErrorHandlingMiddleware>();
 
 app.UseHttpsRedirection();
 
