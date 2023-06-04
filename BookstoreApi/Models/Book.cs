@@ -1,4 +1,4 @@
-namespace asp_mvc_doc_k8s.Models;
+namespace BookstoreApi.Models;
 
 public class Book
 {

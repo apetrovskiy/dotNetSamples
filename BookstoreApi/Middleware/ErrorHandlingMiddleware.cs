@@ -1,8 +1,8 @@
 using System.Net;
-using asp_mvc_doc_k8s.Middleware.Exceptions;
+using BookstoreApi.Middleware.Exceptions;
 using Newtonsoft.Json;
 
-namespace asp_mvc_doc_k8s.Middleware;
+namespace BookstoreApi.Middleware;
 
 public class ErrorHandlingMiddleware
 {

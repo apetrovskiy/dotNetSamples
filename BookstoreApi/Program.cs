@@ -1,4 +1,4 @@
-using asp_mvc_doc_k8s.Middleware;
+using BookstoreApi.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 

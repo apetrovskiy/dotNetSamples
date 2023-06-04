@@ -1,4 +1,4 @@
-namespace asp_mvc_doc_k8s.Middleware.Exceptions;
+namespace BookstoreApi.Middleware.Exceptions;
 
 public class BookstoreException : Exception
 {

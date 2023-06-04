@@ -1,4 +1,4 @@
-namespace asp_mvc_doc_k8s;
+namespace BookstoreApi;
 
 public class WeatherForecast
 {

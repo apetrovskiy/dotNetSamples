@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace asp_mvc_doc_k8s.Controllers;
+namespace BookstoreApi.Controllers;
 
 [ApiController]
 [Route("[controller]")]

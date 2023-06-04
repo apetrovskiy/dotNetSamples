@@ -2,10 +2,10 @@
 
 
 
-namespace asp_mvc_doc_k8s.Controllers;
+namespace BookstoreApi.Controllers;
 
-using asp_mvc_doc_k8s.Middleware.Exceptions;
-using asp_mvc_doc_k8s.Models;
+using BookstoreApi.Middleware.Exceptions;
+using BookstoreApi.Models;
 using Microsoft.AspNetCore.Mvc;
 
 [ApiController]
