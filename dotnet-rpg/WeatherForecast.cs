@@ -1,4 +1,4 @@
-namespace patrick_god;
+﻿namespace dotnet_rpg;
 
 public class WeatherForecast
 {

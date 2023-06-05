@@ -1,0 +1,3 @@
+#!/binsh
+
+dotnet-format
