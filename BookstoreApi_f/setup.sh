@@ -1,4 +1,4 @@
-#!/cin/sh
+#!/bin/sh
 
 dotnet new webapi --language "F#"
 

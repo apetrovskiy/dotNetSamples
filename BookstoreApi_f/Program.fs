@@ -25,8 +25,13 @@ module Program =
         let builder = WebApplication.CreateBuilder(args)
 
         builder.Services.AddControllers()
+        builder.Services.AddEndpointsApiExplorer()
+        builder.Services.AddSwaggerGen()
 
         let app = builder.Build()
+
+        app.UseSwagger()
+        app.UseSwaggerUI()
 
         app.UseHttpsRedirection()
 
