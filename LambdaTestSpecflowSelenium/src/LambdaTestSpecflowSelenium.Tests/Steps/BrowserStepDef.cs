@@ -10,7 +10,6 @@ using OpenQA.Selenium;
 using TechTalk.SpecFlow;
 
 [Binding]
-
 public class BrowserStepDef
 {
     private readonly ScenarioContext scenarioContext;
