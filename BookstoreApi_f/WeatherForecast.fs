@@ -1,4 +1,4 @@
-namespace aspapi_f
+namespace BookstoreApi_f
 
 open System
 

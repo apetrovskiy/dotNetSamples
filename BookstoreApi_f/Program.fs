@@ -1,4 +1,4 @@
-namespace aspapi_f
+namespace BookstoreApi_f
 
 #nowarn "20"
 
@@ -30,8 +30,6 @@ module Program =
 
         let app = builder.Build()
 
-        // TODO: use conditional expression
-        // let t = if app.Environment.IsDevelopment() then
         app.UseSwagger()
         app.UseSwaggerUI()
 
