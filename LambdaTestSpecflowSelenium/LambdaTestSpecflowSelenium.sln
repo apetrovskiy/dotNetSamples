@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{0B552DB8-029A-4DAC-8C7D-94CDE0C87054}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{7363E70B-8D74-4E65-AB6B-1EA97F052FEC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LambdaTestSpecflowSelenium.Core", "src\LambdaTestSpecflowSelenium.Core\LambdaTestSpecflowSelenium.Core.csproj", "{1176072A-4C1D-4EA9-89CE-DA7A5AB651B3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LambdaTestSpecflowSelenium.Core", "src\LambdaTestSpecflowSelenium.Core\LambdaTestSpecflowSelenium.Core.csproj", "{CAD0FCAC-0A03-45D6-8D43-8D2EDB0C29A2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LambdaTestSpecflowSelenium.Tests", "src\LambdaTestSpecflowSelenium.Tests\LambdaTestSpecflowSelenium.Tests.csproj", "{08CB0F5D-5E30-4F9A-88FC-016EC0C9A35C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LambdaTestSpecflowSelenium.Tests", "src\LambdaTestSpecflowSelenium.Tests\LambdaTestSpecflowSelenium.Tests.csproj", "{A4EC0C58-A903-48DD-8C0F-1F81A4CC19C8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,17 +18,17 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{1176072A-4C1D-4EA9-89CE-DA7A5AB651B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1176072A-4C1D-4EA9-89CE-DA7A5AB651B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1176072A-4C1D-4EA9-89CE-DA7A5AB651B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1176072A-4C1D-4EA9-89CE-DA7A5AB651B3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{08CB0F5D-5E30-4F9A-88FC-016EC0C9A35C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{08CB0F5D-5E30-4F9A-88FC-016EC0C9A35C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{08CB0F5D-5E30-4F9A-88FC-016EC0C9A35C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{08CB0F5D-5E30-4F9A-88FC-016EC0C9A35C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAD0FCAC-0A03-45D6-8D43-8D2EDB0C29A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAD0FCAC-0A03-45D6-8D43-8D2EDB0C29A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAD0FCAC-0A03-45D6-8D43-8D2EDB0C29A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAD0FCAC-0A03-45D6-8D43-8D2EDB0C29A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4EC0C58-A903-48DD-8C0F-1F81A4CC19C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4EC0C58-A903-48DD-8C0F-1F81A4CC19C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4EC0C58-A903-48DD-8C0F-1F81A4CC19C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4EC0C58-A903-48DD-8C0F-1F81A4CC19C8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{1176072A-4C1D-4EA9-89CE-DA7A5AB651B3} = {0B552DB8-029A-4DAC-8C7D-94CDE0C87054}
-		{08CB0F5D-5E30-4F9A-88FC-016EC0C9A35C} = {0B552DB8-029A-4DAC-8C7D-94CDE0C87054}
+		{CAD0FCAC-0A03-45D6-8D43-8D2EDB0C29A2} = {7363E70B-8D74-4E65-AB6B-1EA97F052FEC}
+		{A4EC0C58-A903-48DD-8C0F-1F81A4CC19C8} = {7363E70B-8D74-4E65-AB6B-1EA97F052FEC}
 	EndGlobalSection
 EndGlobal

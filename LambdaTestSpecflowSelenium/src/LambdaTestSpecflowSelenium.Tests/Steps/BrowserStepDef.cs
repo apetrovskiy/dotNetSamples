@@ -4,6 +4,7 @@
 
 namespace LambdaTestSpecflowSelenium.Tests.Steps;
 
+using System;
 using LambdaTestSpecflowSelenium.Tests.Drivers;
 using NUnit.Framework;
 using OpenQA.Selenium;

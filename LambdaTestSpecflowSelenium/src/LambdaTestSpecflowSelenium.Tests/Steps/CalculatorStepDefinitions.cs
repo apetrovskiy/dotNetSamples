@@ -6,7 +6,7 @@ namespace LambdaTestSpecflowSelenium.Tests.Steps;
 
 using TechTalk.SpecFlow;
 
-// [Binding]
+[Binding]
 public sealed class CalculatorStepDefinitions
 {
     private readonly ScenarioContext scenarioContext;
