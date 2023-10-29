@@ -43,59 +43,62 @@ rm -f "${TEST_PRJ_FOLDER}/Class1.cs"
 rm -f "${MAIN_PRJ_FOLDER}/Class1.cs"
 
 # formatting
-dotnet add "${MAIN_PRJ_FOLDER}" package Stylecop.Analyzers
-dotnet add "${TEST_PRJ_FOLDER}" package Stylecop.Analyzers
+dotnet add "${MAIN_PRJ_FOLDER}" package Stylecop.Analyzersv
+dotnet add "${TEST_PRJ_FOLDER}" package Stylecop.Analyzers --prerelease
 
 # testing
-dotnet add "${TEST_PRJ_FOLDER}" package Microsoft.NET.Test.Sdk
-dotnet add "${TEST_PRJ_FOLDER}" package coverlet.collector
-dotnet add "${TEST_PRJ_FOLDER}" package NUnit
-dotnet add "${TEST_PRJ_FOLDER}" package NUnit3TestAdapter
+dotnet add "${TEST_PRJ_FOLDER}" package Microsoft.NET.Test.Sdk --prerelease
+dotnet add "${TEST_PRJ_FOLDER}" package coverlet.collector --prerelease
+dotnet add "${TEST_PRJ_FOLDER}" package NUnit --prerelease
+dotnet add "${TEST_PRJ_FOLDER}" package NUnit3TestAdapter --prerelease
 # dotnet add "${TEST_PRJ_FOLDER}" package NUnit.Allure
 # dotnet add "${TEST_PRJ_FOLDER}" package NUnit.Allure.Steps
 #
-dotnet add "${TEST_PRJ_FOLDER}" package Allure.Commons
-dotnet add "${TEST_PRJ_FOLDER}" package NUnit.Analyzers
+dotnet add "${TEST_PRJ_FOLDER}" package Allure.Commons --prerelease
+dotnet add "${TEST_PRJ_FOLDER}" package NUnit.Analyzers --prerelease
 #
-dotnet add "${TEST_PRJ_FOLDER}" package SpecFlow.NUnit
-dotnet add "${TEST_PRJ_FOLDER}" package SpecFlow.Plus.LivingDocPlugin
-# dotnet add "${TEST_PRJ_FOLDER}" package SpecFlow.Allure
+dotnet add "${TEST_PRJ_FOLDER}" package SpecFlow --version 4.0.31-beta
+dotnet add "${TEST_PRJ_FOLDER}" package SpecFlow.Tools.MsBuild.Generation --version 4.0.31-beta
+
+dotnet add "${TEST_PRJ_FOLDER}" package SpecFlow.NUnit --prerelease
+dotnet add "${TEST_PRJ_FOLDER}" package SpecFlow.Plus.LivingDocPlugin --prerelease
+# dotnet add "${TEST_PRJ_FOLDER}" package SpecFlow.Allure - legacy
 #
 # dotnet add "${TEST_PRJ_FOLDER}" package SpecFlow
-dotnet add "${TEST_PRJ_FOLDER}" package Allure.SpecFlow --prerelease
+# dotnet add "${TEST_PRJ_FOLDER}" package Allure.SpecFlow --prerelease
 # experimentally
 # dotnet add "${TEST_PRJ_FOLDER}" package SpecFlow.NUnit.Runners
 #
-dotnet add "${TEST_PRJ_FOLDER}" package FluentAssertions
+dotnet add "${TEST_PRJ_FOLDER}" package FluentAssertions --prerelease
 # dotnet add "${TEST_PRJ_FOLDER}" package Shouldly
 
 # REST
-dotnet add "${MAIN_PRJ_FOLDER}" package System.Net.Http
-dotnet add "${MAIN_PRJ_FOLDER}" package RestSharp
-dotnet add "${MAIN_PRJ_FOLDER}" package DalSoft.RestClient
-dotnet add "${MAIN_PRJ_FOLDER}" package Flurl.Http
+dotnet add "${MAIN_PRJ_FOLDER}" package System.Net.Http --prerelease
+dotnet add "${MAIN_PRJ_FOLDER}" package RestSharp --prerelease
+dotnet add "${MAIN_PRJ_FOLDER}" package DalSoft.RestClient --prerelease
+dotnet add "${MAIN_PRJ_FOLDER}" package Flurl.Http --prerelease
 
 # web
-dotnet add "${MAIN_PRJ_FOLDER}" package HtmlAgilityPack
-dotnet add "${MAIN_PRJ_FOLDER}" package Microsoft.Playwright
-dotnet add "${MAIN_PRJ_FOLDER}" package Microsoft.Playwright.NUnit
-dotnet add "${MAIN_PRJ_FOLDER}" package Selenium.WebDriver
-dotnet add "${MAIN_PRJ_FOLDER}" package Selenium.WebDriver.ChromeDriver
-dotnet add "${MAIN_PRJ_FOLDER}" package Selenium.Firefox.WebDriver
-dotnet add "${MAIN_PRJ_FOLDER}" package Selenium.Opera.WebDriver
-dotnet add "${TEST_PRJ_FOLDER}" package HtmlAgilityPack
-dotnet add "${TEST_PRJ_FOLDER}" package Microsoft.Playwright
-dotnet add "${TEST_PRJ_FOLDER}" package Microsoft.Playwright.NUnit
-dotnet add "${TEST_PRJ_FOLDER}" package Selenium.WebDriver
-dotnet add "${TEST_PRJ_FOLDER}" package Selenium.WebDriver.ChromeDriver
-dotnet add "${TEST_PRJ_FOLDER}" package Selenium.Firefox.WebDriver
-dotnet add "${TEST_PRJ_FOLDER}" package Selenium.Opera.WebDriver
+dotnet add "${MAIN_PRJ_FOLDER}" package HtmlAgilityPack --prerelease
+dotnet add "${MAIN_PRJ_FOLDER}" package Microsoft.Playwright --prerelease
+dotnet add "${MAIN_PRJ_FOLDER}" package Microsoft.Playwright.NUnit --prerelease
+dotnet add "${MAIN_PRJ_FOLDER}" package Selenium.WebDriver --prerelease
+dotnet add "${MAIN_PRJ_FOLDER}" package Selenium.WebDriver.ChromeDriver --prerelease
+dotnet add "${MAIN_PRJ_FOLDER}" package Selenium.Firefox.WebDriver --prerelease
+dotnet add "${MAIN_PRJ_FOLDER}" package Selenium.Opera.WebDriver --prerelease
+dotnet add "${TEST_PRJ_FOLDER}" package HtmlAgilityPack --prerelease
+dotnet add "${TEST_PRJ_FOLDER}" package Microsoft.Playwright --prerelease
+dotnet add "${TEST_PRJ_FOLDER}" package Microsoft.Playwright.NUnit --prerelease
+dotnet add "${TEST_PRJ_FOLDER}" package Selenium.WebDriver --prerelease
+dotnet add "${TEST_PRJ_FOLDER}" package Selenium.WebDriver.ChromeDriver --prerelease
+dotnet add "${TEST_PRJ_FOLDER}" package Selenium.Firefox.WebDriver --prerelease
+dotnet add "${TEST_PRJ_FOLDER}" package Selenium.Opera.WebDriver --prerelease
 
 ##########
 # dotnet add "${TEST_PRJ_FOLDER}" package Swashbuckle.AspNetCore
 
 # json
-dotnet add "${MAIN_PRJ_FOLDER}" package Newtonsoft.Json
+dotnet add "${MAIN_PRJ_FOLDER}" package Newtonsoft.Json --prerelease
 # dotnet add "${TEST_PRJ_FOLDER}" package SpecFlow.Plus.LivingDocPlugin
 ##########
 

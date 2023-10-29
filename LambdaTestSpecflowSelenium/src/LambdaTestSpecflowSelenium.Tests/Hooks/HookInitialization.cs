@@ -18,7 +18,7 @@ public class HookInitialization
     [BeforeScenario]
     public void BeforeScenario()
     {
-        SeleniumDriver seleniumDriver = new (this.scenarioContext);
+        SeleniumDriver seleniumDriver = new(this.scenarioContext);
         this.scenarioContext.Set(seleniumDriver, "SeleniumDriver");
     }
 
