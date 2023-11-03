@@ -43,7 +43,7 @@ rm -f "${TEST_PRJ_FOLDER}/Class1.cs"
 rm -f "${MAIN_PRJ_FOLDER}/Class1.cs"
 
 # formatting
-dotnet add "${MAIN_PRJ_FOLDER}" package Stylecop.Analyzersv
+dotnet add "${MAIN_PRJ_FOLDER}" package Stylecop.Analyzersv --prerelease
 dotnet add "${TEST_PRJ_FOLDER}" package Stylecop.Analyzers --prerelease
 
 # testing
