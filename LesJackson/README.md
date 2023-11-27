@@ -1,0 +1,1 @@
+Based on .NET 8.0, https://www.youtube.com/watch?v=DgVjEo3OGBI&ab_channel=LesJackson and with autotests
