@@ -1,4 +1,16 @@
-﻿Console.WriteLine("Hello, World!");
+﻿using RecordDemo;
+
+Console.WriteLine("Hello, World!");
+
+static void SomeTest()
+{
+    Console.WriteLine("SomeTest");
+    Console.WriteLine("=======================================================");
+    Console.WriteLine();
+}
+SomeTest();
+SomeClass.SomeMethod();
+
 Record1 r1a = new("Tim", "Corey");
 Record1 r1b = new("Tim", "Corey");
 Record1 r1c = new("Sue", "Storm");
