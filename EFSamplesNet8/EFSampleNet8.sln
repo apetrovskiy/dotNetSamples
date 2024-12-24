@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFSampleNet8.Core", "EFSampleNet8.Core\EFSampleNet8.Core.csproj", "{FCC78228-ADAC-4B30-9684-2A66ACDB96A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFSampleNet8.Tests", "EFSampleNet8.Tests\EFSampleNet8.Tests.csproj", "{30C7B2C6-28DC-44E0-88E8-DC2AE39D2DDA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FCC78228-ADAC-4B30-9684-2A66ACDB96A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCC78228-ADAC-4B30-9684-2A66ACDB96A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCC78228-ADAC-4B30-9684-2A66ACDB96A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCC78228-ADAC-4B30-9684-2A66ACDB96A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30C7B2C6-28DC-44E0-88E8-DC2AE39D2DDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30C7B2C6-28DC-44E0-88E8-DC2AE39D2DDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30C7B2C6-28DC-44E0-88E8-DC2AE39D2DDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30C7B2C6-28DC-44E0-88E8-DC2AE39D2DDA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
