@@ -11,7 +11,7 @@ TEST_PRJ_FILE="${TEST_PRJ_NAME}/${TEST_PRJ_NAME}.csproj"
 # dotnet new web -f net8.0 -n "${PROJECT_NAME}"
 
 dotnet new sln --name "${SOLUTION_NAME}" --force
-dotnet new classlib --name "${MAIN_PRJ_NAME}" --framework net8.0 --output "${MAIN_PRJ_FOLDER}" --force
+dotnet new web --name "${MAIN_PRJ_NAME}" --framework net8.0 --output "${MAIN_PRJ_FOLDER}" --force
 dotnet new classlib --name "${TEST_PRJ_NAME}" --framework net8.0 --output "${TEST_PRJ_FOLDER}" --force
 dotnet sln add "${MAIN_PRJ_FILE}"
 dotnet sln add "${TEST_PRJ_FILE}"
