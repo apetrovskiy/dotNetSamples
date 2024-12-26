@@ -31,6 +31,7 @@ dotnet add "${MAIN_PRJ_FOLDER}" package Microsoft.EntityFrameworkCore.SQLite
 dotnet add "${MAIN_PRJ_FOLDER}" package Microsoft.EntityFrameworkCore.InMemory
 dotnet add "${MAIN_PRJ_FOLDER}" package Pomelo.EntityFrameworkCore.MySql
 dotnet add "${MAIN_PRJ_FOLDER}" package MongoDB.EntityFrameworkCore
+dotnet add "${MAIN_PRJ_FOLDER}" package Dapper
 
 # formatting
 dotnet add "${MAIN_PRJ_FOLDER}" package Stylecop.Analyzers --prerelease
