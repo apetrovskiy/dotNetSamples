@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="coverlet.collector" Version="6.0.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.3.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.11.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="WireMock.Net" Version="1.7.0" />
+    <PackageReference Include="WireMock.Net.Aspire" Version="1.7.0" />
+    <PackageReference Include="WireMock.Net.AspNetCore.Middleware" Version="1.7.0" />
+    <PackageReference Include="WireMock.Net.FluentAssertions" Version="1.7.0" />
+    <PackageReference Include="WireMock.Net.Matchers.CSharpCode" Version="1.7.0" />
+    <PackageReference Include="WireMock.Net.OpenApiParser" Version="1.7.0" />
+    <PackageReference Include="WireMock.Net.RestClient" Version="1.7.0" />
+    <PackageReference Include="WireMock.Net.StandAlone" Version="1.7.0" />
+    <PackageReference Include="WireMock.Net.Testcontainers" Version="1.7.0" />
+    <PackageReference Include="WireMock.Net.xUnit" Version="1.7.0" />
+    <PackageReference Include="WireMock.Org.RestClient" Version="1.7.0" />
+    <PackageReference Include="xunit" Version="2.9.2" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.8.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Using Include="Xunit" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SimpleService\SimpleService.csproj" />
+  </ItemGroup>
+
+</Project>
