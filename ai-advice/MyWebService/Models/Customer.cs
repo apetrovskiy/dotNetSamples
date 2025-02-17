@@ -1,5 +1,11 @@
+namespace MyWebService.Models;
+
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using MyWebService.Controllers;
+using MyWebService.Repositories;
+using MyWebService.Models;
+using MyWebService.Data;
 
 public class Customer
 {

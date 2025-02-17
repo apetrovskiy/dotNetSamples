@@ -1,7 +1,15 @@
+namespace MyWebService.Repositories;
+
+using MyWebService.Controllers;
+using MyWebService.Repositories;
+using MyWebService.Models;
+using MyWebService.Data;
+
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Query;
+using System.Linq;
 
 public class CustomerRepository<Customer> : IRepository<Customer>
 {
@@ -14,7 +22,7 @@ public class CustomerRepository<Customer> : IRepository<Customer>
 
     public async Task<IEnumerable<Customer>> GetAllAsync()
     {
-        return await _context.Customers.Include(c => c.CustomerPreferences).ThenInclude(cp => cp.Preference).ToListAsync();
+        return Task.FromResult( _context.Customers.Include(c => c.CustomerPreferences).ThenInclude(cp => cp.Preference).AsEnumerable());
     }
 
     public async Task<Customer> GetByIdAsync(int id)

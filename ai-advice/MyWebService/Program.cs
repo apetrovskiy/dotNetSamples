@@ -1,13 +1,20 @@
+
+
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+
+using MyWebService.Controllers;
+using MyWebService.Repositories;
+using MyWebService.Models;
+using MyWebService.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container
 builder.Services.AddDbContext(options =>
 options.UseSqlite("Data Source=mydatabase.db"));
-builder.Services.AddScoped<IRepository, CustomerRepository>();
+builder.Services.AddScoped<IRepository<Customer>, CustomerRepository<Customer>>();
 builder.Services.AddControllers();
 
 var app = builder.Build();

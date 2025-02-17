@@ -1,4 +1,10 @@
+namespace MyWebService.Data;
+
 using Microsoft.EntityFrameworkCore;
+using MyWebService.Controllers;
+using MyWebService.Repositories;
+using MyWebService.Models;
+using MyWebService.Data;
 
 public class AppDbContext : DbContext
 {
