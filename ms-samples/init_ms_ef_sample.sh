@@ -36,4 +36,5 @@ public class PizzaContext : DbContext
 }
 EOF
 
-
+cd ContosoPizza || exit
+dotnet build
