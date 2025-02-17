@@ -1,0 +1,5 @@
+https://learn.microsoft.com/en-us/training/browse/?terms=entity%20framework
+
+https://learn.microsoft.com/en-us/training/modules/build-web-api-minimal-database/3-exercise-add-entity-framework-core
+https://learn.microsoft.com/en-us/training/modules/build-web-api-minimal-database/5-exercise-use-sqlite-database
+https://learn.microsoft.com/en-us/training/modules/persist-data-ef-core/3-migrations
