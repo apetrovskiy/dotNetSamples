@@ -13,7 +13,7 @@ dotnet add ContosoPizza/ContosoPizza.csproj package Microsoft.EntityFrameworkCor
 dotnet add ContosoPizza/ContosoPizza.csproj package Microsoft.EntityFrameworkCore.Design
 
 dotnet tool uninstall --global dotnet-ef
-dotnet tool install --global dotnet-ef --channel classic
+dotnet tool install --global dotnet-ef --version 8.0.0
 # dotnet tool update --global dotnet-ef
 
 mkdir Data
