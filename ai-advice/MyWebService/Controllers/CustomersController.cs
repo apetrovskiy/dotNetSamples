@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 [Route("[controller]")]
 public class CustomersController : ControllerBase
 {
-    private readonly IRepository _repository;
+    private readonly IRepository<Customer> _repository;
 
     public CustomersController(IRepository<Customer> repository)
     {

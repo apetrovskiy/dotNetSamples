@@ -1,8 +1,9 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Query;
 
-public class CustomerRepository : IRepository
+public class CustomerRepository<Customer> : IRepository<Customer>
 {
     private readonly AppDbContext _context;
 
