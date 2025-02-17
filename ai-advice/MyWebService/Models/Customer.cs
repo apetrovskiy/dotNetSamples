@@ -9,6 +9,7 @@ using MyWebService.Data;
 
 public class Customer
 {
+    [Key]
     public int Id { get; set; }
 
     [MaxLength(100)]

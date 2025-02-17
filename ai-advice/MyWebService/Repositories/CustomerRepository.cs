@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Query;
 using System.Linq;
 
-public class CustomerRepository<Customer> : IRepository<Customer>
+public class CustomerRepository<Customer> : IRepository<Customer> 
 {
     private readonly AppDbContext _context;
 
