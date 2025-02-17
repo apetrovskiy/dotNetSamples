@@ -12,7 +12,7 @@ using MyWebService.Data;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container
-builder.Services.AddDbContext(options =>
+builder.Services.AddDbContext<AppDbContext>(options =>
 options.UseSqlite("Data Source=mydatabase.db"));
 builder.Services.AddScoped<IRepository<Customer>, CustomerRepository<Customer>>();
 builder.Services.AddControllers();
@@ -22,7 +22,7 @@ var app = builder.Build();
 // Create the database and tables
 using (var scope = app.Services.CreateScope())
 {
-    var dbContext = scope.ServiceProvider.GetRequiredService();
+    var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
     await dbContext.Database.EnsureCreatedAsync();
 }
 

@@ -1,7 +1,7 @@
 namespace MyWebService.Repositories;
 
 using MyWebService.Controllers;
-using MyWebService.Repositories;
+
 using MyWebService.Models;
 using MyWebService.Data;
 

@@ -1,7 +1,7 @@
 namespace MyWebService.Repositories;
 
 using MyWebService.Controllers;
-using MyWebService.Repositories;
+
 using MyWebService.Models;
 using MyWebService.Data;
 
@@ -22,7 +22,7 @@ public class CustomerRepository<Customer> : IRepository<Customer>
 
     public async Task<IEnumerable<Customer>> GetAllAsync()
     {
-        return Task.FromResult( _context.Customers.Include(c => c.CustomerPreferences).ThenInclude(cp => cp.Preference).AsEnumerable());
+        return Task.FromResult(_context.Customers.Include(c => c.CustomerPreferences).ThenInclude(cp => cp.Preference).AsEnumerable());
     }
 
     public async Task<Customer> GetByIdAsync(int id)
