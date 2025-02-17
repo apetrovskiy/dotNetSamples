@@ -2,7 +2,7 @@
 # https://learn.microsoft.com/en-us/training/modules/persist-data-ef-core/3-migrations
 
 git clone https://github.com/MicrosoftDocs/mslearn-persist-data-ef-core
-
+rm -rfR **/.git/
 sleep 20
 cd mslearn-persist-data-ef-core || exit
 # code . &
@@ -16,8 +16,8 @@ dotnet tool uninstall --global dotnet-ef
 dotnet tool install --global dotnet-ef --version 8.0.0
 # dotnet tool update --global dotnet-ef
 
-mkdir Data
-cat << EOF > Data/PizzaContext.cs
+mkdir -p ContosoPizza/Data
+cat << EOF > ContosoPizza/Data/PizzaContext.cs
 using Microsoft.EntityFrameworkCore;
 using ContosoPizza.Models;
 
