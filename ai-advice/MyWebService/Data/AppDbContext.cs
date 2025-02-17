@@ -4,6 +4,9 @@ using Microsoft.EntityFrameworkCore;
 using MyWebService.Controllers;
 using MyWebService.Repositories;
 using MyWebService.Models;
+using Microsoft.AspNetCore.Identity;
+
+
 
 
 public class AppDbContext : DbContext
@@ -13,6 +16,8 @@ public class AppDbContext : DbContext
     public DbSet<Customer> Customers { get; set; }
     public DbSet<Preference> Preferences { get; set; }
     public DbSet<PromoCode> PromoCodes { get; set; }
+
+    public AppDbContext(DbContextOptions<AppDbContext> options): base (options){}
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
