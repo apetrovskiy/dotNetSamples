@@ -1,6 +1,6 @@
 #!/bin/sh
 
-PROJECT_NAME=MyWebService
+PROJECT_NAME=MyWebSvcCodeGemma
 
 dotnet new webapi -n "${PROJECT_NAME}" -f net8.0
 cd "${PROJECT_NAME}" || exit
@@ -18,13 +18,10 @@ using System.ComponentModel.DataAnnotations;
 
 public class Employee
 {
-public int Id { get; set; }
-
-[MaxLength(100)]
-public string Name { get; set; }
-
-public int RoleId { get; set; }
-public Role Role { get; set; }
+    public int Id { get; set; }
+    [MaxLength(50)]
+    public string Name { get; set; }
+    public Role Role { get; set; }
 }
 EOF
 
@@ -33,10 +30,9 @@ using System.ComponentModel.DataAnnotations;
 
 public class Role
 {
-public int Id { get; set; }
-
-[MaxLength(50)]
-public string Title { get; set; }
+    public int Id { get; set; }
+    [MaxLength(50)]
+    public string Name { get; set; }
 }
 EOF
 
@@ -46,14 +42,11 @@ using System.ComponentModel.DataAnnotations;
 
 public class Customer
 {
-public int Id { get; set; }
-
-[MaxLength(100)]
-public string Name { get; set; }
-
-public int PreferenceId { get; set; }
-public ICollection<CustomerPreference> CustomerPreferences { get; set; } = new List<CustomerPreference>();
-public PromoCode PromoCode { get; set; }
+    public int Id { get; set; }
+    [MaxLength(50)]
+    public string Name { get; set; }
+    public List<CustomerPreference> Preferences { get; set; }
+    public PromoCode PromoCode { get; set; }
 }
 EOF
 
@@ -63,23 +56,19 @@ using System.ComponentModel.DataAnnotations;
 
 public class Preference
 {
-public int Id { get; set; }
-
-[MaxLength(100)]
-public string Description { get; set; }
-
-public ICollection<CustomerPreference> CustomerPreferences { get; set; } = new List<CustomerPreference>();
+    public int Id { get; set; }
+    [MaxLength(50)]
+    public string Name { get; set; }
 }
 EOF
 
 cat <<EOF >Models/CustomerPreference.cs
 public class CustomerPreference
 {
-public int CustomerId { get; set; }
-public Customer Customer { get; set; }
-
-public int PreferenceId { get; set; }
-public Preference Preference { get; set; }
+    public int CustomerId { get; set; }
+    public Customer Customer { get; set; }
+    public int PreferenceId { get; set; }
+    public Preference Preference { get; set; }
 }
 EOF
 
@@ -88,53 +77,16 @@ using System.ComponentModel.DataAnnotations;
 
 public class PromoCode
 {
-public int Id { get; set; }
-
-[MaxLength(50)]
-public string Code { get; set; }
-
-public int CustomerId { get; set; }
-public Customer Customer { get; set; }
+    public int Id { get; set; }
+    [MaxLength(50)]
+    public string Code { get; set; }
+    public Customer Customer { get; set; }
 }
 EOF
 
-mkdir -p Data
-cat <<EOF >Data/AppDbContext.cs
-using Microsoft.EntityFrameworkCore;
 
-public class AppDbContext : DbContext
-{
-public DbSet Employees { get; set; }
-public DbSet Roles { get; set; }
-public DbSet Customers { get; set; }
-public DbSet Preferences { get; set; }
-public DbSet PromoCodes { get; set; }
-
-protected override void OnModelCreating(ModelBuilder modelBuilder)
-{
-    modelBuilder.Entity<CustomerPreference>()
-        .HasKey(cp => new { cp.CustomerId, cp.PreferenceId });
-
-    modelBuilder.Entity<CustomerPreference>()
-        .HasOne(cp => cp.Customer)
-        .WithMany(c => c.CustomerPreferences)
-        .HasForeignKey(cp => cp.CustomerId);
-
-    modelBuilder.Entity<CustomerPreference>()
-        .HasOne(cp => cp.Preference)
-        .WithMany(p => p.CustomerPreferences)
-        .HasForeignKey(cp => cp.PreferenceId);
-}
-
-protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-{
-    optionsBuilder.UseSqlite("Data Source=mydatabase.db");
-}
-}
-EOF
 
 mkdir -p Repositories
-touch Repositories/IRepository.cs
 cat <<EOF >Repositories/IRepository.cs
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -149,20 +101,29 @@ Task DeleteAsync(int id);
 }
 EOF
 
-touch Repositories/CustomerRepository.cs
+cat <<EOF >Repositories/ICustomerRepository.cs
+using System.Collections.Generic;
+using System.Threading.Tasks;
+
+public interface ICustomerRepository : IRepository
+{
+
+}
+EOF
+
 cat <<EOF >Repositories/CustomerRepository.cs
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 
-public class CustomerRepository : IRepository
+public class CustomerRepository : ICustomerRepository
 {
-private readonly AppDbContext _context;
+    private readonly MyDbContext _context;
 
-public CustomerRepository(AppDbContext context)
-{
-    _context = context;
-}
+    public CustomerRepository(MyDbContext context)
+    {
+        _context = context;
+    }
 
 public async Task<IEnumerable<Customer>> GetAllAsync()
 {
@@ -203,8 +164,28 @@ public async Task DeleteAsync(int id)
 }
 EOF
 
+mkdir -p Data
+cat <<EOF >Data/MyDbContext.cs
+using Microsoft.EntityFrameworkCore;
+
+public class MyDbContext : DbContext
+{
+    public DbSet<Employee> Employees { get; set; }
+    public DbSet<Role> Roles { get; set; }
+    public DbSet<Customer> Customers { get; set; }
+    public DbSet<Preference> Preferences { get; set; }
+    public DbSet<CustomerPreference> CustomerPreferences { get; set; }
+    public DbSet<PromoCode> PromoCodes { get; set; }
+
+    protected override void OnConfiguring(DbContextOptionsBuilder 
+optionsBuilder)
+    {
+        optionsBuilder.UseSqlite("Data Source=database.db");
+    }
+}
+EOF
+
 mkdir -p Controllers
-touch Controllers/CustomersController.cs
 cat <<EOF >Controllers/CustomersController.cs
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
@@ -212,14 +193,14 @@ using System.Threading.Tasks;
 
 [ApiController]
 [Route("[controller]")]
-public class CustomersController : ControllerBase
+public class CustomersController : Controller
 {
-private readonly IRepository _repository;
+    private readonly ICustomerRepository _repository;
 
-public CustomersController(IRepository<Customer> repository)
-{
-    _repository = repository;
-}
+    public CustomersController(ICustomerRepository repository)
+    {
+        _repository = repository;
+    }
 
 /// <summary>
 /// Gets all customers.
@@ -280,21 +261,21 @@ public async Task<ActionResult> DeleteCustomer(int id)
 }
 EOF
 
-cat <<EOF >Controllers/PreferencesController.cs
+cat <<EOF >Controllers/PreferenceController.cs
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
 [ApiController]
 [Route("[controller]")]
-public class PreferencesController : ControllerBase
+public class PreferenceController : Controller
 {
-private readonly AppDbContext _context;
+    private readonly MyDbContext _context;
 
-public PreferencesController(AppDbContext context)
-{
-    _context = context;
-}
+    public PreferenceController(MyDbContext context)
+    {
+        _context = context;
+    }
 
 /// <summary>
 /// Gets all preferences.
@@ -314,14 +295,14 @@ using System.Threading.Tasks;
 
 [ApiController]
 [Route("[controller]")]
-public class PromoCodesController : ControllerBase
+public class PromoCodesController : Controller
 {
-private readonly AppDbContext _context;
+    private readonly MyDbContext _context;
 
-public PromoCodesController(AppDbContext context)
-{
-    _context = context;
-}
+    public PromoCodesController(MyDbContext context)
+    {
+        _context = context;
+    }
 
 /// <summary>
 /// Gives a promo code to a customer.
@@ -355,7 +336,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container
 builder.Services.AddDbContext(options =>
 options.UseSqlite("Data Source=mydatabase.db"));
-builder.Services.AddScoped<IRepository, CustomerRepository>();
+builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
 builder.Services.AddControllers();
 
 var app = builder.Build();
