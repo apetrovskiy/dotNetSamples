@@ -14,7 +14,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container
 builder.Services.AddDbContext<AppDbContext>(options =>
 options.UseSqlite("Data Source=mydatabase.db"));
-builder.Services.AddScoped<IRepository<Customer>, CustomerRepository<Customer>>();
+builder.Services.AddScoped<IRepository<Customer>, CustomerRepository>();
 builder.Services.AddControllers();
 
 var app = builder.Build();

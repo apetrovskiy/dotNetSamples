@@ -13,12 +13,12 @@ public class CustomerRepository : ICustomerRepository
 
 public async Task<IEnumerable<Customer>> GetAllAsync()
 {
-    return await _context.Customers.Include(c => c.CustomerPreferences).ThenInclude(cp => cp.Preference).ToListAsync();
+    return await _context.Customers.Include(c => c.Preferences).ThenInclude(cp => cp.Preference).ToListAsync();
 }
 
 public async Task<Customer> GetByIdAsync(int id)
 {
-    return await _context.Customers.Include(c => c.CustomerPreferences).ThenInclude(cp => cp.Preference).FirstOrDefaultAsync(c => c.Id == id);
+    return await _context.Customers.Include(c => c.Preferences).ThenInclude(cp => cp.Preference).FirstOrDefaultAsync(c => c.Id == id);
 }
 
 public async Task AddAsync(Customer customer)

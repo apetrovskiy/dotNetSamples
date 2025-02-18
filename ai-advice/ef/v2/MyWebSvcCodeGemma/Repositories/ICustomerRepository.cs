@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-public interface ICustomerRepository : IRepository
+public interface ICustomerRepository : IRepository<Customer>
 {
 
 }

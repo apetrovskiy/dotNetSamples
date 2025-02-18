@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Query;
 using System.Linq;
 
-public class CustomerRepository<Customer> : IRepository<Customer> 
+public class CustomerRepository : IRepository<Customer> 
 {
     private readonly AppDbContext _context;
 
@@ -22,7 +22,8 @@ public class CustomerRepository<Customer> : IRepository<Customer>
 
     public async Task<IEnumerable<Customer>> GetAllAsync()
     {
-        return Task.FromResult(_context.Customers.Include(c => c.CustomerPreferences).ThenInclude(cp => cp.Preference).AsEnumerable());
+       // return Task.FromResult(_context.Customers.Include(c => c.CustomerPreferences).ThenInclude(cp => cp.Preference).AsEnumerable());
+        return _context.Customers.Include(c => c.CustomerPreferences).ThenInclude(cp => cp.Preference).AsEnumerable();
     }
 
     public async Task<Customer> GetByIdAsync(int id)

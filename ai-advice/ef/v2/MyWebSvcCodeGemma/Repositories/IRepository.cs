@@ -1,10 +1,10 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-public interface IRepository
+public interface IRepository<T>
 {
-Task<IEnumerable> GetAllAsync();
-Task GetByIdAsync(int id);
+Task<IEnumerable<T>> GetAllAsync();
+Task<T> GetByIdAsync(int id);
 Task AddAsync(T entity);
 Task UpdateAsync(T entity);
 Task DeleteAsync(int id);

@@ -5,7 +5,7 @@ using Microsoft.Extensions.Hosting;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container
-builder.Services.AddDbContext(options =>
+builder.Services.AddDbContext<MyDbContext>(options =>
 options.UseSqlite("Data Source=mydatabase.db"));
 builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
 builder.Services.AddControllers();
@@ -15,7 +15,7 @@ var app = builder.Build();
 // Create the database and tables
 using (var scope = app.Services.CreateScope())
 {
-var dbContext = scope.ServiceProvider.GetRequiredService();
+var dbContext = scope.ServiceProvider.GetRequiredService<MyDbContext>();
 await dbContext.Database.EnsureCreatedAsync();
 }
 
