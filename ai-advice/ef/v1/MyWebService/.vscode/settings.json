@@ -1,0 +1,4 @@
+{
+    "dotnetAcquisitionExtension.sharedExistingDotnetPath": "/var/lib/snapd/snap/bin/dotnet",
+    "omnisharp.sdkPath": "/var/lib/snapd/snap/bin/dotnet"
+}
