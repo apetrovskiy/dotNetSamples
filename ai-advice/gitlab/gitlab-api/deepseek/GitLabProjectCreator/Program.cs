@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using dotenv.net;
 using System.Net.Http.Headers;
-using System.Text.Json;
+// using System.Text.Json;
 using System.Text;
 using System.Net.Http.Json;
 
@@ -23,8 +23,14 @@ class Program
 
         client.DefaultRequestHeaders.Add("PRIVATE-TOKEN", envVars["PRIVATE_TOKEN"]);
         // client.DefaultRequestHeaders.Add("Content-Type", "application/json");
+        /*
         HttpContent httpContent = new StringContent(Json, Encoding.UTF8, "application/json");
         httpContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+        var content = new StringContent(JsonSerializer.Serialize(data), Encoding.UTF8, "application/json");
+        */
+        string groupName, int? parentId = null;
+        var data = new { name = groupName, path = groupName, parent_id = parentId };
+        var content = new StringContent(JsonSerializer.Serialize(data), Encoding.UTF8, "application/json");
         client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
         // client.DefaultRequestHeaders.Add(new MediaTypeWithQualityHeaderValue("application/json"));
         /*

@@ -51,13 +51,13 @@ class GitLabProjectCreator
 
     static async Task Main(string[] args)
     {
-var path=args[0];
+        var path = args[0];
 
 
         var baseUrl = "https://gitlab.com/api/v4";
         var privateToken = "your_private_token";
 
         var creator = new GitLabProjectCreator(baseUrl, privateToken);
-        await creator.SetupProjectsAsync("projects001/tests/v2", new[] { "project01", "project02", "project03" });
+        // await creator.SetupProjectsAsync("projects001/tests/v2", new[] { "project01", "project02", "project03" });
     }
 }
