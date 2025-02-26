@@ -1,0 +1,18 @@
+{
+    "profiles": {"Debug":{
+        "commandName": "Project",
+        "commandLineArgs": "projects111/v1 prj01 prj02"
+    }}
+}
+{
+    "profiles": {
+      "GitlabProjectCreator": {
+        "commandName": "Project",
+        "commandLineArgs": "projects111/v1 prj01 prj02",
+        "workingDirectory": "$(ProjectDir)",
+        "environmentVariables": {
+          "DOTNET_ENVIRONMENT": "Development"
+        }
+      }
+    }
+  }
