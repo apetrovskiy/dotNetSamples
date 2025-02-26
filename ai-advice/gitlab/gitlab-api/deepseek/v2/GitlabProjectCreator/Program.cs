@@ -4,15 +4,18 @@
 using System;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Net.Security;
 using System.Text.Json;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Configuration;
+using System.Security.Cryptography.X509Certificates;
+
 
 public class Program
 {
     private static ILogger<Program> _logger;
-    private static HttpClient _httpClient = new HttpClient();
+    private static HttpClient httpClient  = new HttpClient();
     private static string _gitlabUrl;
     private static string _gitlabToken;
 
@@ -31,7 +34,7 @@ public class Program
             .Build();
         _gitlabUrl = config["GitLab:Url"];
         _gitlabToken = config["GitLab:Token"];
-        _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _gitlabToken);
+        httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _gitlabToken);
 
         // Parse command-line arguments
         if (args.Length < 2)
@@ -59,7 +62,7 @@ public class Program
         {
             var url = $"{_gitlabUrl}/api/v4/groups";
             var payload = new { name = part, path = part, parent_id = parentId };
-            var response = await _httpClient.PostAsync(url, new StringContent(JsonSerializer.Serialize(payload), System.Net.Http.Headers.MediaTypeHeaderValue.Parse("application/json")));
+            var response = await httpClient.PostAsync(url, new StringContent(JsonSerializer.Serialize(payload), System.Net.Http.Headers.MediaTypeHeaderValue.Parse("application/json")));
 
             if (response.IsSuccessStatusCode)
             {
@@ -69,7 +72,7 @@ public class Program
             }
             else if (response.StatusCode == System.Net.HttpStatusCode.BadRequest)
             {
-                var searchResponse = await _httpClient.GetAsync($"{_gitlabUrl}/api/v4/groups?search={part}");
+                var searchResponse = await httpClient.GetAsync($"{_gitlabUrl}/api/v4/groups?search={part}");
                 var groups = JsonSerializer.Deserialize<JsonElement>(await searchResponse.Content.ReadAsStringAsync());
                 parentId = groups[0].GetProperty("id").GetInt32();
                 _logger.LogInformation($"Group/subgroup already exists: {part}", new { id = parentId });
@@ -86,7 +89,7 @@ public class Program
     {
         var url = $"{_gitlabUrl}/api/v4/projects";
         var payload = new { name = projectName, namespace_id = groupId, initialize_with_readme = true };
-        var response = await _httpClient.PostAsync(url, new StringContent(JsonSerializer.Serialize(payload), System.Net.Http.Headers.MediaTypeHeaderValue.Parse("application/json")));
+        var response = await httpClient.PostAsync(url, new StringContent(JsonSerializer.Serialize(payload), System.Net.Http.Headers.MediaTypeHeaderValue.Parse("application/json")));
 
         if (response.IsSuccessStatusCode)
         {
@@ -104,20 +107,20 @@ public class Program
     static async Task ConfigureProject(int projectId)
     {
         // Create develop branch
-        await _httpClient.PostAsync($"{_gitlabUrl}/api/v4/projects/{projectId}/repository/branches?branch=develop&ref=main", null);
+        await httpClient.PostAsync($"{_gitlabUrl}/api/v4/projects/{projectId}/repository/branches?branch=develop&ref=main", null);
 
         // Set develop as default branch
-        await _httpClient.PutAsync($"{_gitlabUrl}/api/v4/projects/{projectId}?default_branch=develop", null);
+        await httpClient.PutAsync($"{_gitlabUrl}/api/v4/projects/{projectId}?default_branch=develop", null);
 
         // Protect branches
         var protections = new[] { ("main", "maintainers"), ("develop", "developers") };
         foreach (var (branch, accessLevel) in protections)
         {
             var payload = new { name = branch, push_access_level = "0", merge_access_level = accessLevel };
-            await _httpClient.PostAsync($"{_gitlabUrl}/api/v4/projects/{projectId}/protected_branches", new StringContent(JsonSerializer.Serialize(payload), System.Net.Http.Headers.MediaTypeHeaderValue.Parse("application/json")));
+            await httpClient.PostAsync($"{_gitlabUrl}/api/v4/projects/{projectId}/protected_branches", new StringContent(JsonSerializer.Serialize(payload), System.Net.Http.Headers.MediaTypeHeaderValue.Parse("application/json")));
         }
 
         // Set CI/CD path
-        await _httpClient.PutAsync($"{_gitlabUrl}/api/v4/projects/{projectId}?ci_config_path=ci/.gitlab-ci.yml", null);
+        await httpClient.PutAsync($"{_gitlabUrl}/api/v4/projects/{projectId}?ci_config_path=ci/.gitlab-ci.yml", null);
     }
 }
