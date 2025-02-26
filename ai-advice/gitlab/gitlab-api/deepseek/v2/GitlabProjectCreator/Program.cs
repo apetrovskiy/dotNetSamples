@@ -15,7 +15,9 @@ using System.Security.Cryptography.X509Certificates;
 public class Program
 {
     private static ILogger<Program> _logger;
-    private static HttpClient httpClient  = new HttpClient();
+    private static HttpClientHandler handler = new HttpClientHandler { ServerCertificateCustomValidationCallback = (sender, cert, chain, ssl) => true };
+    // private static HttpClient httpClient = new HttpClient(handler);
+    private static HttpClient httpClient = new HttpClient();
     private static string _gitlabUrl;
     private static string _gitlabToken;
 
